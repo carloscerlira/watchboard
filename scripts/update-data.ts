@@ -68,24 +68,55 @@ function writeJSON(filename: string, data: unknown): void {
 }
 
 function extractJSON(text: string): string {
-  // Extract from code fences or bare JSON
+  // 1. Try code fences first
   const codeBlock = text.match(/```(?:json)?\s*\n?([\s\S]*?)\n?\s*```/);
   let json = codeBlock ? codeBlock[1].trim() : text.trim();
 
+  // 2. If no code fence, extract JSON by matching brackets (string-aware)
   if (!codeBlock) {
-    const jsonMatch = json.match(/(\[[\s\S]*\]|\{[\s\S]*\})/);
-    if (jsonMatch) json = jsonMatch[1];
+    const start = json.search(/[\[{]/);
+    if (start === -1) return json;
+
+    const openChar = json[start];
+    const closeChar = openChar === '[' ? ']' : '}';
+    let depth = 0;
+    let inString = false;
+    let escape = false;
+
+    for (let i = start; i < json.length; i++) {
+      const ch = json[i];
+      if (escape) { escape = false; continue; }
+      if (ch === '\\' && inString) { escape = true; continue; }
+      if (ch === '"') { inString = !inString; continue; }
+      if (inString) continue;
+      if (ch === openChar) depth++;
+      if (ch === closeChar) depth--;
+      if (depth === 0) {
+        json = json.substring(start, i + 1);
+        break;
+      }
+    }
   }
 
-  // Sanitize common LLM JSON issues:
-  // 1. Remove single-line comments (// ...)
-  json = json.replace(/\/\/[^\n]*/g, '');
-  // 2. Remove multi-line comments (/* ... */)
-  json = json.replace(/\/\*[\s\S]*?\*\//g, '');
-  // 3. Remove trailing commas before ] or }
-  json = json.replace(/,\s*([\]}])/g, '$1');
+  // 3. Remove trailing commas before ] or } (only outside strings)
+  let result = '';
+  let inStr = false;
+  let esc = false;
+  for (let i = 0; i < json.length; i++) {
+    const ch = json[i];
+    if (esc) { esc = false; result += ch; continue; }
+    if (ch === '\\' && inStr) { esc = true; result += ch; continue; }
+    if (ch === '"') { inStr = !inStr; result += ch; continue; }
+    if (inStr) { result += ch; continue; }
+    // Skip comma if next non-whitespace is ] or }
+    if (ch === ',') {
+      const rest = json.substring(i + 1).match(/^\s*([\]}])/);
+      if (rest) continue; // skip this comma
+    }
+    result += ch;
+  }
 
-  return json;
+  return result;
 }
 
 // ─── Anthropic Provider ───
