@@ -41,6 +41,7 @@ export const MapPointSchema = z.object({
   label: z.string(),
   sub: z.string(),
   tier: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
+  date: z.string(),
 });
 
 export const MapLineSchema = z.object({
@@ -48,6 +49,7 @@ export const MapLineSchema = z.object({
   to: z.tuple([z.number(), z.number()]),
   cat: z.enum(['strike', 'retaliation', 'asset', 'front']),
   label: z.string(),
+  date: z.string(),
 });
 
 // ── Military strike items ──

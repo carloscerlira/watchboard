@@ -2,7 +2,7 @@
 
 A comprehensive, source-cited intelligence dashboard tracking the 2026 Iran-US/Israel conflict (Operation Epic Fury / Roaring Lion). Built with Astro 5, TypeScript, and React — auto-updated nightly via AI web search.
 
-**[→ Live Dashboard](https://artpad6.github.io/iran-conflict-tracker/)**
+**[→ Live Dashboard](https://artemiopadilla.github.io/iran-conflict-tracker/)**
 
 ---
 
@@ -15,7 +15,7 @@ This dashboard visualizes the ongoing conflict that began February 28, 2026, whe
 | # | Section | Description |
 |---|---------|-------------|
 | 01 | **Historical Timeline** | Interactive timeline from 1941 Allied invasion through Feb 28, 2026 strikes. Click any node for sourced details. |
-| 02 | **Intelligence Map** | SVG theater map with 30+ plotted points: strike targets, retaliation hits, US assets, active fronts. Filterable by category. |
+| 02 | **Intelligence Map** | SVG theater map with 27 plotted points: strike targets, retaliation hits, US assets, active fronts. Filterable by category. |
 | 03 | **Military Operations** | Tabbed view: strike targets in Iran, Iranian retaliation across Gulf/Israel, US assets deployed. |
 | 04 | **Humanitarian Impact** | Casualty table with contested/verified badges for every figure. |
 | 05 | **Economic Impact** | Market data with sparkline charts: Brent, WTI, gold, S&P 500, VIX, Iranian rial. |

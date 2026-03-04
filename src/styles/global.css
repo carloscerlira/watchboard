@@ -1004,20 +1004,6 @@ body::before {
   margin-bottom: 1.5rem;
 }
 
-.map-svg-wrap {
-  position: relative;
-  width: 100%;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.map-svg-wrap svg {
-  display: block;
-  width: 100%;
-  min-width: 700px;
-  height: auto;
-}
-
 .map-controls {
   display: flex;
   gap: 0.5rem;
@@ -1122,23 +1108,148 @@ body::before {
   line-height: 1;
 }
 
-/* Map point animations */
-@keyframes mapPulse {
-  0%, 100% { r: 4; opacity: 1; }
-  50% { r: 7; opacity: 0.6; }
+/* ── Leaflet overrides (dark theme) ── */
+.leaflet-container {
+  background: #0d0f14 !important;
+  font-family: 'JetBrains Mono', monospace;
 }
 
-@keyframes mapRipple {
-  0% { r: 4; opacity: 0.6; }
-  100% { r: 18; opacity: 0; }
+.dark-tooltip.leaflet-tooltip {
+  background: rgba(24, 27, 35, 0.95);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
 }
 
-.map-point { cursor: pointer; transition: opacity 0.2s; }
-.map-point:hover { opacity: 0.85; }
-.map-point.hidden { opacity: 0; pointer-events: none; }
+.dark-tooltip.leaflet-tooltip::before {
+  border-top-color: rgba(24, 27, 35, 0.95);
+}
 
-.map-point-active circle:first-child {
-  animation: mapPulse 2.5s ease-in-out infinite;
+.leaflet-control-zoom a {
+  background: var(--bg-card) !important;
+  color: var(--text-secondary) !important;
+  border-color: var(--border) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--bg-card-hover) !important;
+  color: var(--text-primary) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(10, 11, 14, 0.7) !important;
+  color: var(--text-muted) !important;
+  font-size: 0.5rem !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--text-muted) !important;
+}
+
+/* ── Timeline slider ── */
+.timeline-slider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.timeline-play-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 0.7rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+.timeline-play-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-light);
+}
+
+.timeline-date-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.timeline-current-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--accent-red);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.timeline-range {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.timeline-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  border: 2px solid var(--bg-card);
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(231, 76, 60, 0.4);
+}
+
+.timeline-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  border: 2px solid var(--bg-card);
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(231, 76, 60, 0.4);
+}
+
+/* ── Marker pulse animation ── */
+@keyframes markerPulse {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 0.5; }
+}
+
+.marker-pulse {
+  animation: markerPulse 2s ease-in-out infinite;
+}
+
+/* ── Hormuz blockade pulse ── */
+@keyframes hormuzPulse {
+  0%, 100% { stroke-opacity: 0.7; }
+  50% { stroke-opacity: 0.3; }
+}
+
+.hormuz-blockade {
+  animation: hormuzPulse 2s ease-in-out infinite;
 }
 
 /* ─── ANIMATIONS ─── */

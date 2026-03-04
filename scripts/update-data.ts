@@ -8,6 +8,7 @@ import {
   TimelineEraSchema,
   TimelineEventSchema,
   MapPointSchema,
+  MapLineSchema,
   StrikeItemSchema,
   AssetSchema,
   CasualtyRowSchema,
@@ -208,7 +209,7 @@ async function updateMapPoints(): Promise<SectionResult> {
     const text = await callAI(SYSTEM_PROMPT, `Search for new military locations, strike targets, or asset deployments in the Iran-US/Israel conflict as of ${today}.
 Return an updated map points array as JSON.
 
-Each object must have: { "id": string (lowercase_snake_case), "lon": number (25-65 range), "lat": number (20-42 range), "cat": "strike"|"retaliation"|"asset"|"front", "label": string, "sub": string (description), "tier": 1|2|3|4 }
+Each object must have: { "id": string (lowercase_snake_case), "lon": number (25-65 range), "lat": number (20-42 range), "cat": "strike"|"retaliation"|"asset"|"front", "label": string, "sub": string (description), "tier": 1|2|3|4, "date": string (ISO date YYYY-MM-DD when event occurred or asset was deployed) }
 
 Current map points:
 ${JSON.stringify(current, null, 2)}
@@ -229,6 +230,33 @@ Update existing points if their details have changed. Add new points for newly r
     return { status: 'updated', itemCount: valid.length };
   } catch (err) {
     console.error('[map-points] Error:', err);
+    return { status: 'error', reason: String(err) };
+  }
+}
+
+async function updateMapLines(): Promise<SectionResult> {
+  try {
+    const current = readJSON<z.infer<typeof MapLineSchema>[]>('map-lines.json');
+    const text = await callAI(SYSTEM_PROMPT, `Search for new military strike routes, retaliation vectors, or front lines in the Iran-US/Israel conflict as of ${today}.
+Return an updated map lines array as JSON.
+
+Each object must have: { "from": [lon, lat], "to": [lon, lat], "cat": "strike"|"retaliation"|"asset"|"front", "label": string (e.g. "Ford → Tehran"), "date": string (ISO date YYYY-MM-DD) }
+
+Current map lines:
+${JSON.stringify(current, null, 2)}
+
+Update existing lines if their details have changed. Add new lines for newly reported attack vectors. Remove nothing. Return the complete updated array.`);
+
+    const parsed = JSON.parse(extractJSON(text));
+    const result = z.array(MapLineSchema).safeParse(parsed);
+    if (!result.success) {
+      console.error('[map-lines] Validation failed:', result.error.format());
+      return { status: 'skipped', reason: 'validation_failed' };
+    }
+    writeJSON('map-lines.json', result.data);
+    return { status: 'updated', itemCount: result.data.length };
+  } catch (err) {
+    console.error('[map-lines] Error:', err);
     return { status: 'error', reason: String(err) };
   }
 }
@@ -420,6 +448,7 @@ async function main() {
   if (runAll || sections.includes('kpis')) results.kpis = await updateKPIs();
   if (runAll || sections.includes('timeline')) results.timeline = await updateTimeline();
   if (runAll || sections.includes('map')) results.map = await updateMapPoints();
+  if (runAll || sections.includes('map-lines')) results['map-lines'] = await updateMapLines();
   if (runAll || sections.includes('casualties')) results.casualties = await updateCasualties();
   if (runAll || sections.includes('econ')) results.econ = await updateEcon();
   if (runAll || sections.includes('claims')) results.claims = await updateClaims();

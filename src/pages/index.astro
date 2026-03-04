@@ -14,7 +14,8 @@ import TimelineSection from '../components/islands/TimelineSection';
 import IntelMap from '../components/islands/IntelMap';
 import MilitaryTabs from '../components/islands/MilitaryTabs';
 
-import type { KpiItem, TimelineEra, MapPoint, MapLine, StrikeItem, Asset, CasualtyRow, EconItem, Claim, PolItem, Meta } from '../lib/schemas';
+import { z } from 'zod';
+import { KpiSchema, TimelineEraSchema, MapPointSchema, MapLineSchema, StrikeItemSchema, AssetSchema, CasualtyRowSchema, EconItemSchema, ClaimSchema, PolItemSchema, MetaSchema } from '../lib/schemas';
 
 import kpisRaw from '../data/kpis.json';
 import timelineRaw from '../data/timeline.json';
@@ -29,26 +30,26 @@ import claimsRaw from '../data/claims.json';
 import politicalRaw from '../data/political.json';
 import metaRaw from '../data/meta.json';
 
-// Type assertions to narrow JSON imports to match Zod schema types
-const kpis = kpisRaw as unknown as KpiItem[];
-const timeline = timelineRaw as unknown as TimelineEra[];
-const mapPoints = mapPointsRaw as unknown as MapPoint[];
-const mapLines = mapLinesRaw as unknown as MapLine[];
-const strikeTargets = strikeTargetsRaw as unknown as StrikeItem[];
-const retaliationData = retaliationRaw as unknown as StrikeItem[];
-const assetsData = assetsRaw as unknown as Asset[];
-const casualties = casualtiesRaw as unknown as CasualtyRow[];
-const econ = econRaw as unknown as EconItem[];
-const claims = claimsRaw as unknown as Claim[];
-const political = politicalRaw as unknown as PolItem[];
-const meta = metaRaw as unknown as Meta;
+// Runtime validation — build fails if any JSON file drifts from its schema
+const kpis = z.array(KpiSchema).parse(kpisRaw);
+const timeline = z.array(TimelineEraSchema).parse(timelineRaw);
+const mapPoints = z.array(MapPointSchema).parse(mapPointsRaw);
+const mapLines = z.array(MapLineSchema).parse(mapLinesRaw);
+const strikeTargets = z.array(StrikeItemSchema).parse(strikeTargetsRaw);
+const retaliationData = z.array(StrikeItemSchema).parse(retaliationRaw);
+const assetsData = z.array(AssetSchema).parse(assetsRaw);
+const casualties = z.array(CasualtyRowSchema).parse(casualtiesRaw);
+const econ = z.array(EconItemSchema).parse(econRaw);
+const claims = z.array(ClaimSchema).parse(claimsRaw);
+const political = z.array(PolItemSchema).parse(politicalRaw);
+const meta = MetaSchema.parse(metaRaw);
 ---
 <BaseLayout title="2026 Iran Conflict — Live Intelligence Dashboard">
   <Header meta={meta} />
   <Hero meta={meta} />
   <KpiStrip kpis={kpis} />
   <TimelineSection client:load timeline={timeline} />
-  <IntelMap client:load points={mapPoints} lines={mapLines} />
+  <IntelMap client:only="react" points={mapPoints} lines={mapLines} />
   <MilitaryTabs client:load strikeTargets={strikeTargets} retaliationData={retaliationData} assetsData={assetsData} />
   <CasualtyTable casualties={casualties} />
   <EconGrid econ={econ} />
