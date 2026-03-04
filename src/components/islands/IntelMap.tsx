@@ -53,7 +53,6 @@ export default function IntelMap({ points, lines }: Props) {
   const togglePlay = useCallback(() => {
     setIsPlaying(prev => {
       if (!prev) {
-        // If at end, restart from beginning
         setCurrentDate(cur =>
           cur >= dateRange.max ? dateRange.min : cur,
         );
@@ -97,18 +96,26 @@ export default function IntelMap({ points, lines }: Props) {
       <div className="section-header">
         <span className="section-num">02</span>
         <h2 className="section-title">Theater of Operations</h2>
-        <span className="section-count">Live Intel Map</span>
+        <span className="section-count">{filteredPoints.length} locations</span>
       </div>
 
       <div className="map-container">
-        {/* Filter controls */}
-        <div className="map-controls">
+        {/* Map fills the container */}
+        <LeafletMap
+          points={filteredPoints}
+          lines={filteredLines}
+          onSelectPoint={setSelectedPoint}
+        />
+
+        {/* Overlay: filter controls (top-left) */}
+        <div className="map-controls-overlay">
           {MAP_CATEGORIES.map(c => (
             <button
               key={c.id}
               className={`map-filter${activeFilters.has(c.id) ? ' active' : ''}`}
               data-cat={c.id}
               onClick={() => toggleFilter(c.id)}
+              aria-pressed={activeFilters.has(c.id)}
             >
               <span className="fdot" style={{ background: c.color }} />
               {c.label}
@@ -116,24 +123,17 @@ export default function IntelMap({ points, lines }: Props) {
           ))}
         </div>
 
-        {/* Leaflet map */}
-        <LeafletMap
-          points={filteredPoints}
-          lines={filteredLines}
-          onSelectPoint={setSelectedPoint}
-        />
+        {/* Overlay: legend (bottom-left) */}
+        <div className="map-legend-overlay">
+          {MAP_CATEGORIES.map(c => (
+            <span key={c.id} className="map-legend-item">
+              <span className="map-legend-dot" style={{ background: c.color }} />
+              {c.label}
+            </span>
+          ))}
+        </div>
 
-        {/* Timeline slider */}
-        <TimelineSlider
-          minDate={dateRange.min}
-          maxDate={dateRange.max}
-          currentDate={currentDate}
-          isPlaying={isPlaying}
-          onDateChange={setCurrentDate}
-          onTogglePlay={togglePlay}
-        />
-
-        {/* Info panel */}
+        {/* Overlay: info panel (right side) */}
         {selectedPoint && selectedCategory && (
           <div className="map-info-panel visible">
             <button
@@ -151,7 +151,7 @@ export default function IntelMap({ points, lines }: Props) {
             <div style={{ marginTop: '0.6rem' }}>
               <span
                 className={`source-chip ${tierClass(selectedPoint.tier)}`}
-                style={{ fontSize: '0.5rem' }}
+                style={{ fontSize: '0.6rem' }}
               >
                 {tierLabelFull(selectedPoint.tier)}
               </span>
@@ -159,27 +159,15 @@ export default function IntelMap({ points, lines }: Props) {
           </div>
         )}
 
-        {/* Legend bar */}
-        <div className="map-legend-bar">
-          {MAP_CATEGORIES.map(c => (
-            <span key={c.id} className="map-legend-item">
-              <span
-                className="fdot"
-                style={{
-                  background: c.color,
-                  width: '6px',
-                  height: '6px',
-                  borderRadius: '50%',
-                  display: 'inline-block',
-                }}
-              />
-              {' '}{c.label}
-            </span>
-          ))}
-          <span style={{ marginLeft: 'auto' }}>
-            Scroll / drag to pan &bull; Click points for details
-          </span>
-        </div>
+        {/* Timeline slider (bottom bar, outside map) */}
+        <TimelineSlider
+          minDate={dateRange.min}
+          maxDate={dateRange.max}
+          currentDate={currentDate}
+          isPlaying={isPlaying}
+          onDateChange={setCurrentDate}
+          onTogglePlay={togglePlay}
+        />
       </div>
     </section>
   );

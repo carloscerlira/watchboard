@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, CircleMarker, Polyline, Tooltip } from 'react-leaflet';
+import { MapContainer, TileLayer, CircleMarker, Polyline, Tooltip, ZoomControl } from 'react-leaflet';
 import type { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { MapPoint, MapLine } from '../../lib/schemas';
@@ -51,13 +51,15 @@ export default function LeafletMap({ points, lines, onSelectPoint }: Props) {
       zoom={5}
       minZoom={4}
       maxZoom={8}
-      style={{ width: '100%', height: '500px', background: '#0d0f14' }}
+      style={{ width: '100%', height: '100%', background: '#0d0f14' }}
       scrollWheelZoom={true}
-      attributionControl={false}
+      zoomControl={false}
     >
+      <ZoomControl position="topright" />
       <TileLayer
         url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
         subdomains="abcd"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
       />
 
       {/* Connection lines */}
