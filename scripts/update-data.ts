@@ -166,7 +166,6 @@ function mergeById<T extends { id: string }>(
     const prev = map.get(item.id);
     if (prev) {
       // Only stamp lastUpdated if something changed
-      const prevJSON = JSON.stringify(prev);
       const merged = { ...prev, ...item, lastUpdated: now };
       if (JSON.stringify({ ...prev, lastUpdated: now }) !== JSON.stringify(merged)) {
         updatedCount++;
@@ -282,7 +281,7 @@ Update the values and sources with the latest available data. Preserve existing 
       console.error('[kpis] Validation failed:', result.error.format());
       return { status: 'skipped', reason: 'validation_failed' };
     }
-    const { merged, newCount, updatedCount } = mergeById(current, result.data);
+    const { merged } = mergeById(current, result.data);
     writeJSON('kpis.json', merged);
     return { status: 'updated', itemCount: merged.length };
   } catch (err) {

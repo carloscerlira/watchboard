@@ -1,9 +1,9 @@
 import Anthropic from '@anthropic-ai/sdk';
 import OpenAI from 'openai';
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import { z } from 'zod';
-import { TimelineEventSchema, SourceSchema } from '../src/lib/schemas.js';
+import { TimelineEventSchema } from '../src/lib/schemas.js';
 
 // ─── Configuration ───
 

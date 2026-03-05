@@ -9,6 +9,17 @@ function tierLabel(t: number): string {
   return t === 1 ? 'Official' : t === 2 ? 'Major' : t === 3 ? 'Institutional' : 'Unverified';
 }
 
+function poleLabel(pole?: string): string | null {
+  if (!pole) return null;
+  switch (pole) {
+    case 'western': return 'W';
+    case 'middle_eastern': return 'ME';
+    case 'eastern': return 'E';
+    case 'international': return 'I';
+    default: return null;
+  }
+}
+
 interface Props {
   timeline: TimelineEra[];
 }
@@ -64,6 +75,9 @@ export default function TimelineSection({ timeline }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                {s.pole && poleLabel(s.pole) && (
+                  <span className={`source-pole ${s.pole}`}>{poleLabel(s.pole)}</span>
+                )}
                 {tierLabel(s.tier)} &middot; {s.name}
               </a>
             ))}

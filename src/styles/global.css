@@ -1087,6 +1087,50 @@ body::before {
   font-weight: 600;
 }
 
+.legend-subtitle {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.pole-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+}
+
+.pole-badge.western { background: var(--accent-blue-dim); color: var(--accent-blue); border: 1px solid rgba(52,152,219,0.25); }
+.pole-badge.middle_eastern { background: var(--accent-amber-dim); color: var(--accent-amber); border: 1px solid rgba(243,156,18,0.25); }
+.pole-badge.eastern { background: var(--accent-red-dim); color: var(--accent-red); border: 1px solid rgba(231,76,60,0.25); }
+.pole-badge.intl { background: var(--accent-green-dim); color: var(--accent-green); border: 1px solid rgba(46,204,113,0.25); }
+
+/* Inline pole chips for timeline source display */
+.source-pole {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.45rem;
+  font-weight: 600;
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  vertical-align: middle;
+}
+
+.source-pole.western { background: rgba(52,152,219,0.15); color: var(--accent-blue); }
+.source-pole.middle_eastern { background: rgba(243,156,18,0.15); color: var(--accent-amber); }
+.source-pole.eastern { background: rgba(231,76,60,0.15); color: var(--accent-red); }
+.source-pole.international { background: rgba(46,204,113,0.15); color: var(--accent-green); }
+
 /* ─── FOOTER ─── */
 .site-footer {
   padding: 2rem;
