@@ -1719,6 +1719,28 @@ body::before {
   line-height: 1.6;
 }
 
+.map-info-meta {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.map-info-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.map-info-coords {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.5rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
 .map-info-close {
   position: absolute;
   top: 8px; right: 10px;
@@ -1880,22 +1902,23 @@ body::before {
 
 /* ── Marker pulse animation ── */
 @keyframes markerPulse {
-  0%, 100% { opacity: 0.85; }
-  50% { opacity: 0.5; }
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.15); }
 }
 
 .marker-pulse {
-  animation: markerPulse 2s ease-in-out infinite;
+  animation: markerPulse 2.5s ease-in-out infinite;
+  transform-origin: center;
 }
 
-/* ── Hormuz blockade pulse ── */
-@keyframes hormuzPulse {
-  0%, 100% { stroke-opacity: 0.7; }
-  50% { stroke-opacity: 0.3; }
+/* ── Front zone breathing ── */
+@keyframes frontZonePulse {
+  0%, 100% { fill-opacity: 0.08; stroke-opacity: 0.3; }
+  50% { fill-opacity: 0.15; stroke-opacity: 0.5; }
 }
 
-.hormuz-blockade {
-  animation: hormuzPulse 2s ease-in-out infinite;
+.front-zone-pulse {
+  animation: frontZonePulse 3s ease-in-out infinite;
 }
 
 /* ─── ANIMATIONS ─── */

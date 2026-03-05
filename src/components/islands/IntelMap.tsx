@@ -96,7 +96,7 @@ export default function IntelMap({ points, lines }: Props) {
       <div className="section-header">
         <span className="section-num">02</span>
         <h2 className="section-title">Theater of Operations</h2>
-        <span className="section-count">{filteredPoints.length} locations</span>
+        <span className="section-count">{filteredPoints.length} locations &middot; {filteredLines.length} vectors</span>
       </div>
 
       <div className="map-container">
@@ -148,12 +148,16 @@ export default function IntelMap({ points, lines }: Props) {
             </div>
             <div className="map-info-title">{selectedPoint.label}</div>
             <div className="map-info-body">{selectedPoint.sub}</div>
-            <div style={{ marginTop: '0.6rem' }}>
+            <div className="map-info-meta">
               <span
                 className={`source-chip ${tierClass(selectedPoint.tier)}`}
                 style={{ fontSize: '0.6rem' }}
               >
                 {tierLabelFull(selectedPoint.tier)}
+              </span>
+              <span className="map-info-date">{selectedPoint.date}</span>
+              <span className="map-info-coords">
+                {selectedPoint.lat.toFixed(2)}°N, {selectedPoint.lon.toFixed(2)}°E
               </span>
             </div>
           </div>
