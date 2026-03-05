@@ -1899,15 +1899,14 @@ body::before {
   letter-spacing: 0.08em;
 }
 
-/* ── Marker pulse animation ── */
+/* ── Marker pulse animation (opacity only — no transform to avoid SVG drift) ── */
 @keyframes markerPulse {
-  0%, 100% { opacity: 0.9; transform: scale(1); }
-  50% { opacity: 0.55; transform: scale(1.15); }
+  0%, 100% { opacity: 0.9; stroke-width: 2; }
+  50% { opacity: 0.55; stroke-width: 4; }
 }
 
 .marker-pulse {
   animation: markerPulse 2.5s ease-in-out infinite;
-  transform-origin: center;
 }
 
 /* ── Front zone breathing ── */
