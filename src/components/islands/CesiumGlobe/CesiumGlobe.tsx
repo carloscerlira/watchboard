@@ -1,9 +1,11 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { Viewer } from 'resium';
 import {
+  Camera,
   Cartesian3,
   Math as CesiumMath,
   Color,
+  Rectangle,
   SceneMode,
   type Viewer as CesiumViewer,
 } from 'cesium';
@@ -32,6 +34,9 @@ interface Props {
 
 // Configure Cesium Ion on module load
 configureCesium();
+
+// Override Cesium's default home view (USA) with Middle East theater
+Camera.DEFAULT_VIEW_RECTANGLE = Rectangle.fromDegrees(25, 12, 65, 42);
 
 const KPI_COLORS: Record<string, string> = {
   red: '#e74c3c',
