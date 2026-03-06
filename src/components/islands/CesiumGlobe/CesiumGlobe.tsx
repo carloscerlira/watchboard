@@ -227,8 +227,12 @@ export default function CesiumGlobe({ points, lines, kpis, meta }: Props) {
         vrButton={false}
         creditContainer={document.createElement('div')}
       >
-        <CesiumPoints points={filteredPoints} onSelect={setSelectedPoint} />
-        <CesiumArcs lines={filteredLines} />
+        {cesiumViewer && (
+          <>
+            <CesiumPoints points={filteredPoints} onSelect={setSelectedPoint} />
+            <CesiumArcs lines={filteredLines} />
+          </>
+        )}
       </Viewer>
 
       {/* Overlay controls */}
