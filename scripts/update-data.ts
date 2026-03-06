@@ -75,13 +75,12 @@ function extractJSON(text: string): string {
   if (codeBlock) {
     json = codeBlock[1].trim();
   } else if (json.includes('```')) {
-    // Manual strip: remove opening ```json line and closing ``` line
     json = json.replace(/^```\w*\s*\n?/, '').replace(/\n?\s*```\s*$/, '').trim();
   }
 
   // 2. Extract by matching brackets (string-aware)
   const start = json.search(/[\[{]/);
-  if (start === -1) return json;
+  if (start === -1) throw new Error('No JSON array or object found in response');
 
   const openChar = json[start];
   const closeChar = openChar === '[' ? ']' : '}';
@@ -103,9 +102,92 @@ function extractJSON(text: string): string {
 
   if (end !== -1) {
     json = json.substring(start, end + 1);
+  } else {
+    // 2b. Truncated JSON — try to repair by closing open structures
+    json = repairTruncatedJSON(json.substring(start));
   }
 
   // 3. Remove trailing commas before ] or }
+  json = removeTrailingCommas(json);
+
+  return json;
+}
+
+/** Attempt to repair truncated JSON by closing open brackets/braces and strings */
+function repairTruncatedJSON(json: string): string {
+  // Walk through and track open structures
+  const stack: string[] = [];
+  let inString = false;
+  let escape = false;
+  let lastValidEnd = 0;
+
+  for (let i = 0; i < json.length; i++) {
+    const ch = json[i];
+    if (escape) { escape = false; continue; }
+    if (ch === '\\' && inString) { escape = true; continue; }
+    if (ch === '"') {
+      inString = !inString;
+      continue;
+    }
+    if (inString) continue;
+    if (ch === '[' || ch === '{') stack.push(ch === '[' ? ']' : '}');
+    if (ch === ']' || ch === '}') {
+      stack.pop();
+      lastValidEnd = i;
+    }
+  }
+
+  if (stack.length === 0) return json;
+
+  // Truncate to last complete value boundary (after a comma, colon+value, or bracket)
+  // Find the last comma or closing bracket outside a string
+  let truncateAt = json.length;
+  let inStr2 = false;
+  let esc2 = false;
+  let lastComma = -1;
+  let lastCloseBracket = -1;
+
+  for (let i = 0; i < json.length; i++) {
+    const ch = json[i];
+    if (esc2) { esc2 = false; continue; }
+    if (ch === '\\' && inStr2) { esc2 = true; continue; }
+    if (ch === '"') { inStr2 = !inStr2; continue; }
+    if (inStr2) continue;
+    if (ch === ',') lastComma = i;
+    if (ch === ']' || ch === '}') lastCloseBracket = i;
+  }
+
+  // Prefer truncating at the last complete item (after closing bracket > after comma)
+  if (lastCloseBracket > lastComma && lastCloseBracket > 0) {
+    truncateAt = lastCloseBracket + 1;
+  } else if (lastComma > 0) {
+    truncateAt = lastComma;
+  }
+
+  let repaired = json.substring(0, truncateAt);
+
+  // Recount what still needs closing
+  const stack2: string[] = [];
+  let inStr3 = false;
+  let esc3 = false;
+  for (let i = 0; i < repaired.length; i++) {
+    const ch = repaired[i];
+    if (esc3) { esc3 = false; continue; }
+    if (ch === '\\' && inStr3) { esc3 = true; continue; }
+    if (ch === '"') { inStr3 = !inStr3; continue; }
+    if (inStr3) continue;
+    if (ch === '[' || ch === '{') stack2.push(ch === '[' ? ']' : '}');
+    if (ch === ']' || ch === '}') stack2.pop();
+  }
+
+  // Close all open structures
+  repaired += stack2.reverse().join('');
+
+  return repaired;
+}
+
+/** Remove trailing commas before ] or } */
+function removeTrailingCommas(json: string): string {
   let result = '';
   let inStr = false;
   let esc = false;
@@ -121,7 +203,6 @@ function extractJSON(text: string): string {
     }
     result += ch;
   }
-
   return result;
 }
 
@@ -240,8 +321,8 @@ async function callAI(systemPrompt: string, userPrompt: string): Promise<string>
 
 const SYSTEM_PROMPT = `You are an intelligence analyst updating a conflict tracking dashboard.
 Today's date is ${today}. You have access to web search to find the latest information.
-You must respond with ONLY valid JSON matching the exact schema provided.
-Do not include any commentary, markdown fences, or explanation outside the JSON.
+CRITICAL: Your entire response must be ONLY a raw JSON array or object — no markdown, no code fences, no prose, no explanation before or after.
+Do NOT wrap in \`\`\`json blocks. Do NOT add any text before [ or {. Just output the JSON directly.
 Every item must have an "id" field (lowercase_snake_case, e.g. "brent_crude", "tehran_strike").
 
 MULTI-POLE SOURCING — gather information from all four media poles:

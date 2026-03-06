@@ -53,7 +53,7 @@ function extractJSON(text: string): string {
 
   // 2. Extract by matching brackets (string-aware)
   const start = json.search(/[\[{]/);
-  if (start === -1) return json;
+  if (start === -1) throw new Error('No JSON array or object found in response');
 
   const openChar = json[start];
   const closeChar = openChar === '[' ? ']' : '}';
@@ -75,9 +75,64 @@ function extractJSON(text: string): string {
 
   if (end !== -1) {
     json = json.substring(start, end + 1);
+  } else {
+    // 2b. Truncated JSON — try to repair by closing open structures
+    json = repairTruncatedJSON(json.substring(start));
   }
 
   // 3. Remove trailing commas before ] or }
+  json = removeTrailingCommas(json);
+
+  return json;
+}
+
+function repairTruncatedJSON(json: string): string {
+  const stack: string[] = [];
+  let inString = false;
+  let escape = false;
+  let lastCloseBracket = -1;
+  let lastComma = -1;
+
+  for (let i = 0; i < json.length; i++) {
+    const ch = json[i];
+    if (escape) { escape = false; continue; }
+    if (ch === '\\' && inString) { escape = true; continue; }
+    if (ch === '"') { inString = !inString; continue; }
+    if (inString) continue;
+    if (ch === '[' || ch === '{') stack.push(ch === '[' ? ']' : '}');
+    if (ch === ']' || ch === '}') { stack.pop(); lastCloseBracket = i; }
+    if (ch === ',') lastComma = i;
+  }
+
+  if (stack.length === 0) return json;
+
+  let truncateAt = json.length;
+  if (lastCloseBracket > lastComma && lastCloseBracket > 0) {
+    truncateAt = lastCloseBracket + 1;
+  } else if (lastComma > 0) {
+    truncateAt = lastComma;
+  }
+
+  let repaired = json.substring(0, truncateAt);
+
+  const stack2: string[] = [];
+  let inStr = false;
+  let esc = false;
+  for (let i = 0; i < repaired.length; i++) {
+    const ch = repaired[i];
+    if (esc) { esc = false; continue; }
+    if (ch === '\\' && inStr) { esc = true; continue; }
+    if (ch === '"') { inStr = !inStr; continue; }
+    if (inStr) continue;
+    if (ch === '[' || ch === '{') stack2.push(ch === '[' ? ']' : '}');
+    if (ch === ']' || ch === '}') stack2.pop();
+  }
+
+  repaired += stack2.reverse().join('');
+  return repaired;
+}
+
+function removeTrailingCommas(json: string): string {
   let result = '';
   let inStr = false;
   let esc = false;
@@ -93,7 +148,6 @@ function extractJSON(text: string): string {
     }
     result += ch;
   }
-
   return result;
 }
 
