@@ -2,42 +2,42 @@
   {
     "id": "brent_crude",
     "label": "Brent Crude",
-    "value": "$84.17/bbl",
-    "change": "-1.43%",
-    "direction": "down",
+    "value": "$84.59/bbl",
+    "change": "+20%",
+    "direction": "up",
     "sparkData": [
-      72.87,
-      79.33,
+      70,
+      72,
+      75,
+      78,
+      80,
       82,
-      96,
-      118,
-      138,
-      148,
-      84.17
+      84,
+      84.59
     ],
     "color": "#e74c3c",
-    "source": "Baonghean",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "source": "AP News",
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "wti_crude",
     "label": "WTI Crude",
-    "value": "$79.52/bbl",
-    "change": "-1.81%",
-    "direction": "down",
+    "value": "$80.07/bbl",
+    "change": "+18%",
+    "direction": "up",
     "sparkData": [
-      67,
-      72.79,
+      68,
+      70,
+      72,
+      74,
+      76,
       78,
-      91,
-      112,
-      132,
-      141,
-      79.52
+      79,
+      80.07
     ],
     "color": "#e67e22",
-    "source": "Baonghean",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "source": "AP News",
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "gold_spot",
@@ -57,7 +57,7 @@
     ],
     "color": "#f1c40f",
     "source": "AInvest",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "sp500",
@@ -77,7 +77,7 @@
     ],
     "color": "#3498db",
     "source": "State Street SPDR S&P 500 ETF Trust (SPY)",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "vix",
@@ -96,7 +96,7 @@
     ],
     "color": "#9b59b6",
     "source": "CBOE",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "iranian_rial",
@@ -115,7 +115,7 @@
     ],
     "color": "#e74c3c",
     "source": "Iran Intl",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "gas_price_us",
@@ -135,7 +135,7 @@
     ],
     "color": "#e74c3c",
     "source": "Kiplinger",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "shipping_rates",
@@ -154,6 +154,6 @@
     ],
     "color": "#e67e22",
     "source": "Freightos",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   }
 ]

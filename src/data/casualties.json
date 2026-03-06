@@ -2,24 +2,24 @@
   {
     "id": "iran_strikes",
     "category": "Iran (strikes)",
-    "killed": "1,168",
-    "injured": "747",
-    "source": "HRANA",
+    "killed": "1,045",
+    "injured": "6,000+",
+    "source": "Iranian Red Crescent Society",
     "tier": 3,
     "contested": "yes",
-    "note": "Includes 194 children; figures are evolving.",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "note": "Includes 175 schoolgirls and staff killed in Minab; figures are evolving.",
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "iran_minab_school",
     "category": "Iran — Minab school",
-    "killed": "165–186",
+    "killed": "175",
     "injured": "114",
-    "source": "Iranian state media",
-    "tier": 2,
+    "source": "Iranian Red Crescent Society",
+    "tier": 3,
     "contested": "yes",
     "note": "Schoolgirls and staff killed in missile strike on primary school.",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "iran_isfahan_uni",
@@ -30,7 +30,7 @@
     "tier": 2,
     "contested": "evolving",
     "note": "Pentagon denies civilian site.",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "iran_officials",
@@ -41,29 +41,29 @@
     "tier": 1,
     "contested": "partial",
     "note": "Includes Supreme Leader Ali Khamenei; figures are evolving.",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "us_service_members",
     "category": "US service members",
-    "killed": "3",
-    "injured": "5",
+    "killed": "6",
+    "injured": "18",
     "source": "CENTCOM",
     "tier": 1,
     "contested": "no",
-    "note": "First U.S. combat deaths in the operation.",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "note": "Includes 4 members of the 103rd Sustainment Command killed in Kuwait.",
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "israel_retaliation",
     "category": "Israel (retaliation)",
-    "killed": "11",
+    "killed": "10",
     "injured": "121",
     "source": "Israeli officials",
     "tier": 1,
     "contested": "evolving",
     "note": "Includes 9 killed at Beit Shemesh synagogue; missile strikes on Tel Aviv & Jerusalem.",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "uae",
@@ -74,7 +74,7 @@
     "tier": 1,
     "contested": "no",
     "note": "Casualties include foreign nationals; injuries from debris and shrapnel.",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "kuwait",
@@ -85,7 +85,7 @@
     "tier": 1,
     "contested": "no",
     "note": "",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "lebanon",
@@ -96,7 +96,7 @@
     "tier": 1,
     "contested": "no",
     "note": "Includes civilians and militants; Israeli strikes on Hezbollah positions.",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "qatar",
@@ -107,7 +107,7 @@
     "tier": 1,
     "contested": "no",
     "note": "",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "iraq",
@@ -118,7 +118,7 @@
     "tier": 2,
     "contested": "evolving",
     "note": "Includes 4 Popular Mobilization Forces fighters killed; 3 injured.",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "prewar_protests",
@@ -129,7 +129,7 @@
     "tier": "all",
     "contested": "heavily",
     "note": "Wide range.",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "bahrain",
@@ -140,7 +140,7 @@
     "tier": 1,
     "contested": "no",
     "note": "Fatality due to fire caused by intercepted missile debris.",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "oman",
@@ -151,7 +151,7 @@
     "tier": 1,
     "contested": "no",
     "note": "Fatality and injuries from projectile hitting a tanker off Muscat coast.",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   },
   {
     "id": "pakistan_consulate_attack",
@@ -162,6 +162,6 @@
     "tier": 1,
     "contested": "yes",
     "note": "Protesters stormed US Consulate; security forces opened fire.",
-    "lastUpdated": "2026-03-06T05:43:43.246Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   }
 ]

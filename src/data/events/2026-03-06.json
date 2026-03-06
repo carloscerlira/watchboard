@@ -378,5 +378,99 @@
       }
     ],
     "lastUpdated": "2026-03-06T05:43:43.246Z"
+  },
+  {
+    "id": "iran_closes_strait_of_hormuz",
+    "year": "2026",
+    "title": "Iran Closes Strait of Hormuz",
+    "type": "economic",
+    "detail": "On March 3, 2026, Iran's Islamic Revolutionary Guard Corps (IRGC) announced the closure of the Strait of Hormuz, a critical maritime passage through which approximately 20% of global oil trade flows. This action was in response to joint U.S.-Israeli military operations targeting Iranian sites. The closure has led to a significant disruption in global energy supplies, causing oil prices to surge and prompting major shipping firms to suspend operations in the area.",
+    "sources": [
+      {
+        "name": "Israel Hayom",
+        "tier": 2,
+        "url": "https://www.israelhayom.com/2026/03/03/israel-us-joint-strike-iran-tehran",
+        "pole": "western"
+      },
+      {
+        "name": "The Guardian",
+        "tier": 2,
+        "url": "https://www.theguardian.com/world/2026/mar/02/oil-prices-rise-as-iran-war-threatens-shipping-through-strait-of-hormuz",
+        "pole": "western"
+      },
+      {
+        "name": "Al Jazeera",
+        "tier": 2,
+        "url": "https://www.aljazeera.com/news/2026/3/2/after-irans-salvo-hit-their-skylines-will-gulf-states-enter-the-war",
+        "pole": "middle_eastern"
+      }
+    ],
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
+  },
+  {
+    "id": "us_urges_americans_to_leave_middle_east",
+    "year": "2026",
+    "title": "U.S. Urges Americans to Leave Middle East Amid Escalating Conflict",
+    "type": "diplomatic",
+    "detail": "On March 3, 2026, the U.S. State Department issued a directive urging American citizens to leave 14 countries across the Middle East due to escalating military actions involving the U.S., Israel, and Iran. The department also announced the closure of U.S. embassies in Kuwait and Saudi Arabia, citing security concerns as Iran's retaliatory strikes intensified across the region.",
+    "sources": [
+      {
+        "name": "Fox News",
+        "tier": 2,
+        "url": "https://www.foxnews.com/live-news/us-iran-israel-war-latest-march-3",
+        "pole": "western"
+      },
+      {
+        "name": "Al Jazeera",
+        "tier": 2,
+        "url": "https://www.aljazeera.com/news/2026/3/4/israel-iran-continue-attacks-as-war-enters-its-fifth-day-engulfs-region",
+        "pole": "middle_eastern"
+      }
+    ],
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
+  },
+  {
+    "id": "iranian_missile_attacks_us_bases",
+    "year": "2026",
+    "title": "Iran Launches Missile Attacks on U.S. Bases in Gulf States",
+    "type": "military",
+    "detail": "On March 4, 2026, Iran launched over 500 ballistic missiles and 2,000 drones targeting U.S. military bases in Gulf countries, including Saudi Arabia, the United Arab Emirates, Kuwait, and Bahrain. These attacks were in retaliation for the joint U.S.-Israeli military operations against Iranian targets. The strikes resulted in casualties and significant infrastructure damage, further escalating regional tensions.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "tier": 2,
+        "url": "https://www.aljazeera.com/news/2026/3/4/what-we-know-on-day-five-of-us-israeli-attacks-on-iran",
+        "pole": "middle_eastern"
+      },
+      {
+        "name": "Associated Press",
+        "tier": 2,
+        "url": "https://apnews.com/article/e1c316da4ce809407122590a6872aa85",
+        "pole": "western"
+      }
+    ],
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
+  },
+  {
+    "id": "trump_declares_iran_knocked_out",
+    "year": "2026",
+    "title": "President Trump Declares Iran 'Knocked Out' Militarily",
+    "type": "diplomatic",
+    "detail": "On March 4, 2026, President Donald Trump announced that Iran's military capabilities had been significantly degraded following joint U.S.-Israeli strikes. He stated that Iran's navy, air force, radar systems, and air defenses had been neutralized, asserting that the nation had been 'knocked out' militarily. Despite these claims, Iran continued to launch retaliatory attacks, indicating ongoing resistance.",
+    "sources": [
+      {
+        "name": "Time",
+        "tier": 2,
+        "url": "https://time.com/7382322/trump-iran-war-progress-knocked-out-reason-for-strikes/",
+        "pole": "western"
+      },
+      {
+        "name": "Al Jazeera",
+        "tier": 2,
+        "url": "https://www.aljazeera.com/news/2026/3/4/what-we-know-on-day-five-of-us-israeli-attacks-on-iran",
+        "pole": "middle_eastern"
+      }
+    ],
+    "lastUpdated": "2026-03-06T05:57:54.619Z"
   }
 ]
