@@ -55,14 +55,16 @@ export function useFlights(viewer: CesiumViewer | null, enabled: boolean) {
 
     const fetchFlights = async () => {
       try {
+        if (viewer.isDestroyed()) return;
+
         // Middle East bounding box
         const url =
           'https://opensky-network.org/api/states/all?lamin=12&lamax=42&lomin=24&lomax=65';
         const res = await fetch(url);
-        if (!res.ok) return;
+        if (!res.ok || viewer.isDestroyed()) return;
 
         const data = await res.json();
-        if (!data.states) return;
+        if (!data.states || viewer.isDestroyed()) return;
 
         const flights: FlightState[] = data.states.map((s: any[]) => ({
           icao24: s[0],
@@ -131,9 +133,11 @@ export function useFlights(viewer: CesiumViewer | null, enabled: boolean) {
 
     return () => {
       clearInterval(intervalRef.current);
-      entitiesRef.current.forEach((entity) => {
-        try { viewer.entities.remove(entity); } catch { /* already removed */ }
-      });
+      if (!viewer.isDestroyed()) {
+        entitiesRef.current.forEach((entity) => {
+          try { viewer.entities.remove(entity); } catch { /* already removed */ }
+        });
+      }
       entitiesRef.current.clear();
       setCount(0);
     };

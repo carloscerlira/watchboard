@@ -27,12 +27,16 @@ export function useEarthquakes(viewer: CesiumViewer | null, enabled: boolean) {
 
     const fetchQuakes = async () => {
       try {
+        if (viewer.isDestroyed()) return;
+
         const res = await fetch(
           'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson',
         );
-        if (!res.ok) return;
+        if (!res.ok || viewer.isDestroyed()) return;
 
         const data = await res.json();
+        if (viewer.isDestroyed()) return;
+
         const quakes: Earthquake[] = data.features.map((f: any) => ({
           id: f.id,
           mag: f.properties.mag,
@@ -78,7 +82,11 @@ export function useEarthquakes(viewer: CesiumViewer | null, enabled: boolean) {
 
     return () => {
       clearInterval(intervalRef.current);
-      entitiesRef.current.forEach(e => viewer.entities.remove(e));
+      if (!viewer.isDestroyed()) {
+        entitiesRef.current.forEach(e => {
+          try { viewer.entities.remove(e); } catch { /* already removed */ }
+        });
+      }
       entitiesRef.current = [];
       setCount(0);
     };

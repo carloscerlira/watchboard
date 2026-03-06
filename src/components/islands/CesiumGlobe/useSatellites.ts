@@ -118,10 +118,14 @@ export function useSatellites(viewer: CesiumViewer | null, enabled: boolean) {
     if (!enabled || !viewer || satsRef.current.length === 0) return;
 
     // Clean up previous entities
-    entitiesRef.current.forEach(e => {
-      try { viewer.entities.remove(e); } catch { /* already removed */ }
-    });
+    if (!viewer.isDestroyed()) {
+      entitiesRef.current.forEach(e => {
+        try { viewer.entities.remove(e); } catch { /* already removed */ }
+      });
+    }
     entitiesRef.current = [];
+
+    if (viewer.isDestroyed()) return;
 
     // Create entities for each satellite
     satsRef.current.forEach(sat => {
@@ -177,16 +181,20 @@ export function useSatellites(viewer: CesiumViewer | null, enabled: boolean) {
         }
       });
 
-      animRef.current = requestAnimationFrame(updatePositions);
+      if (!viewer.isDestroyed()) {
+        animRef.current = requestAnimationFrame(updatePositions);
+      }
     };
 
     animRef.current = requestAnimationFrame(updatePositions);
 
     return () => {
       cancelAnimationFrame(animRef.current);
-      entitiesRef.current.forEach(e => {
-        try { viewer.entities.remove(e); } catch { /* already removed */ }
-      });
+      if (!viewer.isDestroyed()) {
+        entitiesRef.current.forEach(e => {
+          try { viewer.entities.remove(e); } catch { /* already removed */ }
+        });
+      }
       entitiesRef.current = [];
     };
   }, [enabled, viewer, count]);
