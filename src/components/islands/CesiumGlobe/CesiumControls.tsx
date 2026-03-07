@@ -11,6 +11,8 @@ interface Props {
   onVisualMode: (mode: VisualMode) => void;
   layers: { satellites: boolean; flights: boolean; quakes: boolean };
   onToggleLayer: (layer: 'satellites' | 'flights' | 'quakes') => void;
+  persistLines: boolean;
+  onTogglePersist: () => void;
 }
 
 const PRESET_LABELS: Record<CameraPresetKey, string> = {
@@ -39,6 +41,8 @@ export default function CesiumControls({
   onVisualMode,
   layers,
   onToggleLayer,
+  persistLines,
+  onTogglePersist,
 }: Props) {
   return (
     <div className="globe-controls">
@@ -59,6 +63,15 @@ export default function CesiumControls({
             )}
           </button>
         ))}
+        <button
+          className={`globe-filter globe-persist-toggle${persistLines ? ' active' : ''}`}
+          onClick={onTogglePersist}
+          aria-pressed={persistLines}
+          title={persistLines ? 'Showing all past arcs' : 'Showing current day arcs only'}
+        >
+          <span className="globe-fdot" style={{ background: persistLines ? '#00ff88' : '#555' }} />
+          {persistLines ? 'All Days' : 'Day Only'}
+        </button>
       </div>
 
       {/* Camera presets */}

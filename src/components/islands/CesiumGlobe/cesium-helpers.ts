@@ -91,10 +91,10 @@ export function haversineDistance(from: [number, number], to: [number, number]):
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-/** Animation duration in ms, scaled by distance (2000–4000ms) */
-export function animationDuration(from: [number, number], to: [number, number]): number {
+/** Simulated flight duration in ms, based on haversine distance at ~2000 m/s */
+export function simFlightDuration(from: [number, number], to: [number, number]): number {
   const dist = haversineDistance(from, to);
-  return Math.min(4000, Math.max(2000, (dist / 2_000_000) * 3000));
+  return Math.max(60_000, (dist / 2000) * 1000); // min 1 minute simulated
 }
 
 /** Tier label for info panel */

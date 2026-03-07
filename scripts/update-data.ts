@@ -513,7 +513,7 @@ async function updateMapPoints(): Promise<SectionResult> {
     const existingDates = new Set(current.map(p => p.date));
     const maxDate = [...existingDates].sort().pop() || '';
 
-    const text = await callAI(SYSTEM_PROMPT, `Search for new military locations, strike targets, or asset deployments in the Iran-US/Israel conflict as of ${today}.
+    const text = await callAI(SYSTEM_PROMPT, `Search for military locations, strike targets, or asset deployments in the Iran-US/Israel conflict for EACH DATE from ${maxDate} to ${today}.
 Return an updated map points array as JSON.
 
 Each object must have exactly these fields:
@@ -536,9 +536,10 @@ ${JSON.stringify(retaliation, null, 2)}
 RULES:
 1. Keep ALL existing points unchanged (update details only if new info exists)
 2. ADD new points for any strike/retaliation location not yet on the map
-3. ADD new points for any newly reported events since ${maxDate}
-4. Every new point MUST have a date of when the event occurred in YYYY-MM-DD format
-5. Return the complete updated array`);
+3. For EACH DATE from ${maxDate} to ${today}, search for events and add points with the correct date
+4. ENSURE every date in the range has at least one point if any military activity occurred
+5. Every new point MUST have a date of when the event occurred in YYYY-MM-DD format
+6. Return the complete updated array`);
 
     const parsed = normalizeItems(JSON.parse(extractJSON(text)));
     const PointSchema = MapPointSchema.omit({ lastUpdated: true }).extend({ lastUpdated: z.string().optional() });
@@ -569,7 +570,7 @@ async function updateMapLines(): Promise<SectionResult> {
     const pointCoords = mapPoints.map(p => ({ id: p.id, label: p.label, cat: p.cat, lon: p.lon, lat: p.lat }));
     const maxDate = [...current.map(l => l.date)].sort().pop() || '';
 
-    const text = await callAI(SYSTEM_PROMPT, `Search for new military strike routes, retaliation vectors, or front lines in the Iran-US/Israel conflict as of ${today}.
+    const text = await callAI(SYSTEM_PROMPT, `Search for military strike routes, retaliation vectors, or front lines in the Iran-US/Israel conflict for EACH DATE from ${maxDate} to ${today}.
 Return an updated map lines array as JSON.
 
 Each object must have exactly these fields:
@@ -585,10 +586,11 @@ ${JSON.stringify(pointCoords, null, 2)}
 
 RULES:
 1. Keep ALL existing lines unchanged
-2. ADD new arc lines for any new strike routes, retaliation vectors, or front movements since ${maxDate}
-3. "from" and "to" are [lon, lat] — use coordinates from the map points above
-4. Each new line needs a date in YYYY-MM-DD format for when the event occurred
-5. Return the complete updated array`);
+2. For EACH DATE from ${maxDate} to ${today}, search for strike routes, retaliation vectors, or front movements
+3. ADD new arc lines for any found on each date — ENSURE every date with military activity has at least one line
+4. "from" and "to" are [lon, lat] — use coordinates from the map points above
+5. Each new line needs a date in YYYY-MM-DD format for when the event occurred
+6. Return the complete updated array`);
 
     const parsed = normalizeItems(JSON.parse(extractJSON(text)));
     const LineSchema = MapLineSchema.omit({ lastUpdated: true }).extend({ lastUpdated: z.string().optional() });

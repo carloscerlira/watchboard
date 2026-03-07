@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import type { FlatEvent } from '../../../lib/timeline-utils';
+import type { MapLine } from '../../../lib/schemas';
 
 interface Props {
   minDate: string;
@@ -9,13 +10,24 @@ interface Props {
   playbackSpeed: number;
   mode: 'historical' | 'live';
   events: FlatEvent[];
+  lines?: MapLine[];
   onDateChange: (date: string) => void;
   onTogglePlay: () => void;
   onSpeedChange: (speed: number) => void;
   onGoLive: () => void;
 }
 
-const SPEEDS = [0.5, 1, 2, 5];
+const SPEEDS = [
+  { label: '1x',   value: 1 },
+  { label: '10m',  value: 600 },
+  { label: '30m',  value: 1800 },
+  { label: '1hr',  value: 3600 },
+  { label: '2hr',  value: 7200 },
+  { label: '3hr',  value: 10800 },
+  { label: '5hr',  value: 18000 },
+  { label: '10hr', value: 36000 },
+  { label: '24hr', value: 86400 },
+];
 
 const EVENT_TYPE_COLORS: Record<string, string> = {
   military: '#e74c3c',
@@ -31,8 +43,8 @@ function dateToDay(date: string, minDate: string): number {
 }
 
 function dayToDate(day: number, minDate: string): string {
-  const d = new Date(minDate);
-  d.setDate(d.getDate() + day);
+  const d = new Date(minDate + 'T00:00:00Z');
+  d.setUTCDate(d.getUTCDate() + day);
   return d.toISOString().split('T')[0];
 }
 
@@ -45,13 +57,18 @@ function formatDate(iso: string): string {
   });
 }
 
-function stepDate(date: string, delta: number, min: string, max: string): string {
-  const d = new Date(date);
-  d.setDate(d.getDate() + delta);
-  const next = d.toISOString().split('T')[0];
-  if (next < min) return min;
-  if (next > max) return max;
-  return next;
+function prevEventDate(current: string, dates: string[]): string {
+  for (let i = dates.length - 1; i >= 0; i--) {
+    if (dates[i] < current) return dates[i];
+  }
+  return current;
+}
+
+function nextEventDate(current: string, dates: string[]): string {
+  for (const d of dates) {
+    if (d > current) return d;
+  }
+  return current;
 }
 
 export default function CesiumTimelineBar({
@@ -62,6 +79,7 @@ export default function CesiumTimelineBar({
   playbackSpeed,
   mode,
   events,
+  lines = [],
   onDateChange,
   onTogglePlay,
   onSpeedChange,
@@ -70,12 +88,19 @@ export default function CesiumTimelineBar({
   const totalDays = dateToDay(maxDate, minDate);
   const currentDay = dateToDay(currentDate, minDate);
 
+  // Sorted unique dates that have events or lines
+  const eventDates = useMemo(() => {
+    const dates = new Set<string>();
+    events.forEach(ev => dates.add(ev.resolvedDate));
+    lines.forEach(l => dates.add(l.date));
+    return [...dates].filter(d => d >= minDate && d <= maxDate).sort();
+  }, [events, lines, minDate, maxDate]);
+
   // Event ticks positioned by date
   const ticks = useMemo(() => {
     const seen = new Set<string>();
     return events
       .filter(ev => {
-        // Deduplicate by date+type for cleaner visuals
         const key = `${ev.resolvedDate}-${ev.type}`;
         if (seen.has(key)) return false;
         seen.add(key);
@@ -101,8 +126,10 @@ export default function CesiumTimelineBar({
       <div className="globe-tl-controls">
         <button
           className="globe-tl-btn"
-          onClick={() => onDateChange(stepDate(currentDate, -1, minDate, maxDate))}
-          aria-label="Previous day"
+          onClick={() => onDateChange(prevEventDate(currentDate, eventDates))}
+          disabled={prevEventDate(currentDate, eventDates) === currentDate}
+          aria-label="Previous event"
+          title="Previous event date"
         >
           &#9664;
         </button>
@@ -115,21 +142,24 @@ export default function CesiumTimelineBar({
         </button>
         <button
           className="globe-tl-btn"
-          onClick={() => onDateChange(stepDate(currentDate, 1, minDate, maxDate))}
-          aria-label="Next day"
+          onClick={() => onDateChange(nextEventDate(currentDate, eventDates))}
+          disabled={nextEventDate(currentDate, eventDates) === currentDate}
+          aria-label="Next event"
+          title="Next event date"
         >
           &#9654;
         </button>
 
-        {/* Speed selector */}
+        {/* Speed selector — scrollable row */}
         <div className="globe-tl-speed">
           {SPEEDS.map(s => (
             <button
-              key={s}
-              className={`globe-tl-speed-btn ${playbackSpeed === s ? 'active' : ''}`}
-              onClick={() => onSpeedChange(s)}
+              key={s.value}
+              className={`globe-tl-speed-btn ${playbackSpeed === s.value ? 'active' : ''}`}
+              onClick={() => onSpeedChange(s.value)}
+              title={`${s.label} per second`}
             >
-              {s}x
+              {s.label}
             </button>
           ))}
         </div>

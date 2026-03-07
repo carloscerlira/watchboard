@@ -132,6 +132,12 @@ body:has(.globe-wrapper) .tooltip {
   margin-left: auto;
 }
 
+.globe-persist-toggle {
+  margin-top: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 6px;
+}
+
 /* Sub-label for feed color legends */
 .globe-sublabel {
   font-family: 'JetBrains Mono', monospace;
@@ -583,8 +589,13 @@ body:has(.globe-wrapper) .tooltip {
   transition: background 0.2s;
 }
 
-.globe-tl-btn:hover {
+.globe-tl-btn:hover:not(:disabled) {
   background: rgba(255, 255, 255, 0.12);
+}
+
+.globe-tl-btn:disabled {
+  opacity: 0.25;
+  cursor: default;
 }
 
 .globe-tl-play {
@@ -596,6 +607,15 @@ body:has(.globe-wrapper) .tooltip {
   display: flex;
   gap: 2px;
   margin-left: 4px;
+  overflow-x: auto;
+  max-width: 320px;
+  scrollbar-width: none;
+  mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+}
+
+.globe-tl-speed::-webkit-scrollbar {
+  display: none;
 }
 
 .globe-tl-speed-btn {

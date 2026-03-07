@@ -40,9 +40,6 @@ interface Props {
 // Configure Cesium Ion on module load
 configureCesium();
 
-// Override Cesium's default home view (USA) with Middle East theater
-Camera.DEFAULT_VIEW_RECTANGLE = Rectangle.fromDegrees(25, 12, 65, 42);
-
 const KPI_COLORS: Record<string, string> = {
   red: '#e74c3c',
   amber: '#f39c12',
@@ -50,14 +47,25 @@ const KPI_COLORS: Record<string, string> = {
   green: '#2ecc71',
 };
 
-// Stable DOM element for Cesium credit container (must not change between renders)
-const creditDiv = document.createElement('div');
-
 // Today's date for mode detection
 const TODAY = new Date().toISOString().split('T')[0];
 
+// ── Time helpers ──
+
+function dateToMs(dateStr: string): number {
+  return new Date(dateStr + 'T00:00:00Z').getTime();
+}
+
+function msToDateStr(ms: number): string {
+  return new Date(ms).toISOString().split('T')[0];
+}
+
 export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: Props) {
   const viewerRef = useRef<CesiumComponentRef<CesiumViewer> | null>(null);
+  const creditDivRef = useRef<HTMLDivElement | null>(null);
+  if (!creditDivRef.current && typeof document !== 'undefined') {
+    creditDivRef.current = document.createElement('div');
+  }
   const [cesiumViewer, setCesiumViewer] = useState<CesiumViewer | null>(null);
   const { flyTo } = useCesiumCamera(viewerRef);
 
@@ -76,6 +84,9 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
   // ── Events panel ──
   const [eventsOpen, setEventsOpen] = useState(true);
 
+  // ── Persist lines toggle (day-only by default) ──
+  const [persistLines, setPersistLines] = useState(false);
+
   // ── Timeline ──
   const dateRange = useMemo(() => {
     const allDates = [
@@ -89,34 +100,80 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
   }, [points, lines]);
 
   const [currentDate, setCurrentDate] = useState(dateRange.max);
+  const currentDateRef = useRef(currentDate);
+  currentDateRef.current = currentDate;
+
   const [isPlaying, setIsPlaying] = useState(false);
-  const [playbackSpeed, setPlaybackSpeed] = useState(1);
+  const [playbackSpeed, setPlaybackSpeed] = useState(3600); // default: 1hr per real second
+
+  // Continuous simulation time (ms since epoch)
+  const simTimeRef = useRef<number>(dateToMs(dateRange.max) + 43200000); // noon of max date
+  const rafIdRef = useRef<number>(0);
+  const lastFrameRef = useRef<number>(0);
+  const lastDateUpdateRef = useRef<number>(0); // throttle setCurrentDate at high speeds
 
   // Derive mode from currentDate
   const mode: 'historical' | 'live' = currentDate >= TODAY ? 'live' : 'historical';
 
-  // Play/pause auto-advance with variable speed
+  // ── RAF-based continuous playback ──
   useEffect(() => {
-    if (!isPlaying) return;
-    const interval = setInterval(() => {
-      setCurrentDate(prev => {
-        const d = new Date(prev);
-        d.setDate(d.getDate() + 1);
-        const next = d.toISOString().split('T')[0];
-        if (next > dateRange.max) {
-          setIsPlaying(false);
-          return dateRange.max;
+    if (!isPlaying) {
+      lastFrameRef.current = 0;
+      cancelAnimationFrame(rafIdRef.current);
+      rafIdRef.current = 0;
+      return;
+    }
+
+    const tick = (timestamp: number) => {
+      if (lastFrameRef.current === 0) {
+        lastFrameRef.current = timestamp;
+        rafIdRef.current = requestAnimationFrame(tick);
+        return;
+      }
+
+      const deltaMs = Math.min(timestamp - lastFrameRef.current, 100); // cap to avoid jumps
+      lastFrameRef.current = timestamp;
+
+      simTimeRef.current += deltaMs * playbackSpeed;
+      const newDate = msToDateStr(simTimeRef.current);
+      const maxMs = dateToMs(dateRange.max) + 86400000; // end of max date
+
+      if (simTimeRef.current >= maxMs) {
+        simTimeRef.current = maxMs;
+        setIsPlaying(false);
+        setCurrentDate(dateRange.max);
+        return;
+      }
+
+      // Throttle state updates to max 5Hz to avoid entity churn at high speeds
+      if (newDate !== currentDateRef.current) {
+        const realNow = timestamp;
+        if (realNow - lastDateUpdateRef.current >= 200) {
+          lastDateUpdateRef.current = realNow;
+          setCurrentDate(newDate);
         }
-        return next;
-      });
-    }, 200 / playbackSpeed);
-    return () => clearInterval(interval);
-  }, [isPlaying, dateRange.max, playbackSpeed]);
+      }
+
+      rafIdRef.current = requestAnimationFrame(tick);
+    };
+
+    rafIdRef.current = requestAnimationFrame(tick);
+
+    return () => {
+      cancelAnimationFrame(rafIdRef.current);
+      rafIdRef.current = 0;
+    };
+  }, [isPlaying, playbackSpeed, dateRange.max]);
 
   const togglePlay = useCallback(() => {
     setIsPlaying(prev => {
       if (!prev) {
-        setCurrentDate(cur => (cur >= dateRange.max ? dateRange.min : cur));
+        // If at the end, restart from the beginning
+        if (currentDateRef.current >= dateRange.max) {
+          const startMs = dateToMs(dateRange.min);
+          simTimeRef.current = startMs;
+          setCurrentDate(dateRange.min);
+        }
       }
       return !prev;
     });
@@ -124,8 +181,16 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
 
   const goLive = useCallback(() => {
     setIsPlaying(false);
-    setCurrentDate(dateRange.max >= TODAY ? TODAY : dateRange.max);
+    const targetDate = dateRange.max >= TODAY ? TODAY : dateRange.max;
+    simTimeRef.current = dateToMs(targetDate) + 43200000;
+    setCurrentDate(targetDate);
   }, [dateRange]);
+
+  // When user manually changes date (scrub, step), sync simTimeRef
+  const handleDateChange = useCallback((date: string) => {
+    simTimeRef.current = dateToMs(date) + 43200000; // noon of that day
+    setCurrentDate(date);
+  }, []);
 
   // ── Filtering ──
   const toggleFilter = (cat: string) => {
@@ -146,8 +211,17 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
     [points, activeFilters, currentDate],
   );
 
-  const filteredLines = useMemo(
-    () => lines.filter(l => activeFilters.has(l.cat) && l.date <= currentDate),
+  // Past arcs — only shown when persist is on (managed by useConflictData)
+  const pastLines = useMemo(
+    () => persistLines
+      ? lines.filter(l => activeFilters.has(l.cat) && l.date < currentDate)
+      : [],
+    [lines, activeFilters, currentDate, persistLines],
+  );
+
+  // Current date arcs — managed by useMissiles
+  const currentLines = useMemo(
+    () => lines.filter(l => activeFilters.has(l.cat) && l.date === currentDate),
     [lines, activeFilters, currentDate],
   );
 
@@ -179,6 +253,7 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
 
   // Initial camera position + store viewer in state for hooks
   const handleViewerReady = useCallback((viewer: CesiumViewer) => {
+    Camera.DEFAULT_VIEW_RECTANGLE = Rectangle.fromDegrees(25, 12, 65, 42);
     viewer.scene.backgroundColor = Color.fromCssColorString('#0a0b0e');
     viewer.scene.globe.baseColor = Color.fromCssColorString('#0d0f14');
 
@@ -219,16 +294,18 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
     setCesiumViewer(viewer);
   }, []);
 
-  // ── Conflict data (imperative entities) ──
-  useConflictData(cesiumViewer, filteredPoints, filteredLines, setSelectedPoint);
+  // ── Conflict data (imperative entities) — points + past arcs ──
+  useConflictData(cesiumViewer, filteredPoints, pastLines, setSelectedPoint);
 
-  // ── Animated missiles ──
-  useMissiles(cesiumViewer, lines, currentDate, isPlaying);
+  // ── Current-date arcs + animated missiles ──
+  useMissiles(cesiumViewer, currentLines, currentDate, isPlaying, simTimeRef);
 
   // ── Real-time data feeds (pass mode for sync) ──
   const { count: satCount } = useSatellites(cesiumViewer, layers.satellites);
   const { count: flightCount } = useFlights(cesiumViewer, layers.flights && mode === 'live');
   const { count: quakeCount } = useEarthquakes(cesiumViewer, layers.quakes);
+
+  const totalLines = pastLines.length + currentLines.length;
 
   return (
     <div className="globe-wrapper">
@@ -272,7 +349,7 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
         selectionIndicator={false}
         timeline={false}
         vrButton={false}
-        creditContainer={creditDiv}
+        creditContainer={creditDivRef.current!}
       />
 
       {/* Overlay controls */}
@@ -285,6 +362,8 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
         onVisualMode={setVisualMode}
         layers={layers}
         onToggleLayer={toggleLayer}
+        persistLines={persistLines}
+        onTogglePersist={() => setPersistLines(prev => !prev)}
       />
 
       {/* Info panel */}
@@ -309,7 +388,8 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
         playbackSpeed={playbackSpeed}
         mode={mode}
         events={events}
-        onDateChange={setCurrentDate}
+        lines={lines}
+        onDateChange={handleDateChange}
         onTogglePlay={togglePlay}
         onSpeedChange={setPlaybackSpeed}
         onGoLive={goLive}
@@ -319,7 +399,7 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
       <div className="globe-stats">
         <span>{filteredPoints.length} locations</span>
         <span className="globe-stats-sep">&middot;</span>
-        <span>{filteredLines.length} vectors</span>
+        <span>{totalLines} vectors</span>
         {layers.satellites && satCount > 0 && (
           <>
             <span className="globe-stats-sep">&middot;</span>
