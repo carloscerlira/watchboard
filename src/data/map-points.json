@@ -582,5 +582,60 @@
     "sub": "PMF movement detected crossing into Syria. US MQ-9 surveillance flights increased to 24/7. CENTCOM warns of escalation.",
     "tier": 2,
     "date": "2026-03-03"
+  },
+  {
+    "id": "basra",
+    "lon": 47.78,
+    "lat": 30.5,
+    "cat": "retaliation",
+    "label": "Basra",
+    "sub": "Iranian strikes hit Halliburton and KBR facilities; fires reported.",
+    "tier": 2,
+    "date": "2026-03-07",
+    "lastUpdated": "2026-03-07T01:18:42.086Z"
+  },
+  {
+    "id": "riyadh_embassy",
+    "lon": 46.7,
+    "lat": 24.7,
+    "cat": "retaliation",
+    "label": "U.S. Embassy, Riyadh",
+    "sub": "Two drones struck embassy; minor damage and fire reported.",
+    "tier": 2,
+    "date": "2026-03-03",
+    "lastUpdated": "2026-03-07T01:18:42.086Z"
+  },
+  {
+    "id": "nakhchivan_airport",
+    "lon": 45.45,
+    "lat": 39.2,
+    "cat": "retaliation",
+    "label": "Nakhchivan International Airport",
+    "sub": "Three Iranian UAVs targeted passenger terminal; no casualties reported.",
+    "tier": 2,
+    "date": "2026-03-05",
+    "lastUpdated": "2026-03-07T01:18:42.086Z"
+  },
+  {
+    "id": "port_shuaiba",
+    "lon": 48.15,
+    "lat": 29.03,
+    "cat": "retaliation",
+    "label": "Port Shuaiba, Kuwait",
+    "sub": "Iranian strike targeted makeshift U.S. command center; 6 U.S. service members killed.",
+    "tier": 1,
+    "date": "2026-03-05",
+    "lastUpdated": "2026-03-07T01:18:42.086Z"
+  },
+  {
+    "id": "strait_of_hormuz",
+    "lon": 56.5,
+    "lat": 26.5,
+    "cat": "front",
+    "label": "Strait of Hormuz",
+    "sub": "IRGC claims complete control; commercial shipping harassed.",
+    "tier": 2,
+    "date": "2026-03-05",
+    "lastUpdated": "2026-03-07T01:18:42.086Z"
   }
 ]

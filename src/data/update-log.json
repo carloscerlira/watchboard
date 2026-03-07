@@ -1,46 +1,18 @@
 {
-  "lastRun": "2026-03-06T06:21:53.605Z",
+  "lastRun": "2026-03-07T01:18:42.086Z",
   "provider": "openai",
   "model": "gpt-4o",
   "sections": {
     "meta": {
       "status": "updated"
     },
-    "kpis": {
-      "status": "updated",
-      "itemCount": 8
-    },
-    "timeline": {
-      "status": "updated",
-      "newEvents": 2
-    },
     "map": {
       "status": "updated",
-      "itemCount": 55
+      "itemCount": 60
     },
     "map-lines": {
       "status": "updated",
-      "itemCount": 52
-    },
-    "casualties": {
-      "status": "updated",
-      "itemCount": 15
-    },
-    "econ": {
-      "status": "updated",
-      "itemCount": 8
-    },
-    "claims": {
-      "status": "updated",
-      "itemCount": 17
-    },
-    "political": {
-      "status": "updated",
-      "itemCount": 29
-    },
-    "military": {
-      "status": "skipped",
-      "reason": "validation_failed"
+      "itemCount": 55
     }
   }
 }
