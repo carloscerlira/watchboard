@@ -187,6 +187,38 @@ body::before {
   font-weight: 600;
 }
 
+/* ── Freshness indicator ── */
+.freshness-indicator {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+
+.freshness-indicator.fresh {
+  color: var(--accent-green);
+  border-color: rgba(46, 204, 113, 0.25);
+  background: rgba(46, 204, 113, 0.06);
+}
+
+.freshness-indicator.stale {
+  color: var(--accent-amber);
+  border-color: rgba(243, 156, 18, 0.3);
+  background: rgba(243, 156, 18, 0.08);
+}
+
+@media (max-width: 900px) {
+  .freshness-indicator {
+    display: none;
+  }
+}
+
 .header-nav {
   display: flex;
   gap: 0.25rem;
@@ -1971,6 +2003,11 @@ body::before {
   border-radius: 3px;
   letter-spacing: 0.03em;
   white-space: nowrap;
+  cursor: default;
+}
+
+.kpi-delta[title] {
+  cursor: help;
 }
 
 .kpi-delta.up {

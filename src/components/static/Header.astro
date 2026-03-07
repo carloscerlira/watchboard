@@ -23,6 +23,9 @@ const NAV_SECTIONS = [
     <div class="header-left">
       <span class="live-dot"></span>
       <span class="header-title"><strong>ACTIVE CONFLICT</strong> &mdash; {meta.operationName}</span>
+      <span class="freshness-indicator" data-updated={meta.lastUpdated} aria-live="polite">
+        <span class="freshness-text">{meta.lastUpdated ? `Updated ${new Date(meta.lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}` : 'Last update time unknown'}</span>
+      </span>
     </div>
     <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
     <nav class="header-nav">
@@ -35,7 +38,7 @@ const NAV_SECTIONS = [
 </header>
 
 <script>
-  // Mobile menu toggle
+  // ── Mobile menu toggle ──
   const menuBtn = document.querySelector('.mobile-menu-btn');
   const nav = document.querySelector('.header-nav');
   if (menuBtn && nav) {
@@ -43,7 +46,6 @@ const NAV_SECTIONS = [
       nav.classList.toggle('open');
       menuBtn.setAttribute('aria-expanded', nav.classList.contains('open').toString());
     });
-    // Close on nav link click
     nav.querySelectorAll('.nav-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         nav.classList.remove('open');
@@ -52,20 +54,91 @@ const NAV_SECTIONS = [
     });
   }
 
-  // Active section tracking
+  // ── Scroll spy with immediate click update ──
   const sections = document.querySelectorAll('[id^="sec-"]');
-  const navBtns = document.querySelectorAll('.nav-btn');
+  const navBtns = document.querySelectorAll('.nav-btn[href^="#"]');
+  let activeSection: string | null = null;
+  let clickOverride: string | null = null;
+  let clickTimer: number | undefined;
+
+  function setActiveNav(sectionId: string | null) {
+    activeSection = sectionId;
+    navBtns.forEach(btn => {
+      const matches = sectionId && btn.getAttribute('href') === `#${sectionId}`;
+      btn.classList.toggle('active', !!matches);
+    });
+  }
+
+  // Immediately highlight on nav click, then let observer take over
+  navBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const href = btn.getAttribute('href');
+      if (href?.startsWith('#')) {
+        clickOverride = href.slice(1);
+        setActiveNav(clickOverride);
+        clearTimeout(clickTimer);
+        clickTimer = window.setTimeout(() => { clickOverride = null; }, 1000);
+      }
+    });
+  });
+
+  const visibleSections = new Set<string>();
   const navObserver = new IntersectionObserver(
     entries => {
+      if (clickOverride) return; // Let click override persist briefly
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          navBtns.forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('href') === `#${entry.target.id}`);
-          });
+          visibleSections.add(entry.target.id);
+        } else {
+          visibleSections.delete(entry.target.id);
         }
       });
+      // Pick the topmost visible section (DOM order)
+      let topmost: string | null = null;
+      sections.forEach(s => {
+        if (visibleSections.has(s.id) && !topmost) topmost = s.id;
+      });
+      setActiveNav(topmost);
     },
-    { rootMargin: '-20% 0px -70% 0px' }
+    { rootMargin: '-56px 0px -70% 0px' }
   );
   sections.forEach(s => navObserver.observe(s));
+
+  // ── Freshness indicator ──
+  const freshnessEl = document.querySelector('.freshness-indicator') as HTMLElement | null;
+  if (freshnessEl) {
+    const updatedStr = freshnessEl.dataset.updated;
+    function updateFreshness() {
+      if (!updatedStr || !freshnessEl) return;
+      const updated = new Date(updatedStr).getTime();
+      if (isNaN(updated)) {
+        freshnessEl.querySelector('.freshness-text')!.textContent = 'Last update time unknown';
+        freshnessEl.classList.add('stale');
+        return;
+      }
+      const ageMs = Date.now() - updated;
+      const ageMin = Math.floor(ageMs / 60000);
+      const ageHr = Math.floor(ageMs / 3600000);
+      const ageDays = Math.floor(ageMs / 86400000);
+      const STALE_MS = 30 * 3600000; // 30 hours
+
+      let text: string;
+      if (ageMin < 60) {
+        text = `Updated ${Math.max(1, ageMin)} min ago`;
+      } else if (ageHr < 24) {
+        text = `Updated ${ageHr}h ago`;
+      } else if (ageHr < 48) {
+        text = 'Updated yesterday';
+      } else {
+        text = `Updated ${ageDays} days ago`;
+      }
+
+      const isStale = ageMs > STALE_MS;
+      freshnessEl.querySelector('.freshness-text')!.textContent = isStale ? `${text} — Data may be outdated` : text;
+      freshnessEl.classList.toggle('stale', isStale);
+      freshnessEl.classList.toggle('fresh', !isStale);
+    }
+    updateFreshness();
+    setInterval(updateFreshness, 60000); // Update every minute
+  }
 </script>

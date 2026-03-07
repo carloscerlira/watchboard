@@ -23,6 +23,7 @@ export const KpiSchema = z.object({
   contested: z.boolean(),
   contestNote: z.string().optional(),
   delta: z.string().optional(),
+  deltaNote: z.string().optional(),
   trend: z.enum(['up', 'down', 'stable']).optional(),
   lastUpdated: z.string().optional(),
 });
