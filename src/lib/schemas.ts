@@ -27,6 +27,15 @@ export const KpiSchema = z.object({
   lastUpdated: z.string().optional(),
 });
 
+// ── Media ──
+export const MediaItemSchema = z.object({
+  type: z.enum(['image', 'video', 'article']),
+  url: z.string(),
+  caption: z.string().optional(),
+  source: z.string().optional(),
+  thumbnail: z.string().optional(),
+});
+
 // ── Timeline ──
 export const TimelineEventSchema = z.object({
   id: z.string(),
@@ -36,6 +45,7 @@ export const TimelineEventSchema = z.object({
   active: z.boolean().optional(),
   detail: z.string(),
   sources: z.array(SourceSchema),
+  media: z.array(MediaItemSchema).optional(),
   lastUpdated: z.string().optional(),
 });
 
@@ -147,6 +157,7 @@ export const MetaSchema = z.object({
 });
 
 // ── Inferred types ──
+export type MediaItem = z.infer<typeof MediaItemSchema>;
 export type Source = z.infer<typeof SourceSchema>;
 export type KpiItem = z.infer<typeof KpiSchema>;
 export type TimelineEvent = z.infer<typeof TimelineEventSchema>;

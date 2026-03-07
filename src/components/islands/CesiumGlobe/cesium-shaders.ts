@@ -102,7 +102,7 @@ export function createThermalStage(): PostProcessStage {
   });
 }
 
-/** Create bloom post-processing stage */
+/** Create bloom post-processing stage with 5x5 Gaussian blur */
 export function createBloomStage(): PostProcessStage {
   return new PostProcessStage({
     name: 'bloom',
@@ -112,10 +112,22 @@ export function createBloomStage(): PostProcessStage {
 
       void main() {
         vec4 color = texture(colorTexture, v_textureCoordinates);
-        // Simple glow: brighten highlights
-        float lum = dot(color.rgb, vec3(0.299, 0.587, 0.114));
-        float bloom = smoothstep(0.4, 1.0, lum) * 0.3;
-        out_FragColor = vec4(color.rgb + bloom, 1.0);
+
+        // 5x5 Gaussian blur for bloom spread
+        vec4 sum = vec4(0.0);
+        float texelX = 1.0 / 1280.0;
+        float texelY = 1.0 / 720.0;
+        for (int x = -2; x <= 2; x++) {
+          for (int y = -2; y <= 2; y++) {
+            sum += texture(colorTexture, v_textureCoordinates + vec2(float(x) * texelX, float(y) * texelY));
+          }
+        }
+        sum /= 25.0;
+
+        float lum = dot(sum.rgb, vec3(0.299, 0.587, 0.114));
+        float bloom = smoothstep(0.3, 0.8, lum) * 0.12;
+
+        out_FragColor = vec4(color.rgb + bloom * sum.rgb, 1.0);
       }
     `,
   });

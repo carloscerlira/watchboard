@@ -48,7 +48,7 @@ function isMilitaryFlight(f: FlightState): boolean {
 export function useFlights(viewer: CesiumViewer | null, enabled: boolean) {
   const [count, setCount] = useState(0);
   const entitiesRef = useRef<Map<string, Entity>>(new Map());
-  const intervalRef = useRef<ReturnType<typeof setInterval>>();
+  const intervalRef = useRef<ReturnType<typeof setInterval>>(undefined);
 
   useEffect(() => {
     if (!enabled || !viewer) return;

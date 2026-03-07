@@ -5,22 +5,26 @@ import {
   Cartesian3,
   Math as CesiumMath,
   Color,
+  Ion,
   Rectangle,
   SceneMode,
+  createWorldTerrainAsync,
   type Viewer as CesiumViewer,
 } from 'cesium';
 import 'cesium/Build/Cesium/Widgets/widgets.css';
 import type { CesiumComponentRef } from 'resium';
 import type { MapPoint, MapLine, KpiItem, Meta } from '../../../lib/schemas';
+import type { FlatEvent } from '../../../lib/timeline-utils';
 import { MAP_CATEGORIES } from '../../../lib/map-utils';
 import { configureCesium } from '../../../lib/cesium-config';
-import { createCRTStage, createNVGStage, createThermalStage, type VisualMode } from './cesium-shaders';
+import { createCRTStage, createNVGStage, createThermalStage, createBloomStage, type VisualMode } from './cesium-shaders';
 import { useCesiumCamera } from './useCesiumCamera';
-import CesiumPoints from './CesiumPoints';
-import CesiumArcs from './CesiumArcs';
+import { useConflictData } from './useConflictData';
+import { useMissiles } from './useMissiles';
 import CesiumControls from './CesiumControls';
 import CesiumInfoPanel from './CesiumInfoPanel';
-import CesiumTimeline from './CesiumTimeline';
+import CesiumTimelineBar from './CesiumTimelineBar';
+import CesiumEventsPanel from './CesiumEventsPanel';
 import { useSatellites } from './useSatellites';
 import { useFlights } from './useFlights';
 import { useEarthquakes } from './useEarthquakes';
@@ -30,6 +34,7 @@ interface Props {
   lines: MapLine[];
   kpis: KpiItem[];
   meta: Meta;
+  events?: FlatEvent[];
 }
 
 // Configure Cesium Ion on module load
@@ -48,7 +53,10 @@ const KPI_COLORS: Record<string, string> = {
 // Stable DOM element for Cesium credit container (must not change between renders)
 const creditDiv = document.createElement('div');
 
-export default function CesiumGlobe({ points, lines, kpis, meta }: Props) {
+// Today's date for mode detection
+const TODAY = new Date().toISOString().split('T')[0];
+
+export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: Props) {
   const viewerRef = useRef<CesiumComponentRef<CesiumViewer> | null>(null);
   const [cesiumViewer, setCesiumViewer] = useState<CesiumViewer | null>(null);
   const { flyTo } = useCesiumCamera(viewerRef);
@@ -65,6 +73,9 @@ export default function CesiumGlobe({ points, lines, kpis, meta }: Props) {
   // ── Live data layer toggles ──
   const [layers, setLayers] = useState({ satellites: true, flights: true, quakes: false });
 
+  // ── Events panel ──
+  const [eventsOpen, setEventsOpen] = useState(true);
+
   // ── Timeline ──
   const dateRange = useMemo(() => {
     const allDates = [
@@ -79,8 +90,12 @@ export default function CesiumGlobe({ points, lines, kpis, meta }: Props) {
 
   const [currentDate, setCurrentDate] = useState(dateRange.max);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [playbackSpeed, setPlaybackSpeed] = useState(1);
 
-  // Play/pause auto-advance
+  // Derive mode from currentDate
+  const mode: 'historical' | 'live' = currentDate >= TODAY ? 'live' : 'historical';
+
+  // Play/pause auto-advance with variable speed
   useEffect(() => {
     if (!isPlaying) return;
     const interval = setInterval(() => {
@@ -94,9 +109,9 @@ export default function CesiumGlobe({ points, lines, kpis, meta }: Props) {
         }
         return next;
       });
-    }, 200);
+    }, 200 / playbackSpeed);
     return () => clearInterval(interval);
-  }, [isPlaying, dateRange.max]);
+  }, [isPlaying, dateRange.max, playbackSpeed]);
 
   const togglePlay = useCallback(() => {
     setIsPlaying(prev => {
@@ -105,6 +120,11 @@ export default function CesiumGlobe({ points, lines, kpis, meta }: Props) {
       }
       return !prev;
     });
+  }, [dateRange]);
+
+  const goLive = useCallback(() => {
+    setIsPlaying(false);
+    setCurrentDate(dateRange.max >= TODAY ? TODAY : dateRange.max);
   }, [dateRange]);
 
   // ── Filtering ──
@@ -144,10 +164,11 @@ export default function CesiumGlobe({ points, lines, kpis, meta }: Props) {
     if (!viewer) return;
 
     const stages = viewer.scene.postProcessStages;
-    // Remove all custom stages
     stages.removeAll();
 
-    if (visualMode === 'crt') {
+    if (visualMode === 'normal') {
+      stages.add(createBloomStage());
+    } else if (visualMode === 'crt') {
       stages.add(createCRTStage());
     } else if (visualMode === 'nvg') {
       stages.add(createNVGStage());
@@ -158,15 +179,32 @@ export default function CesiumGlobe({ points, lines, kpis, meta }: Props) {
 
   // Initial camera position + store viewer in state for hooks
   const handleViewerReady = useCallback((viewer: CesiumViewer) => {
-    // Set dark background
     viewer.scene.backgroundColor = Color.fromCssColorString('#0a0b0e');
     viewer.scene.globe.baseColor = Color.fromCssColorString('#0d0f14');
 
-    // Atmosphere settings for dark look
-    viewer.scene.globe.enableLighting = false;
+    // Terrain (free with Cesium Ion token)
+    if (Ion.defaultAccessToken) {
+      createWorldTerrainAsync().then(terrain => {
+        if (!viewer.isDestroyed()) {
+          viewer.terrainProvider = terrain;
+        }
+      }).catch(() => {});
+    }
+
+    // Lighting — day/night terminator
+    viewer.scene.globe.enableLighting = true;
+
+    // Atmosphere glow
     if (viewer.scene.skyAtmosphere) {
       viewer.scene.skyAtmosphere.show = true;
+      viewer.scene.skyAtmosphere.brightnessShift = -0.3;
+      viewer.scene.skyAtmosphere.saturationShift = -0.2;
     }
+    viewer.scene.globe.showGroundAtmosphere = true;
+
+    // Subtle fog for depth
+    viewer.scene.fog.enabled = true;
+    viewer.scene.fog.density = 0.0002;
 
     // Fly to theater
     viewer.camera.setView({
@@ -178,13 +216,18 @@ export default function CesiumGlobe({ points, lines, kpis, meta }: Props) {
       },
     });
 
-    // Store in state to trigger re-render so hooks receive the viewer
     setCesiumViewer(viewer);
   }, []);
 
-  // ── Real-time data feeds ──
+  // ── Conflict data (imperative entities) ──
+  useConflictData(cesiumViewer, filteredPoints, filteredLines, setSelectedPoint);
+
+  // ── Animated missiles ──
+  useMissiles(cesiumViewer, lines, currentDate, isPlaying);
+
+  // ── Real-time data feeds (pass mode for sync) ──
   const { count: satCount } = useSatellites(cesiumViewer, layers.satellites);
-  const { count: flightCount } = useFlights(cesiumViewer, layers.flights);
+  const { count: flightCount } = useFlights(cesiumViewer, layers.flights && mode === 'live');
   const { count: quakeCount } = useEarthquakes(cesiumViewer, layers.quakes);
 
   return (
@@ -230,14 +273,7 @@ export default function CesiumGlobe({ points, lines, kpis, meta }: Props) {
         timeline={false}
         vrButton={false}
         creditContainer={creditDiv}
-      >
-        {cesiumViewer && (
-          <>
-            <CesiumPoints points={filteredPoints} onSelect={setSelectedPoint} />
-            <CesiumArcs lines={filteredLines} />
-          </>
-        )}
-      </Viewer>
+      />
 
       {/* Overlay controls */}
       <CesiumControls
@@ -256,14 +292,27 @@ export default function CesiumGlobe({ points, lines, kpis, meta }: Props) {
         <CesiumInfoPanel point={selectedPoint} onClose={() => setSelectedPoint(null)} />
       )}
 
-      {/* Timeline */}
-      <CesiumTimeline
+      {/* Events / Intel feed panel */}
+      <CesiumEventsPanel
+        events={events}
+        currentDate={currentDate}
+        isOpen={eventsOpen}
+        onToggle={() => setEventsOpen(prev => !prev)}
+      />
+
+      {/* Enhanced Timeline */}
+      <CesiumTimelineBar
         minDate={dateRange.min}
         maxDate={dateRange.max}
         currentDate={currentDate}
         isPlaying={isPlaying}
+        playbackSpeed={playbackSpeed}
+        mode={mode}
+        events={events}
         onDateChange={setCurrentDate}
         onTogglePlay={togglePlay}
+        onSpeedChange={setPlaybackSpeed}
+        onGoLive={goLive}
       />
 
       {/* Stats overlay */}
@@ -277,7 +326,7 @@ export default function CesiumGlobe({ points, lines, kpis, meta }: Props) {
             <span style={{ color: '#00ff88' }}>{satCount} sats</span>
           </>
         )}
-        {layers.flights && flightCount > 0 && (
+        {mode === 'live' && layers.flights && flightCount > 0 && (
           <>
             <span className="globe-stats-sep">&middot;</span>
             <span style={{ color: '#00aaff' }}>{flightCount} flights</span>
@@ -287,6 +336,12 @@ export default function CesiumGlobe({ points, lines, kpis, meta }: Props) {
           <>
             <span className="globe-stats-sep">&middot;</span>
             <span style={{ color: '#ff6644' }}>{quakeCount} quakes</span>
+          </>
+        )}
+        {mode === 'historical' && (
+          <>
+            <span className="globe-stats-sep">&middot;</span>
+            <span style={{ color: '#9498a8' }}>HISTORICAL</span>
           </>
         )}
       </div>

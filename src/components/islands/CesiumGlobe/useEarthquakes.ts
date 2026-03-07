@@ -20,7 +20,7 @@ interface Earthquake {
 export function useEarthquakes(viewer: CesiumViewer | null, enabled: boolean) {
   const [count, setCount] = useState(0);
   const entitiesRef = useRef<Entity[]>([]);
-  const intervalRef = useRef<ReturnType<typeof setInterval>>();
+  const intervalRef = useRef<ReturnType<typeof setInterval>>(undefined);
 
   useEffect(() => {
     if (!enabled || !viewer) return;

@@ -168,9 +168,9 @@ export function useSatellites(viewer: CesiumViewer | null, enabled: boolean) {
 
         try {
           const posVel = satellite.propagate(sat.satrec, now);
-          if (typeof posVel.position === 'boolean') return;
+          if (!posVel || typeof posVel.position === 'boolean' || !posVel.position) return;
 
-          const geodetic = satellite.eciToGeodetic(posVel.position, gmst);
+          const geodetic = satellite.eciToGeodetic(posVel.position as satellite.EciVec3<number>, gmst);
           const lon = satellite.degreesLong(geodetic.longitude);
           const lat = satellite.degreesLat(geodetic.latitude);
           const alt = geodetic.height * 1000; // km to m

@@ -1,4 +1,5 @@
-import { Cartesian3, Color } from 'cesium';
+import { Cartesian3, Color, PolylineGlowMaterialProperty, PolylineDashMaterialProperty } from 'cesium';
+import type { MaterialProperty } from 'cesium';
 import { MAP_CATEGORIES } from '../../../lib/map-utils';
 
 /** Convert category ID to Cesium Color */
@@ -60,6 +61,40 @@ export function lineDashPattern(cat: string): number {
 export function frontZoneRadius(id: string): number {
   if (id === 'hormuz') return 60_000;
   return 40_000;
+}
+
+/** Arc material — glow for strike/retaliation, dash for front/asset */
+export function arcMaterial(cat: string): MaterialProperty {
+  const color = lineToCesiumColor(cat);
+  if (cat === 'strike' || cat === 'retaliation') {
+    return new PolylineGlowMaterialProperty({
+      glowPower: 0.25,
+      taperPower: 0.5,
+      color,
+    });
+  }
+  return new PolylineDashMaterialProperty({
+    color: color.withAlpha(0.5),
+    dashLength: lineDashPattern(cat),
+  });
+}
+
+/** Haversine distance in meters between two [lon, lat] points */
+export function haversineDistance(from: [number, number], to: [number, number]): number {
+  const R = 6_371_000;
+  const toRad = (deg: number) => (deg * Math.PI) / 180;
+  const dLat = toRad(to[1] - from[1]);
+  const dLon = toRad(to[0] - from[0]);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(from[1])) * Math.cos(toRad(to[1])) * Math.sin(dLon / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+/** Animation duration in ms, scaled by distance (2000–4000ms) */
+export function animationDuration(from: [number, number], to: [number, number]): number {
+  const dist = haversineDistance(from, to);
+  return Math.min(4000, Math.max(2000, (dist / 2_000_000) * 3000));
 }
 
 /** Tier label for info panel */
