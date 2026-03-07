@@ -50,4 +50,9 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add src/data/
           git commit -m "chore(data): nightly AI update $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git push
+          # Retry up to 3 times in case remote has new commits
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 2
+          done
