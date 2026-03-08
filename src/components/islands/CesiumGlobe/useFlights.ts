@@ -114,7 +114,6 @@ export function useFlights(viewer: CesiumViewer | null, enabled: boolean) {
                 width: isMil ? 18 : 12,
                 height: isMil ? 18 : 12,
                 rotation,
-                alignedAxis: Cartesian3.UNIT_Z,
                 scaleByDistance: new NearFarScalar(1e4, 1.5, 5e6, 0.4),
                 verticalOrigin: VerticalOrigin.CENTER,
                 horizontalOrigin: HorizontalOrigin.CENTER,
