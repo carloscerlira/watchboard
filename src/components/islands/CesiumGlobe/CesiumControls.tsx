@@ -15,6 +15,9 @@ interface Props {
   persistLines: boolean;
   onTogglePersist: () => void;
   satGroupCounts?: SatGroupCounts;
+  showFov?: boolean;
+  onToggleFov?: () => void;
+  fovCount?: number;
 }
 
 const PRESET_LABELS: Record<CameraPresetKey, string> = {
@@ -46,6 +49,9 @@ export default function CesiumControls({
   persistLines,
   onTogglePersist,
   satGroupCounts,
+  showFov,
+  onToggleFov,
+  fovCount,
 }: Props) {
   return (
     <div className="globe-controls">
@@ -116,16 +122,32 @@ export default function CesiumControls({
           Satellites
         </button>
         {layers.satellites && (
-          <div className="globe-sublabel globe-sublabel-wrap">
-            {SAT_GROUPS.map(g => {
-              const cnt = satGroupCounts?.[g.group] ?? 0;
-              return (
-                <span key={g.group} style={{ color: g.color }}>
-                  &#9679; {g.label}{cnt > 0 ? ` (${cnt})` : ''}
-                </span>
-              );
-            })}
-          </div>
+          <>
+            <div className="globe-sublabel globe-sublabel-wrap">
+              {SAT_GROUPS.map(g => {
+                const cnt = satGroupCounts?.[g.group] ?? 0;
+                return (
+                  <span key={g.group} style={{ color: g.color }}>
+                    &#9679; {g.label}{cnt > 0 ? ` (${cnt})` : ''}
+                  </span>
+                );
+              })}
+            </div>
+            {onToggleFov && (
+              <button
+                className={`globe-filter globe-fov-toggle${showFov ? ' active' : ''}`}
+                onClick={onToggleFov}
+                aria-pressed={showFov}
+                title={showFov ? 'Hide sensor FOV footprints' : 'Show sensor FOV footprints'}
+              >
+                <span className="globe-fdot" style={{ background: showFov ? '#ff8844' : '#555' }} />
+                Sensor FOV
+                {showFov && fovCount != null && fovCount > 0 && (
+                  <span className="globe-filter-count">{fovCount}</span>
+                )}
+              </button>
+            )}
+          </>
         )}
         <button
           className={`globe-filter${layers.flights ? ' active' : ''}`}

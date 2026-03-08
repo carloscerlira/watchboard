@@ -138,6 +138,11 @@ body:has(.globe-wrapper) .tooltip {
   padding-top: 6px;
 }
 
+.globe-fov-toggle {
+  margin-top: 2px;
+  font-size: 0.6rem;
+}
+
 /* Sub-label for feed color legends */
 .globe-sublabel {
   font-family: 'JetBrains Mono', monospace;

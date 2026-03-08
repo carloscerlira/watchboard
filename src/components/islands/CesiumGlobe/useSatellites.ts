@@ -83,6 +83,41 @@ const THEATER_LON_MIN = 24;
 const THEATER_LON_MAX = 65;
 const STARLINK_CAP = 200;
 
+// ── FOV Configuration ──
+// Half-angle in radians for sensor field-of-view
+const FOV_HALF_ANGLE: Partial<Record<SatGroup, number>> = {
+  recon: (1.5 * Math.PI) / 180,    // 1.5 deg — narrow high-res imaging
+  military: (3.0 * Math.PI) / 180, // 3.0 deg — wider surveillance
+  geo: (8.7 * Math.PI) / 180,      // 8.7 deg — typical GEO comms beam
+};
+
+const FOV_FILL_ALPHA: Partial<Record<SatGroup, number>> = {
+  recon: 0.08,
+  military: 0.08,
+  geo: 0.05,
+};
+
+const FOV_OUTLINE_ALPHA: Partial<Record<SatGroup, number>> = {
+  recon: 0.30,
+  military: 0.30,
+  geo: 0.20,
+};
+
+// Max LEO footprints (recon + military combined) for performance
+const FOV_LEO_CAP = 20;
+// Throttle interval for FOV position updates (ms)
+const FOV_UPDATE_INTERVAL_MS = 2000;
+
+/** Check if a lat/lon is within the theater bounding box */
+function isInTheater(lat: number, lon: number): boolean {
+  return (
+    lat >= THEATER_LAT_MIN &&
+    lat <= THEATER_LAT_MAX &&
+    lon >= THEATER_LON_MIN &&
+    lon <= THEATER_LON_MAX
+  );
+}
+
 function parseTLE(text: string, group: SatGroup): SatRecord[] {
   const lines = text.trim().split('\n');
   const records: SatRecord[] = [];
@@ -116,12 +151,7 @@ function filterToTheater(sats: SatRecord[]): SatRecord[] {
       const lon = satellite.degreesLong(geodetic.longitude);
       const lat = satellite.degreesLat(geodetic.latitude);
 
-      if (
-        lat >= THEATER_LAT_MIN &&
-        lat <= THEATER_LAT_MAX &&
-        lon >= THEATER_LON_MIN &&
-        lon <= THEATER_LON_MAX
-      ) {
+      if (isInTheater(lat, lon)) {
         inTheater.push(sat);
         if (inTheater.length >= STARLINK_CAP) break;
       }
@@ -163,18 +193,29 @@ const EMPTY_COUNTS: SatGroupCounts = {
   gnss: 0,
 };
 
+/** Compute ground footprint radius in meters from altitude (km) and FOV half-angle (rad) */
+function computeFootprintRadius(altitudeKm: number, halfAngleRad: number): number {
+  return altitudeKm * 1000 * Math.tan(halfAngleRad);
+}
+
 /** Fetch military-relevant satellite TLEs and propagate orbits */
 export function useSatellites(
   viewer: CesiumViewer | null,
   enabled: boolean,
   simTimeRef?: React.RefObject<number>,
+  showFov: boolean = false,
 ) {
   const [count, setCount] = useState(0);
   const [groupCounts, setGroupCounts] = useState<SatGroupCounts>({ ...EMPTY_COUNTS });
+  const [fovCount, setFovCount] = useState(0);
   const satsRef = useRef<SatRecord[]>([]);
   const entitiesRef = useRef<Entity[]>([]);
+  const fovEntitiesRef = useRef<Entity[]>([]);
+  const geoFovEntitiesRef = useRef<Entity[]>([]);
+  const geoFovCreatedRef = useRef(false);
   const animRef = useRef<number>(0);
   const fetchedRef = useRef(false);
+  const lastFovUpdateRef = useRef<number>(0);
 
   // Fetch TLE data from all satellite groups
   useEffect(() => {
@@ -322,5 +363,182 @@ export function useSatellites(
     };
   }, [enabled, viewer, count]);
 
-  return { count, groupCounts };
+  // ── FOV Footprint Management ──
+  // Separate effect for FOV so toggling FOV doesn't recreate satellite entities
+  useEffect(() => {
+    if (!viewer || viewer.isDestroyed() || !enabled || satsRef.current.length === 0) {
+      return;
+    }
+
+    // Clean up existing FOV entities when toggling off or re-running
+    const cleanupFov = () => {
+      if (!viewer.isDestroyed()) {
+        fovEntitiesRef.current.forEach(e => {
+          try { viewer.entities.remove(e); } catch { /* ok */ }
+        });
+        geoFovEntitiesRef.current.forEach(e => {
+          try { viewer.entities.remove(e); } catch { /* ok */ }
+        });
+      }
+      fovEntitiesRef.current = [];
+      geoFovEntitiesRef.current = [];
+      geoFovCreatedRef.current = false;
+      setFovCount(0);
+    };
+
+    if (!showFov) {
+      cleanupFov();
+      return;
+    }
+
+    // Create GEO FOV footprints (static — computed once)
+    const createGeoFootprints = () => {
+      if (geoFovCreatedRef.current) return;
+      const now = simTimeRef ? new Date(simTimeRef.current) : new Date();
+      const gmst = satellite.gstime(now);
+      const halfAngle = FOV_HALF_ANGLE.geo;
+      if (!halfAngle) return;
+
+      const geoSats = satsRef.current.filter(s => s.group === 'geo');
+      let geoFovAdded = 0;
+
+      for (const sat of geoSats) {
+        try {
+          const posVel = satellite.propagate(sat.satrec, now);
+          if (!posVel || typeof posVel.position === 'boolean' || !posVel.position) continue;
+
+          const geodetic = satellite.eciToGeodetic(posVel.position as satellite.EciVec3<number>, gmst);
+          const lon = satellite.degreesLong(geodetic.longitude);
+          const lat = satellite.degreesLat(geodetic.latitude);
+          const altKm = geodetic.height;
+
+          // Only show GEO footprints for sats positioned over the theater longitude range
+          if (lon < THEATER_LON_MIN || lon > THEATER_LON_MAX) continue;
+
+          const radiusM = computeFootprintRadius(altKm, halfAngle);
+          const color = Color.fromCssColorString('#ff44ff');
+
+          const entity = viewer.entities.add({
+            name: `FOV: ${sat.name}`,
+            position: Cartesian3.fromDegrees(lon, lat, 0) as any,
+            ellipse: {
+              semiMajorAxis: radiusM,
+              semiMinorAxis: radiusM,
+              material: color.withAlpha(FOV_FILL_ALPHA.geo ?? 0.05),
+              outline: true,
+              outlineColor: color.withAlpha(FOV_OUTLINE_ALPHA.geo ?? 0.20),
+              outlineWidth: 1,
+              height: 0,
+            },
+          });
+          geoFovEntitiesRef.current.push(entity);
+          geoFovAdded++;
+        } catch {
+          // Propagation failed
+        }
+      }
+
+      geoFovCreatedRef.current = true;
+      return geoFovAdded;
+    };
+
+    // Create/update LEO FOV footprints (recon + military) with throttle
+    let leoFovAnimRef = 0;
+
+    const updateLeoFootprints = () => {
+      if (viewer.isDestroyed()) return;
+
+      const now = Date.now();
+      if (now - lastFovUpdateRef.current < FOV_UPDATE_INTERVAL_MS) {
+        leoFovAnimRef = requestAnimationFrame(updateLeoFootprints);
+        return;
+      }
+      lastFovUpdateRef.current = now;
+
+      const simNow = simTimeRef ? new Date(simTimeRef.current) : new Date();
+      const gmst = satellite.gstime(simNow);
+
+      // Collect LEO sats (recon + military) currently over theater
+      interface FovCandidate {
+        sat: SatRecord;
+        lon: number;
+        lat: number;
+        altKm: number;
+      }
+      const candidates: FovCandidate[] = [];
+
+      for (const sat of satsRef.current) {
+        if (sat.group !== 'recon' && sat.group !== 'military') continue;
+
+        try {
+          const posVel = satellite.propagate(sat.satrec, simNow);
+          if (!posVel || typeof posVel.position === 'boolean' || !posVel.position) continue;
+
+          const geodetic = satellite.eciToGeodetic(posVel.position as satellite.EciVec3<number>, gmst);
+          const lon = satellite.degreesLong(geodetic.longitude);
+          const lat = satellite.degreesLat(geodetic.latitude);
+          const altKm = geodetic.height;
+
+          if (isInTheater(lat, lon)) {
+            candidates.push({ sat, lon, lat, altKm });
+            if (candidates.length >= FOV_LEO_CAP) break;
+          }
+        } catch {
+          // Skip
+        }
+      }
+
+      // Remove old LEO FOV entities
+      fovEntitiesRef.current.forEach(e => {
+        try { viewer.entities.remove(e); } catch { /* ok */ }
+      });
+      fovEntitiesRef.current = [];
+
+      // Create new LEO FOV entities
+      for (const c of candidates) {
+        const halfAngle = FOV_HALF_ANGLE[c.sat.group];
+        if (!halfAngle) continue;
+
+        const radiusM = computeFootprintRadius(c.altKm, halfAngle);
+        const cssColor = c.sat.group === 'recon' ? '#ff8844' : '#ffcc00';
+        const color = Color.fromCssColorString(cssColor);
+        const fillAlpha = FOV_FILL_ALPHA[c.sat.group] ?? 0.08;
+        const outlineAlpha = FOV_OUTLINE_ALPHA[c.sat.group] ?? 0.30;
+
+        const entity = viewer.entities.add({
+          name: `FOV: ${c.sat.name}`,
+          position: Cartesian3.fromDegrees(c.lon, c.lat, 0) as any,
+          ellipse: {
+            semiMajorAxis: radiusM,
+            semiMinorAxis: radiusM,
+            material: color.withAlpha(fillAlpha),
+            outline: true,
+            outlineColor: color.withAlpha(outlineAlpha),
+            outlineWidth: 1,
+            height: 0,
+          },
+        });
+        fovEntitiesRef.current.push(entity);
+      }
+
+      // Update total FOV count (LEO + GEO)
+      setFovCount(fovEntitiesRef.current.length + geoFovEntitiesRef.current.length);
+
+      if (!viewer.isDestroyed()) {
+        leoFovAnimRef = requestAnimationFrame(updateLeoFootprints);
+      }
+    };
+
+    // Initialize: create GEO footprints (static) and start LEO update loop
+    const geoAdded = createGeoFootprints() ?? 0;
+    setFovCount(geoAdded);
+    leoFovAnimRef = requestAnimationFrame(updateLeoFootprints);
+
+    return () => {
+      cancelAnimationFrame(leoFovAnimRef);
+      cleanupFov();
+    };
+  }, [showFov, enabled, viewer, count]);
+
+  return { count, groupCounts, fovCount };
 }

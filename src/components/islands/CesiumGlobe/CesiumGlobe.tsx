@@ -90,6 +90,9 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
   // ── Persist lines toggle (day-only by default) ──
   const [persistLines, setPersistLines] = useState(false);
 
+  // ── Satellite FOV footprints ──
+  const [showFov, setShowFov] = useState(false);
+
   // ── Timeline ──
   const dateRange = useMemo(() => {
     const allDates = [
@@ -138,6 +141,13 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
       lastFrameRef.current = timestamp;
 
       simTimeRef.current += deltaMs * playbackSpeed;
+
+      // Sync Cesium clock every frame for smooth day/night terminator
+      const viewer = viewerRef.current?.cesiumElement;
+      if (viewer && !viewer.isDestroyed()) {
+        viewer.clock.currentTime = JulianDate.fromDate(new Date(simTimeRef.current));
+      }
+
       const newDate = msToDateStr(simTimeRef.current);
       const maxMs = dateToMs(dateRange.max) + 86400000; // end of max date
 
@@ -304,7 +314,7 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
   useMissiles(cesiumViewer, currentLines, currentDate, isPlaying, simTimeRef, playbackSpeed);
 
   // ── External data layers (synced to timeline) ──
-  const { count: satCount, groupCounts: satGroupCounts } = useSatellites(cesiumViewer, layers.satellites, simTimeRef);
+  const { count: satCount, groupCounts: satGroupCounts, fovCount: satFovCount } = useSatellites(cesiumViewer, layers.satellites, simTimeRef, showFov);
   const { count: flightCount } = useFlights(cesiumViewer, layers.flights && mode === 'live');
   const { count: quakeCount } = useEarthquakes(cesiumViewer, layers.quakes, currentDate);
   const { count: weatherCount } = useWeather(cesiumViewer, layers.weather, currentDate);
@@ -377,6 +387,9 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
         persistLines={persistLines}
         onTogglePersist={() => setPersistLines(prev => !prev)}
         satGroupCounts={satGroupCounts}
+        showFov={showFov}
+        onToggleFov={() => setShowFov(prev => !prev)}
+        fovCount={satFovCount}
       />
 
       {/* Info panel */}
@@ -417,6 +430,12 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
           <>
             <span className="globe-stats-sep">&middot;</span>
             <span style={{ color: '#00ff88' }}>{satCount} sats</span>
+          </>
+        )}
+        {layers.satellites && showFov && satFovCount > 0 && (
+          <>
+            <span className="globe-stats-sep">&middot;</span>
+            <span style={{ color: '#ff8844' }}>{satFovCount} FOV</span>
           </>
         )}
         {mode === 'live' && layers.flights && flightCount > 0 && (
