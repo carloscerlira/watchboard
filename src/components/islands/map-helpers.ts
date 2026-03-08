@@ -24,3 +24,30 @@ export function lineColor(cat: string): string {
   if (cat === 'front') return '#9b59b6';
   return '#3498db';
 }
+
+// ── OSINT weapon-type helpers ──
+
+export const WEAPON_TYPE_WEIGHTS: Record<string, number> = {
+  ballistic: 2.5,
+  cruise: 2.0,
+  drone: 1.5,
+  rocket: 2.2,
+  mixed: 2.0,
+  unknown: 1.5,
+};
+
+export const WEAPON_TYPE_LABELS: Record<string, string> = {
+  ballistic: 'BALLISTIC',
+  cruise: 'CRUISE',
+  drone: 'DRONE/UAV',
+  rocket: 'ROCKET',
+  mixed: 'MIXED',
+  unknown: 'UNKNOWN',
+};
+
+export const STATUS_LABELS: Record<string, string> = {
+  hit: 'HIT',
+  intercepted: 'INTERCEPTED',
+  partial: 'PARTIAL',
+  unknown: 'UNCONFIRMED',
+};

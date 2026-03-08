@@ -1,16 +1,19 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import type { MapPoint, MapLine } from '../../lib/schemas';
+import type { FlatEvent } from '../../lib/timeline-utils';
 import { MAP_CATEGORIES } from '../../lib/map-utils';
-import { tierLabelFull, tierClass } from './map-helpers';
+import { tierLabelFull, tierClass, WEAPON_TYPE_LABELS, STATUS_LABELS } from './map-helpers';
 import LeafletMap from './LeafletMap';
 import TimelineSlider from './TimelineSlider';
+import MapEventsPanel from './MapEventsPanel';
 
 interface Props {
   points: MapPoint[];
   lines: MapLine[];
+  events: FlatEvent[];
 }
 
-export default function IntelMap({ points, lines }: Props) {
+export default function IntelMap({ points, lines, events }: Props) {
   // ── Filters ──
   const [activeFilters, setActiveFilters] = useState<Set<string>>(
     new Set(['strike', 'retaliation', 'asset', 'front']),
@@ -31,8 +34,10 @@ export default function IntelMap({ points, lines }: Props) {
 
   const [currentDate, setCurrentDate] = useState(dateRange.max);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [playbackSpeed, setPlaybackSpeed] = useState(200);
+  const [eventsOpen, setEventsOpen] = useState(false);
 
-  // Play/pause auto-advance
+  // Play/pause auto-advance using playbackSpeed
   useEffect(() => {
     if (!isPlaying) return;
     const interval = setInterval(() => {
@@ -46,9 +51,9 @@ export default function IntelMap({ points, lines }: Props) {
         }
         return next;
       });
-    }, 200);
+    }, playbackSpeed);
     return () => clearInterval(interval);
-  }, [isPlaying, dateRange.max]);
+  }, [isPlaying, dateRange.max, playbackSpeed]);
 
   const togglePlay = useCallback(() => {
     setIsPlaying(prev => {
@@ -60,6 +65,14 @@ export default function IntelMap({ points, lines }: Props) {
       return !prev;
     });
   }, [dateRange]);
+
+  const handleSpeedChange = useCallback((speed: number) => {
+    setPlaybackSpeed(speed);
+  }, []);
+
+  const toggleEventsPanel = useCallback(() => {
+    setEventsOpen(prev => !prev);
+  }, []);
 
   // ── Filtering ──
   const toggleFilter = (cat: string) => {
@@ -108,7 +121,6 @@ export default function IntelMap({ points, lines }: Props) {
       </div>
 
       <div className="map-container">
-        {/* Map fills the container */}
         <LeafletMap
           points={filteredPoints}
           lines={filteredLines}
@@ -144,6 +156,13 @@ export default function IntelMap({ points, lines }: Props) {
           ))}
         </div>
 
+        {/* Overlay: stats (bottom-right, above timeline) */}
+        <div className="map-stats-overlay">
+          <span>{filteredPoints.length} locations</span>
+          <span className="map-stats-sep">&middot;</span>
+          <span>{filteredLines.length} vectors</span>
+        </div>
+
         {/* Overlay: info panel (right side) */}
         {selectedPoint && selectedCategory && (
           <div className="map-info-panel visible">
@@ -174,14 +193,26 @@ export default function IntelMap({ points, lines }: Props) {
           </div>
         )}
 
-        {/* Timeline slider (bottom bar, outside map) */}
+        {/* Events panel (right side, below info panel) */}
+        <MapEventsPanel
+          events={events}
+          currentDate={currentDate}
+          isOpen={eventsOpen}
+          onToggle={toggleEventsPanel}
+        />
+
+        {/* Enhanced timeline slider (bottom bar) */}
         <TimelineSlider
           minDate={dateRange.min}
           maxDate={dateRange.max}
           currentDate={currentDate}
           isPlaying={isPlaying}
+          playbackSpeed={playbackSpeed}
+          events={events}
+          lines={lines}
           onDateChange={setCurrentDate}
           onTogglePlay={togglePlay}
+          onSpeedChange={handleSpeedChange}
         />
       </div>
     </section>

@@ -19,6 +19,9 @@ import {
   strikeTargets, retaliationData, assetsData,
   casualties, econ, claims, political, meta,
 } from '../lib/data';
+import { flattenTimelineEvents } from '../lib/timeline-utils';
+
+const flatEvents = flattenTimelineEvents(timeline);
 ---
 <BaseLayout title="2026 Iran Conflict — Live Intelligence Dashboard">
   <Header meta={meta} />
@@ -29,7 +32,7 @@ import {
     <!-- Theater: sticky map + scrolling intel -->
     <div class="theater-layout">
       <div class="theater-map">
-        <IntelMap client:only="react" points={mapPoints} lines={mapLines} />
+        <IntelMap client:only="react" points={mapPoints} lines={mapLines} events={flatEvents} />
       </div>
       <div class="theater-scroll">
         <TimelineSection client:visible timeline={timeline} />

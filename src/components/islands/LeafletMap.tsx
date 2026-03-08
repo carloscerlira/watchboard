@@ -3,12 +3,13 @@ import type { LatLngExpression } from 'leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { MapPoint, MapLine } from '../../lib/schemas';
-import { catColor, lineColor } from './map-helpers';
+import { catColor, lineColor, WEAPON_TYPE_WEIGHTS, WEAPON_TYPE_LABELS, STATUS_LABELS } from './map-helpers';
 
 interface Props {
   points: MapPoint[];
   lines: MapLine[];
   onSelectPoint: (pt: MapPoint) => void;
+  onSelectLine?: (line: MapLine) => void;
 }
 
 /** Interpolate an arc between two [lat, lng] points using a sine curve offset */
@@ -54,32 +55,80 @@ function showPermanentLabel(pt: MapPoint): boolean {
   return majorLabels.has(pt.id);
 }
 
-/** Determine line weight based on category */
-function lineWeight(cat: string): number {
-  if (cat === 'strike') return 1.8;
-  if (cat === 'retaliation') return 1.5;
+/** Determine line weight — uses weapon type if available */
+function resolveLineWeight(line: MapLine): number {
+  if (line.weaponType) {
+    return WEAPON_TYPE_WEIGHTS[line.weaponType] || 1.5;
+  }
+  if (line.cat === 'strike') return 1.8;
+  if (line.cat === 'retaliation') return 1.5;
   return 1.2;
 }
 
-/** Determine line dash pattern */
-function lineDash(cat: string): string {
-  if (cat === 'strike') return '8,4';
-  if (cat === 'retaliation') return '4,6';
-  if (cat === 'front') return '2,4';
+/** Determine line opacity — low confidence reduces opacity */
+function resolveLineOpacity(line: MapLine): number {
+  if (line.confidence === 'low') return 0.3;
+  return 0.5;
+}
+
+/** Determine line dash pattern — intercepted uses distinct pattern */
+function resolveLineDash(line: MapLine): string {
+  if (line.status === 'intercepted') return '3,8';
+  if (line.cat === 'strike') return '8,4';
+  if (line.cat === 'retaliation') return '4,6';
+  if (line.cat === 'front') return '2,4';
   return '6,4';
+}
+
+/** Build a rich tooltip string for a line with OSINT data */
+function buildLineTooltip(line: MapLine): string {
+  const parts: string[] = [line.label];
+
+  if (line.weaponType) {
+    parts.push(WEAPON_TYPE_LABELS[line.weaponType] || line.weaponType.toUpperCase());
+  }
+
+  if (line.platform) {
+    parts.push(`Platform: ${line.platform}`);
+  }
+
+  if (line.launched != null || line.intercepted != null) {
+    const launched = line.launched != null ? `${line.launched} launched` : '';
+    const intercepted = line.intercepted != null ? `${line.intercepted} intercepted` : '';
+    const counts = [launched, intercepted].filter(Boolean).join(', ');
+    if (counts) parts.push(counts);
+  }
+
+  if (line.status) {
+    parts.push(`Status: ${STATUS_LABELS[line.status] || line.status.toUpperCase()}`);
+  }
+
+  if (line.damage) {
+    parts.push(`Damage: ${line.damage}`);
+  }
+
+  if (line.casualties) {
+    parts.push(`Casualties: ${line.casualties}`);
+  }
+
+  if (line.time) {
+    parts.push(`Time: ${line.time}`);
+  }
+
+  return parts.join(' | ');
 }
 
 /** Create a DivIcon for military bases */
 function baseIcon(): L.DivIcon {
   return L.divIcon({
     className: 'base-marker',
-    html: '<span class="base-marker-inner">⬟</span>',
+    html: '<span class="base-marker-inner">\u2B1F</span>',
     iconSize: [24, 24],
     iconAnchor: [12, 12],
   });
 }
 
-export default function LeafletMap({ points, lines, onSelectPoint }: Props) {
+export default function LeafletMap({ points, lines, onSelectPoint, onSelectLine }: Props) {
   const center: LatLngExpression = [29, 49];
 
   const basePoints = points.filter(p => p.base);
@@ -103,7 +152,7 @@ export default function LeafletMap({ points, lines, onSelectPoint }: Props) {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
       />
 
-      {/* Active front zones — soft glowing circles */}
+      {/* Active front zones -- soft glowing circles */}
       {frontPoints.map(pt => (
         <Circle
           key={`zone-${pt.id}`}
@@ -121,29 +170,38 @@ export default function LeafletMap({ points, lines, onSelectPoint }: Props) {
         />
       ))}
 
-      {/* Connection lines — arc vectors */}
+      {/* Connection lines -- arc vectors with OSINT enhancements */}
       {lines.map((line, i) => {
         const from: [number, number] = [line.from[1], line.from[0]];
         const to: [number, number] = [line.to[1], line.to[0]];
         const positions = arcPositions(from, to);
         const color = lineColor(line.cat);
+        const tooltipContent = buildLineTooltip(line);
+
         return (
           <Polyline
             key={`line-${i}`}
             positions={positions}
             pathOptions={{
               color,
-              weight: lineWeight(line.cat),
-              opacity: 0.5,
-              dashArray: lineDash(line.cat),
+              weight: resolveLineWeight(line),
+              opacity: resolveLineOpacity(line),
+              dashArray: resolveLineDash(line),
             }}
+            eventHandlers={onSelectLine ? { click: () => onSelectLine(line) } : undefined}
           >
-            <Tooltip className="dark-tooltip">{line.label}</Tooltip>
+            <Tooltip className="dark-tooltip osint-tooltip">
+              <span>
+                {tooltipContent.split(' | ').map((part, j) => (
+                  <span key={j}>{j > 0 && <br />}{part}</span>
+                ))}
+              </span>
+            </Tooltip>
           </Polyline>
         );
       })}
 
-      {/* Military bases — pentagon icon, always visible */}
+      {/* Military bases -- pentagon icon, always visible */}
       {basePoints.map(pt => (
         <Marker
           key={pt.id}
@@ -157,7 +215,7 @@ export default function LeafletMap({ points, lines, onSelectPoint }: Props) {
             offset={[0, -14]}
             className="dark-tooltip base-tooltip"
           >
-            🏛 {pt.label}
+            {pt.label}
           </Tooltip>
         </Marker>
       ))}
@@ -191,7 +249,7 @@ export default function LeafletMap({ points, lines, onSelectPoint }: Props) {
         );
       })}
 
-      {/* Regular map points — sorted so tier-1 renders on top */}
+      {/* Regular map points -- sorted so tier-1 renders on top */}
       {[...regularPoints]
         .sort((a, b) => b.tier - a.tier)
         .map(pt => {
