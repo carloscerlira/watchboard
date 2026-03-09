@@ -88,27 +88,27 @@ const STARLINK_CAP = 200;
 // ── FOV Configuration ──
 // Half-angle in radians for sensor field-of-view
 const FOV_HALF_ANGLE: Partial<Record<SatGroup, number>> = {
-  recon: (1.5 * Math.PI) / 180,    // 1.5 deg — narrow high-res imaging
-  military: (3.0 * Math.PI) / 180, // 3.0 deg — wider surveillance
-  geo: (1.2 * Math.PI) / 180,      // 1.2 deg — realistic spot beam
+  recon: (5.0 * Math.PI) / 180,    // 5 deg — ~44 km footprint at 500 km alt
+  military: (8.0 * Math.PI) / 180, // 8 deg — ~98 km footprint at 700 km alt
+  geo: (3.0 * Math.PI) / 180,      // 3 deg — ~1,870 km footprint at GEO
 };
 
 const FOV_FILL_ALPHA: Partial<Record<SatGroup, number>> = {
-  recon: 0.05,
-  military: 0.05,
-  geo: 0.03,
+  recon: 0.10,
+  military: 0.10,
+  geo: 0.06,
 };
 
 const FOV_OUTLINE_ALPHA: Partial<Record<SatGroup, number>> = {
-  recon: 0.20,
-  military: 0.20,
-  geo: 0.12,
+  recon: 0.35,
+  military: 0.35,
+  geo: 0.20,
 };
 
 // Max LEO footprints (recon + military combined) for performance
 const FOV_LEO_CAP = 15;
 // Max GEO footprints over theater
-const FOV_GEO_CAP = 6;
+const FOV_GEO_CAP = 8;
 // Throttle interval for FOV position updates (ms)
 const FOV_UPDATE_INTERVAL_MS = 2000;
 
