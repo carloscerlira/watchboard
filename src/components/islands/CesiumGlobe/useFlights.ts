@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import {
+  Cartesian2,
   Cartesian3,
   Color,
   Math as CesiumMath,
   NearFarScalar,
   VerticalOrigin,
   HorizontalOrigin,
+  LabelStyle,
+  DistanceDisplayCondition,
   type Viewer as CesiumViewer,
   type Entity,
 } from 'cesium';
@@ -52,6 +55,7 @@ function isMilitaryFlight(f: FlightState): boolean {
 export function useFlights(viewer: CesiumViewer | null, enabled: boolean) {
   const [count, setCount] = useState(0);
   const entitiesRef = useRef<Map<string, Entity>>(new Map());
+  const trailEntitiesRef = useRef<Map<string, Entity>>(new Map());
   const intervalRef = useRef<ReturnType<typeof setInterval>>(undefined);
 
   useEffect(() => {
@@ -89,11 +93,18 @@ export function useFlights(viewer: CesiumViewer | null, enabled: boolean) {
         // Track which IDs we've seen this update
         const seenIds = new Set<string>();
 
+        // Remove old trail entities (recreated each cycle)
+        trailEntitiesRef.current.forEach(e => {
+          try { viewer.entities.remove(e); } catch { /* ok */ }
+        });
+        trailEntitiesRef.current.clear();
+
         airborne.forEach(f => {
           seenIds.add(f.icao24);
           const alt = (f.baro_altitude || 10000) * 1; // meters
           const pos = Cartesian3.fromDegrees(f.longitude!, f.latitude!, alt);
           const isMil = isMilitaryFlight(f);
+          const cs = f.callsign?.trim() || '';
 
           const rotation = f.true_track != null
             ? CesiumMath.toRadians(-(f.true_track)) : 0;
@@ -107,19 +118,49 @@ export function useFlights(viewer: CesiumViewer | null, enabled: boolean) {
             const iconUri = getIconDataUri(isMil ? 'aircraft_mil' : 'aircraft_civ');
 
             const entity = viewer.entities.add({
-              name: `${f.callsign || f.icao24} (${f.origin_country})${isMil ? ' [MIL]' : ''}`,
+              name: `${cs || f.icao24} (${f.origin_country})${isMil ? ' [MIL]' : ''}`,
               position: pos,
               billboard: {
                 image: iconUri,
-                width: isMil ? 18 : 12,
-                height: isMil ? 18 : 12,
+                width: isMil ? 26 : 18,
+                height: isMil ? 26 : 18,
                 rotation,
-                scaleByDistance: new NearFarScalar(1e4, 1.5, 5e6, 0.4),
+                scaleByDistance: new NearFarScalar(1e4, 2.0, 5e6, 0.7),
                 verticalOrigin: VerticalOrigin.CENTER,
                 horizontalOrigin: HorizontalOrigin.CENTER,
               },
+              label: isMil && cs ? {
+                text: cs,
+                font: "10px 'JetBrains Mono', monospace",
+                fillColor: Color.fromCssColorString('#ffdd00'),
+                outlineColor: Color.BLACK,
+                outlineWidth: 2,
+                style: LabelStyle.FILL_AND_OUTLINE,
+                verticalOrigin: VerticalOrigin.TOP,
+                pixelOffset: new Cartesian2(0, 16),
+                scaleByDistance: new NearFarScalar(1e4, 1.0, 3e6, 0.3),
+                distanceDisplayCondition: new DistanceDisplayCondition(0, 1e7),
+              } : undefined,
             });
             entitiesRef.current.set(f.icao24, entity);
+          }
+
+          // Heading trail line for military flights (40km behind)
+          if (isMil && f.true_track != null) {
+            const headingRad = CesiumMath.toRadians(f.true_track);
+            const trailM = 40000;
+            const behindLat = f.latitude! - (trailM / 111000) * Math.cos(headingRad);
+            const behindLon = f.longitude! - (trailM / (111000 * Math.cos(f.latitude! * Math.PI / 180))) * Math.sin(headingRad);
+            const trailStart = Cartesian3.fromDegrees(behindLon, behindLat, alt);
+
+            const trailEntity = viewer.entities.add({
+              polyline: {
+                positions: [trailStart, pos],
+                width: 1.5,
+                material: Color.fromCssColorString('#ffdd00').withAlpha(0.35),
+              },
+            });
+            trailEntitiesRef.current.set(f.icao24, trailEntity);
           }
         });
 
@@ -146,8 +187,12 @@ export function useFlights(viewer: CesiumViewer | null, enabled: boolean) {
         entitiesRef.current.forEach((entity) => {
           try { viewer.entities.remove(entity); } catch { /* already removed */ }
         });
+        trailEntitiesRef.current.forEach((entity) => {
+          try { viewer.entities.remove(entity); } catch { /* ok */ }
+        });
       }
       entitiesRef.current.clear();
+      trailEntitiesRef.current.clear();
       setCount(0);
     };
   }, [enabled, viewer]);
