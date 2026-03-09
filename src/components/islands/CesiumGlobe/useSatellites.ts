@@ -111,8 +111,6 @@ const FOV_CONE_ALPHA: Partial<Record<SatGroup, number>> = {
 const FOV_LEO_CAP = 12;
 // Number of cone ray lines per satellite
 const FOV_CONE_RAYS = 10;
-// Interval to recheck which sats are in theater (ms) — candidates change slowly
-const FOV_CANDIDATE_REFRESH_MS = 5000;
 
 /** Check if a lat/lon is within the theater bounding box */
 function isInTheater(lat: number, lon: number): boolean {
@@ -247,8 +245,6 @@ export function useSatellites(
   const fovEntitiesRef = useRef<Entity[]>([]);
   const animRef = useRef<number>(0);
   const fetchedRef = useRef(false);
-  const fovCandidatesRef = useRef<SatRecord[]>([]);
-
   // Fetch TLE data from all satellite groups
   useEffect(() => {
     if (!enabled) {
@@ -412,7 +408,6 @@ export function useSatellites(
         });
       }
       fovEntitiesRef.current = [];
-      fovCandidatesRef.current = [];
       setFovCount(0);
     };
 
@@ -456,152 +451,111 @@ export function useSatellites(
       }
     };
 
-    // Non-cached version for candidate refresh (uses explicit time)
-    const propagateSat = (sat: SatRecord, time: Date) => {
-      try {
-        const gmst = satellite.gstime(time);
-        const posVel = satellite.propagate(sat.satrec, time);
-        if (!posVel || typeof posVel.position === 'boolean' || !posVel.position) return null;
-        const geodetic = satellite.eciToGeodetic(posVel.position as satellite.EciVec3<number>, gmst);
-        return {
-          lon: satellite.degreesLong(geodetic.longitude),
-          lat: satellite.degreesLat(geodetic.latitude),
-          altKm: geodetic.height,
-        };
-      } catch {
-        return null;
-      }
+    /** Propagate and return position only if satellite is in the theater bbox */
+    const propagateInTheater = (sat: SatRecord) => {
+      const pos = propagateCached(sat);
+      if (!pos) return null;
+      return isInTheater(pos.lat, pos.lon) ? pos : null;
     };
 
-    // Build the set of FOV entities for current candidates
-    const buildFovEntities = (candidates: SatRecord[]) => {
-      // Clean old entities
-      fovEntitiesRef.current.forEach(e => {
-        try { viewer.entities.remove(e); } catch { /* ok */ }
-      });
-      fovEntitiesRef.current = [];
+    // Collect ALL recon + military sats (capped at FOV_LEO_CAP)
+    // Entities are created for all of them; CallbackProperty hides those outside theater per-frame
+    const fovSats = satsRef.current
+      .filter(s => s.group === 'recon' || s.group === 'military')
+      .slice(0, FOV_LEO_CAP);
 
-      for (const sat of candidates) {
-        const halfAngle = FOV_HALF_ANGLE[sat.group];
-        if (!halfAngle) continue;
+    // Build FOV entities for all eligible sats at once
+    for (const sat of fovSats) {
+      const halfAngle = FOV_HALF_ANGLE[sat.group];
+      if (!halfAngle) continue;
 
-        const cssColor = sat.group === 'recon' ? '#ff8844' : '#ffcc00';
-        const color = Color.fromCssColorString(cssColor);
-        const fillAlpha = FOV_FILL_ALPHA[sat.group] ?? 0.07;
-        const outlineAlpha = FOV_OUTLINE_ALPHA[sat.group] ?? 0.35;
-        const coneAlpha = FOV_CONE_ALPHA[sat.group] ?? 0.20;
+      const cssColor = sat.group === 'recon' ? '#ff8844' : '#ffcc00';
+      const color = Color.fromCssColorString(cssColor);
+      const fillAlpha = FOV_FILL_ALPHA[sat.group] ?? 0.07;
+      const outlineAlpha = FOV_OUTLINE_ALPHA[sat.group] ?? 0.35;
+      const coneAlpha = FOV_CONE_ALPHA[sat.group] ?? 0.20;
 
-        // Ground footprint ellipse — position + radius update per frame via CallbackProperty
-        const ellipseEntity = viewer.entities.add({
-          name: `FOV: ${sat.name}`,
-          position: new CallbackProperty(() => {
-            const pos = propagateCached(sat);
-            return pos ? Cartesian3.fromDegrees(pos.lon, pos.lat, 0) : Cartesian3.fromDegrees(0, 0, 0);
+      // Off-screen position returned when satellite is outside theater
+      const HIDDEN_POS = Cartesian3.fromDegrees(0, -90, 0);
+
+      // Ground footprint ellipse — position + radius update per frame via CallbackProperty
+      const ellipseEntity = viewer.entities.add({
+        name: `FOV: ${sat.name}`,
+        position: new CallbackProperty(() => {
+          const pos = propagateInTheater(sat);
+          return pos ? Cartesian3.fromDegrees(pos.lon, pos.lat, 0) : HIDDEN_POS;
+        }, false) as any,
+        ellipse: {
+          semiMajorAxis: new CallbackProperty(() => {
+            const pos = propagateInTheater(sat);
+            return pos ? computeFootprintRadius(pos.altKm, halfAngle) : 1;
           }, false) as any,
-          ellipse: {
-            semiMajorAxis: new CallbackProperty(() => {
-              const pos = propagateCached(sat);
-              return pos ? computeFootprintRadius(pos.altKm, halfAngle) : 50000;
-            }, false) as any,
-            semiMinorAxis: new CallbackProperty(() => {
-              const pos = propagateCached(sat);
-              return pos ? computeFootprintRadius(pos.altKm, halfAngle) : 50000;
-            }, false) as any,
-            material: color.withAlpha(fillAlpha),
-            outline: true,
-            outlineColor: color.withAlpha(outlineAlpha),
-            outlineWidth: 1.5,
-            height: 0,
-          },
-        });
-        fovEntitiesRef.current.push(ellipseEntity);
+          semiMinorAxis: new CallbackProperty(() => {
+            const pos = propagateInTheater(sat);
+            return pos ? computeFootprintRadius(pos.altKm, halfAngle) : 1;
+          }, false) as any,
+          material: color.withAlpha(fillAlpha),
+          outline: true,
+          outlineColor: color.withAlpha(outlineAlpha),
+          outlineWidth: 1.5,
+          height: 0,
+        },
+      });
+      fovEntitiesRef.current.push(ellipseEntity);
 
-        // Cone ray lines — positions update per frame
-        const coneEntity = viewer.entities.add({
+      // Cone ray lines — positions update per frame
+      const coneEntity = viewer.entities.add({
+        polyline: {
+          positions: new CallbackProperty(() => {
+            const pos = propagateInTheater(sat);
+            if (!pos) return [];
+            const radiusKm = computeFootprintRadius(pos.altKm, halfAngle) / 1000;
+            const satCartesian = Cartesian3.fromDegrees(pos.lon, pos.lat, pos.altKm * 1000);
+            const dLat = radiusKm / 111;
+            const dLon = radiusKm / (111 * Math.cos(pos.lat * Math.PI / 180));
+            const pts: Cartesian3[] = [];
+            for (let i = 0; i < FOV_CONE_RAYS; i++) {
+              const angle = (2 * Math.PI * i) / FOV_CONE_RAYS;
+              const edgeLat = pos.lat + dLat * Math.cos(angle);
+              const edgeLon = pos.lon + dLon * Math.sin(angle);
+              pts.push(satCartesian, Cartesian3.fromDegrees(edgeLon, edgeLat, 0));
+            }
+            return pts;
+          }, false) as any,
+          width: 1,
+          material: color.withAlpha(coneAlpha),
+        },
+      });
+      fovEntitiesRef.current.push(coneEntity);
+
+      // Targeting lines — one per target, each with CallbackProperty
+      for (const target of targets) {
+        const targetLineEntity = viewer.entities.add({
           polyline: {
             positions: new CallbackProperty(() => {
-              const pos = propagateCached(sat);
+              const pos = propagateInTheater(sat);
               if (!pos) return [];
               const radiusKm = computeFootprintRadius(pos.altKm, halfAngle) / 1000;
-              const satCartesian = Cartesian3.fromDegrees(pos.lon, pos.lat, pos.altKm * 1000);
-              const dLat = radiusKm / 111;
-              const dLon = radiusKm / (111 * Math.cos(pos.lat * Math.PI / 180));
-              const pts: Cartesian3[] = [];
-              for (let i = 0; i < FOV_CONE_RAYS; i++) {
-                const angle = (2 * Math.PI * i) / FOV_CONE_RAYS;
-                const edgeLat = pos.lat + dLat * Math.cos(angle);
-                const edgeLon = pos.lon + dLon * Math.sin(angle);
-                pts.push(satCartesian, Cartesian3.fromDegrees(edgeLon, edgeLat, 0));
+              const footprintDeg = radiusKm / 111;
+              if (Math.abs(target.lat - pos.lat) > footprintDeg || Math.abs(target.lon - pos.lon) > footprintDeg) {
+                return []; // Target not in footprint
               }
-              return pts;
+              return [
+                Cartesian3.fromDegrees(pos.lon, pos.lat, pos.altKm * 1000),
+                Cartesian3.fromDegrees(target.lon, target.lat, 0),
+              ];
             }, false) as any,
-            width: 1,
-            material: color.withAlpha(coneAlpha),
+            width: 1.5,
+            material: Color.fromCssColorString('#ff2244').withAlpha(0.35),
           },
         });
-        fovEntitiesRef.current.push(coneEntity);
-
-        // Targeting lines — one per target, each with CallbackProperty
-        for (const target of targets) {
-          const targetLineEntity = viewer.entities.add({
-            polyline: {
-              positions: new CallbackProperty(() => {
-                const pos = propagateCached(sat);
-                if (!pos) return [];
-                const radiusKm = computeFootprintRadius(pos.altKm, halfAngle) / 1000;
-                const footprintDeg = radiusKm / 111;
-                if (Math.abs(target.lat - pos.lat) > footprintDeg || Math.abs(target.lon - pos.lon) > footprintDeg) {
-                  return []; // Target not in footprint
-                }
-                return [
-                  Cartesian3.fromDegrees(pos.lon, pos.lat, pos.altKm * 1000),
-                  Cartesian3.fromDegrees(target.lon, target.lat, 0),
-                ];
-              }, false) as any,
-              width: 1.5,
-              material: Color.fromCssColorString('#ff2244').withAlpha(0.35),
-            },
-          });
-          fovEntitiesRef.current.push(targetLineEntity);
-        }
+        fovEntitiesRef.current.push(targetLineEntity);
       }
+    }
 
-      setFovCount(candidates.length);
-    };
-
-    // Refresh candidate list periodically (sats enter/leave theater slowly)
-    let refreshTimer: ReturnType<typeof setInterval>;
-
-    const refreshCandidates = () => {
-      if (viewer.isDestroyed()) return;
-      const simNow = simTimeRef ? new Date(simTimeRef.current) : new Date();
-      const newCandidates: SatRecord[] = [];
-
-      for (const sat of satsRef.current) {
-        if (sat.group !== 'recon' && sat.group !== 'military') continue;
-        const pos = propagateSat(sat, simNow);
-        if (pos && isInTheater(pos.lat, pos.lon)) {
-          newCandidates.push(sat);
-          if (newCandidates.length >= FOV_LEO_CAP) break;
-        }
-      }
-
-      // Only rebuild entities if candidate set changed
-      const oldNames = fovCandidatesRef.current.map(s => s.name).join(',');
-      const newNames = newCandidates.map(s => s.name).join(',');
-      if (oldNames !== newNames) {
-        fovCandidatesRef.current = newCandidates;
-        buildFovEntities(newCandidates);
-      }
-    };
-
-    // Initial build
-    refreshCandidates();
-    // Periodic refresh for candidate set changes
-    refreshTimer = setInterval(refreshCandidates, FOV_CANDIDATE_REFRESH_MS);
+    setFovCount(fovSats.length);
 
     return () => {
-      clearInterval(refreshTimer);
       cleanupFov();
     };
   }, [showFov, enabled, viewer, count, targets]);
