@@ -2,10 +2,13 @@ import { useState, useEffect, useMemo, useCallback } from 'react';
 import type { MapPoint, MapLine } from '../../lib/schemas';
 import type { FlatEvent } from '../../lib/timeline-utils';
 import { MAP_CATEGORIES } from '../../lib/map-utils';
-import { tierLabelFull, tierClass, WEAPON_TYPE_LABELS, STATUS_LABELS } from './map-helpers';
+import { tierLabelFull, tierClass } from './map-helpers';
 import LeafletMap from './LeafletMap';
 import TimelineSlider from './TimelineSlider';
 import MapEventsPanel from './MapEventsPanel';
+import MapLayerToggles from './MapLayerToggles';
+import { useMapOverlays } from './useMapOverlays';
+import type { LayerState } from './useMapOverlays';
 
 interface Props {
   points: MapPoint[];
@@ -36,6 +39,21 @@ export default function IntelMap({ points, lines, events }: Props) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [playbackSpeed, setPlaybackSpeed] = useState(200);
   const [eventsOpen, setEventsOpen] = useState(false);
+
+  // ── Overlay layers ──
+  const [layers, setLayers] = useState<LayerState>({
+    noFlyZones: false,
+    gpsJamming: false,
+    internetBlackout: false,
+    earthquakes: false,
+    weather: false,
+  });
+
+  const toggleLayer = useCallback((layer: keyof LayerState) => {
+    setLayers(prev => ({ ...prev, [layer]: !prev[layer] }));
+  }, []);
+
+  const { overlays, counts } = useMapOverlays(layers, currentDate);
 
   // Play/pause auto-advance using playbackSpeed
   useEffect(() => {
@@ -102,15 +120,20 @@ export default function IntelMap({ points, lines, events }: Props) {
 
   // Count points per category (for filter badges)
   const pointCounts = useMemo(() => {
-    const counts: Record<string, number> = {};
-    for (const c of MAP_CATEGORIES) counts[c.id] = 0;
-    for (const p of filteredPoints) counts[p.cat] = (counts[p.cat] || 0) + 1;
-    return counts;
+    const cnts: Record<string, number> = {};
+    for (const c of MAP_CATEGORIES) cnts[c.id] = 0;
+    for (const p of filteredPoints) cnts[p.cat] = (cnts[p.cat] || 0) + 1;
+    return cnts;
   }, [filteredPoints]);
 
   const selectedCategory = selectedPoint
     ? MAP_CATEGORIES.find(c => c.id === selectedPoint.cat)
     : null;
+
+  // ── Active overlay count for stats ──
+  const activeOverlayCount =
+    counts.noFlyZones + counts.gpsJamming + counts.internetBlackout +
+    counts.earthquakes + counts.weather;
 
   return (
     <section className="section" id="sec-map">
@@ -125,6 +148,7 @@ export default function IntelMap({ points, lines, events }: Props) {
           points={filteredPoints}
           lines={filteredLines}
           onSelectPoint={setSelectedPoint}
+          overlays={overlays}
         />
 
         {/* Overlay: filter controls (top-left) */}
@@ -146,6 +170,13 @@ export default function IntelMap({ points, lines, events }: Props) {
           ))}
         </div>
 
+        {/* Overlay: layer toggles (below filter controls) */}
+        <MapLayerToggles
+          layers={layers}
+          onToggle={toggleLayer}
+          counts={counts}
+        />
+
         {/* Overlay: legend (bottom-left) */}
         <div className="map-legend-overlay">
           {MAP_CATEGORIES.map(c => (
@@ -161,6 +192,12 @@ export default function IntelMap({ points, lines, events }: Props) {
           <span>{filteredPoints.length} locations</span>
           <span className="map-stats-sep">&middot;</span>
           <span>{filteredLines.length} vectors</span>
+          {activeOverlayCount > 0 && (
+            <>
+              <span className="map-stats-sep">&middot;</span>
+              <span className="map-stats-overlays">{activeOverlayCount} overlays</span>
+            </>
+          )}
         </div>
 
         {/* Overlay: info panel (right side) */}

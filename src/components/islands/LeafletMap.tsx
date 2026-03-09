@@ -1,16 +1,26 @@
-import { MapContainer, TileLayer, CircleMarker, Polyline, Tooltip, ZoomControl, Circle, Marker } from 'react-leaflet';
+import { MapContainer, TileLayer, CircleMarker, Polyline, Tooltip, ZoomControl, Circle, Marker, Polygon } from 'react-leaflet';
 import type { LatLngExpression } from 'leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { MapPoint, MapLine } from '../../lib/schemas';
 import { catColor, lineColor, WEAPON_TYPE_WEIGHTS, WEAPON_TYPE_LABELS, STATUS_LABELS } from './map-helpers';
+import type { OverlayData } from './useMapOverlays';
+
+// ────────────────────────────────────────────
+//  Types
+// ────────────────────────────────────────────
 
 interface Props {
   points: MapPoint[];
   lines: MapLine[];
   onSelectPoint: (pt: MapPoint) => void;
   onSelectLine?: (line: MapLine) => void;
+  overlays?: OverlayData;
 }
+
+// ────────────────────────────────────────────
+//  Geometry helpers
+// ────────────────────────────────────────────
 
 /** Interpolate an arc between two [lat, lng] points using a sine curve offset */
 function arcPositions(
@@ -36,6 +46,10 @@ function arcPositions(
   return positions;
 }
 
+// ────────────────────────────────────────────
+//  Marker helpers
+// ────────────────────────────────────────────
+
 /** Determine marker radius based on category and tier */
 function markerRadius(cat: string, tier: number): number {
   if (cat === 'front') return 8;
@@ -55,7 +69,11 @@ function showPermanentLabel(pt: MapPoint): boolean {
   return majorLabels.has(pt.id);
 }
 
-/** Determine line weight — uses weapon type if available */
+// ────────────────────────────────────────────
+//  Line rendering helpers (OSINT-aware)
+// ────────────────────────────────────────────
+
+/** Determine line weight -- uses weapon type if available */
 function resolveLineWeight(line: MapLine): number {
   if (line.weaponType) {
     return WEAPON_TYPE_WEIGHTS[line.weaponType] || 1.5;
@@ -65,13 +83,13 @@ function resolveLineWeight(line: MapLine): number {
   return 1.2;
 }
 
-/** Determine line opacity — low confidence reduces opacity */
+/** Determine line opacity -- low confidence reduces opacity */
 function resolveLineOpacity(line: MapLine): number {
   if (line.confidence === 'low') return 0.3;
   return 0.5;
 }
 
-/** Determine line dash pattern — intercepted uses distinct pattern */
+/** Determine line dash pattern -- intercepted uses distinct pattern */
 function resolveLineDash(line: MapLine): string {
   if (line.status === 'intercepted') return '3,8';
   if (line.cat === 'strike') return '8,4';
@@ -128,7 +146,27 @@ function baseIcon(): L.DivIcon {
   });
 }
 
-export default function LeafletMap({ points, lines, onSelectPoint, onSelectLine }: Props) {
+// ────────────────────────────────────────────
+//  Earthquake rendering helpers
+// ────────────────────────────────────────────
+
+/** Compute earthquake marker radius from magnitude */
+function quakeRadius(mag: number): number {
+  return Math.max(4, mag * 3);
+}
+
+/** Compute earthquake color from depth using HSL (shallow = red, deep = blue) */
+function quakeColor(depth: number): string {
+  // depth 0 -> hue 0 (red), depth 100+ -> hue 240 (blue)
+  const hue = Math.min(240, Math.round((depth / 100) * 240));
+  return `hsl(${hue}, 90%, 55%)`;
+}
+
+// ────────────────────────────────────────────
+//  Component
+// ────────────────────────────────────────────
+
+export default function LeafletMap({ points, lines, onSelectPoint, onSelectLine, overlays }: Props) {
   const center: LatLngExpression = [29, 49];
 
   const basePoints = points.filter(p => p.base);
@@ -151,6 +189,108 @@ export default function LeafletMap({ points, lines, onSelectPoint, onSelectLine 
         subdomains="abcd"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
       />
+
+      {/* ── Overlay: No-fly zones ── */}
+      {overlays?.noFlyZones.map(zone => (
+        <Polygon
+          key={zone.id}
+          positions={zone.polygon}
+          pathOptions={{
+            color: zone.color,
+            fillColor: zone.color,
+            fillOpacity: 0.08,
+            weight: 2,
+            opacity: 0.5,
+            dashArray: '6,4',
+          }}
+        >
+          <Tooltip className="dark-tooltip nfz-tooltip" sticky>
+            <span>{zone.label}</span>
+          </Tooltip>
+        </Polygon>
+      ))}
+
+      {/* ── Overlay: GPS jamming hexagons ── */}
+      {overlays?.gpsJamming.map(zone => (
+        <Polygon
+          key={zone.id}
+          positions={zone.hexLatLngs}
+          pathOptions={{
+            color: zone.color,
+            fillColor: zone.color,
+            fillOpacity: zone.fillAlpha,
+            weight: 1.5,
+            opacity: 0.4,
+            dashArray: '4,4',
+          }}
+        >
+          <Tooltip className="dark-tooltip jam-tooltip" sticky>
+            <span>{zone.label}</span>
+          </Tooltip>
+        </Polygon>
+      ))}
+
+      {/* ── Overlay: Internet blackout zones ── */}
+      {overlays?.internetBlackout.map(zone => (
+        <Polygon
+          key={zone.id}
+          positions={zone.polygon}
+          pathOptions={{
+            color: zone.color,
+            fillColor: zone.color,
+            fillOpacity: zone.fillAlpha,
+            weight: 2,
+            opacity: zone.outlineAlpha,
+            dashArray: '8,6',
+          }}
+        >
+          <Tooltip className="dark-tooltip blackout-tooltip" sticky>
+            <span>{zone.label}</span>
+          </Tooltip>
+        </Polygon>
+      ))}
+
+      {/* ── Overlay: Earthquakes ── */}
+      {overlays?.earthquakes.map(quake => (
+        <CircleMarker
+          key={quake.id}
+          center={[quake.lat, quake.lon]}
+          radius={quakeRadius(quake.mag)}
+          pathOptions={{
+            color: quakeColor(quake.depth),
+            fillColor: quakeColor(quake.depth),
+            fillOpacity: 0.6,
+            weight: 1.5,
+          }}
+          className={quake.mag >= 4.5 ? 'earthquake-marker' : undefined}
+        >
+          <Tooltip className="dark-tooltip" sticky>
+            <span>{quake.label}<br />Depth: {quake.depth.toFixed(1)} km</span>
+          </Tooltip>
+        </CircleMarker>
+      ))}
+
+      {/* ── Overlay: Weather (cloud cover circles + wind tooltips) ── */}
+      {overlays?.weather
+        .filter(w => w.cloudCover > 15)
+        .map(w => (
+          <Circle
+            key={`wx-${w.label}`}
+            center={[w.lat, w.lon]}
+            radius={Math.max(15000, w.cloudCover * 800)}
+            pathOptions={{
+              color: '#88ccff',
+              fillColor: '#88ccff',
+              fillOpacity: Math.min(0.25, w.cloudCover / 400),
+              weight: 0.5,
+              opacity: Math.min(0.3, w.cloudCover / 300),
+            }}
+          >
+            <Tooltip className="dark-tooltip weather-tooltip" sticky>
+              <span>{w.label}: {Math.round(w.cloudCover)}% cloud {w.windText}</span>
+            </Tooltip>
+          </Circle>
+        ))}
 
       {/* Active front zones -- soft glowing circles */}
       {frontPoints.map(pt => (

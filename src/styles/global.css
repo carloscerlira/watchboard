@@ -2812,6 +2812,210 @@ body::before {
   font-size: 0.55rem;
 }
 
+/* ─── MAP OVERLAY STATS ─── */
+.map-stats-overlays {
+  color: var(--accent-amber, #f39c12);
+}
+
+/* ─── MAP LAYER TOGGLES ─── */
+.map-layers-toggle {
+  position: absolute;
+  top: 220px;
+  left: 10px;
+  z-index: 1001;
+  background: rgba(18, 20, 26, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  transition: all 0.15s;
+}
+
+.map-layers-toggle:hover {
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+.map-layers-toggle-icon {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.map-layers-toggle-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.map-layers-toggle-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.42rem;
+  background: var(--accent-red);
+  color: #fff;
+  padding: 1px 5px;
+  border-radius: 8px;
+  font-weight: 600;
+  min-width: 14px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.map-layers-panel {
+  position: absolute;
+  top: 220px;
+  left: 10px;
+  z-index: 1001;
+  background: rgba(18, 20, 26, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0;
+  min-width: 180px;
+  animation: mapPanelSlideIn 0.2s ease;
+}
+
+.map-layers-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.map-layers-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.5rem;
+  color: var(--accent-red);
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.map-layers-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.map-layers-close:hover {
+  color: var(--text-primary);
+}
+
+.map-layers-list {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 4px 8px;
+  gap: 2px;
+}
+
+.map-layer-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.12s;
+  text-align: left;
+  width: 100%;
+}
+
+.map-layer-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+}
+
+.map-layer-item.active {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.map-layer-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid;
+  flex-shrink: 0;
+  transition: background 0.12s;
+}
+
+.map-layer-icon {
+  font-size: 0.6rem;
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  transition: color 0.12s;
+}
+
+.map-layer-label {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.map-layer-short {
+  display: none;
+}
+
+.map-layer-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.42rem;
+  color: #fff;
+  padding: 1px 5px;
+  border-radius: 8px;
+  font-weight: 600;
+  min-width: 14px;
+  text-align: center;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+/* ─── OVERLAY TOOLTIPS ─── */
+.nfz-tooltip.leaflet-tooltip,
+.jam-tooltip.leaflet-tooltip,
+.blackout-tooltip.leaflet-tooltip,
+.weather-tooltip.leaflet-tooltip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  max-width: 300px;
+}
+
+/* ─── EARTHQUAKE MARKER PULSE ─── */
+.earthquake-marker {
+  animation: earthquakePulse 2s ease-in-out infinite;
+}
+
+@keyframes earthquakePulse {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 3px rgba(255, 153, 0, 0.6));
+  }
+  50% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 8px rgba(255, 153, 0, 0.9));
+  }
+}
+
 /* ─── Map panel responsive ─── */
 @media (max-width: 768px) {
   .map-events-panel {
@@ -2841,6 +3045,31 @@ body::before {
   .map-stats-overlay {
     bottom: 66px;
     right: 8px;
+  }
+
+  /* Layer panel: compact mode on mobile */
+  .map-layers-toggle {
+    top: 180px;
+    padding: 4px 8px;
+  }
+
+  .map-layers-toggle-text {
+    display: none;
+  }
+
+  .map-layers-panel {
+    top: 180px;
+    min-width: 150px;
+  }
+
+  .map-layer-label {
+    display: none;
+  }
+
+  .map-layer-short {
+    display: inline;
+    flex: 1;
+    white-space: nowrap;
   }
 }
 
