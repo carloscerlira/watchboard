@@ -281,7 +281,7 @@ export default function CesiumTimelineBar({
           <span className="globe-tl-clock"><span className="globe-tl-clock-label">TEHRAN</span> {formatTZ(simMs, 3.5)}</span>
           <span className="globe-tl-clock"><span className="globe-tl-clock-label">TLV</span> {formatTZ(simMs, 3)}</span>
           <span className="globe-tl-clock"><span className="globe-tl-clock-label">UTC</span> {formatTZ(simMs, 0)}</span>
-          <span className="globe-tl-clock"><span className="globe-tl-clock-label">EST</span> {formatTZ(simMs, -5)}</span>
+          <span className="globe-tl-clock"><span className="globe-tl-clock-label">CST</span> {formatTZ(simMs, -6)}</span>
         </div>
       </div>
 
