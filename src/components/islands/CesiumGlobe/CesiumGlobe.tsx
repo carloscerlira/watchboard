@@ -60,6 +60,9 @@ const KPI_COLORS: Record<string, string> = {
 // Today's date for mode detection
 const TODAY = new Date().toISOString().split('T')[0];
 
+/** Noon offset in milliseconds (12h * 3600s * 1000ms) — used to center sim time at midday */
+const NOON_OFFSET_MS = 43_200_000;
+
 // ── Time helpers ──
 
 function dateToMs(dateStr: string): number {
@@ -151,7 +154,7 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
   const [playbackSpeed, setPlaybackSpeed] = useState(3600); // default: 1hr per real second
 
   // Continuous simulation time (ms since epoch)
-  const simTimeRef = useRef<number>(dateToMs(dateRange.max) + 43200000); // noon of max date
+  const simTimeRef = useRef<number>(dateToMs(dateRange.max) + NOON_OFFSET_MS); // noon of max date
   const rafIdRef = useRef<number>(0);
   const lastFrameRef = useRef<number>(0);
   const lastDateUpdateRef = useRef<number>(0); // throttle setCurrentDate at high speeds
@@ -248,7 +251,7 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
 
   // When user manually changes date (scrub, step), sync simTimeRef
   const handleDateChange = useCallback((date: string) => {
-    simTimeRef.current = dateToMs(date) + 43200000; // noon of that day
+    simTimeRef.current = dateToMs(date) + NOON_OFFSET_MS; // noon of that day
     setCurrentDate(date);
   }, []);
 

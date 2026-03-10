@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import type { MapLine } from '../../lib/schemas';
+import { computeArcPositions, interpolateArcPosition } from './map-helpers';
 
 // ────────────────────────────────────────────
 //  Types
@@ -20,47 +21,6 @@ interface Props {
 const MAX_SIMULTANEOUS = 8;
 const ANIMATION_DURATION_MS = 2000;
 const ANIMATION_STEP_MS = 30;
-const ARC_SEGMENTS = 40;
-
-// ────────────────────────────────────────────
-//  Geometry (same arc as LeafletMap)
-// ────────────────────────────────────────────
-
-function computeArcPath(
-  from: [number, number],
-  to: [number, number],
-): [number, number][] {
-  const positions: [number, number][] = [];
-  const dlat = to[0] - from[0];
-  const dlng = to[1] - from[1];
-  const dist = Math.sqrt(dlat * dlat + dlng * dlng);
-  const amplitude = dist * 0.18;
-
-  for (let i = 0; i <= ARC_SEGMENTS; i++) {
-    const t = i / ARC_SEGMENTS;
-    const lat = from[0] + dlat * t;
-    const lng = from[1] + dlng * t;
-    const offset = Math.sin(t * Math.PI) * amplitude;
-    const nx = -dlng / dist;
-    const ny = dlat / dist;
-    positions.push([lat + nx * offset, lng + ny * offset]);
-  }
-  return positions;
-}
-
-function interpolateArc(
-  path: [number, number][],
-  t: number,
-): [number, number] {
-  const idx = t * (path.length - 1);
-  const lower = Math.floor(idx);
-  const upper = Math.min(lower + 1, path.length - 1);
-  const frac = idx - lower;
-  return [
-    path[lower][0] + (path[upper][0] - path[lower][0]) * frac,
-    path[lower][1] + (path[upper][1] - path[lower][1]) * frac,
-  ];
-}
 
 // ────────────────────────────────────────────
 //  CSS class for category
@@ -113,7 +73,7 @@ export default function MapArcAnimator({ lines, currentDate, isPlaying }: Props)
       // Coordinates: line.from/to are [lon, lat], need [lat, lon] for Leaflet
       const from: [number, number] = [line.from[1], line.from[0]];
       const to: [number, number] = [line.to[1], line.to[0]];
-      const path = computeArcPath(from, to);
+      const path = computeArcPositions(from, to);
 
       const icon = L.divIcon({
         className: projectileClass(line.cat),
@@ -137,7 +97,7 @@ export default function MapArcAnimator({ lines, currentDate, isPlaying }: Props)
           startTime = Date.now();
         }
 
-        const pos = interpolateArc(path, t);
+        const pos = interpolateArcPosition(path, t);
         marker.setLatLng(pos);
       }, ANIMATION_STEP_MS);
 

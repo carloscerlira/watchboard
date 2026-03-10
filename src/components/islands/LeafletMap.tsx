@@ -3,7 +3,7 @@ import type { LatLngExpression } from 'leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { MapPoint, MapLine } from '../../lib/schemas';
-import { catColor, lineColor, WEAPON_TYPE_WEIGHTS, WEAPON_TYPE_LABELS, STATUS_LABELS } from './map-helpers';
+import { catColor, lineColor, WEAPON_TYPE_WEIGHTS, WEAPON_TYPE_LABELS, STATUS_LABELS, computeArcPositions } from './map-helpers';
 import type { OverlayData } from './useMapOverlays';
 import type { FlightData } from './useMapFlights';
 import MapArcAnimator from './MapArcAnimator';
@@ -25,34 +25,6 @@ interface Props {
 }
 
 // ────────────────────────────────────────────
-//  Geometry helpers
-// ────────────────────────────────────────────
-
-/** Interpolate an arc between two [lat, lng] points using a sine curve offset */
-function arcPositions(
-  from: [number, number],
-  to: [number, number],
-  segments = 40,
-): LatLngExpression[] {
-  const positions: LatLngExpression[] = [];
-  const dlat = to[0] - from[0];
-  const dlng = to[1] - from[1];
-  const dist = Math.sqrt(dlat * dlat + dlng * dlng);
-  const amplitude = dist * 0.18;
-
-  for (let i = 0; i <= segments; i++) {
-    const t = i / segments;
-    const lat = from[0] + dlat * t;
-    const lng = from[1] + dlng * t;
-    const offset = Math.sin(t * Math.PI) * amplitude;
-    const nx = -dlng / dist;
-    const ny = dlat / dist;
-    positions.push([lat + nx * offset, lng + ny * offset]);
-  }
-  return positions;
-}
-
-// ────────────────────────────────────────────
 //  Marker helpers
 // ────────────────────────────────────────────
 
@@ -64,15 +36,9 @@ function markerRadius(cat: string, tier: number): number {
   return 5;
 }
 
-/** Determine if point should show permanent label */
+/** Determine if point should show permanent label — driven by data fields */
 function showPermanentLabel(pt: MapPoint): boolean {
-  if (pt.base) return true;
-  const majorLabels = new Set([
-    'tehran', 'natanz', 'isfahan', 'lincoln', 'ford',
-    'hormuz', 'beirut', 'israel_r', 'tel_aviv',
-    'dubai', 'red_sea', 'riyadh',
-  ]);
-  return majorLabels.has(pt.id);
+  return pt.base === true || pt.showLabel === true;
 }
 
 // ────────────────────────────────────────────
@@ -322,7 +288,7 @@ export default function LeafletMap({
         <Circle
           key={`zone-${pt.id}`}
           center={[pt.lat, pt.lon]}
-          radius={pt.id === 'hormuz' ? 60000 : 40000}
+          radius={pt.zoneRadius ?? 40000}
           pathOptions={{
             color: '#9b59b6',
             fillColor: '#9b59b6',
@@ -339,7 +305,7 @@ export default function LeafletMap({
       {lines.map((line, i) => {
         const from: [number, number] = [line.from[1], line.from[0]];
         const to: [number, number] = [line.to[1], line.to[0]];
-        const positions = arcPositions(from, to);
+        const positions = computeArcPositions(from, to);
         const color = lineColor(line.cat);
         const tooltipContent = buildLineTooltip(line);
 

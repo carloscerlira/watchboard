@@ -135,8 +135,8 @@ export function useConflictData(
           heightReference: isShip ? HeightReference.RELATIVE_TO_GROUND : HeightReference.NONE,
         } : undefined,
         ellipse: (isFront || isShip || isBase) ? {
-          semiMajorAxis: isFront ? frontZoneRadius(pt.id) : isShip ? navalZoneRadius(pt) : 50_000,
-          semiMinorAxis: isFront ? frontZoneRadius(pt.id) : isShip ? navalZoneRadius(pt) : 50_000,
+          semiMajorAxis: isFront ? frontZoneRadius(pt.zoneRadius) : isShip ? navalZoneRadius(pt) : 50_000,
+          semiMinorAxis: isFront ? frontZoneRadius(pt.zoneRadius) : isShip ? navalZoneRadius(pt) : 50_000,
           material: (isShip ? markerColor : isFront ? color : markerColor).withAlpha(
             isFront ? 0.08 : isShip ? 0.12 : 0.03,
           ),

@@ -20,6 +20,11 @@ concurrency:
 
 jobs:
   build:
+    # When triggered by workflow_run (nightly update), only deploy if it succeeded.
+    # Push and workflow_dispatch triggers always run.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

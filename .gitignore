@@ -5,6 +5,11 @@ Thumbs.db
 *~
 setup.sh
 
+# Environment variables
+.env
+.env.local
+.env.*.local
+
 # Astro
 node_modules/
 dist/
@@ -15,3 +20,6 @@ public/cesium/
 
 # Firebase (leftover)
 firebase-debug.log
+
+# Atomic write temp files
+*.json.tmp

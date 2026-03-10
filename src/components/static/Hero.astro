@@ -27,6 +27,6 @@ const formattedDate = updatedDate.toISOString().split('T')[0];
       UPDATED {timeAgo} &middot; {formattedDate}
     </span>
   </div>
-  <h1 set:html={meta.heroHeadline} />
+  <h1>{meta.heroHeadline}</h1>
   <p class="hero-subtitle">{meta.heroSubtitle}</p>
 </section>

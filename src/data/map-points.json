@@ -8,7 +8,8 @@
     "sub": "Khamenei compound, Thar-Allah HQ, Rev. Court, IRIB, Armed Forces GS, Interior Ministry",
     "tier": 1,
     "date": "2026-02-28",
-    "lastUpdated": "2026-03-06T06:21:53.605Z"
+    "lastUpdated": "2026-03-06T06:21:53.605Z",
+    "showLabel": true
   },
   {
     "id": "natanz",
@@ -19,7 +20,8 @@
     "sub": "Nuclear enrichment facility — ground-penetrating munitions",
     "tier": 1,
     "date": "2026-02-28",
-    "lastUpdated": "2026-03-06T06:21:53.605Z"
+    "lastUpdated": "2026-03-06T06:21:53.605Z",
+    "showLabel": true
   },
   {
     "id": "fordow",
@@ -41,7 +43,8 @@
     "sub": "Nuclear material buildings damaged; tunnel entrances impacted",
     "tier": 1,
     "date": "2026-02-28",
-    "lastUpdated": "2026-03-06T06:21:53.605Z"
+    "lastUpdated": "2026-03-06T06:21:53.605Z",
+    "showLabel": true
   },
   {
     "id": "minab",
@@ -250,7 +253,8 @@
     "sub": "137 missiles + 209 drones at UAE. Burj Al Arab fire, Jebel Ali Port fire. 3 killed, 58 injured.",
     "tier": 2,
     "date": "2026-02-28",
-    "lastUpdated": "2026-03-06T05:57:54.619Z"
+    "lastUpdated": "2026-03-06T05:57:54.619Z",
+    "showLabel": true
   },
   {
     "id": "abudhabi",
@@ -312,7 +316,8 @@
     "label": "Israel",
     "sub": "Multiple barrages. 9 killed Beit Shemesh, 777 hospitalized. Ben Gurion closed.",
     "tier": 2,
-    "date": "2026-02-28"
+    "date": "2026-02-28",
+    "showLabel": true
   },
   {
     "id": "rastanura",
@@ -402,7 +407,8 @@
     "label": "USS Abraham Lincoln",
     "sub": "CVN-72 + CSG. F/A-18s, F-35Cs. IRGC claims hit — CENTCOM denies.",
     "tier": 1,
-    "date": "2026-01-23"
+    "date": "2026-01-23",
+    "showLabel": true
   },
   {
     "id": "ford",
@@ -412,7 +418,8 @@
     "label": "USS Gerald R. Ford",
     "sub": "CVN-78 + CSG-12. Eastern Mediterranean off Israel.",
     "tier": 1,
-    "date": "2026-02-01"
+    "date": "2026-02-01",
+    "showLabel": true
   },
   {
     "id": "aludeid",
@@ -521,7 +528,8 @@
     "label": "Beirut",
     "sub": "Israel struck Dahiyeh suburb. Hezbollah intel chief Makled killed. 52 killed, 154 wounded in Lebanon.",
     "tier": 2,
-    "date": "2026-02-28"
+    "date": "2026-02-28",
+    "showLabel": true
   },
   {
     "id": "haifa",
@@ -541,7 +549,9 @@
     "label": "Strait of Hormuz",
     "sub": "De facto shutdown. IRGC says traffic \"not allowed.\" 150+ ships anchored. 15M bbl/day normally transits.",
     "tier": 2,
-    "date": "2026-02-28"
+    "date": "2026-02-28",
+    "showLabel": true,
+    "zoneRadius": 60000
   },
   {
     "id": "red_sea",
@@ -551,7 +561,8 @@
     "label": "Red Sea",
     "sub": "Houthi anti-ship missiles at USS Gravely. All intercepted. Houthis declare Red Sea blockade.",
     "tier": 2,
-    "date": "2026-03-03"
+    "date": "2026-03-03",
+    "showLabel": true
   },
   {
     "id": "golan_heights",

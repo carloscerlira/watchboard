@@ -1,6 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
 import OpenAI from 'openai';
-import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, renameSync } from 'fs';
 import { join } from 'path';
 import { z } from 'zod';
 import {
@@ -63,8 +63,15 @@ function readJSON<T>(filename: string): T {
   return JSON.parse(readFileSync(join(DATA_DIR, filename), 'utf8'));
 }
 
+/** Atomic write: write to temp file then rename (rename is atomic on POSIX). */
+function atomicWriteFile(filePath: string, content: string): void {
+  const tmpPath = `${filePath}.tmp`;
+  writeFileSync(tmpPath, content);
+  renameSync(tmpPath, filePath);
+}
+
 function writeJSON(filename: string, data: unknown): void {
-  writeFileSync(join(DATA_DIR, filename), JSON.stringify(data, null, 2) + '\n');
+  atomicWriteFile(join(DATA_DIR, filename), JSON.stringify(data, null, 2) + '\n');
 }
 
 function extractJSON(text: string): string {
@@ -642,7 +649,7 @@ Return ONLY genuinely new events as a JSON array.`,
           todayEvents.push({ ...event, lastUpdated: now });
         }
       }
-      writeFileSync(todayFile, JSON.stringify(todayEvents, null, 2) + '\n');
+      atomicWriteFile(todayFile, JSON.stringify(todayEvents, null, 2) + '\n');
     }
     return { status: 'updated', newEvents: newEvents.length };
   } catch (err) {

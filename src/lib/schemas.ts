@@ -76,6 +76,8 @@ export const MapPointSchema = z.object({
   tier: TierSchema,
   date: z.string(),
   base: z.boolean().optional(),
+  showLabel: z.boolean().optional(),
+  zoneRadius: z.number().optional(),
   lastUpdated: z.string().optional(),
 });
 
@@ -139,7 +141,7 @@ export const EconItemSchema = z.object({
   value: z.string(),
   change: z.string(),
   direction: z.enum(['up', 'down']),
-  sparkData: z.array(z.number()),
+  sparkData: z.array(z.number()).min(2),
   color: z.string(),
   source: z.string(),
   lastUpdated: z.string().optional(),

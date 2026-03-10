@@ -1,21 +1,12 @@
 ---
 import type { Meta } from '../../lib/schemas';
+import { NAV_SECTIONS } from '../../lib/constants';
 
 interface Props {
   meta: Meta;
 }
 
 const { meta } = Astro.props;
-
-const NAV_SECTIONS = [
-  { id: 'sec-timeline', label: 'Timeline' },
-  { id: 'sec-map', label: 'Map' },
-  { id: 'sec-military', label: 'Military' },
-  { id: 'sec-humanitarian', label: 'Humanitarian' },
-  { id: 'sec-economic', label: 'Economic' },
-  { id: 'sec-contested', label: 'Contested' },
-  { id: 'sec-political', label: 'Political' },
-];
 ---
 <header class="site-header">
   <a class="skip-link" href="#main-content">Skip to main content</a>

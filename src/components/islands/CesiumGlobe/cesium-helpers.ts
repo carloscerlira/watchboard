@@ -74,10 +74,9 @@ export function lineDashPattern(cat: string): number {
   return 12;
 }
 
-/** Front zone radius in meters */
-export function frontZoneRadius(id: string): number {
-  if (id === 'hormuz') return 60_000;
-  return 40_000;
+/** Front zone radius in meters — uses data-driven zoneRadius, defaults to 40km */
+export function frontZoneRadius(zoneRadius?: number): number {
+  return zoneRadius ?? 40_000;
 }
 
 /** Arc material — glow for strike/retaliation, dash for front/asset */
@@ -180,18 +179,5 @@ export function billboardSize(cat: string, subType?: string): { width: number; h
   return { width: 18, height: 18 };
 }
 
-/** Tier label for info panel */
-export function tierLabelFull(t: number): string {
-  return t === 1
-    ? 'Tier 1 — Official'
-    : t === 2
-      ? 'Tier 2 — Major Outlet'
-      : t === 3
-        ? 'Tier 3 — Institutional'
-        : 'Tier 4';
-}
-
-/** Tier CSS class for styling */
-export function tierClass(t: number): string {
-  return t === 1 ? 't1' : t === 2 ? 't2' : t === 3 ? 't3' : 't4';
-}
+// Re-export tier helpers for backward compatibility — canonical source is tier-utils
+export { tierClass, tierLabelFull } from '../../../lib/tier-utils';

@@ -82,7 +82,7 @@ const EVENT_TYPE_COLORS: Record<string, string> = {
 
 function dateToDay(date: string, minDate: string): number {
   return Math.round(
-    (new Date(date).getTime() - new Date(minDate).getTime()) / 86400000,
+    (new Date(date + 'T00:00:00Z').getTime() - new Date(minDate + 'T00:00:00Z').getTime()) / 86400000,
   );
 }
 
@@ -93,11 +93,12 @@ function dayToDate(day: number, minDate: string): string {
 }
 
 function formatDate(iso: string): string {
-  const d = new Date(iso + 'T00:00:00');
+  const d = new Date(iso + 'T00:00:00Z');
   return d.toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
+    timeZone: 'UTC',
   });
 }
 

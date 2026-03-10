@@ -1,13 +1,6 @@
 import { useState } from 'react';
 import type { TimelineEra, TimelineEvent } from '../../lib/schemas';
-
-function tierClass(t: number): string {
-  return t === 1 ? 't1' : t === 2 ? 't2' : t === 3 ? 't3' : 't4';
-}
-
-function tierLabel(t: number): string {
-  return t === 1 ? 'Official' : t === 2 ? 'Major' : t === 3 ? 'Institutional' : 'Unverified';
-}
+import { tierClass, tierLabel } from '../../lib/tier-utils';
 
 function poleLabel(pole?: string): string | null {
   if (!pole) return null;

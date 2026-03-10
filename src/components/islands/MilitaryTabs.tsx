@@ -1,22 +1,49 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import type { StrikeItem, Asset } from '../../lib/schemas';
-
-const MIL_TABS = [
-  { id: 'strikes', label: 'Strike Targets' },
-  { id: 'retaliation', label: 'Iranian Retaliation' },
-  { id: 'assets', label: 'US Assets Deployed' },
-] as const;
-
-function tierClass(t: number): string {
-  return t === 1 ? 't1' : t === 2 ? 't2' : t === 3 ? 't3' : 't4';
-}
-
-function tierLabel(t: number): string {
-  return t === 1 ? 'T1' : t === 2 ? 'T2' : t === 3 ? 'T3' : 'T4';
-}
+import { tierClass, tierLabelShort } from '../../lib/tier-utils';
+import { MIL_TABS } from '../../lib/constants';
 
 function strikeIcon(icon: string): string {
   return icon === 'target' ? '\u25CE' : icon === 'retaliation' ? '\u26A1' : icon === 'asset' ? '\u25C6' : '\u2726';
+}
+
+const MONTH_INDEX: Record<string, number> = {
+  Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+  Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+};
+
+/** Parse "Feb 28", "Mar 1, 08:10", "Mar 1–2" etc. into a Date (year defaults to 2026). */
+function parseTimeField(time: string): Date | null {
+  const match = time.match(/^([A-Z][a-z]{2})\s+(\d{1,2})/);
+  if (!match) return null;
+  const monthIdx = MONTH_INDEX[match[1]];
+  if (monthIdx === undefined) return null;
+  return new Date(2026, monthIdx, parseInt(match[2], 10));
+}
+
+function computeDateRange(strikes: StrikeItem[], retaliation: StrikeItem[]): string {
+  const allItems = [...strikes, ...retaliation];
+  let earliest: Date | null = null;
+  let latest: Date | null = null;
+
+  for (const item of allItems) {
+    const d = parseTimeField(item.time);
+    if (!d) continue;
+    if (!earliest || d < earliest) earliest = d;
+    if (!latest || d > latest) latest = d;
+  }
+
+  if (!earliest || !latest) return '';
+
+  const fmtShort = (d: Date) =>
+    d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+  if (earliest.getTime() === latest.getTime()) return fmtShort(earliest);
+
+  if (earliest.getMonth() === latest.getMonth()) {
+    return `${fmtShort(earliest)}\u2013${latest.getDate()}`;
+  }
+  return `${fmtShort(earliest)}\u2013${fmtShort(latest)}`;
 }
 
 interface Props {
@@ -27,6 +54,11 @@ interface Props {
 
 export default function MilitaryTabs({ strikeTargets, retaliationData, assetsData }: Props) {
   const [activeTab, setActiveTab] = useState('strikes');
+
+  const dateRange = useMemo(
+    () => computeDateRange(strikeTargets, retaliationData),
+    [strikeTargets, retaliationData],
+  );
 
   const renderStrikeList = (items: StrikeItem[]) => (
     <ul className="strike-list">
@@ -40,7 +72,7 @@ export default function MilitaryTabs({ strikeTargets, retaliationData, assetsDat
           <div className="strike-meta">
             <span>{s.time || ''}</span>
             <span className={`source-chip ${tierClass(s.tier)}`} style={{ fontSize: '0.5rem' }}>
-              {tierLabel(s.tier)}
+              {tierLabelShort(s.tier)}
             </span>
           </div>
         </li>
@@ -53,7 +85,7 @@ export default function MilitaryTabs({ strikeTargets, retaliationData, assetsDat
       <div className="section-header">
         <span className="section-num">03</span>
         <h2 className="section-title">Military Operations</h2>
-        <span className="section-count">Feb 28 &ndash; Mar 4</span>
+        {dateRange && <span className="section-count">{dateRange}</span>}
       </div>
       <div className="tab-row" role="tablist" aria-label="Military operations categories">
         {MIL_TABS.map(t => (
