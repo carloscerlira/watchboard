@@ -308,14 +308,14 @@ export default function CesiumControls({
         Internet Blackout
       </button>
 
-      {/* Ground Truth */}
-      <div className="globe-control-label" style={{ marginTop: '6px' }}>Ground Truth</div>
+      {/* Fact Cards */}
+      <div className="globe-control-label" style={{ marginTop: '6px' }}>Intel Overlays</div>
       <button
         className={`globe-filter${layers.groundTruth ? ' active' : ''}`}
         onClick={() => onToggleLayer('groundTruth')}
       >
         <span className="globe-fdot" style={{ background: '#ffaa00' }} />
-        Ground Truth Cards
+        Fact Cards
       </button>
 
       {/* Existing environmental layers */}

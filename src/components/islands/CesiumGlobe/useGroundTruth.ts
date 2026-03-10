@@ -2,107 +2,107 @@ import { useEffect, useRef, useState } from 'react';
 import {
   Cartesian3,
   Color,
-  LabelStyle,
-  VerticalOrigin,
-  HorizontalOrigin,
   NearFarScalar,
   DistanceDisplayCondition,
+  VerticalOrigin,
+  HorizontalOrigin,
+  HeightReference,
   type Viewer as CesiumViewer,
   type Entity,
 } from 'cesium';
 import type { MapPoint } from '../../../lib/schemas';
 import type { FlatEvent } from '../../../lib/timeline-utils';
+import { buildFactCards, type FactCard, type FactCardCategory } from '../useFactCards';
 
-export interface GroundTruthCard {
-  id: string;
-  title: string;
-  type: 'kinetic' | 'infrastructure' | 'civilian_impact' | 'escalation';
-  utcTime: string;
-  lon: number;
-  lat: number;
-  date: string;
-}
+// Re-export for consumers
+export type { FactCard as GroundTruthCard };
 
-const TYPE_COLORS: Record<string, string> = {
-  kinetic: '#ff2244',
-  infrastructure: '#ff8844',
-  civilian_impact: '#ffaa00',
-  escalation: '#ff44ff',
+// ────────────────────────────────────────────
+//  Canvas card renderer
+// ────────────────────────────────────────────
+
+const CARD_WIDTH = 280;
+const CARD_PADDING = 12;
+const HEADER_HEIGHT = 20;
+const TITLE_HEIGHT = 24;
+const CARD_HEIGHT = HEADER_HEIGHT + TITLE_HEIGHT + CARD_PADDING * 2 + 4;
+
+const CATEGORY_COLORS: Record<FactCardCategory, string> = {
+  KINETIC: '#ff2244',
+  INFRASTRUCTURE: '#ff8844',
+  'CIVILIAN IMPACT': '#ffaa00',
+  ESCALATION: '#ff44ff',
 };
 
-const TYPE_LABELS: Record<string, string> = {
-  kinetic: 'KINETIC',
-  infrastructure: 'INFRASTRUCTURE',
-  civilian_impact: 'CIVILIAN IMPACT',
-  escalation: 'ESCALATION',
-};
+function renderFactCardCanvas(card: FactCard): HTMLCanvasElement {
+  const dpr = 2; // retina
+  const canvas = document.createElement('canvas');
+  canvas.width = CARD_WIDTH * dpr;
+  canvas.height = CARD_HEIGHT * dpr;
+  const ctx = canvas.getContext('2d')!;
+  ctx.scale(dpr, dpr);
 
-/** Derive event type from timeline event */
-function classifyEvent(event: FlatEvent): string {
-  const typeStr = (event.type || '').toLowerCase();
-  if (typeStr === 'military' || typeStr.includes('strike') || typeStr.includes('kinetic')) return 'kinetic';
-  if (typeStr.includes('infrastructure') || typeStr.includes('internet') || typeStr.includes('cyber')) return 'infrastructure';
-  if (typeStr.includes('humanitarian') || typeStr.includes('civilian')) return 'civilian_impact';
-  if (typeStr.includes('escalation') || typeStr.includes('diplomatic')) return 'escalation';
-  return 'kinetic';
-}
+  // Background
+  ctx.fillStyle = 'rgba(12, 14, 18, 0.92)';
+  ctx.beginPath();
+  ctx.roundRect(0, 0, CARD_WIDTH, CARD_HEIGHT, 6);
+  ctx.fill();
 
-/** Generate ground truth cards from conflict data points and timeline events */
-function buildGroundTruthCards(
-  points: MapPoint[],
-  events: FlatEvent[],
-  currentDate: string,
-): GroundTruthCard[] {
-  const cards: GroundTruthCard[] = [];
-  const seen = new Set<string>();
+  // Border
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.roundRect(0.5, 0.5, CARD_WIDTH - 1, CARD_HEIGHT - 1, 6);
+  ctx.stroke();
 
-  // From strike/retaliation map points on current date
-  for (const pt of points) {
-    if (pt.date !== currentDate) continue;
-    if (pt.cat !== 'strike' && pt.cat !== 'retaliation') continue;
-    const key = `${pt.lon.toFixed(1)}-${pt.lat.toFixed(1)}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
+  // Category accent line (top)
+  const catColor = CATEGORY_COLORS[card.category] || '#ff4444';
+  ctx.fillStyle = catColor;
+  ctx.fillRect(CARD_PADDING, CARD_PADDING, 3, HEADER_HEIGHT);
 
-    cards.push({
-      id: `gt-pt-${pt.id}`,
-      title: pt.label.toUpperCase(),
-      type: pt.cat === 'strike' ? 'kinetic' : 'kinetic',
-      utcTime: pt.date,
-      lon: pt.lon,
-      lat: pt.lat,
-      date: pt.date,
-    });
+  // Category label
+  ctx.font = "bold 10px 'JetBrains Mono', monospace";
+  ctx.fillStyle = catColor;
+  ctx.textBaseline = 'middle';
+  ctx.fillText(card.category, CARD_PADDING + 8, CARD_PADDING + HEADER_HEIGHT / 2);
+
+  // UTC time (right-aligned)
+  if (card.utcTime) {
+    ctx.font = "9px 'JetBrains Mono', monospace";
+    ctx.fillStyle = 'rgba(232, 233, 237, 0.5)';
+    ctx.textAlign = 'right';
+    ctx.fillText(card.utcTime, CARD_WIDTH - CARD_PADDING, CARD_PADDING + HEADER_HEIGHT / 2);
+    ctx.textAlign = 'left';
   }
 
-  // From timeline events on current date with location
-  for (const ev of events) {
-    if (ev.resolvedDate !== currentDate) continue;
-    const evType = classifyEvent(ev);
-    // Use events that don't already overlap with map points
-    const title = (ev.title || '').toUpperCase();
-    const key = title.substring(0, 20);
-    if (seen.has(key)) continue;
-    seen.add(key);
-
-    // Skip events without geographic context (no reliable lon/lat from timeline events)
-    // Instead, we use them to augment nearby map point cards
+  // Title
+  ctx.font = "bold 11px 'JetBrains Mono', monospace";
+  ctx.fillStyle = '#e8e9ed';
+  // Truncate title to fit
+  let title = card.title;
+  while (ctx.measureText(title).width > CARD_WIDTH - CARD_PADDING * 2 && title.length > 3) {
+    title = title.slice(0, -4) + '...';
   }
+  ctx.fillText(title, CARD_PADDING, CARD_PADDING + HEADER_HEIGHT + TITLE_HEIGHT / 2 + 4);
 
-  return cards;
+  return canvas;
 }
 
-/** Ground truth intelligence cards rendered as Cesium entities at strike locations */
+// ────────────────────────────────────────────
+//  Hook
+// ────────────────────────────────────────────
+
+/** Ground truth / fact cards rendered as Cesium billboard entities at strike locations */
 export function useGroundTruth(
   viewer: CesiumViewer | null,
   enabled: boolean,
   points: MapPoint[],
   events: FlatEvent[],
   currentDate: string,
-  onSelectCard?: (card: GroundTruthCard) => void,
+  onSelectCard?: (card: FactCard) => void,
 ) {
   const [count, setCount] = useState(0);
-  const [cards, setCards] = useState<GroundTruthCard[]>([]);
+  const [cards, setCards] = useState<FactCard[]>([]);
   const entitiesRef = useRef<Entity[]>([]);
 
   useEffect(() => {
@@ -120,59 +120,32 @@ export function useGroundTruth(
       return;
     }
 
-    const builtCards = buildGroundTruthCards(points, events, currentDate);
+    const builtCards = buildFactCards(points, events, [], currentDate, 8);
     setCards(builtCards);
     setCount(builtCards.length);
 
     for (const card of builtCards) {
-      const cssColor = TYPE_COLORS[card.type] || '#ff4444';
-      const typeLabel = TYPE_LABELS[card.type] || 'EVENT';
+      const cssColor = CATEGORY_COLORS[card.category] || '#ff4444';
       const color = Color.fromCssColorString(cssColor);
 
-      // Main label — event type + time
-      const headerEntity = viewer.entities.add({
-        name: `GT: ${card.title}`,
+      // Canvas-rendered card billboard
+      const canvas = renderFactCardCanvas(card);
+      const billboardEntity = viewer.entities.add({
+        name: `FC: ${card.title}`,
         position: Cartesian3.fromDegrees(card.lon, card.lat, 5000),
-        label: {
-          text: `${typeLabel}    ${card.utcTime}`,
-          font: "bold 9px 'JetBrains Mono', monospace",
-          fillColor: Color.WHITE.withAlpha(0.95),
-          backgroundColor: Color.fromCssColorString('#111').withAlpha(0.85),
-          showBackground: true,
-          backgroundPadding: { x: 8, y: 5 } as any,
-          outlineColor: color.withAlpha(0.8),
-          outlineWidth: 1,
-          style: LabelStyle.FILL_AND_OUTLINE,
+        billboard: {
+          image: canvas as any,
+          width: CARD_WIDTH,
+          height: CARD_HEIGHT,
           verticalOrigin: VerticalOrigin.BOTTOM,
-          horizontalOrigin: HorizontalOrigin.LEFT,
-          scaleByDistance: new NearFarScalar(5e4, 1.0, 3e6, 0.3),
+          horizontalOrigin: HorizontalOrigin.CENTER,
+          scaleByDistance: new NearFarScalar(5e4, 0.6, 3e6, 0.18),
           distanceDisplayCondition: new DistanceDisplayCondition(0, 5e6),
-          pixelOffset: { x: 6, y: -20 } as any,
+          heightReference: HeightReference.NONE,
+          pixelOffset: { x: 0, y: -8 } as any,
         },
       });
-      entitiesRef.current.push(headerEntity);
-
-      // Title label below header
-      const titleEntity = viewer.entities.add({
-        position: Cartesian3.fromDegrees(card.lon, card.lat, 5000),
-        label: {
-          text: card.title,
-          font: "bold 10px 'JetBrains Mono', monospace",
-          fillColor: Color.WHITE.withAlpha(0.9),
-          backgroundColor: Color.fromCssColorString('#111').withAlpha(0.85),
-          showBackground: true,
-          backgroundPadding: { x: 8, y: 5 } as any,
-          outlineColor: Color.BLACK,
-          outlineWidth: 2,
-          style: LabelStyle.FILL_AND_OUTLINE,
-          verticalOrigin: VerticalOrigin.TOP,
-          horizontalOrigin: HorizontalOrigin.LEFT,
-          scaleByDistance: new NearFarScalar(5e4, 1.0, 3e6, 0.3),
-          distanceDisplayCondition: new DistanceDisplayCondition(0, 5e6),
-          pixelOffset: { x: 6, y: -5 } as any,
-        },
-      });
-      entitiesRef.current.push(titleEntity);
+      entitiesRef.current.push(billboardEntity);
 
       // Connecting line from ground to card
       const lineEntity = viewer.entities.add({

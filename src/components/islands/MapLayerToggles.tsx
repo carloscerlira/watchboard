@@ -21,6 +21,7 @@ const LAYER_DEFS: LayerDef[] = [
   { key: 'weather', label: 'Weather', shortLabel: 'WX', color: '#88ccff', icon: '\u2601' },
   { key: 'flights', label: 'Live Flights', shortLabel: 'FLT', color: '#00aaff', icon: '\u2708' },
   { key: 'terminator', label: 'Day/Night', shortLabel: 'D/N', color: '#4488aa', icon: '\u25D1' },
+  { key: 'factCards', label: 'Fact Cards', shortLabel: 'FC', color: '#ffaa00', icon: '\u25A3' },
 ];
 
 // ────────────────────────────────────────────

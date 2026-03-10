@@ -24,6 +24,7 @@ export interface LayerState {
   weather: boolean;
   flights: boolean;
   terminator: boolean;
+  factCards: boolean;
 }
 
 export interface NoFlyOverlay {
@@ -240,6 +241,7 @@ export function useMapOverlays(layers: LayerState, currentDate: string) {
     weather: weather.length,
     flights: 0,
     terminator: 0,
+    factCards: 0,
   };
 
   return {

@@ -7,6 +7,8 @@ import { catColor, lineColor, WEAPON_TYPE_WEIGHTS, WEAPON_TYPE_LABELS, STATUS_LA
 import type { OverlayData } from './useMapOverlays';
 import type { FlightData } from './useMapFlights';
 import MapArcAnimator from './MapArcAnimator';
+import MapFactCards from './MapFactCards';
+import type { FlatEvent } from '../../lib/timeline-utils';
 
 // ────────────────────────────────────────────
 //  Types
@@ -22,6 +24,8 @@ interface Props {
   terminatorPolygon?: [number, number][] | null;
   currentDate?: string;
   isPlaying?: boolean;
+  events?: FlatEvent[];
+  showFactCards?: boolean;
 }
 
 // ────────────────────────────────────────────
@@ -141,6 +145,7 @@ function quakeColor(depth: number): string {
 export default function LeafletMap({
   points, lines, onSelectPoint, onSelectLine, overlays,
   flights, terminatorPolygon, currentDate, isPlaying,
+  events, showFactCards,
 }: Props) {
   const center: LatLngExpression = [29, 49];
 
@@ -445,6 +450,16 @@ export default function LeafletMap({
           lines={lines}
           currentDate={currentDate}
           isPlaying={isPlaying ?? false}
+        />
+      )}
+
+      {/* ── Fact cards overlay ── */}
+      {showFactCards && currentDate && events && (
+        <MapFactCards
+          points={points}
+          events={events}
+          lines={lines}
+          currentDate={currentDate}
         />
       )}
     </MapContainer>

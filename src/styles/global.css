@@ -3191,6 +3191,103 @@ body::before {
   color: var(--accent-blue, #3498db);
 }
 
+/* ─── FACT CARDS (map overlay) ─── */
+
+.fact-card-wrapper {
+  background: none !important;
+  border: none !important;
+}
+
+.fact-card {
+  width: 220px;
+  background: rgba(12, 14, 18, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  pointer-events: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  animation: factCardFadeIn 0.4s ease;
+  position: relative;
+}
+
+.fact-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.fact-card-category {
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.fact-card-time {
+  font-size: 0.45rem;
+  color: rgba(232, 233, 237, 0.5);
+  letter-spacing: 0.06em;
+}
+
+.fact-card-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #e8e9ed;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.fact-card-thumb {
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-top: 6px;
+  opacity: 0.85;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.fact-card-connector {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 1px;
+  height: 20px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+}
+
+@keyframes factCardFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .fact-card {
+    width: 160px;
+    padding: 6px 8px;
+  }
+  .fact-card-title {
+    font-size: 0.55rem;
+  }
+  .fact-card-category {
+    font-size: 0.45rem;
+  }
+  .fact-card-thumb {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fact-card-thumb {
+    display: none;
+  }
+}
+
 /* ─── REDUCED MOTION ─── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

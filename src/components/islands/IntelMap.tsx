@@ -52,6 +52,7 @@ export default function IntelMap({ points, lines, events }: Props) {
     weather: false,
     flights: false,
     terminator: false,
+    factCards: false,
   });
 
   const toggleLayer = useCallback((layer: keyof LayerState) => {
@@ -180,6 +181,8 @@ export default function IntelMap({ points, lines, events }: Props) {
           terminatorPolygon={layers.terminator ? terminatorPolygon : undefined}
           currentDate={currentDate}
           isPlaying={isPlaying}
+          events={events}
+          showFactCards={layers.factCards}
         />
 
         {/* Overlay: filter controls (top-left) */}
