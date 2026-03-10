@@ -1417,7 +1417,7 @@
       56.2,
       26.3
     ],
-    "cat": "retaliation",
+    "cat": "front",
     "label": "IRGC naval exercise Strait of Hormuz",
     "date": "2026-02-23",
     "lastUpdated": "2026-03-07T05:19:32.200Z",
@@ -1467,7 +1467,7 @@
       51.58,
       34.62
     ],
-    "cat": "retaliation",
+    "cat": "front",
     "label": "Nuclear material Natanz → Fordow",
     "date": "2026-02-26",
     "lastUpdated": "2026-03-07T05:19:32.200Z",
@@ -1603,7 +1603,7 @@
       56.3,
       26.5
     ],
-    "cat": "retaliation",
+    "cat": "front",
     "label": "IRGC Hormuz live-fire drills",
     "date": "2026-02-02",
     "lastUpdated": "2026-03-07T05:29:27.814Z",
@@ -1685,7 +1685,7 @@
       51.66,
       32.65
     ],
-    "cat": "retaliation",
+    "cat": "front",
     "label": "Centrifuge transfer Natanz → Isfahan",
     "date": "2026-02-08",
     "lastUpdated": "2026-03-07T05:29:27.814Z",
@@ -1738,7 +1738,7 @@
       51.66,
       32.65
     ],
-    "cat": "retaliation",
+    "cat": "front",
     "label": "Isfahan tunnel fortification ops",
     "date": "2026-02-12",
     "lastUpdated": "2026-03-07T05:29:27.814Z",
@@ -1791,7 +1791,7 @@
       55,
       25.5
     ],
-    "cat": "retaliation",
+    "cat": "front",
     "label": "IRGC Smart Control exercises",
     "date": "2026-02-16",
     "lastUpdated": "2026-03-07T05:29:27.814Z",
@@ -2177,8 +2177,14 @@
   },
   {
     "id": "israel_irgc_airforce_hq_mar9",
-    "from": [34.78, 32.07],
-    "to": [51.39, 35.69],
+    "from": [
+      34.78,
+      32.07
+    ],
+    "to": [
+      51.39,
+      35.69
+    ],
     "cat": "strike",
     "label": "Israel → IRGC Air Force HQ (Tehran)",
     "date": "2026-03-09",
@@ -2194,8 +2200,14 @@
   },
   {
     "id": "israel_kish_fuel_depot_mar9",
-    "from": [34.78, 32.07],
-    "to": [53.98, 26.53],
+    "from": [
+      34.78,
+      32.07
+    ],
+    "to": [
+      53.98,
+      26.53
+    ],
     "cat": "strike",
     "label": "Israel → Kish Island Airport",
     "date": "2026-03-09",
@@ -2211,8 +2223,14 @@
   },
   {
     "id": "israel_ghobeiry_quds_mar9",
-    "from": [34.78, 32.07],
-    "to": [35.49, 33.86],
+    "from": [
+      34.78,
+      32.07
+    ],
+    "to": [
+      35.49,
+      33.86
+    ],
     "cat": "strike",
     "label": "Israel → Ghobeiry, Beirut (Quds Force)",
     "date": "2026-03-09",
@@ -2228,8 +2246,14 @@
   },
   {
     "id": "iran_bahrain_bapco_mar9",
-    "from": [51.39, 35.69],
-    "to": [50.62, 26.07],
+    "from": [
+      51.39,
+      35.69
+    ],
+    "to": [
+      50.62,
+      26.07
+    ],
     "cat": "retaliation",
     "label": "Iran → Bahrain (Bapco Refinery)",
     "date": "2026-03-09",
@@ -2246,8 +2270,14 @@
   },
   {
     "id": "iran_fujairah_oil_mar9",
-    "from": [51.39, 35.69],
-    "to": [56.33, 25.12],
+    "from": [
+      51.39,
+      35.69
+    ],
+    "to": [
+      56.33,
+      25.12
+    ],
     "cat": "retaliation",
     "label": "Iran → Fujairah Oil Facility",
     "date": "2026-03-09",
@@ -2263,8 +2293,14 @@
   },
   {
     "id": "iran_alkharj_saudi_mar9",
-    "from": [51.39, 35.69],
-    "to": [47.3, 24.15],
+    "from": [
+      51.39,
+      35.69
+    ],
+    "to": [
+      47.3,
+      24.15
+    ],
     "cat": "retaliation",
     "label": "Iran → Al-Kharj, Saudi Arabia",
     "date": "2026-03-09",
@@ -2281,8 +2317,14 @@
   },
   {
     "id": "iran_qatar_missiles_mar9",
-    "from": [51.39, 35.69],
-    "to": [51.53, 25.29],
+    "from": [
+      51.39,
+      35.69
+    ],
+    "to": [
+      51.53,
+      25.29
+    ],
     "cat": "retaliation",
     "label": "Iran → Qatar",
     "date": "2026-03-09",
@@ -2297,8 +2339,14 @@
   },
   {
     "id": "iran_israel_missiles_mar9",
-    "from": [51.39, 35.69],
-    "to": [34.78, 32.07],
+    "from": [
+      51.39,
+      35.69
+    ],
+    "to": [
+      34.78,
+      32.07
+    ],
     "cat": "retaliation",
     "label": "Iran → Israel",
     "date": "2026-03-09",

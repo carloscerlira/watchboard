@@ -806,11 +806,11 @@ Field rules:
 - "cat": one of "strike", "retaliation", "asset", "front"
 - "label": "Origin → Target" description
 - "date": YYYY-MM-DD string
-- "weaponType": (optional) "ballistic"|"cruise"|"drone"|"rocket"|"mixed"|"unknown"
+- "weaponType": REQUIRED for strike/retaliation — "ballistic"|"cruise"|"drone"|"rocket"|"mixed"|"unknown"
+- "time": REQUIRED for strike/retaliation — "HH:MM" UTC (24h format, e.g. "01:30", "14:00")
 - "launched": (optional) integer — munitions launched
 - "intercepted": (optional) integer — munitions intercepted
 - "confidence": (optional) "high"|"medium"|"low"
-- "time": (optional) "HH:MM" UTC — when the strike occurred
 - "platform": (optional) launch platform name
 - "status": (optional) "hit"|"intercepted"|"partial"|"unknown"
 - "damage": (optional) brief damage description
@@ -830,7 +830,8 @@ Return ONLY new lines as a JSON array.`,
       // Retry prompt
       `Search for new military strikes or retaliations in the Iran-US/Israel conflict on ${today}.
 Return new arc lines as a JSON array. Each needs: id (string), from ([lon,lat]), to ([lon,lat]), cat ("strike"|"retaliation"|"asset"|"front"), label (string), date ("${today}").
-Optional OSINT fields: weaponType ("ballistic"|"cruise"|"drone"|"rocket"|"mixed"|"unknown"), launched (int), intercepted (int), confidence ("high"|"medium"|"low"), time ("HH:MM"), platform (string), status ("hit"|"intercepted"|"partial"|"unknown"), damage (string), casualties (string), notes (string).
+REQUIRED for strike/retaliation: weaponType ("ballistic"|"cruise"|"drone"|"rocket"|"mixed"|"unknown"), time ("HH:MM" 24h UTC).
+Optional: launched (int), intercepted (int), confidence ("high"|"medium"|"low"), platform (string), status ("hit"|"intercepted"|"partial"|"unknown"), damage (string), casualties (string), notes (string).
 Example: ${example}
 Return [] if nothing new.`,
     );

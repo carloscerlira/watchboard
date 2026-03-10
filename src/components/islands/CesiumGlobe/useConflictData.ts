@@ -23,6 +23,7 @@ import {
   arc3D,
   lineWidth,
   arcMaterial,
+  weaponPeakAlt,
 } from './cesium-helpers';
 import { getIconDataUri } from './cesium-icons';
 import type { IconType } from './cesium-icons';
@@ -229,7 +230,7 @@ export function useConflictData(
     // Create new arc entities
     for (const line of lines) {
       const offset = offsets.get(line.id) ?? 0;
-      const positions = arc3D(line.from, line.to, 60, 150_000, offset);
+      const positions = arc3D(line.from, line.to, 60, weaponPeakAlt(line.weaponType), offset);
 
       const entity = viewer.entities.add({
         name: line.label,

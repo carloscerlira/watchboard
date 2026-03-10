@@ -65,34 +65,51 @@ export const TimelineEraSchema = z.object({
   events: z.array(TimelineEventSchema),
 });
 
+// ── Shared field schemas ──
+
+/** HH:MM time format (0:00–23:59) */
+const TimeFieldSchema = z.string().regex(
+  /^([01]?\d|2[0-3]):[0-5]\d$/,
+  'Invalid time format, expected HH:MM (0:00–23:59)',
+);
+
+/** ISO date format YYYY-MM-DD */
+const DateFieldSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Date must be YYYY-MM-DD');
+
+/** Theater coordinate: [lon, lat] bounded to operational area */
+const TheaterCoordSchema = z.tuple([
+  z.number().min(20, 'Longitude must be ≥ 20°E').max(75, 'Longitude must be ≤ 75°E'),
+  z.number().min(5, 'Latitude must be ≥ 5°N').max(50, 'Latitude must be ≤ 50°N'),
+]);
+
 // ── Map ──
 export const MapPointSchema = z.object({
   id: z.string(),
-  lon: z.number(),
-  lat: z.number(),
+  lon: z.number().min(20).max(75),
+  lat: z.number().min(5).max(50),
   cat: z.enum(['strike', 'retaliation', 'asset', 'front']),
   label: z.string(),
   sub: z.string(),
   tier: TierSchema,
-  date: z.string(),
+  date: DateFieldSchema,
   base: z.boolean().optional(),
   showLabel: z.boolean().optional(),
-  zoneRadius: z.number().optional(),
+  zoneRadius: z.number().positive().optional(),
   lastUpdated: z.string().optional(),
 });
 
 export const MapLineSchema = z.object({
   id: z.string(),
-  from: z.tuple([z.number(), z.number()]),
-  to: z.tuple([z.number(), z.number()]),
+  from: TheaterCoordSchema,
+  to: TheaterCoordSchema,
   cat: z.enum(['strike', 'retaliation', 'asset', 'front']),
   label: z.string(),
-  date: z.string(),
+  date: DateFieldSchema,
   weaponType: WeaponTypeSchema.optional(),
-  launched: z.number().optional(),
-  intercepted: z.number().optional(),
+  launched: z.number().int().min(0).optional(),
+  intercepted: z.number().int().min(0).optional(),
   confidence: ConfidenceSchema.optional(),
-  time: z.string().optional(),
+  time: TimeFieldSchema.optional(),
   damage: z.string().optional(),
   casualties: z.string().optional(),
   notes: z.string().optional(),

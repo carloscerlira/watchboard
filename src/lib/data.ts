@@ -90,6 +90,16 @@ export const kpis = z.array(KpiSchema).parse(kpisRaw);
 export const timeline = loadTimeline();
 export const mapPoints = z.array(MapPointSchema).parse(mapPointsRaw);
 export const mapLines = z.array(MapLineSchema).parse(mapLinesRaw);
+
+// Cross-field validation: strike/retaliation lines must have weaponType + time for rendering
+for (const line of mapLines) {
+  if ((line.cat === 'strike' || line.cat === 'retaliation') && (!line.weaponType || !line.time)) {
+    throw new Error(
+      `MapLine "${line.id}" (cat=${line.cat}) missing required fields: ` +
+      `${!line.weaponType ? 'weaponType ' : ''}${!line.time ? 'time' : ''}`.trim(),
+    );
+  }
+}
 export const strikeTargets = z.array(StrikeItemSchema).parse(strikeTargetsRaw);
 export const retaliationData = z.array(StrikeItemSchema).parse(retaliationRaw);
 export const assetsData = z.array(AssetSchema).parse(assetsRaw);

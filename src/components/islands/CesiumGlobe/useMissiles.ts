@@ -140,7 +140,7 @@ export function useMissiles(
     // Render static arcs immediately
     for (const line of toStatic) {
       const offset = lateralOffsets.get(line.id) ?? 0;
-      const positions = arc3D(line.from, line.to, 60, 150_000, offset);
+      const positions = arc3D(line.from, line.to, 60, weaponPeakAlt(line.weaponType), offset);
       const entity = viewer.entities.add({
         name: line.label,
         polyline: {
@@ -156,7 +156,7 @@ export function useMissiles(
     const animatable = toAnimate.slice(0, MAX_ARCS);
     for (const line of toAnimate.slice(MAX_ARCS)) {
       const offset = lateralOffsets.get(line.id) ?? 0;
-      const positions = arc3D(line.from, line.to, 60, 150_000, offset);
+      const positions = arc3D(line.from, line.to, 60, weaponPeakAlt(line.weaponType), offset);
       const entity = viewer.entities.add({
         name: line.label,
         polyline: {
@@ -168,11 +168,20 @@ export function useMissiles(
       staticEntitiesRef.current.push(entity);
     }
 
-    if (animatable.length === 0) return;
+    if (animatable.length === 0) {
+      // Return cleanup for static entities even when no animated arcs exist
+      return () => {
+        if (!viewer.isDestroyed()) {
+          cleanup(viewer, animationsRef.current, staticEntitiesRef.current);
+        }
+        animationsRef.current = [];
+        staticEntitiesRef.current = [];
+      };
+    }
 
-    const baseSimTime = simTimeRef.current;
+    const baseSimTime = new Date(currentDate + 'T00:00:00Z').getTime();
     const minSimDuration = MIN_REAL_SECONDS * playbackSpeed * 1000;
-    const staggerSim = 0.3 * playbackSpeed * 1000;
+    // Note: no inter-arc stagger — line.time offsets handle temporal spacing
     let totalProjectiles = 0;
 
     for (let i = 0; i < animatable.length; i++) {
@@ -193,11 +202,11 @@ export function useMissiles(
         if (match) {
           const hours = parseInt(match[1], 10);
           const mins = parseInt(match[2], 10);
-          timeOffset = ((hours * 3600 + mins * 60) - 43200) * 1000;
+          timeOffset = (hours * 3600 + mins * 60) * 1000;
         }
       }
 
-      const arcStartTime = baseSimTime + i * staggerSim + timeOffset;
+      const arcStartTime = baseSimTime + timeOffset;
 
       // How many projectiles for this line
       const launched = line.launched || 1;

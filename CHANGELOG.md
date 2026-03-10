@@ -8,6 +8,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Fixed
+- Globe missile timing: sim clock starts at midnight instead of noon so pre-dawn USA strikes (01:00-06:00) animate correctly instead of completing instantly
+- Schema hardening: `MapLineSchema` now validates `time` format (HH:MM), coordinate bounds (theater area), and `launched`/`intercepted` as non-negative integers; `MapPointSchema` validates coordinate bounds and date format
+- Cross-field validation in data loader: strike/retaliation lines must have `weaponType` and `time` fields
+- Recategorized 6 logistics/exercise lines from `retaliation` to `front` (IRGC exercises, nuclear transfers, tunnel ops)
+- Update script prompts now mark `weaponType` and `time` as REQUIRED for strike/retaliation lines
+
+### Changed (Data Update — March 10, 2026)
+- Updated casualties: UAE killed 3->5 (inc. 2 armed forces officers), injured 78->112+; Lebanon killed 400+->486+, 700K displaced; added Saudi Arabia entry (2 killed in Al-Kharj)
+- Updated KPIs: Lebanon killed 486+, Gulf Region killed 11+, countries affected 14+, flights cancelled 35K+
+- Updated econ: Gold $5,400/oz (+2.7%), S&P 500 6,769, VIX 31.5, Iranian Rial 3.5M/$1, shipping rates +400%
+- Added 8 map lines for March 9 strikes/retaliation arcs (IRGC HQ, Kish Island, Ghobeiry/Beirut, Bapco/Bahrain, Fujairah/UAE, Al-Kharj/Saudi, Qatar missiles, Iran-Israel missiles)
+- Added 3 map points: Qatar intercept, Shaybah oil field, updated Al-Kharj details
+- Updated political: Mojtaba Khamenei details, added Pezeshkian (apology to neighbors), updated Araghchi (rejects ceasefire)
+- Added 3 claims: Iran-CIA backchannel, Pezeshkian gulf apology contradiction, US war cost estimates
+- Updated meta: heroSubtitle with latest status, footer note source count
+
+### Fixed
+- fix(globe): USA-fired missiles now animate correctly on 3D globe; sim clock anchored to midnight instead of noon so pre-dawn strikes (01:00-06:00) are no longer instantly "completed" when playback begins
 - TD-001: Consolidated `tierClass`/`tierLabel` from 5 duplicated definitions into single canonical source in `tier-utils.ts`; added `tierLabelFull` and `tierLabelShort` variants; consumer files now import or re-export from the canonical module
 - TD-002: Wired up orphaned `constants.ts` — `Header.astro` now imports `NAV_SECTIONS` and `MilitaryTabs.tsx` now imports `MIL_TABS` from `src/lib/constants.ts`; removed inline redefinitions
 - TD-009: Replaced hard-coded "Feb 28 -- Mar 4" date range in MilitaryTabs with `computeDateRange()` that dynamically derives min/max dates from strike and retaliation `time` fields

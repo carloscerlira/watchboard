@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Agent Triforce Dashboard</title>
+<title>iran-conflict-tracker — Agent Triforce</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔱</text></svg>">
 <style>
 :root {
   --bg: #0f172a;
@@ -438,7 +439,7 @@ tr:last-child td { border-bottom: none; }
 <body>
 <div class="header">
   <div>
-    <h1>Agent Triforce Dashboard</h1>
+    <h1>iran-conflict-tracker — Agent Triforce</h1>
     <div class="quick-actions">
       <span class="quick-action pm" title="Define a feature spec (Prometeo)">/feature-spec</span>
       <span class="quick-action dev" title="Implement from spec (Forja)">/implement-feature</span>
@@ -457,9 +458,10 @@ tr:last-child td { border-bottom: none; }
   <div class="stat-item"><div class="stat-value">0</div><div class="stat-label">ADRs</div></div>
   <div class="stat-item"><div class="stat-value">0<span style="font-size:12px;font-weight:400;color:var(--text-dim)"> (0)</span></div><div class="stat-label">Checklists (items)</div></div>
   <div class="stat-item"><div class="stat-value">10</div><div class="stat-label">Commits</div></div>
+  <div class="stat-item" style="border-left:2px solid #60a5fa;padding-left:12px"><div class="stat-value" style="font-size:13px;color:#60a5fa">QA /release-check</div><div class="stat-label">Next Step</div></div>
 </div>
 <nav class="nav">
-  <a href="#whats-next">What's Next</a>
+  <a href="#whats-next">Recommended Next Steps</a>
   <a href="#overview">Overview</a>
   <a href="#pipeline">Pipeline</a>
   <a href="#quality">Quality</a>
@@ -470,7 +472,7 @@ tr:last-child td { border-bottom: none; }
   <a href="#activity">Activity</a>
   <a href="#checklists">Checklists</a>
 </nav>
-<div class="next-section" id="whats-next"><h2>What's Next</h2>
+<div class="next-section" id="whats-next"><h2>Recommended Next Steps</h2>
 <div class="next-action">
   <span class="next-agent qa">QA</span>
   <div><div class="next-desc">Verify review conditions are met <span class="next-cmd">/release-check</span></div><div class="next-detail">Reviews with conditions: cesium-timeline-missile-2026-03-06.md, code-health-2026-03-04.md, security-audit-2026-03-04.md</div></div>
@@ -641,68 +643,69 @@ tr:last-child td { border-bottom: none; }
 <div class="section" id="activity"><h2>Recent Activity</h2>
 <h3>Git Log</h3>
 <div class="commit-line">
-  <span class="commit-hash">7a5d961</span>
+  <span class="commit-hash">da48f55</span>
   <span class="commit-badge" style="background:#10B981">feat</span>
-  <span class="commit-msg">feat(globe): user-provided AIS API key via UI instead of env var</span>
-  <span class="commit-date">2026-03-08</span>
+  <span class="commit-msg">feat(data): backfill 30 event files + update recent data</span>
+  <span class="commit-date">2026-03-10</span>
 </div>
 <div class="commit-line">
-  <span class="commit-hash">f331348</span>
+  <span class="commit-hash">a9fd6cb</span>
+  <span class="commit-badge" style="background:#10B981">feat</span>
+  <span class="commit-msg">feat: add About page with disclaimer, credits, and inspiration</span>
+  <span class="commit-date">2026-03-09</span>
+</div>
+<div class="commit-line">
+  <span class="commit-hash">de51f36</span>
   <span class="commit-badge" style="background:#EF4444">fix</span>
-  <span class="commit-msg">fix(globe): remove alignedAxis on flight billboards to prevent edge-on</span>
-  <span class="commit-date">2026-03-08</span>
+  <span class="commit-msg">fix: resolve 20 tech debt items (TD-001 through TD-023)</span>
+  <span class="commit-date">2026-03-09</span>
 </div>
 <div class="commit-line">
-  <span class="commit-hash">82965a0</span>
-  <span class="commit-badge" style="background:#10B981">feat</span>
-  <span class="commit-msg">feat(globe): add live ship tracking via AISStream.io WebSocket</span>
-  <span class="commit-date">2026-03-08</span>
-</div>
-<div class="commit-line">
-  <span class="commit-hash">ac68fdd</span>
-  <span class="commit-badge" style="background:#10B981">feat</span>
-  <span class="commit-msg">feat(globe): custom SVG billboard icons for all entity types</span>
-  <span class="commit-date">2026-03-08</span>
-</div>
-<div class="commit-line">
-  <span class="commit-hash">16a0252</span>
-  <span class="commit-badge" style="background:#10B981">feat</span>
-  <span class="commit-msg">feat(map): upgrade 2D intel map — enhanced timeline, events panel, OSI</span>
-  <span class="commit-date">2026-03-08</span>
-</div>
-<div class="commit-line">
-  <span class="commit-hash">255987c</span>
+  <span class="commit-hash">ad6c23b</span>
   <span class="commit-badge" style="background:#94a3b8">chore</span>
-  <span class="commit-msg">chore(data): nightly AI update 2026-03-08T22:00:23Z</span>
-  <span class="commit-date">2026-03-08</span>
+  <span class="commit-msg">chore(data): nightly AI update 2026-03-10T05:03:57Z</span>
+  <span class="commit-date">2026-03-10</span>
 </div>
 <div class="commit-line">
-  <span class="commit-hash">32004cb</span>
+  <span class="commit-hash">19223ed</span>
   <span class="commit-badge" style="background:#10B981">feat</span>
-  <span class="commit-msg">feat(globe): sync daylight with timeline + add satellite FOV footprint</span>
+  <span class="commit-msg">feat(ui): add floating feedback button linking to GitHub Issues</span>
+  <span class="commit-date">2026-03-09</span>
+</div>
+<div class="commit-line">
+  <span class="commit-hash">7d2fcf2</span>
+  <span class="commit-badge" style="background:#EF4444">fix</span>
+  <span class="commit-msg">fix(ci): have Claude commit/push during its execution</span>
+  <span class="commit-date">2026-03-09</span>
+</div>
+<div class="commit-line">
+  <span class="commit-hash">d529c5a</span>
+  <span class="commit-badge" style="background:#EF4444">fix</span>
+  <span class="commit-msg">fix(ci): improve change detection and prevent Claude self-committing</span>
+  <span class="commit-date">2026-03-09</span>
+</div>
+<div class="commit-line">
+  <span class="commit-hash">9e74ece</span>
+  <span class="commit-badge" style="background:#EF4444">fix</span>
+  <span class="commit-msg">fix(ci): bypass permissions for headless CI execution</span>
+  <span class="commit-date">2026-03-09</span>
+</div>
+<div class="commit-line">
+  <span class="commit-hash">f8f94e9</span>
+  <span class="commit-badge" style="background:#EF4444">fix</span>
+  <span class="commit-msg">fix(ci): enable debug and full output to diagnose OAuth failure</span>
   <span class="commit-date">2026-03-08</span>
 </div>
 <div class="commit-line">
-  <span class="commit-hash">c910874</span>
-  <span class="commit-badge" style="background:#10B981">feat</span>
-  <span class="commit-msg">feat(globe): fix ship visibility + expand satellite tracking to 6 grou</span>
-  <span class="commit-date">2026-03-08</span>
-</div>
-<div class="commit-line">
-  <span class="commit-hash">1b46b2a</span>
-  <span class="commit-badge" style="background:#94a3b8">chore</span>
-  <span class="commit-msg">chore(data): nightly AI update 2026-03-08T06:22:50Z</span>
-  <span class="commit-date">2026-03-08</span>
-</div>
-<div class="commit-line">
-  <span class="commit-hash">90d7b14</span>
-  <span class="commit-badge" style="background:#94a3b8">chore</span>
-  <span class="commit-msg">chore(data): nightly AI update 2026-03-08T00:32:10Z</span>
+  <span class="commit-hash">d9336a2</span>
+  <span class="commit-badge" style="background:#EF4444">fix</span>
+  <span class="commit-msg">fix(globe): push info panel and intel feed below header/KPI strip</span>
   <span class="commit-date">2026-03-08</span>
 </div>
 <h3 style='margin-top:16px'>Changelog (Unreleased)</h3>
 <div class="changelog-cats">
-<span class="changelog-cat">Added: 10 items</span>
+<span class="changelog-cat">Fixed: 5 items</span>
+<span class="changelog-cat">Added: 22 items</span>
 </div>
 <h3 style='margin-top:16px'>Agent Memory Snippets</h3>
 <div style="margin-bottom:4px"><span style="color:#fff;font-weight:600">agent-triforce-centinela-qa</span></div>
@@ -752,6 +755,6 @@ tr:last-child td { border-bottom: none; }
 <div class="cl-breakdown">
 </div>
 </div>
-<div class="gen-time">Generated 2026-03-08 16:43:48 by tools/dashboard.py</div>
+<div class="gen-time">Generated 2026-03-10 00:44:10 by tools/dashboard.py</div>
 </body>
 </html>
