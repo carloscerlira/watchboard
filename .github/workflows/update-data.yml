@@ -75,13 +75,25 @@ jobs:
             - Update meta.json with current timestamp
 
             After updating, verify the changes by reading back modified files to confirm valid JSON.
+
+            IMPORTANT: Do NOT commit or push changes yourself. Just edit the files. The workflow will handle git operations.
           claude_args: "--max-turns 50 --dangerously-skip-permissions"
 
       - name: Check for changes
         id: changes
         run: |
+          echo "=== Git status ==="
+          git status --short src/data/
           git add src/data/
-          git diff --cached --quiet src/data/ && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+          echo "=== Staged changes ==="
+          git diff --cached --name-only src/data/
+          if git diff --cached --quiet src/data/; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected, will commit"
+          fi
 
       - name: Commit and push
         if: steps.changes.outputs.changed == 'true'
