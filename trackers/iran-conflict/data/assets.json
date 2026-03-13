@@ -68,5 +68,19 @@
     "name": "~50,000 regional",
     "detail": "Kuwait, Qatar, UAE, Bahrain bases",
     "lastUpdated": "2026-03-08T21:56:37.543Z"
+  },
+  {
+    "id": "kc135_stratotanker",
+    "type": "Tanker (lost)",
+    "name": "KC-135 Stratotanker — Crashed Mar 13",
+    "detail": "4th US aircraft lost in conflict. Crashed in western Iraq supporting Epic Fury ops. CENTCOM: 'not due to hostile or friendly fire.' Islamic Resistance in Iraq claims shootdown. 6 crew onboard, no ejection seats.",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "french_carrier_cdg",
+    "type": "Carrier",
+    "name": "French Aircraft Carrier (CDG)",
+    "detail": "French carrier joined US CENTCOM area. Pro-Iranian Iraq groups threatened French interests. French soldier CWO Arnaud Frion killed in Mala Qara base drone strike Mar 13.",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
   }
 ]

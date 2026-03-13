@@ -3463,5 +3463,120 @@
     "time": "20:00",
     "notes": "Continued Hezbollah rocket salvos at northern Israel. Lebanon death toll: 634+, 800K displaced.",
     "lastUpdated": "2026-03-13T05:50:55.000Z"
+  },
+  {
+    "id": "iran_palmachim_ovda_mar13",
+    "from": [
+      51.39,
+      35.69
+    ],
+    "to": [
+      34.69,
+      31.9
+    ],
+    "cat": "retaliation",
+    "label": "Iran → Palmachim / Ovda Airbases (Most Intense Barrage)",
+    "date": "2026-03-13",
+    "weaponType": "ballistic",
+    "confidence": "high",
+    "launched": 60,
+    "intercepted": 40,
+    "status": "partial",
+    "time": "03:00",
+    "notes": "Iran's 'most intense operation since beginning of war.' Targets: Palmachim Airbase, Ovda Airbase, Shin Bet HQ. 58 Israelis hospitalized. Most advanced ballistic missiles deployed.",
+    "casualties": "58 hospitalized",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "iran_shinbet_hq_mar13",
+    "from": [
+      51.39,
+      35.69
+    ],
+    "to": [
+      34.8,
+      32.07
+    ],
+    "cat": "retaliation",
+    "label": "Iran → Shin Bet HQ, Tel Aviv",
+    "date": "2026-03-13",
+    "weaponType": "ballistic",
+    "confidence": "medium",
+    "launched": 15,
+    "intercepted": 10,
+    "status": "partial",
+    "time": "03:30",
+    "notes": "IRGC claimed direct strike on Shin Bet (internal security) headquarters in central Israel as part of most intense barrage of the war.",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "iran_basra_tankers_mar13",
+    "from": [
+      56.28,
+      27.18
+    ],
+    "to": [
+      47.85,
+      29.95
+    ],
+    "cat": "retaliation",
+    "label": "Iran Underwater Drones → Basra (Safesea Vishnu + Zefyros)",
+    "date": "2026-03-13",
+    "weaponType": "drone",
+    "confidence": "high",
+    "launched": 2,
+    "intercepted": 0,
+    "status": "hit",
+    "time": "22:00",
+    "notes": "Iran launched underwater drone 'suicide boats' against US-owned MV Safesea Vishnu and MV Zefyros in Iraqi waters near Basra. First oil-related strike in Iraq's territorial waters. 1 Indian crew member killed, 25 total crew rescued. Iraq oil terminals suspended operations.",
+    "casualties": "1 Indian crew member killed; 25 rescued",
+    "damage": "Both tankers set ablaze; Iraq oil terminals suspended",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "iran_kuwait_airport_mar13",
+    "from": [
+      51.39,
+      35.69
+    ],
+    "to": [
+      47.97,
+      29.23
+    ],
+    "cat": "retaliation",
+    "label": "Iran Drones → Kuwait International Airport",
+    "date": "2026-03-13",
+    "weaponType": "drone",
+    "confidence": "high",
+    "launched": 6,
+    "intercepted": 4,
+    "status": "partial",
+    "time": "05:00",
+    "notes": "Multiple drones targeted Kuwait International Airport, causing material damage to runway infrastructure. 6 electricity transmission lines went out after intercepted drone debris fell on power infrastructure. Earlier a drone struck a residential building wounding 2.",
+    "damage": "Material damage to airport; 6 electricity lines disrupted",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "iran_salalah_drone_mar13",
+    "from": [
+      56.28,
+      27.18
+    ],
+    "to": [
+      54.0,
+      17.0
+    ],
+    "cat": "retaliation",
+    "label": "Iran Drone → Salalah Port (Oman Fuel Tanks)",
+    "date": "2026-03-13",
+    "weaponType": "drone",
+    "confidence": "high",
+    "launched": 2,
+    "intercepted": 0,
+    "status": "hit",
+    "time": "07:00",
+    "notes": "Drone attack damaged several fuel storage tanks at Port of Salalah, Oman. Condemned by Qatar as 'dangerous escalation.' Oman's navy separately rescued 20 sailors from a Thai-flagged vessel attacked in the Strait of Hormuz.",
+    "damage": "Fuel tanks at Salalah port set ablaze",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
   }
 ]

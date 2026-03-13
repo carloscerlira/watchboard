@@ -446,5 +446,33 @@
     },
     "resolution": "CONTESTED — Reserve release announced but oil still above $100/bbl. Insufficient to fully offset 20M bbl/day normally transiting Hormuz if blockade continues.",
     "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "kc135_shootdown",
+    "question": "Was the US KC-135 tanker crash in Iraq due to hostile fire?",
+    "sideA": {
+      "label": "US CENTCOM",
+      "text": "The incident that downed a KC-135 Stratotanker occurred in 'friendly airspace' and was 'not due to hostile or friendly fire.' A rescue operation was launched for the 6 crew members onboard."
+    },
+    "sideB": {
+      "label": "Islamic Resistance in Iraq",
+      "text": "Claimed responsibility for shooting down the US KC-135 aircraft with 'the appropriate weapon' over western Iraq during Operation Epic Fury."
+    },
+    "resolution": "CONTESTED — CENTCOM denies hostile fire while Iran-backed Iraqi militias claim credit. Cause of crash unverified independently; investigation ongoing. No ejection seats on KC-135 compounds crew survival concerns.",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "iran_iraq_oil_terminals",
+    "question": "Did Iran's attack on tankers near Basra trigger a halt to Iraqi oil exports?",
+    "sideA": {
+      "label": "Bloomberg / Iraq state oil marketer (SOMO)",
+      "text": "Iraq's state oil marketer confirmed southern oil export terminals suspended operations following Iranian underwater drone attacks on tankers Safesea Vishnu and Zefyros in Iraqi territorial waters near Basra."
+    },
+    "sideB": {
+      "label": "Iranian Government",
+      "text": "Iran confirmed the operation, stating underwater drones 'blew up two oil tankers in the Persian Gulf.' Iran claimed vessels were US-owned and legitimate military targets, making no reference to Iraqi civilian export infrastructure."
+    },
+    "resolution": "CONFIRMED — Iraqi oil terminal suspension verified. First oil-related attack in Iraqi waters during the conflict. Iraq exports ~3.3M bbl/day; disruption compounds global supply crisis.",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
   }
 ]

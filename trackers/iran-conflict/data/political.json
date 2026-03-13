@@ -304,5 +304,23 @@
     "initial": "MP",
     "quote": "Iran would consider ending the war if three conditions are met: recognition of Tehran's legitimate rights, payment of reparations, and firm international guarantees against future aggression. That we surrender unconditionally is a dream they must take with themselves to the grave.",
     "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "macron",
+    "name": "Emmanuel Macron",
+    "role": "President of France",
+    "avatar": "other",
+    "initial": "EM",
+    "quote": "France lost a soldier today. Chief Warrant Officer Arnaud Frion was killed in a drone attack on our base in Iraqi Kurdistan. This attack is unacceptable. Our troops were there to fight ISIS, not to be targets. France will respond to this provocation with resolve.",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "trump_day14",
+    "name": "Donald Trump",
+    "role": "US President — Day 14 Update",
+    "avatar": "us",
+    "initial": "DT",
+    "quote": "The war is going very well. Iran is losing badly. A KC-135 went down — we are looking into it — but the war is essentially won. There is nothing left in Iran to hit of significance. We are waiting for Iran to come to the table. Unconditional surrender is the only option.",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
   }
 ]

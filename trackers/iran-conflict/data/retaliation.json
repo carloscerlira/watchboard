@@ -346,5 +346,41 @@
     "time": "Mar 12",
     "tier": 2,
     "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "iran_most_intense_barrage_mar13",
+    "name": "Iran — Most Intense Missile Barrage (Palmachim, Ovda, Shin Bet HQ)",
+    "detail": "IRGC launched its 'most intense operation since beginning of war,' targeting Palmachim Airbase south of Tel Aviv, Ovda Airbase (Negev), and Shin Bet HQ in central Israel with advanced ballistic missiles. 58 Israelis hospitalized. Blasts heard over Jerusalem.",
+    "icon": "retaliation",
+    "time": "Mar 13",
+    "tier": 2,
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "iran_safesea_vishnu_basra_mar13",
+    "name": "Iran Underwater Drones — Safesea Vishnu + Zefyros (Iraqi Waters, Basra)",
+    "detail": "Iran used underwater suicide drones to strike US-owned MV Safesea Vishnu and MV Zefyros in Iraqi territorial waters near Basra. 1 Indian crew killed, 25 rescued. First oil-related attack in Iraqi waters. Iraq suspended oil terminal operations.",
+    "icon": "retaliation",
+    "time": "Mar 13",
+    "tier": 1,
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "iran_drone_french_base_makhmour_mar13",
+    "name": "Iran Drone — French Base, Mala Qara, Iraqi Kurdistan",
+    "detail": "Iranian drone strike on joint French-Peshmerga base at Mala Qara (Makhmour, ~40km from Erbil). 1 French soldier killed (CWO Arnaud Frion, 7th Chasseurs Alpins), 5 injured. First French combat death of the war. Italy also withdraws troops after separate Erbil base strike.",
+    "icon": "casualty",
+    "time": "Mar 13",
+    "tier": 1,
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "iran_kuwait_airport_drones_mar13",
+    "name": "Kuwait International Airport — Drone Attack",
+    "detail": "Iranian drones targeted Kuwait International Airport, causing material damage. 6 electricity transmission lines disrupted by debris from intercepted drones. Earlier residential building in Kuwait City struck, wounding 2.",
+    "icon": "retaliation",
+    "time": "Mar 13",
+    "tier": 1,
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
   }
 ]

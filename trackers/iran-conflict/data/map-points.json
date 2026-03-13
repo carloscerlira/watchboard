@@ -1645,9 +1645,53 @@
     "lat": 33.5,
     "cat": "asset",
     "label": "KC-135 Crash Site — Western Iraq",
-    "sub": "US Air Force KC-135 tanker crashed in western Iraq supporting Iran ops. 6 crew missing. Not due to hostile fire. First KC-135 loss in 13 years.",
+    "sub": "US Air Force KC-135 tanker crashed in western Iraq supporting Iran ops. 6 crew missing. Not due to hostile fire per CENTCOM; Islamic Resistance in Iraq claims shootdown. First KC-135 loss in 13 years.",
     "tier": 1,
     "date": "2026-03-13",
-    "lastUpdated": "2026-03-13T05:50:55.000Z"
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "palmachim_airbase_mar13",
+    "lon": 34.69,
+    "lat": 31.9,
+    "cat": "retaliation",
+    "label": "Palmachim Airbase — Iran Strike",
+    "sub": "Iranian IRGC targeted Palmachim Airbase (Israel) in 'most intense operation since beginning of war.' Advanced ballistic missiles deployed. 58 Israelis hospitalized.",
+    "tier": 2,
+    "date": "2026-03-13",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "ovda_airbase_mar13",
+    "lon": 34.87,
+    "lat": 29.94,
+    "cat": "retaliation",
+    "label": "Ovda Airbase (Negev) — Iran Strike",
+    "sub": "IRGC claimed targeting of Ovda Air Base in southern Israel's Negev desert as part of most intense missile barrage of the war.",
+    "tier": 2,
+    "date": "2026-03-13",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "basra_tankers_mar13",
+    "lon": 47.85,
+    "lat": 29.95,
+    "cat": "retaliation",
+    "label": "Basra — Tanker Attack (Iraqi Waters)",
+    "sub": "Iran underwater drones struck MV Safesea Vishnu (US-owned, Marshall Islands) and MV Zefyros in Iraqi territorial waters near Basra. 1 Indian crew member killed, 25 rescued. First oil-strike in Iraqi waters. Iraq oil terminals suspended.",
+    "tier": 1,
+    "date": "2026-03-13",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "kuwait_airport_mar13",
+    "lon": 47.97,
+    "lat": 29.23,
+    "cat": "retaliation",
+    "label": "Kuwait International Airport — Drone Attack",
+    "sub": "Iranian drones targeted Kuwait International Airport causing material damage. 6 electricity transmission lines disrupted after intercepted drone debris struck power infrastructure.",
+    "tier": 1,
+    "date": "2026-03-13",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
   }
 ]

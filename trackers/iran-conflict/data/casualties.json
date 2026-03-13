@@ -90,12 +90,12 @@
   {
     "id": "lebanon",
     "category": "Lebanon",
-    "killed": "634+",
+    "killed": "687+",
     "injured": "1,586+",
-    "source": "Lebanese health authorities / gov disaster management office",
+    "source": "Lebanese health authorities / Lebanon Information Ministry",
     "tier": 2,
     "contested": "evolving",
-    "note": "634 killed including 91 children and 47 women; 275 children wounded. 800,000+ displaced (up from 750,000). Hezbollah launched largest rocket barrage of war on March 12 (joint IRGC-Hezbollah attack — 50+ Israeli targets). Lebanese PM Nawaf Salam: Lebanon 'sought by all means to avoid' the conflict. Israeli DM Katz warns Israel will 'take the territory' if Lebanon cannot control Hezbollah.",
+    "note": "687 killed including 98 children and 47 women. 800,000+ displaced. Hezbollah continues joint IRGC-Hezbollah rocket barrages against northern Israel. Lebanese PM Nawaf Salam: Lebanon 'sought by all means to avoid' the conflict. Israeli DM Katz warns Israel will 'take the territory' if Lebanon cannot control Hezbollah.",
     "lastUpdated": "2026-03-13T06:00:00.000Z"
   },
   {
@@ -119,6 +119,28 @@
     "contested": "evolving",
     "note": "Includes 4 Popular Mobilization Forces fighters killed; 3 injured.",
     "lastUpdated": "2026-03-08T21:56:37.543Z"
+  },
+  {
+    "id": "france_iraq",
+    "category": "France (Iraq base)",
+    "killed": "1",
+    "injured": "5",
+    "source": "President Macron / France 24",
+    "tier": 1,
+    "contested": "no",
+    "note": "Chief Warrant Officer Arnaud Frion, 7th Battalion of Chasseurs Alpins (Varces), killed in Iranian drone strike on joint French-Peshmerga base at Mala Qara, Makhmour district (40km from Erbil), March 13. First French combat fatality. Macron called it 'unacceptable.'",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "tanker_crew",
+    "category": "Maritime (tanker crews)",
+    "killed": "3+",
+    "injured": "—",
+    "source": "Deccan Herald / Bloomberg / Oman MOI",
+    "tier": 2,
+    "contested": "evolving",
+    "note": "1 Indian crew member killed aboard MV Safesea Vishnu (Basra, Mar 13); 1 crew killed off Oman coast (Mar 1); 1 other in earlier Hormuz attack. 25+ crew rescued in Basra attacks. 16 ships struck in Gulf total.",
+    "lastUpdated": "2026-03-13T06:00:00.000Z"
   },
   {
     "id": "prewar_protests",
