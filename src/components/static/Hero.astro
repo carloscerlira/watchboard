@@ -7,6 +7,18 @@ interface Props {
 
 const { meta } = Astro.props;
 
+/** Strip HTML tags and decode common entities for safe text display */
+const cleanText = (s: string) =>
+  s.replace(/<[^>]+>/g, ' ')
+   .replace(/&amp;/g, '&')
+   .replace(/&lt;/g, '<')
+   .replace(/&gt;/g, '>')
+   .replace(/&quot;/g, '"')
+   .replace(/&#39;/g, "'")
+   .replace(/&middot;/g, '·')
+   .replace(/\s{2,}/g, ' ')
+   .trim();
+
 const updatedDate = new Date(meta.lastUpdated);
 const timeAgo = (() => {
   const now = new Date();
@@ -27,6 +39,6 @@ const formattedDate = updatedDate.toISOString().split('T')[0];
       UPDATED {timeAgo} &middot; {formattedDate}
     </span>
   </div>
-  <h1>{meta.heroHeadline}</h1>
+  <h1>{cleanText(meta.heroHeadline)}</h1>
   <p class="hero-subtitle">{meta.heroSubtitle}</p>
 </section>
