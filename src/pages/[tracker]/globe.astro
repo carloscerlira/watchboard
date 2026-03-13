@@ -24,9 +24,11 @@ interface Props {
 const { config } = Astro.props;
 const data = loadTrackerData(config.slug, config.eraLabel);
 const events = flattenTimelineEvents(data.timeline);
+const base = import.meta.env.BASE_URL;
+const basePath = base.endsWith('/') ? base : `${base}/`;
 ---
 <BaseLayout title={`3D Intelligence Globe — ${config.shortName}`} trackerSlug={config.slug}>
-  <a href={`/${config.slug}/`} class="globe-back-link">&larr; Dashboard</a>
-  <a href={`/${config.slug}/about/`} class="globe-about-link">About</a>
+  <a href={`${basePath}${config.slug}/`} class="globe-back-link">&larr; Dashboard</a>
+  <a href={`${basePath}${config.slug}/about/`} class="globe-about-link">About</a>
   <CesiumGlobe client:only="react" points={data.mapPoints} lines={data.mapLines} kpis={data.kpis} meta={data.meta} events={events} />
 </BaseLayout>

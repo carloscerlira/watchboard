@@ -850,6 +850,20 @@ Return [] if nothing new.`,
     const LineSchema = MapLineSchema.omit({ lastUpdated: true }).extend({ lastUpdated: z.string().optional() });
     const validItems = validateItemwise(parsed, LineSchema, 'map-lines');
 
+    // Enforce time + weaponType on strike/retaliation lines
+    for (const l of validItems) {
+      if (l.cat === 'strike' || l.cat === 'retaliation') {
+        if (!l.weaponType) {
+          console.warn(`[map-lines] ${l.id} missing weaponType for ${l.cat}, defaulting to "unknown"`);
+          (l as any).weaponType = 'unknown';
+        }
+        if (!l.time) {
+          console.warn(`[map-lines] ${l.id} missing time for ${l.cat}, defaulting to "12:00"`);
+          (l as any).time = '12:00';
+        }
+      }
+    }
+
     // Filter duplicates and out-of-bounds
     const newLines = validItems
       .filter(l => !existingIds.has(l.id))

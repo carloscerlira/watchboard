@@ -5,6 +5,8 @@ import { loadAllTrackers } from '../lib/tracker-registry';
 const trackers = loadAllTrackers();
 const active = trackers.filter(t => t.status === 'active');
 const archived = trackers.filter(t => t.status === 'archived');
+const base = import.meta.env.BASE_URL;
+const basePath = base.endsWith('/') ? base : `${base}/`;
 ---
 <BaseLayout title="Intel Dashboard — Event Tracker Platform">
   <main class="index-page">
@@ -18,7 +20,7 @@ const archived = trackers.filter(t => t.status === 'archived');
         <h2 class="section-label">Active Trackers</h2>
         <div class="tracker-grid">
           {active.map(t => (
-            <a href={`/${t.slug}/`} class="tracker-card" style={`--card-accent: ${t.color || '#3498db'}`}>
+            <a href={`${basePath}${t.slug}/`} class="tracker-card" style={`--card-accent: ${t.color || '#3498db'}`}>
               <div class="tracker-card-header">
                 <span class="tracker-icon">{t.icon || ''}</span>
                 <span class="tracker-status active">LIVE</span>
@@ -41,7 +43,7 @@ const archived = trackers.filter(t => t.status === 'archived');
         <h2 class="section-label">Archived</h2>
         <div class="tracker-grid">
           {archived.map(t => (
-            <a href={`/${t.slug}/`} class="tracker-card archived" style={`--card-accent: ${t.color || '#6b7280'}`}>
+            <a href={`${basePath}${t.slug}/`} class="tracker-card archived" style={`--card-accent: ${t.color || '#6b7280'}`}>
               <div class="tracker-card-header">
                 <span class="tracker-icon">{t.icon || ''}</span>
                 <span class="tracker-status archived">ARCHIVED</span>
