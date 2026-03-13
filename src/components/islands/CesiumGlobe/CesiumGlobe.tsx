@@ -380,7 +380,7 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [] }: 
   useConflictData(cesiumViewer, filteredPoints, pastLines, handlePointSelect);
 
   // ── Current-date arcs + animated missiles ──
-  useMissiles(cesiumViewer, currentLines, currentDate, isPlaying, simTimeRef, playbackSpeed);
+  useMissiles(cesiumViewer, currentLines, currentDate, isPlaying);
 
   // ── Satellite targets — strike/retaliation points for targeting lines ──
   const satTargets = useMemo(
