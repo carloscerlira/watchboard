@@ -2,8 +2,8 @@
   {
     "id": "brent_crude",
     "label": "Brent Crude",
-    "value": "~$100/bbl",
-    "change": "+28.7% (crisis)",
+    "value": "~$103/bbl",
+    "change": "+32.5% (crisis)",
     "direction": "up",
     "sparkData": [
       77.74,
@@ -15,11 +15,12 @@
       112.98,
       79.5,
       90.2,
-      100.5
+      100.5,
+      103.0
     ],
     "color": "#e74c3c",
     "source": "Reuters / Al Jazeera / CNBC / Euronews",
-    "lastUpdated": "2026-03-13T06:00:00.000Z"
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
   },
   {
     "id": "wti_crude",
@@ -129,8 +130,8 @@
   {
     "id": "gas_price_us",
     "label": "US Gas Price",
-    "value": "$3.54/gal",
-    "change": "+17% since Feb 28",
+    "value": "$4.10+/gal",
+    "change": "+39% since Feb 28",
     "direction": "up",
     "sparkData": [
       2.95,
@@ -140,11 +141,13 @@
       3.35,
       3.4,
       3.45,
-      3.54
+      3.54,
+      3.75,
+      4.10
     ],
     "color": "#e74c3c",
-    "source": "NPR / AAA",
-    "lastUpdated": "2026-03-11T06:00:00.000Z"
+    "source": "NPR / AAA / Reuters",
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
   },
   {
     "id": "iea_reserve_release",

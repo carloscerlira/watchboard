@@ -322,5 +322,14 @@
     "initial": "DT",
     "quote": "The war is going very well. Iran is losing badly. A KC-135 went down — we are looking into it — but the war is essentially won. There is nothing left in Iran to hit of significance. We are waiting for Iran to come to the table. Unconditional surrender is the only option.",
     "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "pentagon_day15",
+    "name": "Pentagon Spokesperson",
+    "role": "US Department of Defense — Day 15",
+    "avatar": "us",
+    "initial": "DoD",
+    "quote": "We are ramping up the military campaign against Iran. Today's strike on Kharg Island sends a clear message: Iran's ability to fund its aggression will not be spared. Oil facilities that sustain Iran's war machine are legitimate military targets. The campaign continues until Iran's unconditional surrender.",
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
   }
 ]

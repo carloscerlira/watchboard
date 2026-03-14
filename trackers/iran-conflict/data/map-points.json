@@ -96,10 +96,10 @@
     "lat": 29.59,
     "cat": "strike",
     "label": "Shiraz",
-    "sub": "Air base and military facilities targeted",
+    "sub": "Shahid Dastghaib air base + underground ballistic missile production/storage struck Mar 13. IRIAF southern Iran hub for drone/missile operations.",
     "tier": 2,
-    "date": "2026-02-28",
-    "lastUpdated": "2026-03-06T06:21:53.605Z"
+    "date": "2026-03-13",
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
   },
   {
     "id": "parchin",
@@ -206,10 +206,10 @@
     "lat": 31.32,
     "cat": "strike",
     "label": "Ahvaz",
-    "sub": "IRGC regional command, Khuzestan province. Adjacent civilian neighborhood damaged; 14 civilians killed per IRNA.",
+    "sub": "IRGC Ground Forces HQ and internal security HQ struck Mar 13. Adjacent civilian neighborhood damaged; 14 civilians killed per IRNA (Mar 1 strike). Key oil region bordering Iraq.",
     "tier": 2,
-    "date": "2026-03-01",
-    "lastUpdated": "2026-03-06T06:21:53.605Z"
+    "date": "2026-03-13",
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
   },
   {
     "id": "mashhad",
@@ -239,10 +239,11 @@
     "lat": 29.23,
     "cat": "strike",
     "label": "Kharg Island",
-    "sub": "Iran's main oil export terminal. Warning strikes on loading berths; no direct hit on storage tanks. 90% of Iran's oil exports transit here.",
+    "sub": "Iran's main oil export terminal — handles ~90% of crude exports. Initial warning strikes Mar 3; full US strike on loading infrastructure Mar 14 (Pentagon 'ramp up'). Most significant economic strike of the war.",
     "tier": 1,
-    "date": "2026-03-03",
-    "lastUpdated": "2026-03-06T05:57:54.619Z"
+    "date": "2026-03-14",
+    "showLabel": true,
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
   },
   {
     "id": "dubai",

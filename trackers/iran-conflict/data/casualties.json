@@ -3,12 +3,12 @@
     "id": "iran_strikes",
     "category": "Iran (strikes)",
     "killed": "2,800+",
-    "injured": "17,000+",
-    "source": "Al Jazeera / HRANA / Hengaw / Iranian Red Crescent",
-    "tier": 2,
+    "injured": "18,551+",
+    "source": "Iran Health Ministry / HRANA / Hengaw / Iranian Red Crescent",
+    "tier": 1,
     "contested": "yes",
-    "note": "Iranian Red Crescent: 1,348+ civilians killed, 17,000+ injured. Iran UN ambassador: ~10,000 civilian sites struck (8,000 residential, schools, medical facilities). HRANA: 2,400+ incl. 181+ children. Hengaw: 4,300+ total first 10 days. 3.2M Iranians displaced per UNHCR. 6,000+ targets struck (CENTCOM). Internet blackout 290+ hrs (~1% connectivity) severely limits verification.",
-    "lastUpdated": "2026-03-13T06:00:00.000Z"
+    "note": "Iran Health Ministry (official): 1,444+ killed, 18,551+ injured as of Mar 14. HRANA NGO: 2,800+ incl. 181+ children. Hengaw: 4,300+ total first 10 days. Iran UN ambassador: ~10,000 civilian sites struck. Pentagon denies targeting civilian infrastructure. 3.2M Iranians displaced per UNHCR. 6,000+ targets struck (CENTCOM). Internet blackout 290+ hrs (~1% connectivity) severely limits independent verification.",
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
   },
   {
     "id": "iran_minab_school",
@@ -46,24 +46,24 @@
   {
     "id": "us_service_members",
     "category": "US service members",
-    "killed": "8",
+    "killed": "13",
     "injured": "140+",
-    "source": "Pentagon",
+    "source": "Pentagon / Time / NPR",
     "tier": 1,
     "contested": "no",
-    "note": "8 KIA confirmed. ~140 total wounded per Pentagon (Mar 11): 'vast majority minor, 108 have returned to duty, 8 severely injured.' 6 Army Reserve killed in Kuwait drone strike (Feb 28); Sgt. Benjamin N. Pennington (1st Space Brigade, died Mar 8 from wounds at Prince Sultan AB); 1 additional casualty.",
-    "lastUpdated": "2026-03-11T06:00:00.000Z"
+    "note": "13 KIA confirmed as of Mar 14 (Time Mar 10; NPR Mar 2). Includes: 6 Army Reserve killed in Kuwait drone strike (Feb 28); Sgt. Benjamin N. Pennington (1st Space Brigade, died Mar 8 from wounds at Prince Sultan AB); 6 KC-135 crew (crashed Iraq Mar 13 — rescue op ongoing, presumed killed). ~140 total wounded; vast majority minor, 108 returned to duty.",
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
   },
   {
     "id": "israel_retaliation",
     "category": "Israel (retaliation)",
-    "killed": "14+",
-    "injured": "2,142+",
+    "killed": "15+",
+    "injured": "2,000+",
     "source": "Al Jazeera / Israeli health authorities",
     "tier": 2,
     "contested": "evolving",
-    "note": "Includes 9 killed at Beit Shemesh synagogue; 2 civilians killed by Iranian cluster warhead missile in Yehud on March 10; missile strikes on Tel Aviv, Jerusalem, Yehud, and central Israel. 174+ attack waves recorded since Feb 28.",
-    "lastUpdated": "2026-03-10T12:00:00.000Z"
+    "note": "15 killed in Israel from Iranian missile/drone attacks. Includes 9 killed at Beit Shemesh synagogue; 2 civilians killed by Iranian cluster warhead missile in Yehud (Mar 10); 58 hospitalized in most intense barrage (Mar 13, targeting Palmachim Airbase, Ovda Airbase, Shin Bet HQ). 174+ attack waves recorded since Feb 28.",
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
   },
   {
     "id": "uae",
@@ -90,13 +90,13 @@
   {
     "id": "lebanon",
     "category": "Lebanon",
-    "killed": "687+",
+    "killed": "773+",
     "injured": "1,586+",
     "source": "Lebanese health authorities / Lebanon Information Ministry",
     "tier": 2,
     "contested": "evolving",
-    "note": "687 killed including 98 children and 47 women. 800,000+ displaced. Hezbollah continues joint IRGC-Hezbollah rocket barrages against northern Israel. Lebanese PM Nawaf Salam: Lebanon 'sought by all means to avoid' the conflict. Israeli DM Katz warns Israel will 'take the territory' if Lebanon cannot control Hezbollah.",
-    "lastUpdated": "2026-03-13T06:00:00.000Z"
+    "note": "773 killed including 98 children and 47 women. 800,000+ displaced. Hezbollah continues joint IRGC-Hezbollah rocket barrages against northern Israel. Lebanese PM Nawaf Salam: Lebanon 'sought by all means to avoid' the conflict. Israeli DM Katz warns Israel will 'take the territory' if Lebanon cannot control Hezbollah.",
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
   },
   {
     "id": "qatar",

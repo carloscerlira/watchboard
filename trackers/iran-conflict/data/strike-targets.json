@@ -448,5 +448,32 @@
     "time": "Mar 13",
     "tier": 1,
     "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "shiraz_dastghaib_missile_production",
+    "name": "Shahid Dastghaib AB + Underground Missile Production — Shiraz",
+    "detail": "IDF struck underground ballistic missile production and storage facilities in Shiraz alongside the Shahid Dastghaib air base (Mar 13). One of Iran's key remaining missile production nodes in southern Iran. Follows 80% destruction of missile launchers by Mar 9.",
+    "icon": "target",
+    "time": "Mar 13",
+    "tier": 2,
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
+  },
+  {
+    "id": "ahvaz_irgc_ground_forces_hq_mar13",
+    "name": "IRGC Ground Forces HQ + Internal Security HQ — Ahvaz",
+    "detail": "IDF struck IRGC Ground Forces headquarters and an internal security headquarters in Ahvaz, Khuzestan Province (Mar 13). Khuzestan is Iran's oil heartland bordering Iraq. Strike eliminates southwestern regional command node.",
+    "icon": "target",
+    "time": "Mar 13",
+    "tier": 2,
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
+  },
+  {
+    "id": "kharg_island_mar14",
+    "name": "Kharg Island Oil Export Terminal — Full Strike",
+    "detail": "US forces bombed Kharg Island (Mar 14), Iran's primary oil export terminal responsible for ~90% of crude exports. Initial warning strikes were conducted Mar 3. The Mar 14 strike directly targets Iran's economic lifeline. Pentagon vowed to 'ramp up' the campaign. Analysts warn of potential $200/bbl oil prices.",
+    "icon": "target",
+    "time": "Mar 14",
+    "tier": 1,
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
   }
 ]

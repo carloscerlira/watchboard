@@ -462,6 +462,20 @@
     "lastUpdated": "2026-03-13T06:00:00.000Z"
   },
   {
+    "id": "kharg_island_oil_target",
+    "question": "Is the US strike on Kharg Island a legitimate military target or an attack on civilian infrastructure?",
+    "sideA": {
+      "label": "Pentagon / US Administration",
+      "text": "Kharg Island oil infrastructure funds Iran's war machine and is a legitimate military-economic target. The US warned oil facilities would be targeted if Iran did not end the Hormuz blockade. 'Ramping up' the campaign is necessary to end the conflict faster."
+    },
+    "sideB": {
+      "label": "Iran / UN / International Community",
+      "text": "Kharg Island is civilian energy infrastructure. Striking it constitutes economic warfare targeting Iran's entire population. Iran warns the strike will push oil to $200/bbl and devastate global energy markets. UN Charter prohibits deliberate destruction of civilian economic infrastructure."
+    },
+    "resolution": "CONTESTED — Pentagon frames as military-economic target; international law experts and Iran condemn it as unlawful attack on civilian infrastructure. Kharg handles 90%+ of Iran's crude exports.",
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
+  },
+  {
     "id": "iran_iraq_oil_terminals",
     "question": "Did Iran's attack on tankers near Basra trigger a halt to Iraqi oil exports?",
     "sideA": {

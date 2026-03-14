@@ -3578,5 +3578,75 @@
     "notes": "Drone attack damaged several fuel storage tanks at Port of Salalah, Oman. Condemned by Qatar as 'dangerous escalation.' Oman's navy separately rescued 20 sailors from a Thai-flagged vessel attacked in the Strait of Hormuz.",
     "damage": "Fuel tanks at Salalah port set ablaze",
     "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "israel_shiraz_missile_production_mar13",
+    "from": [
+      34.78,
+      32.08
+    ],
+    "to": [
+      52.53,
+      29.61
+    ],
+    "cat": "strike",
+    "label": "IDF → Shiraz (Missile Production + Dastghaib AB)",
+    "date": "2026-03-13",
+    "weaponType": "cruise",
+    "platform": "IAF F-35I",
+    "confidence": "medium",
+    "launched": 12,
+    "intercepted": 1,
+    "status": "hit",
+    "time": "03:00",
+    "notes": "IDF struck underground ballistic missile production and storage facilities in Shiraz and Shahid Dastghaib air base. Targets Iran's remaining missile production capacity in southern Iran.",
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
+  },
+  {
+    "id": "israel_ahvaz_irgc_groundforces_mar13",
+    "from": [
+      34.78,
+      32.08
+    ],
+    "to": [
+      48.68,
+      31.32
+    ],
+    "cat": "strike",
+    "label": "IDF → Ahvaz (IRGC Ground Forces HQ)",
+    "date": "2026-03-13",
+    "weaponType": "cruise",
+    "platform": "IAF",
+    "confidence": "medium",
+    "launched": 8,
+    "intercepted": 0,
+    "status": "hit",
+    "time": "04:00",
+    "notes": "Israeli strike on IRGC Ground Forces HQ and internal security HQ in Ahvaz, Khuzestan Province. Region borders Iraq and hosts Iran's main oil production.",
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
+  },
+  {
+    "id": "us_kharg_island_mar14",
+    "from": [
+      60,
+      23
+    ],
+    "to": [
+      50.33,
+      29.23
+    ],
+    "cat": "strike",
+    "label": "US → Kharg Island (Iran's Main Oil Export Terminal)",
+    "date": "2026-03-14",
+    "weaponType": "mixed",
+    "platform": "US CENTCOM / B-1B / Lincoln CSG",
+    "confidence": "high",
+    "launched": 20,
+    "intercepted": 0,
+    "status": "hit",
+    "time": "04:00",
+    "notes": "US bombed Kharg Island — Iran's primary oil export terminal handling ~90% of crude exports. Pentagon vowed to 'ramp up' campaign. Most economically significant infrastructure strike of the war. Analysts warn $200/bbl possible.",
+    "damage": "Kharg Island oil loading infrastructure struck",
+    "lastUpdated": "2026-03-14T06:00:00.000Z"
   }
 ]
