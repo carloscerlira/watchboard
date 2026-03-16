@@ -475,5 +475,14 @@
     "time": "Mar 14",
     "tier": 1,
     "lastUpdated": "2026-03-14T06:00:00.000Z"
+  },
+  {
+    "id": "iran_continued_strikes_day17",
+    "name": "Iran — Continued High-Tempo US-Israel Strikes (Day 17)",
+    "detail": "US-Israel continued high-tempo operations on Day 17 (Mar 16). IDF states 'thousands of targets' remain and operations will continue for 'at least 3 more weeks.' CENTCOM has struck 6,000+ targets across Iran. Trump is actively weighing additional Kharg Island strikes and secondary oil infrastructure (Abadan refinery, Arak). 4,700+ IDF sorties and 380+ strike waves total since Feb 28.",
+    "icon": "target",
+    "time": "Mar 16",
+    "tier": 1,
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
   }
 ]

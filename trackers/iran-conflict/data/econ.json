@@ -131,8 +131,8 @@
   {
     "id": "gas_price_us",
     "label": "US Gas Price",
-    "value": "$4.10+/gal",
-    "change": "+39% since Feb 28",
+    "value": "$4.15+/gal",
+    "change": "+41% since Feb 28",
     "direction": "up",
     "sparkData": [
       2.95,
@@ -144,11 +144,12 @@
       3.45,
       3.54,
       3.75,
-      4.10
+      4.10,
+      4.15
     ],
     "color": "#e74c3c",
     "source": "NPR / AAA / Reuters",
-    "lastUpdated": "2026-03-14T06:00:00.000Z"
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
   },
   {
     "id": "iea_reserve_release",

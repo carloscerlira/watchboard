@@ -2,13 +2,13 @@
   {
     "id": "days_of_conflict",
     "label": "Days of Conflict",
-    "value": "16",
+    "value": "17",
     "color": "red",
     "source": "Al Jazeera",
     "contested": false,
     "delta": "+1",
     "trend": "up",
-    "lastUpdated": "2026-03-15T06:00:00.000Z"
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
   },
   {
     "id": "iran_killed",
@@ -17,10 +17,10 @@
     "color": "red",
     "source": "Al Jazeera / HRANA / Hengaw / Iran Health Ministry",
     "contested": true,
-    "contestNote": "Iran Health Ministry (official floor): 1,444+ killed, 18,551+ injured. HRANA estimates exceed 2,800+ including 181+ children. Hengaw: 4,300+ total in first 10 days. Iran UN ambassador: ~10,000 civilian sites hit. Pentagon denies targeting civilian infrastructure. 3.2M Iranians displaced per UNHCR. Internet blackout (~1% connectivity / 290+ hrs) severely limits verification.",
-    "delta": "+100+",
+    "contestNote": "Iran Health Ministry (official floor): 1,444+ killed, 18,551+ injured. HRANA NGO: 2,800+ incl. 181+ children. Hengaw: 4,300+ total in first 10 days. Iran UN ambassador: ~10,000 civilian sites hit. Pentagon denies targeting civilian infrastructure. 3.2M Iranians displaced per UNHCR. Internet blackout (~1% connectivity / 300+ hrs) severely limits verification.",
+    "delta": "+0",
     "trend": "up",
-    "lastUpdated": "2026-03-14T06:00:00.000Z"
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
   },
   {
     "id": "us_killed",
@@ -29,10 +29,10 @@
     "color": "amber",
     "source": "Pentagon / Time / NPR",
     "contested": false,
-    "delta": "+5",
-    "trend": "up",
-    "deltaNote": "13 KIA confirmed: 6 Army Reserve killed in Kuwait drone strike (Feb 28), Sgt. Benjamin N. Pennington (died Mar 8 from wounds), 6 KC-135 crew (status: crash investigation ongoing). ~140 wounded total.",
-    "lastUpdated": "2026-03-14T06:00:00.000Z"
+    "delta": "0",
+    "trend": "stable",
+    "deltaNote": "13 KIA confirmed: 6 Army Reserve killed in Kuwait drone strike (Feb 28), Sgt. Benjamin N. Pennington (died Mar 8 from wounds), 6 KC-135 crew (names released by Pentagon — crash Mar 13 western Iraq, cause under investigation). ~140 wounded total.",
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
   },
   {
     "id": "israel_killed",
@@ -41,10 +41,10 @@
     "color": "amber",
     "source": "Israeli health authorities / Al Jazeera",
     "contested": false,
-    "delta": "+2",
-    "deltaNote": "15 killed in Israel total. 58 hospitalized in Iran's most intense missile barrage (Mar 13) targeting Palmachim Airbase, Ovda Airbase, Shin Bet HQ. 2,000+ Israelis wounded total.",
-    "trend": "up",
-    "lastUpdated": "2026-03-14T06:00:00.000Z"
+    "delta": "0",
+    "deltaNote": "15 killed in Israel total. Iran 6th wave (Mar 15) targeting Tel Nof AB, Israeli Military HQ, Tel Aviv defense complex — sirens across central Israel, cluster fragments hit Tel Aviv streets, minor casualties. 2,000+ Israelis wounded total.",
+    "trend": "stable",
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
   },
   {
     "id": "gulf_killed",
@@ -55,20 +55,20 @@
     "contested": false,
     "delta": "0",
     "trend": "stable",
-    "lastUpdated": "2026-03-13T06:00:00.000Z",
-    "deltaNote": "6 vessels struck in Persian Gulf in 48 hours (March 11-12). UAE, Bahrain, Kuwait, Saudi Arabia, Oman all struck. Oman fuel depot fire. Bahrain fuel tanks targeted March 12."
+    "lastUpdated": "2026-03-16T06:00:00.000Z",
+    "deltaNote": "16+ vessels struck in Persian Gulf total. All Mar 14 Gulf strikes (UAE: 9 ballistic + 33 UAVs; Saudi: 7 drones; Qatar: 4 ballistic) were fully intercepted. No new Gulf casualties Mar 15-16."
   },
   {
     "id": "lebanon_killed",
     "label": "Lebanon Killed",
-    "value": "773+",
+    "value": "850+",
     "color": "amber",
     "source": "Lebanese health authorities / Lebanon Information Ministry",
     "contested": false,
-    "delta": "+86+",
-    "deltaNote": "773 killed including 98 children and 47 women. 800,000+ displaced. Hezbollah continues rocket barrages at northern Israel. Lebanese PM Nawaf Salam: Lebanon 'did not want' this war. Israeli DM Katz warns Israel will 'take the territory' if Lebanon can't control Hezbollah.",
+    "delta": "+77+",
+    "deltaNote": "850 killed including 107 children and 66 women; 32 health workers killed. 2,100+ injured. 800,000+ displaced. Separate Israel-Lebanon ceasefire track forming (France involved, Ron Dermer leading for Israel). Lebanese PM Nawaf Salam supportive but Hezbollah has not responded.",
     "trend": "up",
-    "lastUpdated": "2026-03-14T06:00:00.000Z"
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
   },
   {
     "id": "brent_crude",
@@ -77,10 +77,10 @@
     "color": "red",
     "source": "Reuters / Al Jazeera / CNBC / Euronews",
     "contested": false,
-    "delta": "+$13",
-    "trend": "up",
-    "lastUpdated": "2026-03-15T06:00:00.000Z",
-    "deltaNote": "Climbed to ~$106/bbl after US Kharg Island strike (Mar 14) — Iran's main oil export terminal. IEA releases record 400M barrels (US: 172M from SPR) insufficient to offset Hormuz blockade + Kharg damage. Iran warns '$200/bbl.' Both US and Iran reject ceasefire, signaling prolonged supply disruption."
+    "delta": "0",
+    "trend": "stable",
+    "lastUpdated": "2026-03-16T06:00:00.000Z",
+    "deltaNote": "Holding near $106/bbl. Trump actively weighing additional Kharg Island strikes and other Iranian energy infrastructure. Iran warns '$200/bbl.' IEA 400M barrel release partially absorbed. Qatar LNG force majeure risk flagged by energy minister."
   },
   {
     "id": "flights_cancelled",
@@ -90,9 +90,9 @@
     "source": "FlightAware / Al Jazeera",
     "contested": false,
     "delta": "0",
-    "deltaNote": "~500 oil tankers stranded in Persian Gulf. Hormuz traffic near-zero. IEA: largest supply disruption in history of global oil market.",
+    "deltaNote": "~500 oil tankers stranded in Persian Gulf. Hormuz traffic near-zero, day 17. Saudi Arabia and UAE diverting via Yanbu/Fujairah pipelines but ~12M bpd deficit remains. Cape of Good Hope rerouting increasing.",
     "trend": "stable",
-    "lastUpdated": "2026-03-13T06:00:00.000Z"
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
   },
   {
     "id": "countries_affected",
@@ -102,8 +102,8 @@
     "source": "Al Jazeera / Reuters / France 24",
     "contested": false,
     "trend": "stable",
-    "lastUpdated": "2026-03-15T06:00:00.000Z",
+    "lastUpdated": "2026-03-16T06:00:00.000Z",
     "delta": "0",
-    "deltaNote": "Iran, Israel, Lebanon, UAE, Bahrain, Kuwait, Qatar, Saudi Arabia, Oman, Iraq, Jordan, Azerbaijan, Turkey, Cyprus, France. Day 16: Trump and Iran both reject ceasefire mediation. Iran fires 9 ballistic + 33 UAVs at UAE, 7 drones at Saudi Riyadh, 4 ballistic at Qatar (all intercepted). Baghdad US Embassy helipad struck. 16+ vessels struck in Gulf total."
+    "deltaNote": "Iran, Israel, Lebanon, UAE, Bahrain, Kuwait, Qatar, Saudi Arabia, Oman, Iraq, Jordan, Azerbaijan, Turkey, Cyprus, France. Day 17: Arab League condemns Iran attacks on Arab states. UK/France/Germany joint statement. Israel-Lebanon ceasefire track forming. USS George H.W. Bush certifying as potential 3rd carrier."
   }
 ]

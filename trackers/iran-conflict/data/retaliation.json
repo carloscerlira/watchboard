@@ -418,5 +418,14 @@
     "time": "Mar 14",
     "tier": 1,
     "lastUpdated": "2026-03-15T06:00:00.000Z"
+  },
+  {
+    "id": "iran_6th_wave_tel_nof_mar15",
+    "name": "Iran 6th Wave — Tel Nof AB, Israeli Military HQ, Tel Aviv Defense Industry",
+    "detail": "IRGC Aerospace Force announced its 'sixth wave' of retaliatory operations. Targets included Tel Nof Airbase (IAF F-35I home, south of Tel Aviv), the Israeli Military General Headquarters (Kirya, Tel Aviv), and a defense industry complex in central Israel. Sirens blared across central and northern Israel. Cluster missile fragments struck Tel Aviv streets. Iron Dome, David's Sling, and Arrow-3 systems all activated. 58 Israelis taken to hospitals. Total 174+ attack waves conducted against Israel since Feb 28.",
+    "icon": "retaliation",
+    "time": "Mar 15",
+    "tier": 1,
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
   }
 ]

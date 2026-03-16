@@ -349,5 +349,50 @@
     "initial": "VP",
     "quote": "Russia is ready to act as a mediator to find a political and diplomatic solution to the conflict. We urge all parties to show restraint and begin immediate negotiations. The continuation of military operations threatens global stability.",
     "lastUpdated": "2026-03-15T06:00:00.000Z"
+  },
+  {
+    "id": "araghchi_cbs_mar15",
+    "name": "Abbas Araghchi",
+    "role": "Iranian Foreign Minister — CBS Face the Nation, Mar 15",
+    "avatar": "ir",
+    "initial": "AA",
+    "quote": "We never asked for a ceasefire, and we have never asked even for negotiation. We are ready to defend ourselves as long as it takes. Negotiate with the U.S. when we negotiated with them twice, and every time they attacked us in the middle of negotiations?",
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
+  },
+  {
+    "id": "trump_day17",
+    "name": "Donald Trump",
+    "role": "US President — Day 17",
+    "avatar": "us",
+    "initial": "DT",
+    "quote": "Iran is ready to make a deal, but the terms are not good enough yet. I'm hearing their Supreme Leader is not alive — if he is, he should surrender. Other nations need to send warships to keep the Strait of Hormuz open. The US should not carry this burden alone.",
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
+  },
+  {
+    "id": "hegseth_day17",
+    "name": "Pete Hegseth",
+    "role": "Secretary of Defense — Day 17",
+    "avatar": "us",
+    "initial": "PH",
+    "quote": "Iran's new Supreme Leader is likely disfigured. We are not going to stop until Iran surrenders unconditionally. We have thousands of targets remaining and the means to hit all of them. The campaign continues.",
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
+  },
+  {
+    "id": "aboul_gheit_arab_league",
+    "name": "Ahmed Aboul Gheit",
+    "role": "Arab League Secretary-General",
+    "avatar": "other",
+    "initial": "AAG",
+    "quote": "Iran's attacks on Arab states are fully reprehensible and a grave strategic mistake. Arab nations did not ask to be drawn into this conflict. We call on Iran to immediately cease all attacks on its Arab neighbors.",
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
+  },
+  {
+    "id": "starmer_mar15",
+    "name": "Keir Starmer",
+    "role": "Prime Minister of the United Kingdom",
+    "avatar": "other",
+    "initial": "KS",
+    "quote": "The UK condemns Iranian attacks on civilian populations and Arab neighbors. But we do not believe in regime change from the skies. All parties must protect civilians and adhere fully to international law.",
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
   }
 ]

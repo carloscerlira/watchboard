@@ -82,5 +82,12 @@
     "name": "French Aircraft Carrier (CDG)",
     "detail": "French carrier joined US CENTCOM area. Pro-Iranian Iraq groups threatened French interests. French soldier CWO Arnaud Frion killed in Mala Qara base drone strike Mar 13.",
     "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "cvn77_bush",
+    "type": "Carrier (certifying)",
+    "name": "USS George H.W. Bush (CVN-77)",
+    "detail": "Completing pre-deployment certification as of mid-March. Potential 3rd carrier strike group for Iran theater. Would carry CVW-8. Not yet officially committed; deployment timing under review by Pentagon.",
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
   }
 ]

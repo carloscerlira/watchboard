@@ -488,5 +488,47 @@
     },
     "resolution": "CONFIRMED — Iraqi oil terminal suspension verified. First oil-related attack in Iraqi waters during the conflict. Iraq exports ~3.3M bbl/day; disruption compounds global supply crisis.",
     "lastUpdated": "2026-03-13T06:00:00.000Z"
+  },
+  {
+    "id": "mojtaba_khamenei_status",
+    "question": "Is Iran's Supreme Leader Mojtaba Khamenei alive?",
+    "sideA": {
+      "label": "Trump / Hegseth / US State Dept",
+      "text": "Trump: 'I'm hearing he's not alive — if he is, he should surrender.' Hegseth said Khamenei is 'likely disfigured.' State Dept offered $10M reward for information on Khamenei's whereabouts and condition. US intelligence assesses status as 'unknown but degraded.'"
+    },
+    "sideB": {
+      "label": "Iranian State Media",
+      "text": "A statement attributed to Mojtaba Khamenei was broadcast March 12, but he did not appear in person — a photo was shown while another person read the statement. Iranian state media insists the Supreme Leader is 'leading' Iran's defense."
+    },
+    "resolution": "UNVERIFIED — No confirmed sighting of Mojtaba Khamenei since being named Supreme Leader on March 8. Statement attribution contested. US and Israeli intelligence publicly doubt his condition.",
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
+  },
+  {
+    "id": "iran_negotiation_backchannel_mar15",
+    "question": "Is Iran secretly seeking negotiations while publicly rejecting ceasefire?",
+    "sideA": {
+      "label": "Trump / NBC News",
+      "text": "Trump told reporters on March 15 that Iran is 'ready to make a deal' but that terms are 'not good enough yet.' NBC News reported Iran sent back-channel signals through third parties expressing interest in talks."
+    },
+    "sideB": {
+      "label": "Araghchi / Iranian Foreign Ministry",
+      "text": "FM Araghchi on CBS Face the Nation (March 15): 'We never asked for a ceasefire, and we have never asked even for negotiation.' Iranian Foreign Ministry said publicly there is 'nothing to talk about' while bombing continues."
+    },
+    "resolution": "CONTRADICTORY — Possible disconnect between civilian-diplomatic and military-IRGC tracks within Iran. Trump may be projecting willingness onto Iranian back-channels not confirmed by Iranian principals.",
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
+  },
+  {
+    "id": "hormuz_naval_coalition",
+    "question": "Will other nations send warships to join a US-led Hormuz escort coalition?",
+    "sideA": {
+      "label": "Trump / White House",
+      "text": "Trump publicly urged other nations to send warships to keep the Strait of Hormuz open, stating 'the countries that get the oil' should protect the passage. Ambassador Waltz called for a multinational naval coalition similar to CTF-151."
+    },
+    "sideB": {
+      "label": "Allied governments / analysts",
+      "text": "No nation has publicly committed forces to a Hormuz escort coalition as of March 16. EU extended Operation Aspides mandate but has not sent ships into the Strait under Iranian fire. Gulf states have not offered naval assistance. Analysts note the risk of losing ships to IRGC anti-ship missiles is deterring participation."
+    },
+    "resolution": "UNRESOLVED — US coalition call has received no public commitments. Meaningful naval coalition formation under fire remains uncertain as of Day 17.",
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
   }
 ]

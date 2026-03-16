@@ -1705,5 +1705,16 @@
     "tier": 1,
     "date": "2026-03-14",
     "lastUpdated": "2026-03-15T06:00:00.000Z"
+  },
+  {
+    "id": "tel_nof_ab_mar15",
+    "lon": 34.82,
+    "lat": 31.84,
+    "cat": "retaliation",
+    "label": "Tel Nof AB — 6th Wave Strike",
+    "sub": "IRGC 6th wave targeted Tel Nof Airbase (IAF F-35I squadrons), Israeli Military GHQ, and Tel Aviv defense industry. Sirens across central Israel. Cluster fragments struck Tel Aviv streets.",
+    "tier": 1,
+    "date": "2026-03-15",
+    "lastUpdated": "2026-03-16T06:00:00.000Z"
   }
 ]
