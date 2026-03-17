@@ -21,11 +21,13 @@ import {
 
 interface MissileAnimation {
   lineId: string;
+  simLaunchTime: number;
   wallStartMs: number;
   launchFraction: number;
   arcPositions: Cartesian3[];
   trailEntity: Entity | null;
   projectileEntity: Entity | null;
+  started: boolean;
   completed: boolean;
 }
 
@@ -61,6 +63,11 @@ function realAnimMs(clockMultiplier: number): number {
   return Math.max(1500, 8000 / (Math.log10(m) + 1));
 }
 
+/** Read the viewer's current clock time as Unix ms */
+function viewerNowMs(viewer: CesiumViewer): number {
+  return JulianDate.toDate(viewer.clock.currentTime).getTime();
+}
+
 // Seeded random for deterministic spread per line
 function seededRandom(seed: number): () => number {
   let s = seed;
@@ -86,7 +93,6 @@ function computeLateralOffsets(lines: MapLine[]): Map<string, number> {
   const offsets = new Map<string, number>();
   const groups = new Map<string, string[]>();
 
-  // Group by rounded endpoints (0.5° grid) to detect overlaps
   for (const line of lines) {
     const key = [
       Math.round(line.from[0] * 2) / 2,
@@ -102,7 +108,6 @@ function computeLateralOffsets(lines: MapLine[]): Map<string, number> {
     if (ids.length <= 1) {
       offsets.set(ids[0], 0);
     } else {
-      // Spread increases with group size, capped at 1.5°
       const totalSpread = Math.min(0.3 * ids.length, 1.5);
       for (let i = 0; i < ids.length; i++) {
         const offset = (i / (ids.length - 1) - 0.5) * totalSpread;
@@ -116,9 +121,9 @@ function computeLateralOffsets(lines: MapLine[]): Map<string, number> {
 
 /**
  * Renders arcs for the current date's lines.
- * - When playing: animates strike/retaliation using wall-clock time so
- *   speed changes don't break mid-flight animations. Duration adapts
- *   logarithmically to clock multiplier (8s at 1x → 1.5s at 86400x).
+ * - When playing: missiles launch at their designated sim-time (line.time),
+ *   then animate using wall-clock duration scaled by clock speed.
+ *   Speed changes mid-flight adjust remaining duration smoothly.
  * - When not playing: shows all lines as static arcs.
  * - On date/lines change: cleans up all entities and rebuilds.
  */
@@ -143,10 +148,8 @@ export function useMissiles(
     rafRef.current = 0;
     if (lines.length === 0) return;
 
-    // Compute lateral offsets so overlapping arcs fan out
     const lateralOffsets = computeLateralOffsets(lines);
 
-    // Determine which lines to animate vs show static
     const toAnimate: MapLine[] = [];
     const toStatic: MapLine[] = [];
 
@@ -199,8 +202,8 @@ export function useMissiles(
       };
     }
 
-    // Wall-clock anchor — immune to sim-time / speed changes
-    const wallStart = Date.now();
+    const baseSimTime = new Date(currentDate + 'T00:00:00Z').getTime();
+    const simNow = viewer.isDestroyed() ? baseSimTime : viewerNowMs(viewer);
     let totalProjectiles = 0;
 
     for (let i = 0; i < animatable.length; i++) {
@@ -212,33 +215,49 @@ export function useMissiles(
       const baseSize = weaponProjectileSize(line.weaponType);
       const glowPwr = weaponGlowPower(line.weaponType);
 
+      // Sub-day timing from line.time field
+      let timeOffset = 0;
+      if (line.time) {
+        const match = line.time.match(/^(\d{1,2}):(\d{2})$/);
+        if (match) {
+          const hours = parseInt(match[1], 10);
+          const mins = parseInt(match[2], 10);
+          timeOffset = (hours * 3600 + mins * 60) * 1000;
+        }
+      }
+
+      const simLaunchTime = baseSimTime + timeOffset;
+      // If sim clock already past launch time, start immediately
+      const alreadyPast = simNow >= simLaunchTime;
+
       // How many projectiles for this line
       const launched = line.launched || 1;
       const remaining = MAX_TOTAL_PROJECTILES - totalProjectiles;
       const projCount = Math.min(launched, PER_ARC_CAP, Math.max(1, remaining));
 
-      // Scale projectile size down for large swarms
       const projSize = projCount > 10
         ? Math.max(2, baseSize - 2)
         : projCount > 5
           ? Math.max(3, baseSize - 1)
           : baseSize;
 
-      // Trail width scales with volume
       const trailW = lineWidth(line.cat) + Math.min(projCount / 10, 3);
 
-      // ── Trail entity (single growing polyline per arc) ──
+      // ── Trail entity ──
       const trailAnim: MissileAnimation = {
         lineId: line.id,
-        wallStartMs: wallStart,
+        simLaunchTime,
+        wallStartMs: alreadyPast ? Date.now() : 0,
         launchFraction: 0,
         arcPositions: mainArc,
+        started: alreadyPast,
         trailEntity: viewer.entities.add({
           polyline: {
             positions: new CallbackProperty((_time?: JulianDate) => {
               if (trailAnim.completed) return mainArc;
+              if (!trailAnim.started) return [mainArc[0]];
               const dur = realAnimMs(viewer.isDestroyed() ? 1 : viewer.clock.multiplier);
-              const elapsed = Date.now() - wallStart;
+              const elapsed = Date.now() - trailAnim.wallStartMs;
               const progress = Math.min(Math.max(elapsed / dur, 0), 1);
               const segCount = Math.max(1, Math.floor(progress * mainArc.length));
               return mainArc.slice(0, segCount);
@@ -257,16 +276,13 @@ export function useMissiles(
 
       // ── Projectile swarm ──
       const rng = seededRandom(hashString(line.id));
-      // Lateral spread in degrees — scales with distance
       const baseLateralSpread = projCount > 1 ? 0.4 : 0;
 
       for (let p = 0; p < projCount; p++) {
-        // Randomize path for each projectile
         const offsetLon = (rng() - 0.5) * baseLateralSpread;
         const offsetLat = (rng() - 0.5) * baseLateralSpread;
         const altFactor = 1 + (rng() - 0.5) * 0.2;
 
-        // Generate spread arc for this projectile
         let projArc: Cartesian3[];
         if (projCount > 1) {
           const projFrom: [number, number] = [
@@ -282,21 +298,23 @@ export function useMissiles(
           projArc = mainArc;
         }
 
-        // Stagger: fraction of flight time (0–0.4)
         const launchFrac = projCount > 1 ? rng() * 0.4 : 0;
 
         const projAnim: MissileAnimation = {
           lineId: `${line.id}_p${p}`,
-          wallStartMs: wallStart,
+          simLaunchTime,
+          wallStartMs: alreadyPast ? Date.now() : 0,
           launchFraction: launchFrac,
           arcPositions: projArc,
+          started: alreadyPast,
           trailEntity: null,
           projectileEntity: viewer.entities.add({
             position: new CallbackProperty((_time?: JulianDate) => {
               if (projAnim.completed) return projArc[projArc.length - 1];
+              if (!projAnim.started) return projArc[0];
               const dur = realAnimMs(viewer.isDestroyed() ? 1 : viewer.clock.multiplier);
               const myDelay = launchFrac * dur;
-              const elapsed = Date.now() - wallStart - myDelay;
+              const elapsed = Date.now() - projAnim.wallStartMs - myDelay;
               const progress = Math.min(Math.max(elapsed / dur, 0), 1);
               return lerpArc(projArc, progress);
             }, false) as any,
@@ -314,7 +332,7 @@ export function useMissiles(
       }
     }
 
-    // Animation tick loop — check for completion using wall-clock
+    // Animation tick loop — start pending animations, complete finished ones
     const tick = () => {
       if (!viewer || viewer.isDestroyed()) {
         rafRef.current = 0;
@@ -323,10 +341,22 @@ export function useMissiles(
 
       let anyActive = false;
       const now = Date.now();
+      const simNowTick = viewerNowMs(viewer);
       const dur = realAnimMs(viewer.clock.multiplier);
 
       for (const anim of animationsRef.current) {
         if (anim.completed) continue;
+
+        // Check if sim clock has reached launch time
+        if (!anim.started) {
+          if (simNowTick >= anim.simLaunchTime) {
+            anim.started = true;
+            anim.wallStartMs = now;
+          } else {
+            anyActive = true;
+            continue;
+          }
+        }
 
         const myDelay = anim.launchFraction * dur;
         const elapsed = now - anim.wallStartMs - myDelay;
