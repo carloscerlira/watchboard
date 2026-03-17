@@ -839,6 +839,75 @@ body:has(.globe-wrapper) .tooltip {
   letter-spacing: 0.05em;
 }
 
+/* ── Zoom controls ── */
+.globe-tl-zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.globe-tl-zoom-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  color: rgba(232, 233, 237, 0.5);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 3px 7px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.globe-tl-zoom-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e8e9ed;
+}
+
+.globe-tl-zoom-btn.active {
+  background: rgba(52, 152, 219, 0.2);
+  color: #3498db;
+  border-color: rgba(52, 152, 219, 0.3);
+}
+
+.globe-tl-zoom-shift {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  line-height: 1;
+}
+
+.globe-tl-minimap {
+  flex: 1;
+  min-width: 60px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  position: relative;
+  margin-left: 4px;
+}
+
+.globe-tl-minimap-viewport {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: rgba(52, 152, 219, 0.25);
+  border: 1px solid rgba(52, 152, 219, 0.4);
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.globe-tl-minimap-cursor {
+  position: absolute;
+  top: -1px;
+  width: 2px;
+  height: 8px;
+  background: #e74c3c;
+  border-radius: 1px;
+  transform: translateX(-50%);
+}
+
 /* ── Intra-day timeline ── */
 .globe-tl-intraday {
   display: flex;
@@ -1501,6 +1570,18 @@ body:has(.globe-wrapper) .tooltip {
   /* Hide timeline stats on mobile (shown in bottom sheet STATS tab) */
   .globe-tl-stats {
     display: none;
+  }
+
+  /* Zoom controls — wrap on mobile */
+  .globe-tl-zoom-controls {
+    flex-wrap: wrap;
+  }
+
+  .globe-tl-minimap {
+    width: 100%;
+    flex: none;
+    margin-left: 0;
+    margin-top: 2px;
   }
 
   /* Compact header */

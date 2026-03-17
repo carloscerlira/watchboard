@@ -2,6 +2,86 @@ import { useMemo, useState, useEffect } from 'react';
 import type { FlatEvent } from '../../../lib/timeline-utils';
 import type { MapLine } from '../../../lib/schemas';
 
+// ── Zoom types & helpers ──
+
+export type TimelineZoomLevel = 'all' | 'year' | 'quarter' | 'month' | 'week';
+
+const ZOOM_DAYS: Record<TimelineZoomLevel, number> = {
+  all: Infinity,
+  year: 365,
+  quarter: 90,
+  month: 30,
+  week: 7,
+};
+
+const ZOOM_LABELS: Record<TimelineZoomLevel, string> = {
+  all: 'ALL',
+  year: 'YR',
+  quarter: 'QTR',
+  month: 'MO',
+  week: 'WK',
+};
+
+function computeZoomWindow(
+  currentDate: string,
+  minDate: string,
+  maxDate: string,
+  zoomLevel: TimelineZoomLevel,
+): { viewMin: string; viewMax: string } {
+  if (zoomLevel === 'all') return { viewMin: minDate, viewMax: maxDate };
+
+  const windowDays = ZOOM_DAYS[zoomLevel];
+  const halfWindow = Math.floor(windowDays / 2);
+  const currentMs = new Date(currentDate + 'T00:00:00Z').getTime();
+  const minMs = new Date(minDate + 'T00:00:00Z').getTime();
+  const maxMs = new Date(maxDate + 'T00:00:00Z').getTime();
+  const dayMs = 86400000;
+
+  let viewMinMs = currentMs - halfWindow * dayMs;
+  let viewMaxMs = viewMinMs + windowDays * dayMs;
+
+  // Clamp to full range
+  if (viewMinMs < minMs) {
+    viewMinMs = minMs;
+    viewMaxMs = Math.min(minMs + windowDays * dayMs, maxMs);
+  }
+  if (viewMaxMs > maxMs) {
+    viewMaxMs = maxMs;
+    viewMinMs = Math.max(maxMs - windowDays * dayMs, minMs);
+  }
+
+  return {
+    viewMin: new Date(viewMinMs).toISOString().split('T')[0],
+    viewMax: new Date(viewMaxMs).toISOString().split('T')[0],
+  };
+}
+
+function availableZoomLevels(totalDays: number): TimelineZoomLevel[] {
+  if (totalDays <= 10) return [];
+  const levels: TimelineZoomLevel[] = ['all'];
+  if (totalDays > 365) levels.push('year');
+  if (totalDays > 90) levels.push('quarter');
+  if (totalDays > 30) levels.push('month');
+  if (totalDays > 7) levels.push('week');
+  return levels;
+}
+
+function shiftPeriod(
+  currentDate: string,
+  minDate: string,
+  maxDate: string,
+  zoomLevel: TimelineZoomLevel,
+  direction: 1 | -1,
+): string {
+  if (zoomLevel === 'all') return currentDate;
+  const shiftDays = ZOOM_DAYS[zoomLevel];
+  const currentMs = new Date(currentDate + 'T00:00:00Z').getTime();
+  const minMs = new Date(minDate + 'T00:00:00Z').getTime();
+  const maxMs = new Date(maxDate + 'T00:00:00Z').getTime();
+  const newMs = Math.max(minMs, Math.min(maxMs, currentMs + direction * shiftDays * 86400000));
+  return new Date(newMs).toISOString().split('T')[0];
+}
+
 export interface StatsData {
   locations: number;
   vectors: number;
@@ -36,6 +116,8 @@ interface Props {
   onGoLive: () => void;
   stats?: StatsData;
   simTimeRef?: React.RefObject<number>;
+  zoomLevel?: TimelineZoomLevel;
+  onZoomChange?: (level: TimelineZoomLevel) => void;
 }
 
 /** Format time in a specific timezone offset (hours from UTC) */
@@ -138,6 +220,8 @@ export default function CesiumTimelineBar({
   stats,
   simTimeRef,
   onTimeChange,
+  zoomLevel = 'all',
+  onZoomChange,
 }: Props) {
   const [showSpeeds, setShowSpeeds] = useState(false);
   const [clockTick, setClockTick] = useState(0);
@@ -153,7 +237,18 @@ export default function CesiumTimelineBar({
   void clockTick;
 
   const totalDays = dateToDay(maxDate, minDate);
-  const currentDay = dateToDay(currentDate, minDate);
+
+  // Zoom window
+  const zoomLevels = useMemo(() => availableZoomLevels(totalDays), [totalDays]);
+  const showZoom = zoomLevels.length > 1;
+  const { viewMin, viewMax } = useMemo(
+    () => computeZoomWindow(currentDate, minDate, maxDate, zoomLevel),
+    [currentDate, minDate, maxDate, zoomLevel],
+  );
+  const viewTotalDays = dateToDay(viewMax, viewMin);
+  const viewCurrentDay = dateToDay(currentDate, viewMin);
+  // Clamp to visible range
+  const clampedViewDay = Math.max(0, Math.min(viewTotalDays, viewCurrentDay));
 
   // Current time within the day (minutes since midnight UTC)
   const simDate = new Date(simMs);
@@ -189,7 +284,7 @@ export default function CesiumTimelineBar({
     return [...dates].filter(d => d >= minDate && d <= maxDate).sort();
   }, [events, lines, minDate, maxDate]);
 
-  // Event ticks positioned by date
+  // Event ticks positioned by date — scoped to zoom window
   const ticks = useMemo(() => {
     const seen = new Set<string>();
     return events
@@ -197,15 +292,15 @@ export default function CesiumTimelineBar({
         const key = `${ev.resolvedDate}-${ev.type}`;
         if (seen.has(key)) return false;
         seen.add(key);
-        return ev.resolvedDate >= minDate && ev.resolvedDate <= maxDate;
+        return ev.resolvedDate >= viewMin && ev.resolvedDate <= viewMax;
       })
       .map(ev => ({
         date: ev.resolvedDate,
         type: ev.type,
         title: ev.title,
-        pct: totalDays > 0 ? (dateToDay(ev.resolvedDate, minDate) / totalDays) * 100 : 0,
+        pct: viewTotalDays > 0 ? (dateToDay(ev.resolvedDate, viewMin) / viewTotalDays) * 100 : 0,
       }));
-  }, [events, minDate, maxDate, totalDays]);
+  }, [events, viewMin, viewMax, viewTotalDays]);
 
   // Count events for current date (for badge)
   const currentEventCount = useMemo(
@@ -294,9 +389,58 @@ export default function CesiumTimelineBar({
         </div>
       </div>
 
+      {/* Zoom controls row */}
+      {showZoom && (
+        <div className="globe-tl-zoom-controls">
+          <button
+            className="globe-tl-btn globe-tl-zoom-shift"
+            disabled={zoomLevel === 'all'}
+            onClick={() => onDateChange(shiftPeriod(currentDate, minDate, maxDate, zoomLevel, -1))}
+            title="Previous period"
+          >
+            &laquo;
+          </button>
+          {zoomLevels.map(level => (
+            <button
+              key={level}
+              className={`globe-tl-zoom-btn ${zoomLevel === level ? 'active' : ''}`}
+              onClick={() => onZoomChange?.(level)}
+            >
+              {ZOOM_LABELS[level]}
+            </button>
+          ))}
+          <button
+            className="globe-tl-btn globe-tl-zoom-shift"
+            disabled={zoomLevel === 'all'}
+            onClick={() => onDateChange(shiftPeriod(currentDate, minDate, maxDate, zoomLevel, 1))}
+            title="Next period"
+          >
+            &raquo;
+          </button>
+          {/* Minimap — only when zoomed */}
+          {zoomLevel !== 'all' && totalDays > 0 && (
+            <div className="globe-tl-minimap">
+              <div
+                className="globe-tl-minimap-viewport"
+                style={{
+                  left: `${(dateToDay(viewMin, minDate) / totalDays) * 100}%`,
+                  width: `${Math.max(2, (viewTotalDays / totalDays) * 100)}%`,
+                }}
+              />
+              <div
+                className="globe-tl-minimap-cursor"
+                style={{
+                  left: `${(dateToDay(currentDate, minDate) / totalDays) * 100}%`,
+                }}
+              />
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Timeline track with event ticks */}
       <div className="globe-tl-track-container">
-        <span className="globe-tl-date-edge">{formatDate(minDate)}</span>
+        <span className="globe-tl-date-edge">{formatDate(viewMin)}</span>
         <div className="globe-tl-track">
           {/* Event tick marks */}
           {ticks.map((tick, i) => (
@@ -314,14 +458,14 @@ export default function CesiumTimelineBar({
             type="range"
             className="globe-tl-slider"
             min={0}
-            max={totalDays}
-            value={currentDay}
+            max={viewTotalDays}
+            value={clampedViewDay}
             aria-label="Timeline date selector"
             aria-valuetext={formatDate(currentDate)}
-            onChange={e => onDateChange(dayToDate(Number(e.target.value), minDate))}
+            onChange={e => onDateChange(dayToDate(Number(e.target.value), viewMin))}
           />
         </div>
-        <span className="globe-tl-date-edge">{formatDate(maxDate)}</span>
+        <span className="globe-tl-date-edge">{formatDate(viewMax)}</span>
       </div>
 
       {/* Intra-day timeline — shows when current day has timed events */}

@@ -25,7 +25,7 @@ import { useConflictData } from './useConflictData';
 import { useMissiles } from './useMissiles';
 import CesiumControls from './CesiumControls';
 import CesiumInfoPanel from './CesiumInfoPanel';
-import CesiumTimelineBar from './CesiumTimelineBar';
+import CesiumTimelineBar, { type TimelineZoomLevel } from './CesiumTimelineBar';
 import CesiumEventsPanel from './CesiumEventsPanel';
 import CesiumHud from './CesiumHud';
 import MobileBottomSheet from './MobileBottomSheet';
@@ -126,6 +126,9 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [], ca
 
   // ── HUD visibility ──
   const [showHud, setShowHud] = useState(true);
+
+  // ── Timeline zoom ──
+  const [zoomLevel, setZoomLevel] = useState<TimelineZoomLevel>('all');
 
   // ── Cinematic mode ──
   const [cinematicMode, setCinematicMode] = useState(false);
@@ -549,6 +552,8 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [], ca
         stats={stats}
         simTimeRef={simTimeRef}
         onTimeChange={handleTimeChange}
+        zoomLevel={zoomLevel}
+        onZoomChange={setZoomLevel}
       />
 
       {isMobile ? (
