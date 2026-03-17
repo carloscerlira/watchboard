@@ -78,8 +78,10 @@ export const TrackerConfigSchema = z.object({
   icon: z.string().optional(),
   color: z.string().optional(),
   status: z.enum(['active', 'archived', 'draft']),
+  temporal: z.enum(['live', 'historical']).default('live'),
 
   startDate: z.string(),
+  endDate: z.string().optional(),
   eraLabel: z.string().optional(),
 
   sections: z.array(SectionId),

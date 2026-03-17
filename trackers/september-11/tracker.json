@@ -6,7 +6,9 @@
   "icon": "🗽",
   "color": "#1a3a5c",
   "status": "active",
+  "temporal": "historical",
   "startDate": "2001-09-11",
+  "endDate": "2001-12-31",
   "eraLabel": "Attack & Aftermath 2001–Present",
   "sections": ["hero", "kpis", "timeline", "map", "casualties", "economic", "claims", "political"],
   "map": {

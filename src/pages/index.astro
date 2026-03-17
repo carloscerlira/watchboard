@@ -6,6 +6,8 @@ import GlobeBackground from '../components/islands/GlobeBackground';
 
 const trackers = loadAllTrackers();
 const active = trackers.filter(t => t.status === 'active');
+const liveTrackers = active.filter(t => t.temporal !== 'historical');
+const historicalTrackers = active.filter(t => t.temporal === 'historical');
 const archived = trackers.filter(t => t.status === 'archived');
 const base = import.meta.env.BASE_URL;
 const basePath = base.endsWith('/') ? base : `${base}/`;
@@ -53,8 +55,13 @@ const utcStr = now.toISOString().replace('T', ' ').slice(0, 19) + 'Z';
         <p class="hero-sub">Multi-source intelligence dashboards with verified data,<br class="hide-mobile" /> interactive theater maps, and contested claims tracking.</p>
         <div class="hero-stats">
           <div class="stat">
-            <span class="stat-value">{active.length}</span>
-            <span class="stat-label">Active Trackers</span>
+            <span class="stat-value">{liveTrackers.length}</span>
+            <span class="stat-label">Live Operations</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-value">{historicalTrackers.length}</span>
+            <span class="stat-label">Historical</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat">
@@ -70,19 +77,19 @@ const utcStr = now.toISOString().replace('T', ' ').slice(0, 19) + 'Z';
       </div>
     </header>
 
-    <!-- Active trackers -->
-    {active.length > 0 && (
+    <!-- Live operations -->
+    {liveTrackers.length > 0 && (
       <section class="ix-section">
         <div class="section-header">
           <h2 class="section-label">
-            <span class="label-icon">&#9673;</span>
-            Active Operations
+            <span class="label-icon live-icon">&#9673;</span>
+            Live Operations
           </h2>
           <span class="section-timestamp">{utcStr}</span>
         </div>
 
         <div class="tracker-grid">
-          {trackerData.map(({ config: t, meta, topKpis, dayCount, lastUpdated, headline }) => {
+          {trackerData.filter(d => d.config.temporal !== 'historical').map(({ config: t, meta, topKpis, dayCount, lastUpdated, headline }) => {
             const updated = new Date(lastUpdated);
             const ageHrs = Math.floor((now.getTime() - updated.getTime()) / 3600000);
             const freshness = ageHrs < 24 ? 'fresh' : ageHrs < 48 ? 'recent' : 'stale';
@@ -99,6 +106,72 @@ const utcStr = now.toISOString().replace('T', ' ').slice(0, 19) + 'Z';
                   <div class={`card-status ${freshness}`}>
                     <span class="status-dot"></span>
                     <span>{freshness === 'fresh' ? 'LIVE' : freshness === 'recent' ? 'RECENT' : 'STALE'}</span>
+                  </div>
+                </div>
+
+                {headline && (
+                  <div class="card-headline">
+                    <span class="headline-marker">&rsaquo;</span>
+                    <span>{headline.length > 100 ? headline.slice(0, 100) + '...' : headline}</span>
+                  </div>
+                )}
+
+                <p class="card-desc">{t.description}</p>
+
+                {topKpis.length > 0 && (
+                  <div class="card-kpis">
+                    {topKpis.map(k => (
+                      <div class="kpi-chip">
+                        <span class="kpi-value">{k.value}</span>
+                        <span class="kpi-label">{k.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <div class="card-footer">
+                  <div class="card-features">
+                    <span>{t.sections.length} sections</span>
+                    {t.map?.enabled && <span>Map</span>}
+                    {t.globe?.enabled && <span>3D Globe</span>}
+                  </div>
+                  <span class="card-updated">
+                    {ageHrs < 1 ? 'Just now' : ageHrs < 24 ? `${ageHrs}h ago` : `${Math.floor(ageHrs / 24)}d ago`}
+                  </span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    <!-- Historical trackers -->
+    {historicalTrackers.length > 0 && (
+      <section class="ix-section">
+        <div class="section-header">
+          <h2 class="section-label">
+            <span class="label-icon hist-icon">&#9202;</span>
+            Historical Analysis
+          </h2>
+        </div>
+
+        <div class="tracker-grid">
+          {trackerData.filter(d => d.config.temporal === 'historical').map(({ config: t, meta, topKpis, dayCount, lastUpdated, headline }) => {
+            const updated = new Date(lastUpdated);
+            const ageHrs = Math.floor((now.getTime() - updated.getTime()) / 3600000);
+            return (
+              <a href={`${basePath}${t.slug}/`} class="tracker-card historical" style={`--card-accent: ${t.color || '#3498db'}`}>
+                <div class="card-top">
+                  <div class="card-ident">
+                    <span class="card-icon">{t.icon || ''}</span>
+                    <div class="card-titles">
+                      <h3 class="card-name">{t.shortName}</h3>
+                      <span class="card-dateline">{t.startDate.slice(0, 4)}{t.endDate ? `\u2013${t.endDate.slice(0, 4)}` : '\u2013Present'}</span>
+                    </div>
+                  </div>
+                  <div class="card-status historical-badge">
+                    <span>HISTORICAL</span>
                   </div>
                 </div>
 
@@ -376,8 +449,15 @@ const utcStr = now.toISOString().replace('T', ' ').slice(0, 19) + 'Z';
   }
 
   .label-icon {
-    color: var(--accent-green);
     font-size: 0.7rem;
+  }
+
+  .label-icon.live-icon {
+    color: var(--accent-green);
+  }
+
+  .label-icon.hist-icon {
+    color: var(--accent-amber);
   }
 
   .section-timestamp {
@@ -517,6 +597,12 @@ const utcStr = now.toISOString().replace('T', ' ').slice(0, 19) + 'Z';
     background: rgba(148, 152, 168, 0.1);
     color: var(--text-muted);
     border: 1px solid var(--border);
+  }
+
+  .card-status.historical-badge {
+    background: rgba(243, 156, 18, 0.1);
+    color: var(--accent-amber);
+    border: 1px solid rgba(243, 156, 18, 0.25);
   }
 
   /* Headline flash */

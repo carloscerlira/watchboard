@@ -49,6 +49,8 @@ interface Props {
   cameraPresets?: Record<string, { lon: number; lat: number; alt: number; pitch: number; heading: number; label?: string }>;
   categories?: { id: string; label: string; color: string }[];
   mapCenter?: { lon: number; lat: number };
+  isHistorical?: boolean;
+  endDate?: string;
 }
 
 // Configure Cesium Ion on module load
@@ -74,7 +76,7 @@ function msToDateStr(ms: number): string {
   return new Date(ms).toISOString().split('T')[0];
 }
 
-export default function CesiumGlobe({ points, lines, kpis, meta, events = [], cameraPresets = {}, categories = [], mapCenter }: Props) {
+export default function CesiumGlobe({ points, lines, kpis, meta, events = [], cameraPresets = {}, categories = [], mapCenter, isHistorical = false, endDate }: Props) {
   const viewerRef = useRef<CesiumComponentRef<CesiumViewer> | null>(null);
   const creditDivRef = useRef<HTMLDivElement | null>(null);
   if (!creditDivRef.current && typeof document !== 'undefined') {
@@ -148,13 +150,14 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [], ca
     const allDates = [
       ...points.map(p => p.date),
       ...lines.map(l => l.date),
-      TODAY, // Always include today so live mode can reach it
+      ...(!isHistorical ? [TODAY] : []), // Only include today for live trackers
     ].sort();
+    const maxFromData = allDates[allDates.length - 1] || TODAY;
     return {
       min: allDates[0] || '2025-12-01',
-      max: allDates[allDates.length - 1] || TODAY,
+      max: isHistorical && endDate ? (endDate < maxFromData ? maxFromData : endDate) : maxFromData,
     };
-  }, [points, lines]);
+  }, [points, lines, isHistorical, endDate]);
 
   const [currentDate, setCurrentDate] = useState(dateRange.max);
   const currentDateRef = useRef(currentDate);

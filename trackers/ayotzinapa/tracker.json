@@ -6,6 +6,7 @@
   "icon": "\ud83d\udd6f\ufe0f",
   "color": "#f39c12",
   "status": "active",
+  "temporal": "historical",
   "startDate": "2014-09-26",
   "eraLabel": "Investigation & Search",
   "sections": ["hero", "kpis", "timeline", "map", "claims", "political"],

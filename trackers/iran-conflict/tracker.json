@@ -6,6 +6,7 @@
   "icon": "⚔️",
   "color": "#e74c3c",
   "status": "active",
+  "temporal": "live",
   "startDate": "2026-02-28",
   "eraLabel": "Crisis & War 2026",
   "sections": ["hero", "kpis", "timeline", "map", "military", "casualties", "economic", "claims", "political"],
