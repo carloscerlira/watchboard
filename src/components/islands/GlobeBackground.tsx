@@ -45,6 +45,7 @@ const POINT_COUNT = 2200;
 const SCAN_PERIOD_MS = 12_000;
 const ROTATION_SPEED_DEG = 0.02;
 const SCAN_BAND_PX = 80;
+const MOUSE_RADIUS_PX = 120;
 
 /* ─── Fibonacci sphere: uniform point distribution ─── */
 
@@ -144,6 +145,25 @@ export default function GlobeBackground({ events = [] }: GlobeBackgroundProps) {
     let frameId = 0;
     let startTime = performance.now();
 
+    /* Mouse tracking — relative to canvas */
+    let mouseX = -9999;
+    let mouseY = -9999;
+
+    function onMouseMove(e: MouseEvent) {
+      if (!canvas) return;
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    }
+
+    function onMouseLeave() {
+      mouseX = -9999;
+      mouseY = -9999;
+    }
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseleave', onMouseLeave);
+
     function resize() {
       if (!container || !canvas || !ctx) return;
       const rect = container.getBoundingClientRect();
@@ -219,6 +239,7 @@ export default function GlobeBackground({ events = [] }: GlobeBackgroundProps) {
         if (dx * dx + dy * dy > radius * radius) continue;
 
         let alpha = 0.08 + proj.z * 0.1;
+        let sizeBoost = 0;
 
         /* Scan beam boost: quadratic falloff within band */
         const distToScan = Math.abs(proj.y - scanY);
@@ -227,7 +248,17 @@ export default function GlobeBackground({ events = [] }: GlobeBackgroundProps) {
           alpha += t * t * 0.2;
         }
 
-        const dotSize = 1.0 + proj.z * 0.8;
+        /* Mouse proximity boost */
+        const mDx = proj.x - mouseX;
+        const mDy = proj.y - mouseY;
+        const mDist = Math.sqrt(mDx * mDx + mDy * mDy);
+        if (mDist < MOUSE_RADIUS_PX) {
+          const t = 1 - mDist / MOUSE_RADIUS_PX;
+          alpha += t * t * 0.25;
+          sizeBoost = t * 0.6;
+        }
+
+        const dotSize = 1.0 + proj.z * 0.8 + sizeBoost;
 
         ctx.fillStyle = `rgba(46, 204, 113, ${alpha})`;
         ctx.beginPath();
@@ -245,6 +276,7 @@ export default function GlobeBackground({ events = [] }: GlobeBackgroundProps) {
         if (dx * dx + dy * dy > radius * radius) continue;
 
         let alpha = 0.15 + proj.z * 0.2;
+        let evSizeBoost = 0;
 
         const distToScan = Math.abs(proj.y - scanY);
         if (distToScan < SCAN_BAND_PX) {
@@ -252,18 +284,28 @@ export default function GlobeBackground({ events = [] }: GlobeBackgroundProps) {
           alpha += t * t * 0.35;
         }
 
+        /* Mouse proximity boost */
+        const eDx = proj.x - mouseX;
+        const eDy = proj.y - mouseY;
+        const eDist = Math.sqrt(eDx * eDx + eDy * eDy);
+        if (eDist < MOUSE_RADIUS_PX) {
+          const t = 1 - eDist / MOUSE_RADIUS_PX;
+          alpha += t * t * 0.35;
+          evSizeBoost = t * 1.5;
+        }
+
         /* Glow ring */
         if (alpha > 0.12) {
           ctx.fillStyle = `rgba(231, 76, 60, ${alpha * 0.3})`;
           ctx.beginPath();
-          ctx.arc(proj.x, proj.y, 5, 0, Math.PI * 2);
+          ctx.arc(proj.x, proj.y, 5 + evSizeBoost, 0, Math.PI * 2);
           ctx.fill();
         }
 
         /* Dot */
         ctx.fillStyle = `rgba(231, 76, 60, ${alpha})`;
         ctx.beginPath();
-        ctx.arc(proj.x, proj.y, 2, 0, Math.PI * 2);
+        ctx.arc(proj.x, proj.y, 2 + evSizeBoost * 0.3, 0, Math.PI * 2);
         ctx.fill();
       }
 
@@ -280,6 +322,8 @@ export default function GlobeBackground({ events = [] }: GlobeBackgroundProps) {
     return () => {
       cancelAnimationFrame(frameId);
       window.removeEventListener('resize', resize);
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseleave', onMouseLeave);
     };
   }, [events]);
 
