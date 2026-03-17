@@ -31,6 +31,22 @@ export function useCesiumCamera(viewerRef: React.RefObject<CesiumComponentRef<Ce
     });
   }, [viewerRef, cameraPresets]);
 
+  const flyToPosition = useCallback((params: {
+    lon: number; lat: number; alt: number; heading?: number; pitch?: number; duration?: number;
+  }) => {
+    const viewer = viewerRef.current?.cesiumElement;
+    if (!viewer || viewer.isDestroyed()) return;
+    viewer.camera.flyTo({
+      destination: Cartesian3.fromDegrees(params.lon, params.lat, params.alt),
+      orientation: {
+        heading: CesiumMath.toRadians(params.heading ?? 0),
+        pitch: CesiumMath.toRadians(params.pitch ?? -90),
+        roll: 0,
+      },
+      duration: params.duration ?? 2.0,
+    });
+  }, [viewerRef]);
+
   const startOrbit = useCallback((mode: OrbitMode, speedDegPerSec: number = 3) => {
     const viewer = viewerRef.current?.cesiumElement;
     if (!viewer || viewer.isDestroyed()) return;
@@ -102,5 +118,5 @@ export function useCesiumCamera(viewerRef: React.RefObject<CesiumComponentRef<Ce
     return () => cancelAnimationFrame(orbitRafRef.current);
   }, []);
 
-  return { flyTo, startOrbit, stopOrbit, orbitModeRef };
+  return { flyTo, flyToPosition, startOrbit, stopOrbit, orbitModeRef };
 }

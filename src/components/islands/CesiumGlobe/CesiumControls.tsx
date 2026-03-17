@@ -30,6 +30,8 @@ interface Props {
   onOrbitMode?: (mode: OrbitMode) => void;
   cameraPresets?: Record<string, { lon: number; lat: number; alt: number; pitch: number; heading: number; label?: string }>;
   categories?: { id: string; label: string; color: string }[];
+  cinematicMode?: boolean;
+  onToggleCinematic?: () => void;
 }
 
 type ToolbarSection = 'filters' | 'camera' | 'visual' | 'layers';
@@ -72,6 +74,8 @@ export default function CesiumControls({
   onOrbitMode,
   cameraPresets = {},
   categories = [],
+  cinematicMode,
+  onToggleCinematic,
 }: Props) {
   const [activeSection, setActiveSection] = useState<ToolbarSection | null>(null);
   const [aisKeyDraft, setAisKeyDraft] = useState('');
@@ -383,6 +387,18 @@ export default function CesiumControls({
         >
           <svg viewBox="0 0 16 16" width="16" height="16"><path d="M8 1L1 5l7 4 7-4zM1 8l7 4 7-4M1 11l7 4 7-4" fill="none" stroke="currentColor" strokeWidth="1.5"/></svg>
         </button>
+        {onToggleCinematic && (
+          <button
+            className={`globe-toolbar-icon${cinematicMode ? ' active cinematic-active' : ''}`}
+            onClick={onToggleCinematic}
+            title={cinematicMode ? 'Exit Cinematic Mode' : 'Cinematic Mode'}
+          >
+            <svg viewBox="0 0 16 16" width="16" height="16">
+              <rect x="1" y="3" width="14" height="10" rx="1" fill="none" stroke="currentColor" strokeWidth="1.3"/>
+              <polygon points="6,6 6,10 11,8" fill="currentColor"/>
+            </svg>
+          </button>
+        )}
       </div>
       {activeSection && sections[activeSection]()}
     </div>

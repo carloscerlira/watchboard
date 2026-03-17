@@ -38,6 +38,7 @@ import { useShips, getStoredAisKey, setStoredAisKey } from './useShips';
 import { useGpsJamming } from './useGpsJamming';
 import { useInternetBlackout } from './useInternetBlackout';
 import { useGroundTruth } from './useGroundTruth';
+import { useCinematicMode } from './useCinematicMode';
 
 interface Props {
   points: MapPoint[];
@@ -80,7 +81,7 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [], ca
     creditDivRef.current = document.createElement('div');
   }
   const [cesiumViewer, setCesiumViewer] = useState<CesiumViewer | null>(null);
-  const { flyTo, startOrbit, stopOrbit, orbitModeRef } = useCesiumCamera(viewerRef, cameraPresets);
+  const { flyTo, flyToPosition, startOrbit, stopOrbit, orbitModeRef } = useCesiumCamera(viewerRef, cameraPresets);
 
   // ── Mobile detection ──
   const [isMobile, setIsMobile] = useState(() =>
@@ -125,6 +126,9 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [], ca
 
   // ── HUD visibility ──
   const [showHud, setShowHud] = useState(true);
+
+  // ── Cinematic mode ──
+  const [cinematicMode, setCinematicMode] = useState(false);
 
   // ── Orbit mode ──
   const [orbitMode, setOrbitMode] = useState<OrbitMode>('off');
@@ -417,6 +421,35 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [], ca
   const { count: internetBlackoutCount } = useInternetBlackout(cesiumViewer, layers.internetBlackout, currentDate);
   const { count: groundTruthCount } = useGroundTruth(cesiumViewer, layers.groundTruth, points, events, currentDate);
 
+  // ── Cinematic mode ──
+  const {
+    activeEventId: cinematicEventId,
+    currentShot,
+    totalShots,
+    currentShotIndex: cinematicShotIndex,
+    shotLabel,
+  } = useCinematicMode(
+    cesiumViewer,
+    cinematicMode,
+    simTimeRef,
+    currentDate,
+    playbackSpeed,
+    lines,
+    points,
+    events,
+    cameraPresets,
+  );
+
+  const handleToggleCinematic = useCallback(() => {
+    setCinematicMode(prev => {
+      if (!prev) {
+        handleOrbitMode('off');
+        setEventsOpen(true);
+      }
+      return !prev;
+    });
+  }, [handleOrbitMode]);
+
   // ── Sync Cesium clock for day/night terminator ──
   useEffect(() => {
     if (!cesiumViewer || cesiumViewer.isDestroyed()) return;
@@ -483,6 +516,16 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [], ca
         simTimeRef={simTimeRef}
         currentDate={currentDate}
       />
+
+      {/* Cinematic mode overlay */}
+      {cinematicMode && currentShot && (
+        <div className="cinematic-overlay">
+          <div className="cinematic-shot-counter">
+            SHOT {cinematicShotIndex + 1} / {totalShots}
+          </div>
+          <div className="cinematic-shot-label">{shotLabel}</div>
+        </div>
+      )}
 
       {/* Info panel — close events panel when a point is selected */}
       {selectedPoint && (
@@ -579,6 +622,8 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [], ca
             onOrbitMode={handleOrbitMode}
             cameraPresets={cameraPresets}
             categories={categories}
+            cinematicMode={cinematicMode}
+            onToggleCinematic={handleToggleCinematic}
           />
 
           {/* Events / Intel feed panel */}
@@ -592,6 +637,7 @@ export default function CesiumGlobe({ points, lines, kpis, meta, events = [], ca
                 return !prev;
               });
             }}
+            activeEventId={cinematicMode ? cinematicEventId : undefined}
           />
         </>
       )}

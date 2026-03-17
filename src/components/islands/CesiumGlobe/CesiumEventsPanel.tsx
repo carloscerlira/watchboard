@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useRef, useEffect } from 'react';
 import type { FlatEvent } from '../../../lib/timeline-utils';
 
 interface Props {
@@ -6,6 +6,7 @@ interface Props {
   currentDate: string;
   isOpen: boolean;
   onToggle: () => void;
+  activeEventId?: string | null;
 }
 
 const TYPE_COLORS: Record<string, string> = {
@@ -51,8 +52,22 @@ const CONFIDENCE_COLORS: Record<string, string> = {
   low: '#e74c3c',
 };
 
-export default function CesiumEventsPanel({ events, currentDate, isOpen, onToggle }: Props) {
+export default function CesiumEventsPanel({ events, currentDate, isOpen, onToggle, activeEventId }: Props) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const activeRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll and auto-expand when cinematic mode highlights an event
+  useEffect(() => {
+    if (activeEventId) {
+      setExpandedId(activeEventId);
+    }
+  }, [activeEventId]);
+
+  useEffect(() => {
+    if (activeEventId && activeRef.current) {
+      activeRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [activeEventId]);
 
   const dateEvents = useMemo(
     () => events.filter(ev => ev.resolvedDate === currentDate),
@@ -94,8 +109,13 @@ export default function CesiumEventsPanel({ events, currentDate, isOpen, onToggl
         ) : (
           dateEvents.map(ev => {
             const isExpanded = expandedId === ev.id;
+            const isCinematicActive = activeEventId === ev.id;
             return (
-              <div key={ev.id} className="globe-event-card">
+              <div
+                key={ev.id}
+                ref={isCinematicActive ? activeRef : undefined}
+                className={`globe-event-card${isCinematicActive ? ' cinematic-highlight' : ''}`}
+              >
                 <div
                   className="globe-event-card-header"
                   onClick={() => setExpandedId(isExpanded ? null : ev.id)}
