@@ -16,7 +16,16 @@ export type IconType =
   | 'aircraft_mil'
   | 'aircraft_civ'
   | 'earthquake'
-  | 'explosion';
+  | 'explosion'
+  | 'weapon_ballistic'
+  | 'weapon_cruise'
+  | 'weapon_drone_loitering'
+  | 'weapon_drone_ucav'
+  | 'weapon_drone_recon'
+  | 'weapon_drone_fpv'
+  | 'weapon_rocket'
+  | 'weapon_mixed'
+  | 'weapon_unknown';
 
 const iconCache = new Map<string, string>();
 
@@ -49,6 +58,15 @@ function generateSvg(type: IconType, color?: string): string {
     case 'aircraft_civ': return svgAircraftCiv(color || '#00aaff');
     case 'earthquake': return svgEarthquake(color || '#ff6633');
     case 'explosion': return svgExplosion(color || '#ff4444');
+    case 'weapon_ballistic': return svgWeaponBallistic(color || '#ff4466');
+    case 'weapon_cruise': return svgWeaponCruise(color || '#44bbff');
+    case 'weapon_drone_loitering': return svgWeaponDroneLoitering(color || '#88ff44');
+    case 'weapon_drone_ucav': return svgWeaponDroneUcav(color || '#66dd66');
+    case 'weapon_drone_recon': return svgWeaponDroneRecon(color || '#44cc88');
+    case 'weapon_drone_fpv': return svgWeaponDroneFpv(color || '#aaff66');
+    case 'weapon_rocket': return svgWeaponRocket(color || '#ffaa22');
+    case 'weapon_mixed': return svgWeaponMixed(color || '#cc66ff');
+    case 'weapon_unknown': return svgWeaponUnknown(color || '#888888');
   }
 }
 
@@ -146,5 +164,88 @@ function svgExplosion(c: string): string {
   return svgWrap(`
     <polygon points="${points.join(' ')}" fill="white" stroke="${c}" stroke-width="1.5"/>
     <circle cx="16" cy="16" r="3" fill="${c}"/>
+  `);
+}
+
+// ── Weapon Ballistic: Tall pointed warhead/chevron ──
+function svgWeaponBallistic(c: string): string {
+  return svgWrap(`
+    <polygon points="16,1 20,12 19,28 16,30 13,28 12,12" fill="white" stroke="${c}" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="12" y1="24" x2="8" y2="28" stroke="${c}" stroke-width="1.5"/>
+    <line x1="20" y1="24" x2="24" y2="28" stroke="${c}" stroke-width="1.5"/>
+    <circle cx="16" cy="10" r="1.5" fill="${c}"/>
+  `);
+}
+
+// ── Weapon Cruise: Sleek horizontal lozenge with tail fins ──
+function svgWeaponCruise(c: string): string {
+  return svgWrap(`
+    <ellipse cx="16" cy="16" rx="14" ry="5" fill="white" stroke="${c}" stroke-width="2"/>
+    <polygon points="2,16 6,11 6,21" fill="white" stroke="${c}" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="20" cy="16" r="1.5" fill="${c}"/>
+  `);
+}
+
+// ── Weapon Drone/Loitering: Delta-wing (Shahed silhouette) ──
+function svgWeaponDroneLoitering(c: string): string {
+  return svgWrap(`
+    <polygon points="16,4 28,26 22,22 16,28 10,22 4,26" fill="white" stroke="${c}" stroke-width="1.5" stroke-linejoin="round"/>
+    <line x1="16" y1="10" x2="16" y2="22" stroke="${c}" stroke-width="1"/>
+  `);
+}
+
+// ── Weapon Drone UCAV: Fixed-wing armed drone (MQ-9 style top-down) ──
+function svgWeaponDroneUcav(c: string): string {
+  return svgWrap(`
+    <polygon points="16,3 18,11 28,16 18,17 19,27 16,24 13,27 14,17 4,16 14,11" fill="white" stroke="${c}" stroke-width="1.5" stroke-linejoin="round"/>
+    <rect x="14" y="14" width="4" height="4" rx="0.5" fill="${c}" opacity="0.6"/>
+  `);
+}
+
+// ── Weapon Drone Recon: Fixed-wing with sensor dish ──
+function svgWeaponDroneRecon(c: string): string {
+  return svgWrap(`
+    <polygon points="16,4 18,12 27,15 18,16 19,26 16,23 13,26 14,16 5,15 14,12" fill="white" stroke="${c}" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="16" cy="20" r="3" fill="none" stroke="${c}" stroke-width="1.5"/>
+    <circle cx="16" cy="20" r="1" fill="${c}"/>
+  `);
+}
+
+// ── Weapon Drone FPV: Quadcopter (4 props at corners of a cross) ──
+function svgWeaponDroneFpv(c: string): string {
+  return svgWrap(`
+    <line x1="8" y1="8" x2="24" y2="24" stroke="${c}" stroke-width="2"/>
+    <line x1="24" y1="8" x2="8" y2="24" stroke="${c}" stroke-width="2"/>
+    <circle cx="8" cy="8" r="4" fill="white" stroke="${c}" stroke-width="1.5"/>
+    <circle cx="24" cy="8" r="4" fill="white" stroke="${c}" stroke-width="1.5"/>
+    <circle cx="8" cy="24" r="4" fill="white" stroke="${c}" stroke-width="1.5"/>
+    <circle cx="24" cy="24" r="4" fill="white" stroke="${c}" stroke-width="1.5"/>
+    <rect x="14" y="14" width="4" height="4" rx="1" fill="${c}"/>
+  `);
+}
+
+// ── Weapon Rocket: Compact pointed triangle with fin at base ──
+function svgWeaponRocket(c: string): string {
+  return svgWrap(`
+    <polygon points="16,2 24,26 16,22 8,26" fill="white" stroke="${c}" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="16" y1="8" x2="16" y2="18" stroke="${c}" stroke-width="1.5"/>
+    <circle cx="16" cy="7" r="1.5" fill="${c}"/>
+  `);
+}
+
+// ── Weapon Mixed: Concentric circles (bullseye) ──
+function svgWeaponMixed(c: string): string {
+  return svgWrap(`
+    <circle cx="16" cy="16" r="13" fill="white" stroke="${c}" stroke-width="2"/>
+    <circle cx="16" cy="16" r="8" fill="none" stroke="${c}" stroke-width="1.5"/>
+    <circle cx="16" cy="16" r="3" fill="${c}"/>
+  `);
+}
+
+// ── Weapon Unknown: Circle with ? mark ──
+function svgWeaponUnknown(c: string): string {
+  return svgWrap(`
+    <circle cx="16" cy="16" r="13" fill="white" stroke="${c}" stroke-width="2"/>
+    <text x="16" y="21" text-anchor="middle" font-size="16" font-weight="bold" fill="${c}" font-family="monospace">?</text>
   `);
 }

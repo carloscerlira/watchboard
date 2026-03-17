@@ -132,6 +132,7 @@ jobs:
             MAP DATA IS HIGHEST PRIORITY — update map-lines.json FIRST:
             For each new military strike or retaliation event:
             - Add to map-lines.json: from/to coords, cat (strike/retaliation), weaponType, launched, intercepted, confidence, time (HH:MM), platform, status
+            - weaponType values: ballistic, cruise, drone_loitering (Shahed/kamikaze drones), drone_ucav (armed UAVs like MQ-9), drone_recon (surveillance UAVs), drone_fpv (FPV quadcopters), rocket, mixed, unknown. Use 'drone_loitering' for generic/unspecified drones.
             - Add map-points.json entries for new locations
             - Validate coordinates within tracker's coordValidation bounds
 

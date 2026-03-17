@@ -40,7 +40,7 @@ export const MediaItemSchema = z.object({
 // ── OSINT Enums ──
 
 export const WeaponTypeSchema = z.enum([
-  'ballistic', 'cruise', 'drone', 'rocket', 'mixed', 'unknown'
+  'ballistic', 'cruise', 'drone', 'drone_loitering', 'drone_ucav', 'drone_recon', 'drone_fpv', 'rocket', 'mixed', 'unknown'
 ]);
 export const ConfidenceSchema = z.enum(['high', 'medium', 'low']);
 export const StrikeStatusSchema = z.enum(['hit', 'intercepted', 'partial', 'unknown']);

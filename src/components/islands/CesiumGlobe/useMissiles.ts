@@ -1,23 +1,27 @@
 import { useEffect, useRef } from 'react';
 import {
   Cartesian3,
-  Color,
   CallbackProperty,
   JulianDate,
-  PolylineGlowMaterialProperty,
+  NearFarScalar,
+  VerticalOrigin,
+  HorizontalOrigin,
   type Viewer as CesiumViewer,
   type Entity,
 } from 'cesium';
 import type { MapLine } from '../../../lib/schemas';
 import {
   arc3D,
-  catToCesiumColor,
   lineWidth,
   arcMaterial,
   weaponPeakAlt,
-  weaponProjectileSize,
-  weaponGlowPower,
+  weaponColor,
+  weaponTrailMaterial,
+  weaponTrailWidth,
+  weaponBillboardSize,
+  weaponIconType,
 } from './cesium-helpers';
+import { getIconDataUri } from './cesium-icons';
 
 interface MissileAnimation {
   lineId: string;
@@ -211,9 +215,10 @@ export function useMissiles(
       const peakAlt = weaponPeakAlt(line.weaponType);
       const arcOffset = lateralOffsets.get(line.id) ?? 0;
       const mainArc = arc3D(line.from, line.to, ARC_SEGMENTS, peakAlt, arcOffset);
-      const color = catToCesiumColor(line.cat);
-      const baseSize = weaponProjectileSize(line.weaponType);
-      const glowPwr = weaponGlowPower(line.weaponType);
+      const color = weaponColor(line.weaponType);
+      const iconType = weaponIconType(line.weaponType);
+      const leadSize = weaponBillboardSize(line.weaponType, true);
+      const swarmSize = weaponBillboardSize(line.weaponType, false);
 
       // Sub-day timing from line.time field
       let timeOffset = 0;
@@ -235,13 +240,7 @@ export function useMissiles(
       const remaining = MAX_TOTAL_PROJECTILES - totalProjectiles;
       const projCount = Math.min(launched, PER_ARC_CAP, Math.max(1, remaining));
 
-      const projSize = projCount > 10
-        ? Math.max(2, baseSize - 2)
-        : projCount > 5
-          ? Math.max(3, baseSize - 1)
-          : baseSize;
-
-      const trailW = lineWidth(line.cat) + Math.min(projCount / 10, 3);
+      const trailW = weaponTrailWidth(line.weaponType) + Math.min(projCount / 10, 3);
 
       // ── Trail entity ──
       const trailAnim: MissileAnimation = {
@@ -263,10 +262,7 @@ export function useMissiles(
               return mainArc.slice(0, segCount);
             }, false) as any,
             width: trailW,
-            material: new PolylineGlowMaterialProperty({
-              glowPower: glowPwr,
-              color: color.withAlpha(line.confidence === 'low' ? 0.4 : 0.9),
-            }),
+            material: weaponTrailMaterial(line.weaponType, line.confidence === 'low' ? 0.4 : 0.9),
           },
         }),
         projectileEntity: null,
@@ -318,11 +314,13 @@ export function useMissiles(
               const progress = Math.min(Math.max(elapsed / dur, 0), 1);
               return lerpArc(projArc, progress);
             }, false) as any,
-            point: {
-              pixelSize: p === 0 ? baseSize : projSize,
-              color: Color.WHITE.withAlpha(p === 0 ? 1 : 0.8),
-              outlineColor: color.withAlpha(p === 0 ? 0.8 : 0.5),
-              outlineWidth: p === 0 ? (baseSize > 6 ? 5 : 4) : Math.max(2, projSize - 1),
+            billboard: {
+              image: getIconDataUri(iconType, color.toCssColorString()),
+              width: p === 0 ? leadSize.width : swarmSize.width,
+              height: p === 0 ? leadSize.height : swarmSize.height,
+              verticalOrigin: VerticalOrigin.CENTER,
+              horizontalOrigin: HorizontalOrigin.CENTER,
+              scaleByDistance: new NearFarScalar(1e5, 1.0, 1e7, 0.3),
             },
           }),
           completed: false,

@@ -1,5 +1,6 @@
 import { Cartesian3, Color, PolylineGlowMaterialProperty, PolylineDashMaterialProperty } from 'cesium';
 import type { MaterialProperty } from 'cesium';
+import type { IconType } from './cesium-icons';
 import { MAP_CATEGORIES } from '../../../lib/map-utils';
 
 /** Convert category ID to Cesium Color */
@@ -118,7 +119,11 @@ export function weaponSpeed(weaponType?: string): number {
   switch (weaponType) {
     case 'ballistic': return 4000;
     case 'cruise': return 900;
-    case 'drone': return 200;
+    case 'drone':
+    case 'drone_loitering': return 200;
+    case 'drone_ucav': return 250;
+    case 'drone_recon': return 180;
+    case 'drone_fpv': return 120;
     case 'rocket': return 1200;
     case 'mixed': return 2000;
     default: return 2000;
@@ -130,7 +135,11 @@ export function weaponPeakAlt(weaponType?: string): number {
   switch (weaponType) {
     case 'ballistic': return 300_000;
     case 'cruise': return 50_000;
-    case 'drone': return 30_000;
+    case 'drone':
+    case 'drone_loitering': return 30_000;
+    case 'drone_ucav': return 45_000;
+    case 'drone_recon': return 40_000;
+    case 'drone_fpv': return 15_000;
     case 'rocket': return 80_000;
     case 'mixed': return 150_000;
     default: return 150_000;
@@ -177,6 +186,102 @@ export function billboardSize(cat: string, subType?: string): { width: number; h
   if (cat === 'front') return { width: 22, height: 22 };
   if (cat === 'strike' || cat === 'retaliation') return { width: 24, height: 24 };
   return { width: 18, height: 18 };
+}
+
+/** Weapon-type color */
+export function weaponColor(weaponType?: string): Color {
+  switch (weaponType) {
+    case 'ballistic': return Color.fromCssColorString('#ff4466');
+    case 'cruise': return Color.fromCssColorString('#44bbff');
+    case 'drone':
+    case 'drone_loitering': return Color.fromCssColorString('#88ff44');
+    case 'drone_ucav': return Color.fromCssColorString('#66dd66');
+    case 'drone_recon': return Color.fromCssColorString('#44cc88');
+    case 'drone_fpv': return Color.fromCssColorString('#aaff66');
+    case 'rocket': return Color.fromCssColorString('#ffaa22');
+    case 'mixed': return Color.fromCssColorString('#cc66ff');
+    case 'unknown': return Color.fromCssColorString('#888888');
+    default: return Color.fromCssColorString('#888888');
+  }
+}
+
+/** Weapon-type trail material (glow or dash) */
+export function weaponTrailMaterial(weaponType?: string, alpha = 0.9): MaterialProperty {
+  const color = weaponColor(weaponType).withAlpha(alpha);
+  switch (weaponType) {
+    case 'drone':
+    case 'drone_loitering':
+      return new PolylineDashMaterialProperty({ color, dashLength: 8 });
+    case 'drone_ucav':
+      return new PolylineGlowMaterialProperty({ glowPower: 0.15, color });
+    case 'drone_recon':
+      return new PolylineDashMaterialProperty({ color, dashLength: 12 });
+    case 'drone_fpv':
+      return new PolylineDashMaterialProperty({ color, dashLength: 4 });
+    case 'unknown':
+      return new PolylineDashMaterialProperty({ color, dashLength: 12 });
+    case 'ballistic':
+      return new PolylineGlowMaterialProperty({ glowPower: 0.5, color });
+    case 'cruise':
+      return new PolylineGlowMaterialProperty({ glowPower: 0.2, color });
+    case 'rocket':
+      return new PolylineGlowMaterialProperty({ glowPower: 0.35, color });
+    case 'mixed':
+      return new PolylineGlowMaterialProperty({ glowPower: 0.3, color });
+    default:
+      return new PolylineGlowMaterialProperty({ glowPower: 0.25, color });
+  }
+}
+
+/** Weapon-type trail width */
+export function weaponTrailWidth(weaponType?: string): number {
+  switch (weaponType) {
+    case 'ballistic': return 4.0;
+    case 'cruise': return 2.5;
+    case 'drone':
+    case 'drone_loitering': return 1.5;
+    case 'drone_ucav': return 2.0;
+    case 'drone_recon': return 1.5;
+    case 'drone_fpv': return 1.0;
+    case 'rocket': return 2.0;
+    case 'mixed': return 3.0;
+    case 'unknown': return 1.5;
+    default: return 2.0;
+  }
+}
+
+/** Weapon-type billboard size (lead vs swarm) */
+export function weaponBillboardSize(weaponType?: string, isLead = true): { width: number; height: number } {
+  switch (weaponType) {
+    case 'ballistic': return isLead ? { width: 28, height: 28 } : { width: 22, height: 22 };
+    case 'cruise': return isLead ? { width: 24, height: 16 } : { width: 18, height: 12 };
+    case 'drone':
+    case 'drone_loitering': return isLead ? { width: 18, height: 18 } : { width: 14, height: 14 };
+    case 'drone_ucav': return isLead ? { width: 20, height: 20 } : { width: 16, height: 16 };
+    case 'drone_recon': return isLead ? { width: 18, height: 18 } : { width: 14, height: 14 };
+    case 'drone_fpv': return isLead ? { width: 12, height: 12 } : { width: 10, height: 10 };
+    case 'rocket': return isLead ? { width: 20, height: 20 } : { width: 16, height: 16 };
+    case 'mixed': return isLead ? { width: 22, height: 22 } : { width: 18, height: 18 };
+    case 'unknown': return isLead ? { width: 18, height: 18 } : { width: 14, height: 14 };
+    default: return isLead ? { width: 18, height: 18 } : { width: 14, height: 14 };
+  }
+}
+
+/** Map weapon type to icon type */
+export function weaponIconType(weaponType?: string): IconType {
+  switch (weaponType) {
+    case 'ballistic': return 'weapon_ballistic';
+    case 'cruise': return 'weapon_cruise';
+    case 'drone':
+    case 'drone_loitering': return 'weapon_drone_loitering';
+    case 'drone_ucav': return 'weapon_drone_ucav';
+    case 'drone_recon': return 'weapon_drone_recon';
+    case 'drone_fpv': return 'weapon_drone_fpv';
+    case 'rocket': return 'weapon_rocket';
+    case 'mixed': return 'weapon_mixed';
+    case 'unknown': return 'weapon_unknown';
+    default: return 'weapon_unknown';
+  }
 }
 
 // Re-export tier helpers for backward compatibility — canonical source is tier-utils
