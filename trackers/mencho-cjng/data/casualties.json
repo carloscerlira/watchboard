@@ -1,1 +1,90 @@
-[]
+[
+  {
+    "id": "el-mencho-tapalpa-operation",
+    "category": "Tapalpa Operation — Feb 22, 2026",
+    "killed": "1 (El Mencho confirmed)",
+    "injured": "Unknown (classified)",
+    "source": "SEDENA / SSPC official announcement",
+    "tier": 1,
+    "contested": "no",
+    "note": "El Mencho killed by Mexican Army/GN/Air Force joint operation in Tapalpa, Jalisco. Number of military or cartel casualties beyond El Mencho remains classified by Mexican government.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "jalisco-police-ambush-2015",
+    "category": "Jalisco State Police Ambush — Apr 2015",
+    "killed": "15 (state police officers)",
+    "injured": "Several",
+    "source": "SSPC / Jalisco State Security",
+    "tier": 1,
+    "contested": "no",
+    "note": "CJNG gunmen ambushed a convoy of Jalisco state police, killing 15 officers in one of the deadliest single attacks on Mexican law enforcement at that time. Occurred weeks before the helicopter shootdown.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "jalisco-helicopter-shootdown-2015",
+    "category": "Military Helicopter Shootdown — May 1, 2015",
+    "killed": "9 (soldiers)",
+    "injured": "0 (no survivors from crew)",
+    "source": "SEDENA official report",
+    "tier": 1,
+    "contested": "no",
+    "note": "CJNG used Russian RPG-27 rockets to shoot down a Mexican military Cougar EC725 helicopter near Villa Purificación, Jalisco, killing all 9 soldiers aboard. Triggered Operation Jalisco deploying 10,000 troops.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "garcia-harfuch-attack-2020",
+    "category": "García Harfuch Assassination Attempt — Jun 26, 2020",
+    "killed": "3 (2 bodyguards, 1 civilian bystander)",
+    "injured": "1 (García Harfuch — 3 bullet wounds)",
+    "source": "SSPC / Mexico City Security Secretariat",
+    "tier": 1,
+    "contested": "no",
+    "note": "Four groups of 7 CJNG gunmen fired 400+ rounds including .50-caliber at Security Secretary Omar García Harfuch on Paseo de la Reforma. 15 hitmen arrested same day; mastermind convicted.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "irapuato-rehab-massacre-2020",
+    "category": "Irapuato Drug Rehab Massacre — Jun 27, 2020",
+    "killed": "27",
+    "injured": "4",
+    "source": "Guanajuato State Prosecutor / Reuters",
+    "tier": 1,
+    "contested": "evolving",
+    "note": "Gunmen attacked a drug rehabilitation center in Irapuato, Guanajuato, killing 27 people and injuring 4. Attributed to CJNG in the context of its war against Santa Rosa de Lima Cartel for Guanajuato corridor control.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "uruapan-bridge-massacre-2019",
+    "category": "Uruapan Bridge Massacre — Aug 13, 2019",
+    "killed": "19 (9 hung from bridge + 10 dismembered)",
+    "injured": "0",
+    "source": "Michoacán State Prosecutor / AP",
+    "tier": 2,
+    "contested": "no",
+    "note": "CJNG hung 9 bodies from a bridge in Uruapan and left 10 more dismembered nearby, in the context of its war with Los Viagras over Tierra Caliente extortion rackets on avocado and lime industries.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "veracruz-massacre-2011",
+    "category": "Veracruz Boca del Río Massacre — Sep 20, 2011",
+    "killed": "35 (alleged Zetas members)",
+    "injured": "0",
+    "source": "Veracruz State Prosecutor / Reuters",
+    "tier": 2,
+    "contested": "partial",
+    "note": "CJNG (then calling itself 'Matazetas') dumped 35 bodies on Boca del Río highway with a narco-banner. This was CJNG's public debut. Contested in that several victims may not have been Zetas but civilians.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "mexico-total-homicides-2024",
+    "category": "Mexico Total Homicides — 2024",
+    "killed": "~29,000 (est.)",
+    "injured": "N/A",
+    "source": "SESNSP / Mexico Peace Index 2024",
+    "tier": 1,
+    "contested": "evolving",
+    "note": "National homicide count; significant portion attributed to organized crime. Represents fourth consecutive year of decline from 2019 peak of ~34,500. CJNG attributed to 81% of all cartel-related homicides since 2013 per security researchers.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  }
+]

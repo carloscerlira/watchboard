@@ -1,1 +1,213 @@
-[]
+[
+  {
+    "id": "mencho-death-confirmation",
+    "question": "Was El Mencho's death in February 2026 conclusively confirmed?",
+    "sideA": {
+      "label": "Mexican Government",
+      "text": "The Mexican Army (SEDENA) and Security Secretary Omar García Harfuch officially confirmed El Mencho's death on February 22, 2026, following the Tapalpa operation. DNA identification matched samples on file with U.S. and Mexican agencies. The government announced confirmation within 48 hours of the operation."
+    },
+    "sideB": {
+      "label": "Skeptical Observers / Social Media",
+      "text": "Multiple narco-influencer social media accounts circulated rumors that El Mencho survived the operation and a body-double was used, a common conspiracy claim after major cartel leader takedowns. Some CJNG-aligned messaging claimed he was alive in the weeks following the operation."
+    },
+    "resolution": "Confirmed by DNA — government confirmation stands; body-double claims unsupported by any verifiable evidence",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "us-intelligence-role-tapalpa",
+    "question": "How significant was U.S. intelligence in the operation that killed El Mencho?",
+    "sideA": {
+      "label": "U.S. Officials",
+      "text": "DEA and U.S. intelligence agencies provided critical real-time location intelligence — including signals intelligence and surveillance data — that enabled the precise targeting of El Mencho's hideout in Tapalpa. Multiple years of sustained signals collection and informant cultivation led to the operation."
+    },
+    "sideB": {
+      "label": "Mexican Government",
+      "text": "Mexico's own intelligence services, SEDENA, and the CNI (national intelligence center) conducted independent surveillance that confirmed El Mencho's location. Mexico emphasizes the operation was exclusively commanded and executed by Mexican forces; U.S. role was strictly intelligence-sharing, not operational."
+    },
+    "resolution": "U.S. intelligence role confirmed by both sides; degree of dependency vs. complementarity remains diplomatically contested",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "cjng-fto-designation-legality",
+    "question": "Is CJNG's U.S. Foreign Terrorist Organization designation legally justified?",
+    "sideA": {
+      "label": "U.S. State Department / Trump Administration",
+      "text": "CJNG meets the FTO standard: it is a foreign organization, it engages in terrorist activity through systematic violence against civilians and state actors, and its activities threaten U.S. national security. The designation enables asset seizures and prosecution of material supporters in the U.S."
+    },
+    "sideB": {
+      "label": "Mexican Government / Legal Scholars",
+      "text": "Mexico formally objected that the FTO designation is an overreach of U.S. jurisdiction that infringes on Mexican sovereignty and complicates bilateral relations. Critics argue CJNG is a criminal enterprise, not a terrorist group, and FTO designation may complicate peace negotiations and impede Mexico's own justice processes."
+    },
+    "resolution": "Designation stands as of Feb 20, 2025; Mexico registered diplomatic objections but did not formally break cooperation",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "rosalinda-early-release",
+    "question": "Was Rosalinda González's early prison release from a Mexican prison in early 2025 politically motivated?",
+    "sideA": {
+      "label": "Mexican Prison Authorities",
+      "text": "Rosalinda González Valencia was released early from her five-year money laundering sentence for documented 'good conduct' under standard Mexican penitentiary regulations. Prison authorities stated the release followed established legal procedures for sentence reduction."
+    },
+    "sideB": {
+      "label": "Opposition Politicians / Anti-corruption Groups",
+      "text": "Her release sparked outrage given that she is the wife of Mexico's most wanted criminal. Critics allege she had improper access to judicial officials or that CJNG paid for the early release. Transparency Mexico noted that early releases in high-profile cartel cases have historically been accompanied by corruption."
+    },
+    "resolution": "Under investigation by FGR as of early 2026; no formal corruption charges yet filed against prison officials",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "cjng-succession-candidate",
+    "question": "Who will lead CJNG following El Mencho's death?",
+    "sideA": {
+      "label": "Grupo Élite / O3 Faction",
+      "text": "Juan Carlos Valencia González 'O3,' El Mencho's stepson and commander of Grupo Élite, is assessed by InSight Crime and U.S. analysts as the most likely successor. He commands CJNG's most militarized unit, has family legitimacy, and has been managing day-to-day operations for years."
+    },
+    "sideB": {
+      "label": "Regional Commanders / El Doble R",
+      "text": "Ricardo Ruiz Velasco 'El Doble R' controls key operational corridors and has significant criminal experience independent of the Oseguera family. Multiple regional commanders may refuse to submit to O3's authority, preferring a federated structure or backing El Doble R as a consensus candidate."
+    },
+    "resolution": "Succession contest ongoing as of March 2026; no single leader has consolidated control",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "cjng-colima-control",
+    "question": "Does CJNG maintain effective territorial control over Colima state post-Mencho?",
+    "sideA": {
+      "label": "CJNG Structure",
+      "text": "CJNG's territorial control in Colima — long one of its most secure plazas — was established through years of systematic violence that eliminated all rivals. The organizational infrastructure (corrupted officials, port contacts, plaza bosses) remains even without El Mencho, and control will likely survive any leadership transition."
+    },
+    "sideB": {
+      "label": "Security Analysts",
+      "text": "El Mencho's death has visibly destabilized Colima as competing CJNG sub-factions and external rivals probe for weaknesses. The spike in violence in March 2026 suggests the succession crisis is creating real territorial uncertainty in the state. Some analysts predict Colima's homicide rate will rise even further in 2026."
+    },
+    "resolution": "Contested control — CJNG retains structural advantage but stability is degrading; violence trending upward in March 2026",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "cjng-fentanyl-responsibility",
+    "question": "Is CJNG primarily responsible for fentanyl deaths in the United States?",
+    "sideA": {
+      "label": "DEA / U.S. Government",
+      "text": "DEA assessments consistently identify CJNG and the Sinaloa Cartel as the two primary organizations responsible for fentanyl supply into the U.S. CJNG controls Port of Manzanillo, the main precursor entry point, and manufactures fentanyl in Jalisco and Michoacán labs before distributing through U.S. networks."
+    },
+    "sideB": {
+      "label": "Public Health Researchers",
+      "text": "Fentanyl deaths in the U.S. result from a complex supply chain involving Chinese precursor suppliers, multiple Mexican cartel intermediaries, and U.S. distribution networks. Attributing deaths to a single organization obscures the systemic demand-side and regulatory failures that created the opioid crisis. CJNG is one major supplier, not uniquely responsible."
+    },
+    "resolution": "Partial attribution confirmed — CJNG is a major but not sole contributor; DEA continues fentanyl supply disruption operations",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "el-menchito-directing-operations",
+    "question": "Did El Menchito continue directing CJNG operations from prison between 2014 and 2020?",
+    "sideA": {
+      "label": "U.S. DOJ / DEA",
+      "text": "U.S. prosecution evidence shows that El Menchito directed drug trafficking operations, coordinated logistics, and communicated with cartel members throughout his six years in Mexican custody. His extradition to the U.S. in 2020 was specifically sought to prevent continued cartel management from prison."
+    },
+    "sideB": {
+      "label": "Mexican Prison Authorities (Historical Position)",
+      "text": "Mexican prison authorities denied that El Menchito had unusual communication access or was directing criminal operations, maintaining that he was held in conditions that prevented external coordination. Prison officials rejected claims of systemic communication failures."
+    },
+    "resolution": "Confirmed by DOJ evidence at U.S. trial; El Menchito convicted and sentenced to life + 30 years (Mar 2025)",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "cjng-vs-sinaloa-guanajuato",
+    "question": "Has CJNG definitively won the Guanajuato drug war against Santa Rosa de Lima Cartel?",
+    "sideA": {
+      "label": "CJNG / Government Intelligence",
+      "text": "Following the August 2020 arrest of CSRL leader 'El Marro,' CJNG rapidly filled the vacuum in Guanajuato. Most CSRL cells either disbanded, joined CJNG, or were eliminated. Violence has declined in some municipalities as CJNG consolidates hegemony, consistent with the 'pacification through dominance' pattern seen in Jalisco and Nayarit."
+    },
+    "sideB": {
+      "label": "InSight Crime / Security Researchers",
+      "text": "CSRL splinter cells continue operating in Guanajuato, and some former CSRL members have aligned with Sinaloa Cartel affiliates to resist CJNG. Full consolidation has not been achieved; some municipalities continue to record high violence. Guanajuato remains Mexico's deadliest state by total homicides in recent years."
+    },
+    "resolution": "CJNG dominant but not fully consolidated; CSRL remnants and Sinaloa-aligned groups persist",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "drone-warfare-cjng",
+    "question": "Is CJNG's use of weaponized drones a strategic escalation or a tactical novelty?",
+    "sideA": {
+      "label": "U.S. Security Agencies / RAND",
+      "text": "CJNG's deployment of remotely detonated IEDs strapped to commercial drones against rivals and law enforcement in Guanajuato (2021) and the Carteles Unidos drone attacks in Tepalcatepec (2021) represent a genuine tactical evolution. These weapons reduce risk to CJNG operators and could escalate against military targets.",
+      "sources": []
+    },
+    "sideB": {
+      "label": "Mexican Military",
+      "text": "Mexican defense officials downplayed drone threats as unsophisticated improvised devices with limited operational impact. SEDENA argues that existing counter-drone capabilities and electronic jamming tools adequately address current cartel drone threats, and that characterizing them as 'military drones' overstates CJNG's capabilities."
+    },
+    "resolution": "Ongoing capability development — drones remain a low-frequency but real tactical threat; no decisive strategic impact recorded",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "mexico-hugs-not-bullets",
+    "question": "Did the AMLO administration's 'hugs not bullets' (abrazos no balazos) security policy fail?",
+    "sideA": {
+      "label": "AMLO Administration / Morena Party",
+      "text": "The López Obrador administration argued that addressing cartel power required attacking poverty and inequality, not military confrontation. Violence did decline nationally from 2021 to 2024 for the first time in years. Officials pointed to record-low violence in some states as evidence the social-first approach was working."
+    },
+    "sideB": {
+      "label": "Opposition / Security Experts / U.S. Officials",
+      "text": "Critics argued that CJNG expanded massively during the AMLO years, achieving presence in 27 of 32 states, while homicide rates remained historically elevated. The policy of avoiding military confrontation with CJNG enabled the cartel to entrench itself more deeply. The U.S. government repeatedly expressed frustration with Mexico's approach."
+    },
+    "resolution": "Empirically contested — homicides declined late in AMLO term, but CJNG territorial expansion continued; debate remains unresolved",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "los-cuinis-financial-network",
+    "question": "Has U.S. prosecution disrupted Los Cuinis' financial architecture?",
+    "sideA": {
+      "label": "U.S. Treasury / DOJ",
+      "text": "The arrests of Abigael González Valencia (El Cuini, 2015–2025 extradition), Gerardo González Valencia (life sentence July 2023), and José González-Valencia (30 years June 2025) have decapitated the leadership of Los Cuinis. Combined with $6 billion in forfeiture orders against El Menchito, the financial infrastructure has been severely disrupted."
+    },
+    "sideB": {
+      "label": "Financial Crime Analysts / FATF",
+      "text": "Los Cuinis' money laundering infrastructure is deeply embedded in the Mexican real estate, restaurant, and agricultural sectors, and has spawned successor networks not dependent on any individual. Mexican financial intelligence (UIF) has identified ongoing suspicious transactions linked to Los Cuinis affiliates not yet charged."
+    },
+    "resolution": "Leadership neutralized; financial network partially disrupted but not dismantled; successor structures active",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "carteles-unidos-effectiveness",
+    "question": "Was the Carteles Unidos coalition an effective resistance to CJNG in Michoacán?",
+    "sideA": {
+      "label": "Carteles Unidos / Los Viagras",
+      "text": "The coalition successfully prevented CJNG from achieving full dominance over Michoacán's Tierra Caliente during its peak operations (2019–2022). By combining multiple regional groups, it maintained territorial integrity in key municipalities and demonstrated that CJNG's expansion could be checked through unified resistance."
+    },
+    "sideB": {
+      "label": "InSight Crime / Security Researchers",
+      "text": "Carteles Unidos largely fragmented by 2023 due to internal rivalries, CJNG infiltration, and the arrest of key leaders. Its dramatic displays — armored vehicle convoys, weaponized drones — masked fundamental organizational weaknesses. CJNG ultimately controls Lázaro Cárdenas port and significant Tierra Caliente territory."
+    },
+    "resolution": "Mixed effectiveness — Carteles Unidos delayed but did not reverse CJNG's Michoacán expansion; coalition collapsed by 2023",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "garcia-harfuch-cjng-motive",
+    "question": "Why did CJNG attempt to assassinate García Harfuch in June 2020?",
+    "sideA": {
+      "label": "Mexican Government",
+      "text": "García Harfuch was targeted because of his aggressive anti-cartel enforcement record — first as CISEN intelligence director and then as Mexico City security secretary. His intelligence operations had disrupted multiple CJNG networks. The assassination attempt was retaliation and a warning to officials who prosecute cartel interests."
+    },
+    "sideB": {
+      "label": "CJNG / Unverified Claims",
+      "text": "Cartel-aligned messaging suggested the attack was connected to disputes over law enforcement corruption and that García Harfuch had double-crossed agreements with CJNG networks. These claims are entirely unverified and consistent with standard cartel disinformation tactics to cast suspicion on government officials."
+    },
+    "resolution": "Government motive confirmed by evidence at trial; CJNG disinformation claims rejected — 12 CJNG members sentenced, mastermind El Vaca arrested",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "cjng-fragmentation-post-mencho",
+    "question": "Will El Mencho's death lead to a major fragmentation of CJNG?",
+    "sideA": {
+      "label": "Fragmentation Analysts (Crisis Group, InSight Crime)",
+      "text": "El Mencho was uniquely suited to unifying CJNG through a combination of family connections, personal brutality, and business acumen. No successor combines all three qualities. Historical precedent — the post-Heliodoro Hurtado fragmentation of Los Zetas, post-Guzmán Sinaloa split — suggests significant fragmentation is likely."
+    },
+    "sideB": {
+      "label": "CJNG Continuity Analysts",
+      "text": "CJNG's institutional structure — including Grupo Élite's military capacity, Los Cuinis' financial networks, and deeply embedded plaza arrangements — survived multiple near-decapitations including El Menchito's extradition. The cartel's franchise model may enable continuity even without a single supreme leader."
+    },
+    "resolution": "Contested outlook — fragmentation indicators present as of March 2026 but full organizational collapse has not occurred",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  }
+]

@@ -1,1 +1,137 @@
-[]
+[
+  {
+    "id": "el-mencho",
+    "name": "Nemesio Oseguera Cervantes",
+    "role": "CJNG Founder & Supreme Leader (d. Feb 22, 2026)",
+    "avatar": "cjng",
+    "initial": "N",
+    "quote": "El Mencho built the most powerful criminal organization in the Western Hemisphere from a rural Michoacán village. His February 2026 death leaves a power vacuum with no clear successor.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "o3-valencia-gonzalez",
+    "name": "Juan Carlos Valencia González",
+    "role": "CJNG Grupo Élite Commander — Primary Succession Candidate ('O3')",
+    "avatar": "cjng",
+    "initial": "J",
+    "quote": "As El Mencho's stepson and commander of CJNG's paramilitary Grupo Élite, O3 commands the cartel's most militarized unit and has U.S. citizenship — creating both an organizational advantage and unique legal exposure.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "el-doble-r",
+    "name": "Ricardo Ruiz Velasco",
+    "role": "CJNG Senior Operational Commander ('El Doble R') — Succession Candidate",
+    "avatar": "cjng",
+    "initial": "R",
+    "quote": "Named by analysts as a top contender for CJNG leadership post-Mencho. El Doble R controls key drug corridors and commands loyalty among operational mid-level commanders independent of the Oseguera family.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "el-jardinero",
+    "name": "Audias Flores Silva",
+    "role": "CJNG Senior Regional Commander ('El Jardinero' / The Gardener)",
+    "avatar": "cjng",
+    "initial": "A",
+    "quote": "Treasury-designated CJNG commander with a $5 million U.S. bounty. El Jardinero manages significant CJNG territorial operations and is among the senior figures who will determine the cartel's post-Mencho direction.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "rosalinda-gonzalez",
+    "name": "Rosalinda González Valencia",
+    "role": "El Mencho's Wife — CJNG Financial Operations ('La Jefa')",
+    "avatar": "cjng",
+    "initial": "R",
+    "quote": "Released early from a five-year money laundering sentence in early 2025 for 'good conduct,' sparking controversy. Rosalinda's González Valencia family connections to Los Cuinis made her CJNG's key financial architect. She remains free and under scrutiny.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "garcia-harfuch",
+    "name": "Omar García Harfuch",
+    "role": "Mexico Security Secretary — Led Post-Mencho Operation",
+    "avatar": "mx-gov",
+    "initial": "O",
+    "quote": "The man CJNG tried to kill in June 2020 ended up overseeing the operation that killed El Mencho in February 2026. As Security Secretary and former intelligence director, García Harfuch personifies Mexico's decade-long escalation against CJNG.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "sedena-general",
+    "name": "General Ricardo Trevilla Trejo",
+    "role": "SEDENA Secretary (Mexican Defense Minister)",
+    "avatar": "mx-gov",
+    "initial": "R",
+    "quote": "Led the institutional military planning behind the Tapalpa operation. SEDENA under Trevilla has deepened intelligence-sharing with U.S. NORTHCOM and DEA while maintaining operational command authority over cartel interdiction missions on Mexican soil.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "claudia-sheinbaum",
+    "name": "Claudia Sheinbaum",
+    "role": "President of Mexico (since Oct 2024)",
+    "avatar": "mx-gov",
+    "initial": "C",
+    "quote": "Sheinbaum inherited Mexico's cartel crisis from AMLO and has navigated between maintaining her predecessor's social-investment approach and cooperating more closely with U.S. security demands following CJNG's FTO designation and the February 2026 El Mencho operation.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "dea-administrator",
+    "name": "DEA Administrator",
+    "role": "U.S. Drug Enforcement Administration — Lead CJNG Targeting Agency",
+    "avatar": "us-dea",
+    "initial": "D",
+    "quote": "DEA has designated CJNG as one of the highest-priority Consolidated Priority Organization Targets (CPOTs). Operation Python (2020) and the sustained intelligence campaign against El Mencho represent the DEA's most intensive sustained targeting effort against a single cartel.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "marco-rubio",
+    "name": "Marco Rubio",
+    "role": "U.S. Secretary of State — Signed CJNG FTO Designation",
+    "avatar": "us-dea",
+    "initial": "M",
+    "quote": "Secretary Rubio officially designated CJNG as a Foreign Terrorist Organization on February 20, 2025, implementing the Trump executive order and marking a major escalation in U.S. legal treatment of Mexican cartels. The designation enabled new prosecution tools against material supporters.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "el-menchito",
+    "name": "Rubén Oseguera González",
+    "role": "CJNG Former Second-in-Command (Imprisoned, U.S.) — 'El Menchito'",
+    "avatar": "cjng",
+    "initial": "R",
+    "quote": "El Mencho's son and former heir apparent was extradited to the U.S. in 2020 and sentenced to life plus 30 years in March 2025, with a $6 billion forfeiture order. His imprisonment sealed CJNG's succession crisis before his father's death.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "el-marro",
+    "name": "José Antonio Yépez Ortiz",
+    "role": "Former Santa Rosa de Lima Cartel Leader — CJNG's Rival ('El Marro')",
+    "avatar": "rivals",
+    "initial": "J",
+    "quote": "CSRL leader whose August 2020 arrest handed CJNG a decisive advantage in Guanajuato. El Marro became a social-media-savvy cartel boss who posted videos defending his gang's role in defending communities from CJNG, but ultimately could not sustain military resistance without state protection.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "los-viagras-leader",
+    "name": "Los Viagras Leadership",
+    "role": "Michoacán Rival Cartel — CJNG's Persistent Enemy in Tierra Caliente",
+    "avatar": "rivals",
+    "initial": "L",
+    "quote": "Originally a community self-defense group, Los Viagras evolved into a criminal enterprise competing with CJNG over Michoacán's avocado and lime extortion rackets. Their knowledge of local terrain gives them a 'profound advantage' in Tierra Caliente despite CJNG's superior firepower.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "human-rights-defenders",
+    "name": "Mexican Human Rights Defenders",
+    "role": "Civil Society — Documenting Cartel and State Violence",
+    "avatar": "victims",
+    "initial": "H",
+    "quote": "Journalists and rights defenders documenting CJNG violence face severe retaliation. Mexico has remained one of the world's most dangerous countries for journalists for over a decade, with CJNG-linked threats and killings documented across Jalisco, Colima, Michoacán, and Veracruz.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "insight-crime-analysts",
+    "name": "InSight Crime / Crisis Group Analysts",
+    "role": "Independent Organized Crime Research Organizations",
+    "avatar": "other",
+    "initial": "I",
+    "quote": "InSight Crime and the International Crisis Group have provided the most sustained independent analysis of CJNG's structure, tactics, and succession dynamics. Their assessments consistently warn that decapitation strategies risk fragmentation that produces more violence, not less.",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  }
+]

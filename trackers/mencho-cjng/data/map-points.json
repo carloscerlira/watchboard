@@ -1,1 +1,224 @@
-[]
+[
+  {
+    "id": "guadalajara-cjng-hq",
+    "lon": -103.35,
+    "lat": 20.66,
+    "cat": "cjng",
+    "label": "Guadalajara — CJNG Headquarters",
+    "sub": "Metropolitan Guadalajara (including Zapopan) is the historic birthplace and operational center of CJNG. El Mencho built his criminal empire here after the 2010 death of Nacho Coronel eliminated Sinaloa's Jalisco umbrella.",
+    "tier": 2,
+    "date": "2026-02-22",
+    "showLabel": true,
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "tapalpa-el-mencho-killed",
+    "lon": -103.75,
+    "lat": 19.95,
+    "cat": "operation",
+    "label": "Tapalpa — El Mencho Killed",
+    "sub": "Mountain town in Jalisco where El Mencho (Nemesio Oseguera Cervantes) was killed on February 22, 2026, during a joint Army/GN/Air Force operation with U.S. intelligence support. El Mencho had reportedly used the rugged Sierra de Tapalpa terrain for years as a hideout.",
+    "tier": 1,
+    "date": "2026-02-22",
+    "showLabel": true,
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "colima-violence-hotspot",
+    "lon": -103.72,
+    "lat": 19.24,
+    "cat": "violence",
+    "label": "Colima — Mexico's Most Violent State",
+    "sub": "Colima city and state have recorded the highest per-capita homicide rate in Mexico for multiple consecutive years — reaching 111 per 100,000 in 2023. CJNG controls most of the state, including lucrative trafficking routes to the Port of Manzanillo.",
+    "tier": 2,
+    "date": "2024-01-01",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "manzanillo-port",
+    "lon": -104.32,
+    "lat": 19.05,
+    "cat": "trafficking",
+    "label": "Port of Manzanillo — Fentanyl Precursor Gateway",
+    "sub": "Mexico's busiest Pacific port and the primary entry point for fentanyl chemical precursors shipped from China. CJNG controls port security and customs infrastructure, enabling massive precursor imports that fuel fentanyl production for the U.S. market.",
+    "tier": 2,
+    "date": "2023-01-01",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "lazaro-cardenas-port",
+    "lon": -102.20,
+    "lat": 17.96,
+    "cat": "trafficking",
+    "label": "Port of Lázaro Cárdenas — CJNG-Controlled Hub",
+    "sub": "Strategic deep-water port in Michoacán controlled by CJNG. Used to import fentanyl precursors, export methamphetamine, and smuggle iron ore with extorted proceeds. The port's strategic importance drives persistent CJNG-Los Viagras conflict in surrounding Tierra Caliente.",
+    "tier": 2,
+    "date": "2022-01-01",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "aguililla-michoacan",
+    "lon": -103.02,
+    "lat": 18.73,
+    "cat": "cjng",
+    "label": "Aguililla, Michoacán — El Mencho's Birthplace",
+    "sub": "Rural township where Nemesio Oseguera Cervantes was born and raised. Aguililla became a symbol of Mexican state weakness when Carteles Unidos blockaded access roads in 2020–2021, leaving residents trapped without food or medicine as part of the anti-CJNG campaign.",
+    "tier": 2,
+    "date": "2021-03-01",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "uruapan-michoacan",
+    "lon": -102.06,
+    "lat": 19.42,
+    "cat": "violence",
+    "label": "Uruapan — Bridge Massacre Site",
+    "sub": "In August 2019, CJNG hung nine bodies from a bridge and left 10 more dismembered nearby in this major Michoacán city, as part of its war against Los Viagras for control of Tierra Caliente's avocado and lime extortion rackets.",
+    "tier": 2,
+    "date": "2019-08-13",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "irapuato-guanajuato",
+    "lon": -101.35,
+    "lat": 20.68,
+    "cat": "violence",
+    "label": "Irapuato, Guanajuato — Drug Rehab Massacre Site",
+    "sub": "Site of a June 2020 CJNG massacre of 27 people at a drug rehabilitation center — one of the deadliest single attacks in the CJNG-CSRL Guanajuato war. CJNG's campaign transformed Guanajuato into Mexico's deadliest state by absolute homicide count for multiple years.",
+    "tier": 2,
+    "date": "2020-06-27",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "leon-guanajuato",
+    "lon": -101.68,
+    "lat": 21.12,
+    "cat": "rival",
+    "label": "León, Guanajuato — CSRL–CJNG Battleground",
+    "sub": "Guanajuato's largest city and the arena of intense CJNG versus Santa Rosa de Lima Cartel (CSRL) conflict from 2016 to 2020. CJNG's decisive win in Guanajuato following El Marro's arrest transformed the state into a CJNG-dominated corridor.",
+    "tier": 2,
+    "date": "2020-08-02",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "villa-purificacion-helicopter",
+    "lon": -104.73,
+    "lat": 19.79,
+    "cat": "operation",
+    "label": "Villa Purificación — Military Helicopter Shootdown",
+    "sub": "On May 1, 2015, CJNG gunmen used Russian-made RPG-27 rocket launchers to shoot down a Mexican military Cougar EC725 helicopter near this town, killing 9 soldiers. The attack triggered Operation Jalisco — the largest military mobilization in Jalisco's history.",
+    "tier": 1,
+    "date": "2015-05-01",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "zapopan-co-founder-killed",
+    "lon": -103.39,
+    "lat": 20.72,
+    "cat": "violence",
+    "label": "Zapopan — Co-founder El 85 Arrested / El 53 Killed",
+    "sub": "Guadalajara suburb with a dark CJNG history: co-founder Érick Valencia Salazar 'El 85' was arrested here in March 2012, and co-founder Martín Arzola Ortega 'El 53' was assassinated at a shopping center here on July 31, 2019, by a CJNG hitman.",
+    "tier": 2,
+    "date": "2019-07-31",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "mexico-city-garcia-harfuch",
+    "lon": -99.13,
+    "lat": 19.43,
+    "cat": "violence",
+    "label": "Mexico City — García Harfuch Assassination Attempt",
+    "sub": "On June 26, 2020, four groups of CJNG gunmen ambushed Mexico City security secretary Omar García Harfuch on Paseo de la Reforma, firing 400+ rounds including .50-caliber. He survived; three others did not. CJNG's ability to strike Mexico's capital signaled extraordinary reach.",
+    "tier": 1,
+    "date": "2020-06-26",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "tepic-nayarit-corridor",
+    "lon": -104.89,
+    "lat": 21.50,
+    "cat": "trafficking",
+    "label": "Tepic, Nayarit — Northern Trafficking Corridor",
+    "sub": "Capital of Nayarit state and a key node in CJNG's northwestern drug trafficking network. CJNG achieved near-total dominance over Nayarit, maintaining relative stability through hegemony while using the state as a transit corridor toward Sinaloa and Baja California.",
+    "tier": 3,
+    "date": "2022-01-01",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "zacatecas-battleground",
+    "lon": -102.57,
+    "lat": 22.77,
+    "cat": "rival",
+    "label": "Zacatecas — CJNG vs. Sinaloa Active Warzone",
+    "sub": "Zacatecas has become one of Mexico's most contested territories as CJNG and the Sinaloa Cartel fight for control of key highway corridors. Multiple roadblocks, mass killings, and hung bodies mark the ongoing conflict in this formerly calm agricultural state.",
+    "tier": 2,
+    "date": "2023-01-01",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "boca-rio-veracruz-debut",
+    "lon": -96.14,
+    "lat": 19.18,
+    "cat": "cjng",
+    "label": "Boca del Río, Veracruz — CJNG Public Debut",
+    "sub": "Site of the 'Veracruz Massacre' on September 20, 2011 — 35 alleged Zeta members were dumped on the Boca del Río highway with a narco-banner introducing CJNG (then called 'Matazetas') to Mexico. This was the cartel's first major public announcement.",
+    "tier": 2,
+    "date": "2011-09-20",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "tepalcatepec-cua-base",
+    "lon": -103.04,
+    "lat": 19.18,
+    "cat": "rival",
+    "label": "Tepalcatepec, Michoacán — Carteles Unidos Stronghold",
+    "sub": "Stronghold of the Carteles Unidos coalition and birthplace of the self-defense movement. In May 2021, Carteles Unidos used weaponized drones to attack a CJNG convoy here — one of the first confirmed uses of armed drones by non-state actors in the Americas.",
+    "tier": 2,
+    "date": "2021-05-01",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "guadalajara-narcobloqueos-2015",
+    "lon": -103.41,
+    "lat": 20.60,
+    "cat": "violence",
+    "label": "Guadalajara Metro — 2015 Narcobloqueos",
+    "sub": "On May 1, 2015, the same day as the military helicopter shootdown, CJNG simultaneously deployed narcobloqueos (cartel roadblocks with burning buses and armed checkpoints) across 11 Jalisco municipalities to prevent potential military pursuit of El Mencho. Over 100 vehicles were torched.",
+    "tier": 1,
+    "date": "2015-05-01",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "celaya-guanajuato-massacre",
+    "lon": -100.82,
+    "lat": 20.52,
+    "cat": "violence",
+    "label": "Celaya, Guanajuato — Cartel Violence Hub",
+    "sub": "Celaya became a symbol of the CJNG–CSRL war in Guanajuato, repeatedly recording some of Mexico's highest municipal homicide rates. CJNG ultimately consolidated control following El Marro's arrest in August 2020, but retaliatory violence continues.",
+    "tier": 2,
+    "date": "2020-01-01",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "riverside-ca-gaucho-arrest",
+    "lon": -117.37,
+    "lat": 33.98,
+    "cat": "operation",
+    "label": "Riverside, CA — El Gaucho Arrested",
+    "sub": "On November 19, 2024, El Mencho's son-in-law Cristian Gutiérrez-Ochoa ('El Gaucho'), who had faked his own death, was arrested in Riverside, California with $2.2 million in CJNG proceeds. His arrest eliminated a key CJNG–U.S. financial conduit.",
+    "tier": 1,
+    "date": "2024-11-19",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  },
+  {
+    "id": "michoacan-tierra-caliente",
+    "lon": -101.70,
+    "lat": 18.65,
+    "cat": "cjng",
+    "label": "Tierra Caliente, Michoacán — Contested Heartland",
+    "sub": "The hot lowland region of western Michoacán is the epicenter of CJNG's war with Los Viagras and La Nueva Familia Michoacana. Rich in avocado and lime extortion revenue, the region has seen sieges, clandestine mass graves, and drone warfare since 2019.",
+    "tier": 3,
+    "date": "2022-01-01",
+    "lastUpdated": "2026-03-17T00:00:00.000Z"
+  }
+]

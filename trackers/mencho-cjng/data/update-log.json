@@ -1,1 +1,12 @@
-{ "lastRun": "2026-03-17T00:00:00.000Z", "tracker": "mencho-cjng", "sections": {} }
+{
+  "lastRun": "2026-03-17T00:00:00.000Z",
+  "tracker": "mencho-cjng",
+  "sections": {
+    "timeline": { "status": "seeded", "itemCount": 30 },
+    "mapPoints": { "status": "seeded", "itemCount": 20 },
+    "claims": { "status": "seeded", "itemCount": 15 },
+    "political": { "status": "seeded", "itemCount": 15 },
+    "kpis": { "status": "seeded", "itemCount": 8 },
+    "casualties": { "status": "seeded", "itemCount": 8 }
+  }
+}
