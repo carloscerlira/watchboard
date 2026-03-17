@@ -171,7 +171,7 @@ export default function GlobeBackground({ events = [] }: GlobeBackgroundProps) {
 
       /* Atmosphere glow */
       const atmosGrad = ctx.createRadialGradient(cx, cy, radius * 0.85, cx, cy, radius * 1.25);
-      atmosGrad.addColorStop(0, 'rgba(46, 204, 113, 0.02)');
+      atmosGrad.addColorStop(0, 'rgba(46, 204, 113, 0.06)');
       atmosGrad.addColorStop(1, 'rgba(46, 204, 113, 0)');
       ctx.fillStyle = atmosGrad;
       ctx.beginPath();
@@ -179,8 +179,8 @@ export default function GlobeBackground({ events = [] }: GlobeBackgroundProps) {
       ctx.fill();
 
       /* Globe outline */
-      ctx.strokeStyle = 'rgba(46, 204, 113, 0.025)';
-      ctx.lineWidth = 0.5;
+      ctx.strokeStyle = 'rgba(46, 204, 113, 0.08)';
+      ctx.lineWidth = 0.8;
       ctx.beginPath();
       ctx.arc(cx, cy, radius, 0, Math.PI * 2);
       ctx.stroke();
@@ -191,8 +191,8 @@ export default function GlobeBackground({ events = [] }: GlobeBackgroundProps) {
       const scanY = (cy - radius) + scanPhase * radius * 2;
 
       /* Draw scan beam line */
-      ctx.strokeStyle = 'rgba(46, 204, 113, 0.04)';
-      ctx.lineWidth = 0.5;
+      ctx.strokeStyle = 'rgba(46, 204, 113, 0.12)';
+      ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(cx - radius, scanY);
       ctx.lineTo(cx + radius, scanY);
@@ -201,7 +201,7 @@ export default function GlobeBackground({ events = [] }: GlobeBackgroundProps) {
       /* Scan beam glow band */
       const beamGrad = ctx.createLinearGradient(0, scanY - SCAN_BAND_PX / 2, 0, scanY + SCAN_BAND_PX / 2);
       beamGrad.addColorStop(0, 'rgba(46, 204, 113, 0)');
-      beamGrad.addColorStop(0.5, 'rgba(46, 204, 113, 0.015)');
+      beamGrad.addColorStop(0.5, 'rgba(46, 204, 113, 0.04)');
       beamGrad.addColorStop(1, 'rgba(46, 204, 113, 0)');
       ctx.fillStyle = beamGrad;
       ctx.fillRect(cx - radius, scanY - SCAN_BAND_PX / 2, radius * 2, SCAN_BAND_PX);
@@ -218,16 +218,16 @@ export default function GlobeBackground({ events = [] }: GlobeBackgroundProps) {
         const dy = proj.y - cy;
         if (dx * dx + dy * dy > radius * radius) continue;
 
-        let alpha = 0.02 + proj.z * 0.03;
+        let alpha = 0.08 + proj.z * 0.1;
 
         /* Scan beam boost: quadratic falloff within band */
         const distToScan = Math.abs(proj.y - scanY);
         if (distToScan < SCAN_BAND_PX) {
           const t = 1 - distToScan / SCAN_BAND_PX;
-          alpha += t * t * 0.12;
+          alpha += t * t * 0.2;
         }
 
-        const dotSize = 0.8 + proj.z * 0.6;
+        const dotSize = 1.0 + proj.z * 0.8;
 
         ctx.fillStyle = `rgba(46, 204, 113, ${alpha})`;
         ctx.beginPath();
@@ -244,26 +244,26 @@ export default function GlobeBackground({ events = [] }: GlobeBackgroundProps) {
         const dy = proj.y - cy;
         if (dx * dx + dy * dy > radius * radius) continue;
 
-        let alpha = 0.05 + proj.z * 0.1;
+        let alpha = 0.15 + proj.z * 0.2;
 
         const distToScan = Math.abs(proj.y - scanY);
         if (distToScan < SCAN_BAND_PX) {
           const t = 1 - distToScan / SCAN_BAND_PX;
-          alpha += t * t * 0.3;
+          alpha += t * t * 0.35;
         }
 
         /* Glow ring */
-        if (alpha > 0.1) {
-          ctx.fillStyle = `rgba(231, 76, 60, ${alpha * 0.25})`;
+        if (alpha > 0.12) {
+          ctx.fillStyle = `rgba(231, 76, 60, ${alpha * 0.3})`;
           ctx.beginPath();
-          ctx.arc(proj.x, proj.y, 4, 0, Math.PI * 2);
+          ctx.arc(proj.x, proj.y, 5, 0, Math.PI * 2);
           ctx.fill();
         }
 
         /* Dot */
         ctx.fillStyle = `rgba(231, 76, 60, ${alpha})`;
         ctx.beginPath();
-        ctx.arc(proj.x, proj.y, 1.5, 0, Math.PI * 2);
+        ctx.arc(proj.x, proj.y, 2, 0, Math.PI * 2);
         ctx.fill();
       }
 
