@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { loadAllTrackers } from '../lib/tracker-registry';
 import { loadTrackerData } from '../lib/data';
+import GlobeBackground from '../components/islands/GlobeBackground';
 
 const trackers = loadAllTrackers();
 const active = trackers.filter(t => t.status === 'active');
@@ -9,15 +10,21 @@ const archived = trackers.filter(t => t.status === 'archived');
 const base = import.meta.env.BASE_URL;
 const basePath = base.endsWith('/') ? base : `${base}/`;
 
-// Load meta + kpis for each active tracker
+// Load meta + kpis + map points for each active tracker
 const trackerData = active.map(t => {
   const data = loadTrackerData(t.slug, t.eraLabel);
   const topKpis = data.kpis.slice(0, 3);
   const dayCount = data.meta.dayCount;
   const lastUpdated = data.meta.lastUpdated;
   const headline = data.meta.heroHeadline?.replace(/<[^>]+>/g, ' ').replace(/\s{2,}/g, ' ').trim();
-  return { config: t, meta: data.meta, topKpis, dayCount, lastUpdated, headline };
+  const mapPoints = data.mapPoints || [];
+  return { config: t, meta: data.meta, topKpis, dayCount, lastUpdated, headline, mapPoints };
 });
+
+// Collect event locations for the globe background
+const globeEvents = trackerData.flatMap(({ mapPoints }) =>
+  mapPoints.slice(0, 30).map(p => ({ lat: p.lat, lon: p.lon }))
+);
 
 const now = new Date();
 const utcStr = now.toISOString().replace('T', ' ').slice(0, 19) + 'Z';
@@ -39,6 +46,7 @@ const utcStr = now.toISOString().replace('T', ' ').slice(0, 19) + 'Z';
     <!-- Hero -->
     <header class="ix-hero">
       <div class="grid-bg" aria-hidden="true"></div>
+      <GlobeBackground events={globeEvents} client:idle />
       <div class="hero-content">
         <div class="hero-eyebrow">
           <span class="pulse-dot"></span>
@@ -300,6 +308,7 @@ const utcStr = now.toISOString().replace('T', ' ').slice(0, 19) + 'Z';
 
   .hero-content {
     position: relative;
+    z-index: 2;
     text-align: center;
     max-width: 720px;
   }
