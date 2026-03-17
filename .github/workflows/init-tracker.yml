@@ -31,6 +31,9 @@ jobs:
   init:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    outputs:
+      created: ${{ steps.changes.outputs.changed }}
+      built: ${{ steps.build_test.outputs.build }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -311,19 +314,6 @@ jobs:
             sleep 2
           done
 
-      - name: Trigger seed workflow
-        if: github.event.inputs.auto_seed == 'true' && steps.changes.outputs.changed == 'true' && steps.build_test.outputs.build == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          SLUG="${{ github.event.inputs.slug }}"
-          # Wait for push to be available
-          sleep 5
-          gh workflow run seed-tracker.yml \
-            -f tracker_slug="${SLUG}" \
-            -f sections=all
-          echo "Seed workflow triggered for ${SLUG}"
-
       - name: Job summary
         if: always()
         run: |
@@ -355,7 +345,157 @@ jobs:
             echo "| Map categories | ${CATS} |" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "**Build**: ${{ steps.build_test.outputs.build == 'true' && '✅ Passed' || '❌ Failed' }}" >> $GITHUB_STEP_SUMMARY
-            echo "**Seed triggered**: ${{ github.event.inputs.auto_seed == 'true' && steps.changes.outputs.changed == 'true' && '✅ Yes' || '—' }}" >> $GITHUB_STEP_SUMMARY
+            echo "**Auto-seed job**: ${{ github.event.inputs.auto_seed == 'true' && '⏳ Will run next' || 'Skipped' }}" >> $GITHUB_STEP_SUMMARY
           else
             echo "❌ **tracker.json was not created**" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  seed:
+    needs: init
+    if: github.event.inputs.auto_seed == 'true' && needs.init.outputs.created == 'true' && needs.init.outputs.built == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Verify tracker exists after init
+        run: |
+          SLUG="${{ github.event.inputs.slug }}"
+          if [ ! -f "trackers/${SLUG}/tracker.json" ]; then
+            echo "ERROR: trackers/${SLUG}/tracker.json not found after init job"
+            exit 1
+          fi
+          echo "Tracker ${SLUG} found, proceeding with seed"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Seed tracker with Claude Code
+        uses: anthropics/claude-code-action@v1
+        continue-on-error: true
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          allowed_bots: "github-actions[bot]"
+          prompt: |
+            You are performing a COMPREHENSIVE HISTORICAL BACKFILL for the Watchboard intelligence tracker: ${{ github.event.inputs.slug }}
+
+            This is NOT a nightly "latest news" update. You are populating a tracker with DEEP HISTORICAL DATA spanning its entire timeline. Research thoroughly and extensively.
+
+            SECTIONS TO BACKFILL: all
+
+            STEP 1 — READ SCHEMAS AND CONFIG
+
+            1. Read src/lib/schemas.ts — ALL data schemas.
+            2. Read trackers/${{ github.event.inputs.slug }}/tracker.json — config with enabledSections, backfillTargets, searchContext, systemPrompt, coordValidation, map.categories, politicalAvatars, eventTypes.
+            3. Read ALL existing data files in trackers/${{ github.event.inputs.slug }}/data/ and count items.
+
+            STEP 2 — PLAN YOUR RESEARCH
+
+            Based on the tracker config, plan research across the full timeline (from startDate to today). Identify key eras, actors, locations, contested claims, and quantitative data.
+
+            STEP 3 — RESEARCH AND POPULATE EACH SECTION
+
+            For each enabled section: deep web searches, generate items conforming to schemas, merge with existing data, write files, verify JSON.
+
+            RULES:
+            - Every item MUST have a unique "id" field (lowercase-kebab-case)
+            - MERGE-BY-ID: read existing data first, APPEND new items, never remove existing
+            - Follow source tier rules from the tracker's ai.systemPrompt
+            - Set "lastUpdated" on every new item
+            - Validate coordinates within ai.coordValidation bounds
+            - Write JSON with 2-space indent
+            - After writing each file, read it back to verify valid JSON
+
+            SECTION GUIDANCE:
+            - timeline.json: Array of TimelineEra objects with events. Cover FULL timeline. Aim for backfillTargets.timeline events.
+            - map-points.json: Real coordinates within bounds. Use tracker's map.categories for cat field.
+            - claims.json: Both sides substantive. Cover all major contested narratives.
+            - political.json: Key actors across all sides. Use tracker's politicalAvatars. Real quotes.
+            - kpis.json: Most important quantitative metrics.
+            - casualties.json, econ.json: Only if relevant to topic.
+            - meta.json: Update dayCount, dateline, heroHeadline, lastUpdated.
+            - update-log.json: Write with current timestamp and section item counts.
+
+            STEP 4 — VERIFY
+
+            Read back every file, count items vs backfillTargets, print summary table.
+
+            IMPORTANT: Do NOT commit or push. The workflow handles that.
+          claude_args: "--max-turns 80 --dangerously-skip-permissions"
+
+      - name: Check for changes
+        id: seed_changes
+        run: |
+          SLUG="${{ github.event.inputs.slug }}"
+          git add "trackers/${SLUG}/"
+          if git diff --cached --quiet "trackers/${SLUG}/"; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes from seed"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Seed produced changes"
+          fi
+
+      - name: Validate JSON syntax
+        id: seed_json
+        if: steps.seed_changes.outputs.changed == 'true'
+        run: |
+          SLUG="${{ github.event.inputs.slug }}"
+          invalid=0
+          for f in $(find "trackers/${SLUG}" -name '*.json' -path '*/data/*' -type f); do
+            if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
+              echo "INVALID JSON: $f"
+              invalid=$((invalid + 1))
+            fi
+          done
+          if [ "$invalid" -gt 0 ]; then
+            echo "valid=false" >> $GITHUB_OUTPUT
+          else
+            echo "valid=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push
+        if: steps.seed_changes.outputs.changed == 'true' && steps.seed_json.outputs.valid == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          SLUG="${{ github.event.inputs.slug }}"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add "trackers/${SLUG}/"
+          git commit -m "chore(data): seed ${SLUG} tracker data $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 2
+          done
+
+      - name: Seed summary
+        if: always()
+        run: |
+          SLUG="${{ github.event.inputs.slug }}"
+          echo "## 🌱 Auto-Seed Report — ${SLUG}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          DIR="trackers/${SLUG}/data"
+          if [ -d "$DIR" ]; then
+            echo "| Section | Items |" >> $GITHUB_STEP_SUMMARY
+            echo "|---------|-------|" >> $GITHUB_STEP_SUMMARY
+            for file in kpis timeline map-points map-lines claims political casualties econ; do
+              FILE="$DIR/${file}.json"
+              if [ -f "$FILE" ]; then
+                COUNT=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$FILE','utf8')).length)}catch{console.log(0)}")
+                SECTION=$(echo "$file" | sed 's/-/ /g')
+                echo "| ${SECTION} | ${COUNT} |" >> $GITHUB_STEP_SUMMARY
+              fi
+            done
           fi
