@@ -319,3 +319,54 @@ jobs:
             echo "Push attempt $i failed, retrying..."
             sleep 2
           done
+
+      - name: Job summary
+        if: always()
+        run: |
+          SLUG="${{ steps.validate.outputs.slug }}"
+          echo "## 🌱 Seed Tracker Report — ${SLUG}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date**: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> $GITHUB_STEP_SUMMARY
+          echo "**Sections requested**: ${{ github.event.inputs.sections }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changes detected**: ${{ steps.changes.outputs.changed || 'false' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**JSON valid**: ${{ steps.json_check.outputs.valid || 'skipped' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Schema valid**: ${{ steps.validate_schemas.outputs.valid || 'skipped' }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          DIR="trackers/${SLUG}/data"
+          if [ -d "$DIR" ]; then
+            echo "### Data Inventory for ${SLUG}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Section | Items | Target | Status |" >> $GITHUB_STEP_SUMMARY
+            echo "|---------|-------|--------|--------|" >> $GITHUB_STEP_SUMMARY
+
+            # Read backfill targets from config
+            CONFIG="trackers/${SLUG}/tracker.json"
+            for file in kpis timeline map-points map-lines claims political casualties econ; do
+              FILE="$DIR/${file}.json"
+              if [ -f "$FILE" ]; then
+                COUNT=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$FILE','utf8')).length)}catch{console.log(0)}")
+                SECTION=$(echo "$file" | sed 's/-/ /g' | sed 's/\b\w/\U&/g')
+                # Get target from config if available
+                KEY=$(echo "$file" | sed 's/-\([a-z]\)/\U\1/g')
+                TARGET=$(node -e "try{const c=JSON.parse(require('fs').readFileSync('$CONFIG','utf8'));console.log(c.ai?.backfillTargets?.${KEY}||'-')}catch{console.log('-')}" 2>/dev/null || echo "-")
+                if [ "$TARGET" != "-" ] && [ "$COUNT" -ge "$TARGET" ] 2>/dev/null; then
+                  STATUS="✅ Met"
+                elif [ "$TARGET" != "-" ] && [ "$COUNT" -gt 0 ] 2>/dev/null; then
+                  STATUS="⚠️ Partial"
+                elif [ "$COUNT" -gt 0 ]; then
+                  STATUS="✅"
+                else
+                  STATUS="—"
+                fi
+                echo "| ${SECTION} | ${COUNT} | ${TARGET} | ${STATUS} |" >> $GITHUB_STEP_SUMMARY
+              fi
+            done
+
+            # Count event files
+            EVENTS_DIR="$DIR/events"
+            if [ -d "$EVENTS_DIR" ]; then
+              EV_COUNT=$(ls "$EVENTS_DIR"/*.json 2>/dev/null | wc -l | tr -d ' ')
+              echo "| Daily Events | ${EV_COUNT} files | - | ${EV_COUNT:+✅} |" >> $GITHUB_STEP_SUMMARY
+            fi
+          fi

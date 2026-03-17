@@ -287,3 +287,33 @@ jobs:
             echo "Push attempt $i failed, retrying..."
             sleep 2
           done
+
+      - name: Job summary
+        if: always()
+        run: |
+          echo "## 🔄 Nightly Data Update Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date**: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> $GITHUB_STEP_SUMMARY
+          echo "**Trackers resolved**: ${{ steps.resolve.outputs.slugs || 'none' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changes detected**: ${{ steps.changes.outputs.changed || 'false' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**JSON valid**: ${{ steps.json_check.outputs.valid || 'skipped' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Schema valid**: ${{ steps.validate.outputs.valid || 'skipped' }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Data item counts per tracker
+          echo "### Data Inventory" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Tracker | KPIs | Timeline Eras | Map Points | Map Lines | Claims | Political | Casualties |" >> $GITHUB_STEP_SUMMARY
+          echo "|---------|------|---------------|------------|-----------|--------|-----------|------------|" >> $GITHUB_STEP_SUMMARY
+          for dir in trackers/*/data; do
+            SLUG=$(basename $(dirname "$dir"))
+            [ ! -d "$dir" ] && continue
+            KPI=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$dir/kpis.json','utf8')).length)}catch{console.log(0)}")
+            TL=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$dir/timeline.json','utf8')).length)}catch{console.log(0)}")
+            MP=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$dir/map-points.json','utf8')).length)}catch{console.log(0)}")
+            ML=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$dir/map-lines.json','utf8')).length)}catch{console.log(0)}")
+            CL=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$dir/claims.json','utf8')).length)}catch{console.log(0)}")
+            PO=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$dir/political.json','utf8')).length)}catch{console.log(0)}")
+            CA=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$dir/casualties.json','utf8')).length)}catch{console.log(0)}")
+            echo "| $SLUG | $KPI | $TL | $MP | $ML | $CL | $PO | $CA |" >> $GITHUB_STEP_SUMMARY
+          done

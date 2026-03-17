@@ -293,3 +293,39 @@ jobs:
             -f tracker_slug="${SLUG}" \
             -f sections=all
           echo "Seed workflow triggered for ${SLUG}"
+
+      - name: Job summary
+        if: always()
+        run: |
+          SLUG="${{ github.event.inputs.slug }}"
+          echo "## 🚀 Init Tracker Report — ${SLUG}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date**: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> $GITHUB_STEP_SUMMARY
+          echo "**Topic**: ${{ github.event.inputs.topic }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Start date**: ${{ github.event.inputs.start_date }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Region**: ${{ github.event.inputs.region }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Auto-seed**: ${{ github.event.inputs.auto_seed }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          CONFIG="trackers/${SLUG}/tracker.json"
+          if [ -f "$CONFIG" ]; then
+            echo "### Generated Config" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            SECTIONS=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$CONFIG','utf8')).sections.join(', '))}catch{console.log('error')}")
+            STATUS=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$CONFIG','utf8')).status)}catch{console.log('error')}")
+            GLOBE=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$CONFIG','utf8')).globe?.enabled?'Yes':'No')}catch{console.log('error')}")
+            INTERVAL=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$CONFIG','utf8')).ai?.updateIntervalDays||'?')}catch{console.log('error')}")
+            CATS=$(node -e "try{console.log(JSON.parse(require('fs').readFileSync('$CONFIG','utf8')).map?.categories?.map(c=>c.id).join(', ')||'none')}catch{console.log('error')}")
+            echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
+            echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
+            echo "| Status | ${STATUS} |" >> $GITHUB_STEP_SUMMARY
+            echo "| Sections | ${SECTIONS} |" >> $GITHUB_STEP_SUMMARY
+            echo "| Globe | ${GLOBE} |" >> $GITHUB_STEP_SUMMARY
+            echo "| Update interval | ${INTERVAL} days |" >> $GITHUB_STEP_SUMMARY
+            echo "| Map categories | ${CATS} |" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Build**: ${{ steps.build_test.outputs.build == 'true' && '✅ Passed' || '❌ Failed' }}" >> $GITHUB_STEP_SUMMARY
+            echo "**Seed triggered**: ${{ github.event.inputs.auto_seed == 'true' && steps.changes.outputs.changed == 'true' && '✅ Yes' || '—' }}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **tracker.json was not created**" >> $GITHUB_STEP_SUMMARY
+          fi
