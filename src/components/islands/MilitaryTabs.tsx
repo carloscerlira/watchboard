@@ -83,7 +83,7 @@ export default function MilitaryTabs({ strikeTargets, retaliationData, assetsDat
   );
 
   return (
-    <section className="section fade-in" id="sec-military">
+    <section className="section" id="sec-military">
       <div className="section-header">
         <span className="section-num">03</span>
         <h2 className="section-title">Military Operations</h2>
