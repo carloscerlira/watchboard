@@ -614,5 +614,33 @@
     },
     "resolution": "CONTESTED — Kent's departure is significant but the administration shows no sign of policy change. More internal departures could increase political pressure to define exit conditions.",
     "lastUpdated": "2026-03-18T06:00:00.000Z"
+  },
+  {
+    "id": "south_pars_strike_legitimacy",
+    "question": "Is Israel's strike on South Pars gas field a legitimate military target or an attack on shared civilian infrastructure?",
+    "sideA": {
+      "label": "Israel / US Administration",
+      "text": "South Pars gas revenues fund Iran's military machine, including its IRGC operations, missile program, and proxy network. As an economic engine that sustains Iran's war capacity, it is a legitimate military-economic target. The strike was intended to maximally pressure Iran to accept unconditional surrender by targeting its remaining revenue streams."
+    },
+    "sideB": {
+      "label": "Qatar / International Community / UN",
+      "text": "South Pars is shared infrastructure with Qatar, a third country not at war with Israel or the US. Qatar's North Dome field is geologically the same reservoir. Any damage to the shared reservoir harms a neutral nation. International law prohibits attacks on infrastructure that serves neutral third parties. Qatar could face collateral energy disruption from Israel's unilateral military action."
+    },
+    "resolution": "CONTESTED — Novel legal question involving shared cross-border resource infrastructure. Israel claims military-economic targeting; Qatar's involvement and neutral status complicate legal framework. No international ruling.",
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
+  },
+  {
+    "id": "iran_hormuz_permanent_redesign",
+    "question": "Does Iran have the legal or practical authority to permanently redesign navigation rules in the Strait of Hormuz?",
+    "sideA": {
+      "label": "Iran / Iranian Foreign Minister Araghchi",
+      "text": "Iran shares sovereignty over the Strait of Hormuz with Oman and has territorial waters that vessels must transit. Iran has consistently argued that transit passage rights are conditioned on good relations with Iran and can be restricted or redesigned when Iran's security interests are threatened. The war has given Iran new leverage to demand formal changes to transit arrangements."
+    },
+    "sideB": {
+      "label": "UNCLOS / International Maritime Law / US Navy",
+      "text": "Under UNCLOS Article 38, all ships enjoy the right of transit passage through international straits used for international navigation. The right cannot be suspended even during conflict. Iran is not a signatory to UNCLOS but is bound by customary international law. The US Navy maintains freedom of navigation and has rejected any Iranian authority to redesign transit rules."
+    },
+    "resolution": "CONTESTED — Legally, Iran cannot unilaterally redesign UNCLOS transit rights. Practically, Iranian military power creates a de facto blockade that international law cannot override without enforcement capacity. Iran's long-term leverage depends on whether any ceasefire agreement formally acknowledges its claims.",
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
   }
 ]

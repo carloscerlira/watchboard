@@ -1793,5 +1793,39 @@
     "tier": 2,
     "date": "2026-03-18",
     "lastUpdated": "2026-03-18T06:00:00.000Z"
+  },
+  {
+    "id": "south_pars_gas_field_mar19",
+    "lon": 52.50,
+    "lat": 27.40,
+    "cat": "strike",
+    "label": "South Pars Gas Field — First Upstream Strike",
+    "sub": "Israel struck South Pars gas field (world's largest natural gas reserve, shared with Qatar) on March 18–19 — the first direct attack on Iran's upstream oil and gas extraction infrastructure. Brent crude spiked back to ~$108–110/bbl after the strike.",
+    "tier": 2,
+    "date": "2026-03-19",
+    "showLabel": true,
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
+  },
+  {
+    "id": "khatib_tehran_strike_mar19",
+    "lon": 51.40,
+    "lat": 35.70,
+    "cat": "strike",
+    "label": "Tehran — Intel Minister Khatib Killed",
+    "sub": "Israel killed Intelligence Minister Esmail Khatib in a targeted strike. Adds to the decapitation campaign that has eliminated Khamenei, Larijani, Soleimani (Basij), and multiple IRGC commanders.",
+    "tier": 2,
+    "date": "2026-03-19",
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
+  },
+  {
+    "id": "uss_tripoli_arg_approach_mar19",
+    "lon": 104.00,
+    "lat": 1.20,
+    "cat": "asset",
+    "label": "USS Tripoli ARG (Near Singapore)",
+    "sub": "America-class USS Tripoli ARG with 31st MEU (~2,200 Marines) tracked near Singapore March 17 heading toward the Middle East. Could support mine countermeasures in Hormuz or reinforce Gulf posture.",
+    "tier": 2,
+    "date": "2026-03-19",
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
   }
 ]

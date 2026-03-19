@@ -439,5 +439,23 @@
     "initial": "BN",
     "quote": "The IDF is watching you from the skies of Iran. [To the Iranian people on Nowruz:] We hope that you will soon be free from the regime that has brought so much suffering upon you. The assassinations of Iran's leadership will continue until Iran's threats to Israel and the world are permanently eliminated.",
     "lastUpdated": "2026-03-18T06:00:00.000Z"
+  },
+  {
+    "id": "araghchi_hormuz_permanent",
+    "name": "Abbas Araghchi",
+    "role": "Iranian Foreign Minister — Hormuz Permanent Redesign Statement, Day 20",
+    "avatar": "ir",
+    "initial": "AA",
+    "quote": "Iran intends to permanently redesign the rules of navigation in the Strait of Hormuz even after the war ends. Multiple countries have approached Tehran to negotiate safe passage for their oil and gas vessels. We are open to those talks. But we will not negotiate with the United States and Israel while they continue bombing our country.",
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
+  },
+  {
+    "id": "trump_day20",
+    "name": "Donald Trump",
+    "role": "US President — Day 20",
+    "avatar": "us",
+    "initial": "DT",
+    "quote": "We are not ready to leave Iran yet, but we will do so in the very near future. Iran knows what they need to do. We have hit more than 7,000 targets. There is practically nothing left to hit. Other nations need to send warships to keep the Strait of Hormuz open — the US should not carry this burden alone.",
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
   }
 ]

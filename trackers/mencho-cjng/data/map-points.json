@@ -254,5 +254,38 @@
     "tier": 2,
     "date": "2026-03-03",
     "lastUpdated": "2026-03-18T06:00:00.000Z"
+  },
+  {
+    "id": "tlajomulco-el-pepe-arrested",
+    "lon": -103.46,
+    "lat": 20.48,
+    "cat": "operation",
+    "label": "Tlajomulco de Zúñiga — 'El Pepe' Arrested Mar 16",
+    "sub": "Mexican Army and National Guard arrested 'El Pepe' (José N.) on March 16, 2026 — the CJNG logistics operator who transported El Mencho's romantic partner to the Tapalpa hideout, triggering the surveillance chain that led to the February 22 operation. Key link in the intelligence chain that killed El Mencho.",
+    "tier": 1,
+    "date": "2026-03-16",
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
+  },
+  {
+    "id": "mexico-city-memo-arrested",
+    "lon": -99.13,
+    "lat": 19.43,
+    "cat": "operation",
+    "label": "Mexico City — 'Memo' Arrested Mar 17",
+    "sub": "Juan Carlos Dominguez Jimenez 'Memo,' a high-ranking CJNG lieutenant integral to cartel logistics, finances, and security, was arrested in Mexico City on March 17, 2026. Expected to yield significant intelligence on CJNG's financial network.",
+    "tier": 2,
+    "date": "2026-03-17",
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
+  },
+  {
+    "id": "tulum-cjng-arrests",
+    "lon": -87.46,
+    "lat": 20.21,
+    "cat": "operation",
+    "label": "Tulum, Q. Roo — 4 CJNG Members Arrested Mar 15",
+    "sub": "Four alleged CJNG members arrested during multi-agency operation in Tulum on March 15, 2026. Firearms, narcotics, radios, and tactical gear seized. CJNG extorts Tulum's tourist economy and uses Q. Roo for money laundering through hotel and restaurant investments.",
+    "tier": 3,
+    "date": "2026-03-15",
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
   }
 ]

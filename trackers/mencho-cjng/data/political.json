@@ -151,5 +151,23 @@
     "initial": "H",
     "quote": "U.S. Treasury-designated CJNG boss of the Puerto Vallarta Plaza and key Chinese precursor chemical acquisition coordinator. Former CJNG operative testimony pointed to El Sapo as a possible successor. Some Mexican media reports suggest he may have been killed in the Feb 22 operation — status officially unconfirmed. (Source: Latin Times)",
     "lastUpdated": "2026-03-18T06:00:00.000Z"
+  },
+  {
+    "id": "o3-succession-confirmed",
+    "name": "Juan Carlos Valencia González ('O3')",
+    "role": "CJNG New Leader (Reported Mar 2026) — Grupo Élite Commander",
+    "avatar": "cjng",
+    "initial": "J",
+    "quote": "O3 has reportedly been named the new CJNG leader following El Mencho's death, per an anonymous cartel source and consistent with U.S. NCTC assessment of him as 'de facto second-in-command.' Born in Santa Ana, California (September 12, 1984), O3 is an American citizen — creating legal complications for U.S. targeting operations. As commander of Grupo Élite, CJNG's most militarized paramilitary unit, he commands the cartel's greatest concentrated firepower. His path to consolidation is clearer with El Doble R arrested and El Tuli dead — but El Jardinero's regional power remains a rival center. Mexican authorities have not officially confirmed the succession. [Sources: InSight Crime, IBTimes UK, U.S. State Department assessment]",
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
+  },
+  {
+    "id": "el-pepe-arrested-political",
+    "name": "Omar García Harfuch",
+    "role": "Mexico Security Secretary — El Pepe Arrest Statement, Mar 16",
+    "avatar": "mx-gov",
+    "initial": "O",
+    "quote": "The arrest of 'El Pepe' in Tlajomulco de Zúñiga represents the closure of a critical intelligence gap. This individual transported El Mencho's companion to the Tapalpa hideout — the link in the chain that ultimately led to the elimination of the most wanted criminal in Mexico's history. Mexico's security forces are systematically dismantling the entire network that protected El Mencho for decades.",
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
   }
 ]

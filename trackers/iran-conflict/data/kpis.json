@@ -2,13 +2,13 @@
   {
     "id": "days_of_conflict",
     "label": "Days of Conflict",
-    "value": "19",
+    "value": "20",
     "color": "red",
     "source": "Al Jazeera",
     "contested": false,
     "delta": "+1",
     "trend": "up",
-    "lastUpdated": "2026-03-18T06:00:00.000Z"
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
   },
   {
     "id": "iran_killed",
@@ -72,14 +72,14 @@
   {
     "id": "brent_crude",
     "label": "Brent Crude",
-    "value": "~$101",
+    "value": "~$109",
     "color": "red",
-    "source": "Reuters / Al Jazeera / OilPrice.com",
+    "source": "Reuters / Al Jazeera / OilPrice.com / Fortune",
     "contested": false,
-    "delta": "-$5",
-    "trend": "down",
-    "lastUpdated": "2026-03-18T06:00:00.000Z",
-    "deltaNote": "Brent fell to ~$100.90 (down $2.55, -2.47%) as Hormuz traffic nearly doubled — Iran allowing more ships. US bunker busters struck Hormuz-area missile sites. Iraq negotiating with Iran for oil tanker passage. TotalEnergies halted 15% of Middle East oil/gas production. UAE Shah Gas Field suspended after Iranian drone strike. Diesel surpassed $5/gallon in US."
+    "delta": "+$8",
+    "trend": "up",
+    "lastUpdated": "2026-03-19T06:00:00.000Z",
+    "deltaNote": "Brent surged back to ~$108–110/bbl after Israel struck South Pars gas field (world's largest natural gas reserve) on Day 20 — the first attack on Iran's upstream gas infrastructure. Brief Day 19 decline reversed. Iran has attacked all six GCC states. 21 confirmed attacks on merchant ships in Gulf/Hormuz. Gulf Arab oil production down 10M bbl/day from pre-war levels."
   },
   {
     "id": "flights_cancelled",
@@ -89,20 +89,20 @@
     "source": "FlightAware / Emirates / Al Jazeera",
     "contested": false,
     "delta": "0",
-    "deltaNote": "Emirates resumed flights after Dubai airport fuel tank fire extinguished. ~500 oil tankers remain stranded. Hormuz traffic nearly doubled on Day 19 as Iran allows more vessels through. India's top refiners suspended fuel credit. Thailand opened talks with Russia for crude oil purchases.",
+    "deltaNote": "~500+ tankers stranded in Persian Gulf. Hormuz selective blockade: Iran permitting China/India-flagged vessels. IMO emergency council meeting convened March 18 — UN maritime body seeking humanitarian corridor. Iran FM: Iran will permanently redesign Hormuz navigation rules even after war. 21 confirmed tanker attacks in Gulf/Hormuz total.",
     "trend": "stable",
-    "lastUpdated": "2026-03-18T06:00:00.000Z"
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
   },
   {
     "id": "countries_affected",
     "label": "Countries Affected",
-    "value": "15+",
+    "value": "16+",
     "color": "blue",
-    "source": "Al Jazeera / Reuters / France 24",
+    "source": "Al Jazeera / Reuters / France 24 / CNN",
     "contested": false,
-    "trend": "stable",
-    "lastUpdated": "2026-03-18T06:00:00.000Z",
-    "delta": "0",
-    "deltaNote": "Iran, Israel, Lebanon, UAE, Bahrain, Kuwait (US Embassy closed), Qatar (missile intercepted; Doha blasts), Saudi Arabia, Oman, Iraq, Jordan, Azerbaijan, Turkey, Cyprus, France. Day 19: Hormuz traffic increasing; Joe Kent resigned; USS Ford fire/departure; Ali Larijani confirmed killed. Arab/Islamic FMs convene Riyadh. Ukraine deployed 201 military experts to Gulf."
+    "trend": "up",
+    "lastUpdated": "2026-03-19T06:00:00.000Z",
+    "delta": "+1",
+    "deltaNote": "Iran, Israel, Lebanon, UAE, Bahrain, Kuwait, Qatar, Saudi Arabia, Oman, Iraq, Jordan, Azerbaijan, Turkey, Cyprus, France. Day 20: Iran attacked all six GCC states simultaneously — first time in history. South Pars gas field struck (shared with Qatar). B-1 bombers flying over Iranian airspace. USS Tripoli ARG with 31st MEU heading to theater. Intel Minister Khatib killed. Iran executed Israeli spy Keyvani."
   }
 ]

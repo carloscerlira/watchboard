@@ -2,9 +2,9 @@
   {
     "id": "brent_crude",
     "label": "Brent Crude",
-    "value": "~$101/bbl",
-    "change": "-5.6% from Day 18 peak",
-    "direction": "down",
+    "value": "~$109/bbl",
+    "change": "+7.9% after South Pars strike",
+    "direction": "up",
     "sparkData": [
       77.74,
       79.37,
@@ -18,18 +18,19 @@
       100.5,
       103.0,
       107.0,
-      101.0
+      101.0,
+      109.0
     ],
     "color": "#e74c3c",
-    "source": "Reuters / OilPrice.com / Al Jazeera",
-    "lastUpdated": "2026-03-18T06:00:00.000Z"
+    "source": "Reuters / OilPrice.com / Al Jazeera / Fortune",
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
   },
   {
     "id": "wti_crude",
     "label": "WTI Crude",
-    "value": "~$92/bbl",
-    "change": "-5.5% from Day 18",
-    "direction": "down",
+    "value": "~$98/bbl",
+    "change": "+6.5% after South Pars strike",
+    "direction": "up",
     "sparkData": [
       71.23,
       72.4,
@@ -41,11 +42,12 @@
       76.8,
       87.1,
       97.0,
-      92.5
+      92.5,
+      98.0
     ],
     "color": "#e67e22",
     "source": "Reuters / OilPrice.com",
-    "lastUpdated": "2026-03-18T06:00:00.000Z"
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
   },
   {
     "id": "gold_spot",
@@ -188,9 +190,9 @@
   {
     "id": "hormuz_traffic",
     "label": "Hormuz Traffic",
-    "value": "~25% (recovering)",
-    "change": "Nearly doubled Day 19 — Iran allowing more ships",
-    "direction": "up",
+    "value": "~5% (selective)",
+    "change": "Selective blockade — Iran permitting China/India-flagged vessels only",
+    "direction": "down",
     "sparkData": [
       100,
       90,
@@ -201,10 +203,11 @@
       1,
       0,
       12,
-      25
+      25,
+      5
     ],
     "color": "#27ae60",
-    "source": "Al Jazeera / OilPrice.com / Kpler",
-    "lastUpdated": "2026-03-18T06:00:00.000Z"
+    "source": "Al Jazeera / OilPrice.com / Kpler / Windward / Euronews",
+    "lastUpdated": "2026-03-19T06:00:00.000Z"
   }
 ]

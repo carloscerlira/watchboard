@@ -1,53 +1,19 @@
 {
-  "lastRun": "2026-03-18T06:00:00.000Z",
+  "lastRun": "2026-03-19T06:00:00.000Z",
   "provider": "anthropic",
   "model": "claude-sonnet-4-6",
   "sections": {
-    "meta": {
-      "status": "updated"
-    },
-    "kpis": {
-      "status": "updated",
-      "itemCount": 9
-    },
-    "events": {
-      "status": "updated",
-      "newFiles": ["2026-03-18.json"],
-      "newEvents": 10
-    },
-    "casualties": {
-      "status": "updated",
-      "itemCount": 19
-    },
-    "econ": {
-      "status": "updated",
-      "itemCount": 10
-    },
-    "political": {
-      "status": "updated",
-      "newItems": 2
-    },
-    "map": {
-      "status": "updated",
-      "newPoints": 3
-    },
-    "claims": {
-      "status": "updated",
-      "newItems": 4
-    },
-    "map-lines": {
-      "status": "updated",
-      "newLines": 4
-    },
-    "assets": {
-      "status": "updated",
-      "itemCount": 14
-    },
-    "strike-targets": {
-      "status": "skipped"
-    },
-    "retaliation": {
-      "status": "skipped"
-    }
+    "meta": { "status": "updated" },
+    "kpis": { "status": "updated", "itemCount": 8 },
+    "events": { "status": "updated", "newFiles": ["2026-03-19.json"], "newEvents": 8 },
+    "casualties": { "status": "checked", "changes": "none" },
+    "econ": { "status": "updated", "itemCount": 10 },
+    "political": { "status": "updated", "newItems": 2 },
+    "map": { "status": "updated", "newPoints": 4 },
+    "claims": { "status": "updated", "newItems": 2 },
+    "map-lines": { "status": "updated", "newLines": 3 },
+    "assets": { "status": "checked", "changes": "none" },
+    "strike-targets": { "status": "skipped" },
+    "retaliation": { "status": "skipped" }
   }
 }
