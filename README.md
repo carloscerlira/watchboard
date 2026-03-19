@@ -18,6 +18,7 @@ A config-driven intelligence dashboard platform for tracking events of interest.
 | **[El Mencho / CJNG Tracker](https://artemiopadilla.github.io/watchboard/mencho-cjng/)** | Intelligence dashboard tracking the February 2026 killing of El Mencho (Nemesio ... | 7 | Jalisco / Michoacán / Colima / Guadalajara / Mexico | 3D |
 | **[Culiacanazo Tracker](https://artemiopadilla.github.io/watchboard/culiacanazo/)** | Intelligence dashboard tracking the October 2019 Culiacán Crisis and January 202... | 7 | Culiacán / Sinaloa / Northwestern Mexico | 3D |
 | **[Fukushima Daiichi Tracker](https://artemiopadilla.github.io/watchboard/fukushima-disaster/)** | Intelligence dashboard tracking the 2011 Fukushima Daiichi nuclear disaster — tr... | 8 | Fukushima Prefecture / Tohoku Region / Japan | 3D |
+| **[Tlatelolco Massacre Tracker](https://artemiopadilla.github.io/watchboard/tlatelolco-1968/)** | Intelligence dashboard tracking the October 2, 1968 massacre at Plaza de las Tre... | 7 | Mexico City / Tlatelolco / Ciudad Universitaria | 3D |
 
 ---
 
