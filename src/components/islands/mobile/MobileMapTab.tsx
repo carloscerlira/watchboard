@@ -1,8 +1,12 @@
 // src/components/islands/mobile/MobileMapTab.tsx
+import { useState, lazy, Suspense } from 'react';
 import IntelMap from '../IntelMap';
-import type { MapPoint, MapLine, KpiItem } from '../../../lib/schemas';
+import type { MapPoint, MapLine, KpiItem, Meta } from '../../../lib/schemas';
 import type { FlatEvent } from '../../../lib/timeline-utils';
 import type { MapCategory } from '../../../lib/map-utils';
+
+// Lazy-load CesiumGlobe — only imported when user confirms
+const CesiumGlobe = lazy(() => import('../CesiumGlobe/CesiumGlobe'));
 
 interface Props {
   mode: '2d' | '3d';
@@ -14,20 +18,29 @@ interface Props {
   mapCenter?: { lon: number; lat: number };
   mapBounds?: { lonMin: number; lonMax: number; latMin: number; latMax: number };
   trackerSlug: string;
+  // Globe-specific props (optional, only needed when globe is enabled)
+  meta?: Meta;
+  cameraPresets?: Record<string, { lon: number; lat: number; alt: number; pitch: number; heading: number; label?: string }>;
+  isHistorical?: boolean;
+  endDate?: string;
+  clocks?: { label: string; offsetHours: number }[];
 }
 
+type GlobeState = 'prompt' | 'loading' | 'loaded' | 'error';
+
 export default function MobileMapTab({
-  mode,
-  points,
-  lines,
-  events,
-  categories,
-  kpis,
-  mapCenter,
-  mapBounds,
-  trackerSlug,
+  mode, points, lines, events, categories, kpis,
+  mapCenter, mapBounds, trackerSlug,
+  meta, cameraPresets, isHistorical, endDate, clocks,
 }: Props) {
   const topKpis = kpis.slice(0, 5);
+  const [globeState, setGlobeState] = useState<GlobeState>('prompt');
+
+  const handleLoadGlobe = () => {
+    setGlobeState('loading');
+    // The lazy import triggers on first render of CesiumGlobe
+    // Suspense handles the loading state
+  };
 
   return (
     <div className="mtab-map-tab">
@@ -55,16 +68,58 @@ export default function MobileMapTab({
           />
         </div>
       ) : (
-        <div className="mtab-3d-placeholder">
-          <div className="mtab-3d-icon">🌍</div>
-          <p className="mtab-3d-title">3D Intelligence Globe</p>
-          <p className="mtab-3d-hint">The interactive 3D globe with satellite tracking, missile animations, and cinematic mode works best on desktop.</p>
-          <a
-            href={`/watchboard/${trackerSlug}/globe/`}
-            className="mtab-3d-link"
-          >
-            Open 3D Globe →
-          </a>
+        <div className="mtab-3d-container" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+          {globeState === 'prompt' && (
+            <div className="mtab-3d-placeholder">
+              <div className="mtab-3d-icon">🌍</div>
+              <p className="mtab-3d-title">3D Intelligence Globe</p>
+              <p className="mtab-3d-hint">
+                Load the interactive 3D globe with satellite tracking, missile animations, and real-time data overlays.
+              </p>
+              <p className="mtab-3d-size">~3 MB download</p>
+              <button className="mtab-3d-load-btn" onClick={handleLoadGlobe}>
+                Load 3D Globe
+              </button>
+            </div>
+          )}
+
+          {(globeState === 'loading' || globeState === 'loaded') && meta && (
+            <Suspense
+              fallback={
+                <div className="mtab-3d-placeholder">
+                  <div className="mtab-3d-spinner" />
+                  <p className="mtab-3d-title">Loading 3D Globe...</p>
+                  <p className="mtab-3d-hint">Downloading Cesium engine and map tiles</p>
+                </div>
+              }
+            >
+              <div style={{ flex: 1, position: 'relative' }}>
+                <CesiumGlobe
+                  points={points}
+                  lines={lines}
+                  kpis={kpis}
+                  meta={meta}
+                  events={events}
+                  cameraPresets={cameraPresets}
+                  categories={categories}
+                  mapCenter={mapCenter}
+                  isHistorical={isHistorical}
+                  endDate={endDate}
+                  clocks={clocks}
+                />
+              </div>
+            </Suspense>
+          )}
+
+          {globeState === 'error' && (
+            <div className="mtab-3d-placeholder">
+              <p className="mtab-3d-title">Failed to load 3D Globe</p>
+              <p className="mtab-3d-hint">Check your connection and try again.</p>
+              <button className="mtab-3d-load-btn" onClick={handleLoadGlobe}>
+                Retry
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>

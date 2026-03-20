@@ -254,12 +254,64 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   height: 100%;
   color: var(--text-muted);
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem;
+  text-align: center;
+  padding: 24px;
 }
+
+.mtab-3d-icon { font-size: 3rem; margin-bottom: 4px; }
+
+.mtab-3d-title {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+.mtab-3d-hint {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  max-width: 280px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.mtab-3d-size {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0;
+}
+
+.mtab-3d-load-btn {
+  margin-top: 8px;
+  padding: 10px 24px;
+  background: var(--accent-red);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.mtab-3d-load-btn:active { opacity: 0.8; }
+
+.mtab-3d-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent-red);
+  border-radius: 50%;
+  animation: mtabSpin 0.8s linear infinite;
+}
+
+@keyframes mtabSpin { to { transform: rotate(360deg); } }
 
 .mtab-3d-link {
   color: var(--accent-red);

@@ -6,7 +6,7 @@ import MobileMapTab from './MobileMapTab';
 import MobileFeedTab from './MobileFeedTab';
 import MobileDataTab from './MobileDataTab';
 import MobileIntelTab from './MobileIntelTab';
-import type { MapPoint, MapLine, KpiItem, CasualtyRow, EconItem, Claim, PolItem, TimelineEra, StrikeItem, Asset } from '../../../lib/schemas';
+import type { MapPoint, MapLine, KpiItem, CasualtyRow, EconItem, Claim, PolItem, TimelineEra, StrikeItem, Asset, Meta } from '../../../lib/schemas';
 import type { FlatEvent } from '../../../lib/timeline-utils';
 import type { MapCategory } from '../../../lib/map-utils';
 
@@ -25,6 +25,11 @@ interface Props {
   mapBounds?: { lonMin: number; lonMax: number; latMin: number; latMax: number };
   // KPIs
   kpis: KpiItem[];
+  // Globe-specific (optional)
+  meta?: Meta;
+  cameraPresets?: Record<string, { lon: number; lat: number; alt: number; pitch: number; heading: number; label?: string }>;
+  endDate?: string;
+  clocks?: { label: string; offsetHours: number }[];
   // Section data
   heroSubtitle: string;
   casualties: CasualtyRow[];
@@ -87,6 +92,11 @@ export default function MobileTabShell(props: Props) {
             mapCenter={props.mapCenter}
             mapBounds={props.mapBounds}
             trackerSlug={props.trackerSlug}
+            meta={props.meta}
+            cameraPresets={props.cameraPresets}
+            isHistorical={props.isHistorical}
+            endDate={props.endDate}
+            clocks={props.clocks}
           />
         </div>
 
