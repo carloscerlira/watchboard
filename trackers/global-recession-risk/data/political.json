@@ -1,1 +1,137 @@
-[]
+[
+  {
+    "id": "jerome-powell",
+    "name": "Jerome Powell",
+    "role": "Chair, Federal Reserve Board (2nd term through Jan 2028)",
+    "avatar": "fed",
+    "initial": "J",
+    "quote": "We are not in a hurry to adjust our policy stance. The economy is strong, and we can afford to be careful as we consider further adjustments.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "christine-lagarde",
+    "name": "Christine Lagarde",
+    "role": "President, European Central Bank (term through 2027)",
+    "avatar": "ecb",
+    "initial": "C",
+    "quote": "We need to be attentive to the risks from trade fragmentation. The ECB will do what is necessary to ensure inflation returns to our 2% medium-term target while supporting growth.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "scott-bessent",
+    "name": "Scott Bessent",
+    "role": "US Treasury Secretary (sworn in Jan 28, 2025)",
+    "avatar": "fed",
+    "initial": "S",
+    "quote": "Our administration is committed to economic strength and fiscal responsibility. Tariffs are a legitimate and powerful tool of economic statecraft.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "kristalina-georgieva",
+    "name": "Kristalina Georgieva",
+    "role": "Managing Director, IMF (2nd term from Oct 2024)",
+    "avatar": "imf",
+    "initial": "K",
+    "quote": "We are seeing effective tariff rates not seen in a century. The global economy can handle a temporary shock, but prolonged trade fragmentation would extract a lasting cost from living standards worldwide.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "li-qiang",
+    "name": "Li Qiang",
+    "role": "Premier, People's Republic of China (since March 2023)",
+    "avatar": "china",
+    "initial": "L",
+    "quote": "China's economy has strong resilience, enormous potential, and great vitality. We have the tools and determination to meet our growth targets and navigate external headwinds.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "kazuo-ueda",
+    "name": "Kazuo Ueda",
+    "role": "Governor, Bank of Japan (since April 2023)",
+    "avatar": "other",
+    "initial": "K",
+    "quote": "We will continue our efforts to achieve the price stability target in a sustainable and stable manner. The timing and pace of adjusting monetary accommodation will depend on economic, price, and financial conditions.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "andrew-bailey",
+    "name": "Andrew Bailey",
+    "role": "Governor, Bank of England (term through 2030)",
+    "avatar": "other",
+    "initial": "A",
+    "quote": "A gradual and careful approach to removing policy restraint remains appropriate given the need to assess how persistent above-target inflation will be, against a backdrop of global uncertainty.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ajay-banga",
+    "name": "Ajay Banga",
+    "role": "President, World Bank Group (since June 2023)",
+    "avatar": "imf",
+    "initial": "A",
+    "quote": "Developing countries are facing a convergence of challenges — high debt, elevated food and energy costs, and now trade disruption. The World Bank stands ready to support resilient and inclusive growth.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pan-gongsheng",
+    "name": "Pan Gongsheng",
+    "role": "Governor, People's Bank of China (since July 2023)",
+    "avatar": "china",
+    "initial": "P",
+    "quote": "The People's Bank of China will strengthen counter-cyclical adjustment, maintain liquidity at reasonably ample levels, and support the real economy. We have ample tools to deal with external shocks.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "gita-gopinath",
+    "name": "Gita Gopinath",
+    "role": "First Deputy Managing Director, IMF; former Chief Economist",
+    "avatar": "imf",
+    "initial": "G",
+    "quote": "Trade fragmentation is a significant drag on long-run productivity and growth. Economies that become more closed lose the gains from specialization and economies of scale that have underpinned decades of prosperity.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "christopher-waller",
+    "name": "Christopher Waller",
+    "role": "Federal Reserve Governor; dissented for rate cut at Jan 2026 FOMC",
+    "avatar": "fed",
+    "initial": "C",
+    "quote": "I believe the policy rate is still meaningfully restrictive and that we can gradually lower it. The risks to achieving our dual-mandate goals are more balanced than our current stance reflects.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "isabel-schnabel",
+    "name": "Isabel Schnabel",
+    "role": "Executive Board Member, ECB (Germany); inflation hawk",
+    "avatar": "ecb",
+    "initial": "I",
+    "quote": "We should not be complacent about inflation persistence. While disinflation has made significant progress, wage growth and services inflation require us to remain vigilant. Cutting too aggressively risks undoing years of credibility-building.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "donald-trump",
+    "name": "Donald Trump",
+    "role": "US President (since Jan 20, 2025); primary trade policy driver",
+    "avatar": "other",
+    "initial": "D",
+    "quote": "Tariffs are the greatest thing ever invented. Other countries have been ripping us off for decades. We're going to protect American workers, bring back American manufacturing, and use tariffs as leverage to get great deals.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "janet-yellen",
+    "name": "Janet Yellen",
+    "role": "Former US Treasury Secretary (Jan 2021–Jan 2025); Former Fed Chair",
+    "avatar": "fed",
+    "initial": "J",
+    "quote": "We achieved something rare in economic history: bringing inflation down from 40-year highs without triggering a recession. The soft landing was not guaranteed — it required skill, patience, and some good fortune with supply chains.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "francois-villeroy-de-galhau",
+    "name": "François Villeroy de Galhau",
+    "role": "Governor, Banque de France; ECB Governing Council dove",
+    "avatar": "ecb",
+    "initial": "F",
+    "quote": "The eurozone cannot afford complacency in the face of tariff-driven stagnation. With inflation near target, the ECB must prioritize economic momentum. Europe needs its own fiscal tools to complement monetary easing.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]

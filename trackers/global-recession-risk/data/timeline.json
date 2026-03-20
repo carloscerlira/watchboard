@@ -1,1 +1,540 @@
-[]
+[
+  {
+    "era": "2024: Rate Hold & Disinflation",
+    "events": [
+      {
+        "id": "fed-holds-jan-2024",
+        "year": "Jan 31, 2024",
+        "title": "Fed Holds at 5.25–5.50%, Rejects March Cut",
+        "type": "policy",
+        "detail": "The Federal Reserve held the federal funds rate at 5.25–5.50% for the fourth consecutive meeting. Chair Jerome Powell ruled out a March 2024 rate cut at the press conference, citing persistent inflation and a still-strong labor market. Markets repriced expectations for fewer and later cuts.",
+        "sources": [
+          { "name": "Federal Reserve FOMC Statement", "url": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm", "tier": 1 },
+          { "name": "Reuters", "url": "https://www.reuters.com", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "ecb-framework-change-mar-2024",
+        "year": "Mar 20, 2024",
+        "title": "ECB Announces New Operational Framework",
+        "type": "policy",
+        "detail": "The ECB Governing Council announced changes to its operational framework, reducing the spread between the Main Refinancing Operations (MRO) rate and the deposit facility rate to 15 basis points, effective September 2024. The move signaled a shift toward a more efficient interest rate corridor.",
+        "sources": [
+          { "name": "ECB Governing Council", "url": "https://www.ecb.europa.eu", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "boj-ends-nirp-mar-2024",
+        "year": "Mar 2024",
+        "title": "Bank of Japan Ends Negative Interest Rate Policy",
+        "type": "policy",
+        "detail": "The Bank of Japan under Governor Kazuo Ueda ended its negative interest rate policy (NIRP) in March 2024 after more than eight years — a landmark shift in global monetary conditions. Japan began hiking rates toward normalization, eventually triggering a global yen carry-trade unwind in August 2024.",
+        "sources": [
+          { "name": "Bank of Japan", "url": "https://www.boj.or.jp/en/", "tier": 1 },
+          { "name": "Bloomberg", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "hot-cpi-apr-2024",
+        "year": "Apr 10, 2024",
+        "title": "Hotter-Than-Expected US CPI Delays Fed Cut Timeline",
+        "type": "economic",
+        "detail": "The US CPI for March 2024 came in at 3.5% year-over-year, significantly above the 3.4% consensus forecast. The upside surprise delayed rate-cut expectations and sent Treasury yields surging. Fed officials reinforced patience messaging. Market pricing for the first cut shifted from June to September.",
+        "sources": [
+          { "name": "BLS CPI Release", "url": "https://www.bls.gov/cpi/", "tier": 1 },
+          { "name": "Wall Street Journal", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "ecb-first-cut-jun-2024",
+        "year": "Jun 12, 2024",
+        "title": "ECB Makes First Rate Cut Since 2019",
+        "type": "policy",
+        "detail": "The ECB cut its deposit facility rate by 25 basis points from 4.00% to 3.75% — the first ECB rate reduction since September 2019. The move came as eurozone inflation fell toward the 2% target while economic growth remained weak, especially in Germany. ECB President Lagarde signaled further cuts would be data-dependent.",
+        "sources": [
+          { "name": "ECB Governing Council", "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "boj-hike-carry-unwind-aug-2024",
+        "year": "Aug 5, 2024",
+        "title": "Global Market Selloff: Nikkei Plunges 12%, Yen Carry Trade Unwinds",
+        "type": "market",
+        "detail": "A global market selloff dubbed 'Black Monday II' unfolded as the Bank of Japan's July 31 rate hike triggered a violent unwind of the yen carry trade — investors who had borrowed cheap yen to invest in higher-yielding assets were forced to close positions. The Nikkei 225 fell 12% in a single session, the S&P 500 dropped ~3%, and volatility spiked sharply. The episode highlighted how BOJ normalization could destabilize global capital flows.",
+        "sources": [
+          { "name": "Reuters", "url": "https://www.reuters.com", "tier": 2 },
+          { "name": "Bloomberg", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "us-cpi-aug-2024-low",
+        "year": "Sep 11, 2024",
+        "title": "US CPI Falls to 2.5% — Lowest Since February 2021",
+        "type": "economic",
+        "detail": "The US CPI for August 2024 was reported at 2.5% year-over-year, the lowest reading since February 2021, significantly clearing the path for a Federal Reserve rate cut. Core CPI remained at 3.2%, but the headline trend gave the Fed cover to begin easing.",
+        "sources": [
+          { "name": "BLS CPI Release", "url": "https://www.bls.gov/cpi/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fed-supersized-cut-sep-2024",
+        "year": "Sep 18, 2024",
+        "title": "Fed Makes Supersized 50 bps Cut — First Since March 2020",
+        "type": "policy",
+        "detail": "The Federal Reserve cut its federal funds rate by a supersized 50 basis points, lowering the target range to 4.75–5.00%. This was the first Fed rate cut since the emergency COVID cuts of March 2020. Chair Powell framed the larger cut as a 'recalibration' appropriate given declining inflation and rising unemployment. The move signaled the start of an easing cycle.",
+        "sources": [
+          { "name": "Federal Reserve FOMC Statement", "url": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm", "tier": 1 },
+          { "name": "Bloomberg", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "strong-payrolls-oct-2024",
+        "year": "Oct 3, 2024",
+        "title": "Blowout September Payrolls (254K Jobs) Complicate Fed Path",
+        "type": "economic",
+        "detail": "The Bureau of Labor Statistics reported 254,000 jobs added in September 2024, far exceeding the ~150,000 consensus forecast. The surprising strength in the labor market tightened the path for further Fed rate cuts, as it suggested the economy might not need as much stimulus. Treasury yields jumped on the report.",
+        "sources": [
+          { "name": "BLS Employment Situation", "url": "https://www.bls.gov/ces/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fed-cut-nov-2024",
+        "year": "Nov 7, 2024",
+        "title": "Fed Cuts 25 bps to 4.50–4.75%",
+        "type": "policy",
+        "detail": "Two days after Donald Trump won the US presidential election, the Federal Reserve cut rates by another 25 basis points, bringing the target range to 4.50–4.75%. Markets had already repriced higher on election results — the 10Y yield surged to ~4.4% on Trump tariff expectations. The Fed signaled a gradual, data-dependent easing pace going forward.",
+        "sources": [
+          { "name": "Federal Reserve FOMC Statement", "url": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "trump-election-tariff-fear-nov-2024",
+        "year": "Nov 5, 2024",
+        "title": "Trump Election Victory Triggers Bond Selloff on Tariff Fears",
+        "type": "political",
+        "detail": "Donald Trump won the US presidential election on November 5, 2024. Markets immediately priced in tariff-driven inflation concerns: the 10Y Treasury yield surged to ~4.4%, the US dollar strengthened, and equity markets initially rallied on deregulation hopes before volatility returned. Economists began modeling the macroeconomic impact of sweeping tariff proposals.",
+        "sources": [
+          { "name": "Reuters", "url": "https://www.reuters.com", "tier": 2 },
+          { "name": "Financial Times", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "ecb-cut-dec-2024",
+        "year": "Dec 18, 2024",
+        "title": "ECB Cuts to 3.00% — Fourth Cut of 2024",
+        "type": "policy",
+        "detail": "The ECB cut its deposit facility rate by 25 basis points to 3.00% at its December 2024 meeting — the fourth cut of the year, totaling 100 basis points of easing since June 2024. The eurozone economy was stagnating, with Germany in technical recession and France facing a fiscal crisis.",
+        "sources": [
+          { "name": "ECB Governing Council", "url": "https://www.ecb.europa.eu", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fed-hawkish-cut-dec-2024",
+        "year": "Dec 19, 2024",
+        "title": "Fed's 'Hawkish Cut': Signals Only 2 Cuts in 2025 vs 4 Expected",
+        "type": "policy",
+        "detail": "The Federal Reserve cut rates by 25 basis points to 4.25–4.50% but delivered a hawkish surprise: the December SEP (Summary of Economic Projections) projected only two cuts in 2025, half the four expected by markets. Chair Powell's press conference reinforced the cautious stance. The US dollar surged and equity markets sold off sharply — the S&P 500 fell ~3% on the day.",
+        "sources": [
+          { "name": "Federal Reserve FOMC / SEP", "url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20241218.htm", "tier": 1 },
+          { "name": "Bloomberg", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "era": "Early 2025: Tariff Shock Begins",
+    "events": [
+      {
+        "id": "trump-inauguration-tariff-eos",
+        "year": "Jan 20, 2025",
+        "title": "Trump Inaugurated; Day-One Tariff Orders Signal Rapid Action",
+        "type": "political",
+        "detail": "Donald Trump was inaugurated as the 47th US president. Day-one executive orders signaled imminent tariff action on Canada, Mexico, and China within two weeks under IEEPA authority. Scott Bessent was confirmed as Treasury Secretary on January 28. Markets began pricing a new tariff-driven inflation scenario.",
+        "sources": [
+          { "name": "White House", "url": "https://www.whitehouse.gov", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fomc-holds-jan-2025",
+        "year": "Jan 28, 2025",
+        "title": "FOMC Holds at 4.25–4.50%; Powell Signals Patience",
+        "type": "policy",
+        "detail": "The FOMC unanimously held the federal funds rate at 4.25–4.50% at its first 2025 meeting. Chair Powell noted solid growth, an unemployment rate of 4.1%, and core PCE at 2.8% — still above target. Powell emphasized the Fed's patience and data-dependence, noting it was not in a hurry to adjust policy. The pause reflected uncertainty about the incoming administration's tariff agenda.",
+        "sources": [
+          { "name": "Federal Reserve FOMC Minutes, Jan 2025", "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20250129.htm", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "trump-tariffs-canada-mexico-china-feb-2025",
+        "year": "Feb 1, 2025",
+        "title": "Trump Announces 25% Tariffs on Canada/Mexico, 10% on China Under IEEPA",
+        "type": "trade",
+        "detail": "President Trump announced 25% tariffs on all imports from Canada and Mexico (citing fentanyl trafficking and border security as a national emergency), and a 10% tariff on China under IEEPA authority — effective February 4, 2025. The tariffs on Canada and Mexico triggered immediate retaliation threats and business alarm over supply chain disruptions, particularly in autos, energy, and agriculture.",
+        "sources": [
+          { "name": "White House Executive Order", "url": "https://www.whitehouse.gov", "tier": 1 },
+          { "name": "Reuters", "url": "https://www.reuters.com", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "ecb-cut-feb-2025",
+        "year": "Feb 5, 2025",
+        "title": "ECB Cuts to 2.75%; BOE Cuts to 4.50% as Europe Slows",
+        "type": "policy",
+        "detail": "The ECB cut its deposit facility rate by 25 basis points to 2.75% at its February meeting — citing weak eurozone growth, especially German recession, and declining inflation. The same day, the Bank of England cut to 4.50% by a 7-2 vote, signaling 'gradual and careful' easing, as UK GDP growth came in weaker than expected and the UK narrowly avoided a technical recession.",
+        "sources": [
+          { "name": "ECB Governing Council", "url": "https://www.ecb.europa.eu", "tier": 1 },
+          { "name": "Bank of England", "url": "https://www.bankofengland.co.uk", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "canada-tariffs-full-mar-2025",
+        "year": "Mar 4, 2025",
+        "title": "Full US Tariffs on Canada Take Effect; Ottawa Retaliates with C$30B",
+        "type": "trade",
+        "detail": "After brief negotiations failed to produce concessions on the border, full 25% US tariffs on Canadian imports took effect. Canada immediately announced C$30 billion in retaliatory tariffs on US goods. The Canadian dollar weakened and auto plants on both sides of the border began contingency planning for supply chain disruptions. Mexico faced similar pressures.",
+        "sources": [
+          { "name": "White House", "url": "https://www.whitehouse.gov", "tier": 1 },
+          { "name": "Government of Canada", "url": "https://www.canada.ca", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "ecb-cut-mar-2025",
+        "year": "Mar 12, 2025",
+        "title": "ECB Cuts to 2.50%; Cites Germany Recession and Tariff Risks",
+        "type": "policy",
+        "detail": "The ECB cut its deposit facility rate by 25 basis points to 2.50%, its sixth consecutive cut. The statement highlighted tariff-related downside risks to eurozone economic growth, with Germany officially in technical recession. ECB staff projections were revised down for 2025 GDP growth. President Lagarde warned that trade policy uncertainty was a significant headwind for European exports.",
+        "sources": [
+          { "name": "ECB Governing Council", "url": "https://www.ecb.europa.eu", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fomc-holds-slows-qt-mar-2025",
+        "year": "Mar 19, 2025",
+        "title": "FOMC Holds Rates; Slows QT Treasury Cap to $5B/Month",
+        "type": "policy",
+        "detail": "The FOMC held rates at 4.25–4.50% unanimously. The minutes highlighted tariff inflation risk as a key concern: staff modeled scenarios where tariff pass-through significantly boosted 2025 PCE inflation. Crucially, the Fed voted to slow the Treasury runoff cap from $25 billion to $5 billion per month effective April — a signal that quantitative tightening was approaching its endpoint as reserve management concerns emerged.",
+        "sources": [
+          { "name": "Federal Reserve FOMC Minutes, Mar 2025", "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20250319.htm", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "liberation-day-tariffs-apr-2025",
+        "year": "Apr 2, 2025",
+        "title": "'Liberation Day': Trump Announces Sweeping Reciprocal Tariffs",
+        "type": "trade",
+        "detail": "President Trump announced sweeping 'reciprocal tariffs' on a global 'Liberation Day' — a 10% baseline tariff on all US imports plus country-specific higher rates (China: 34% additional; EU: 20%; Vietnam: 46%; etc.). Markets plunged: the S&P 500 fell ~5% in two days. The IMF and World Bank issued emergency statements warning of severe growth impacts. The effective US tariff rate hit its highest level since the 1940s.",
+        "sources": [
+          { "name": "White House Executive Order", "url": "https://www.whitehouse.gov", "tier": 1 },
+          { "name": "Reuters", "url": "https://www.reuters.com", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "tariff-pause-china-escalation-apr-2025",
+        "year": "Apr 9, 2025",
+        "title": "Trump Pauses Most Tariffs 90 Days; US-China Rate Hits 145%",
+        "type": "trade",
+        "detail": "One week after Liberation Day, Trump paused most reciprocal tariffs for 90 days to allow negotiations — except for China. China had retaliated with 84% tariffs on US goods, and the US responded by raising the China tariff rate to 145%. The US-China effective tariff rate reached 145% — levels not seen between the two powers in the modern era, effectively functionally decoupling major trade flows.",
+        "sources": [
+          { "name": "White House", "url": "https://www.whitehouse.gov", "tier": 1 },
+          { "name": "USTR", "url": "https://ustr.gov", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "imf-weo-apr-2025-cuts",
+        "year": "Apr 22, 2025",
+        "title": "IMF Slashes Global Forecast: 'Effective Tariff Rates Not Seen in a Century'",
+        "type": "economic",
+        "detail": "The IMF's April 2025 World Economic Outlook cut global growth forecasts to 2.8% (2025) and 3.0% (2026), down from 3.3% and 3.3% in January. US growth was slashed to 1.8% for 2025; China to 4.0%. IMF Chief Economist Pierre-Olivier Gourinchas warned of 'effective tariff rates not seen in a century' and the risk of a synchronous global slowdown, particularly if the tariff pause expired without deals.",
+        "sources": [
+          { "name": "IMF World Economic Outlook, Apr 2025", "url": "https://www.imf.org/en/Blogs/Articles/2025/04/22/the-global-economy-enters-a-new-era", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "era": "Mid-2025: Trade Truce & Fed Pressure",
+    "events": [
+      {
+        "id": "ecb-cut-apr-2025",
+        "year": "Apr 23, 2025",
+        "title": "ECB Cuts to 2.25% — Seventh Consecutive Cut",
+        "type": "policy",
+        "detail": "The ECB cut its deposit facility rate by 25 basis points to 2.25%, its seventh consecutive cut since June 2024. The Governing Council cited ongoing weak eurozone growth, trade war headwinds from tariff escalation, and continuing disinflation. The ECB was approaching what many economists estimated as the 'neutral rate' range of 2.0–2.5%.",
+        "sources": [
+          { "name": "ECB Governing Council", "url": "https://www.ecb.europa.eu", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fomc-holds-may-2025-tariff-warning",
+        "year": "May 7, 2025",
+        "title": "FOMC Holds; Staff Warns Tariff Effects 'Significantly Larger Than Anticipated'",
+        "type": "policy",
+        "detail": "The FOMC unanimously held rates at 4.25–4.50%. Fed staff warned in the May meeting that tariff effects were 'significantly larger and broader than anticipated.' The Fed's dual-mandate was under severe strain: unemployment had risen to 4.2% while tariff-driven inflation kept core PCE at 2.6%. The minutes acknowledged that risks of both higher unemployment and higher inflation had increased simultaneously — the hallmark of a stagflation environment.",
+        "sources": [
+          { "name": "Federal Reserve FOMC Minutes, May 2025", "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20250507.htm", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "us-china-trade-truce-may-2025",
+        "year": "May 12, 2025",
+        "title": "US-China Trade Truce: Tariffs Cut from 145% to ~30% for 90 Days",
+        "type": "trade",
+        "detail": "The US and China agreed to a 90-day trade truce, with the US reducing China tariffs from ~145% to approximately 30%, and China reducing US tariffs from 125% to 10%. The temporary truce relieved immediate pressure on supply chains and allowed some trade to resume. However, economists warned that the underlying dispute was unresolved and the truce's expiry would renew uncertainty. Global equity markets rallied 2–3% on the news.",
+        "sources": [
+          { "name": "USTR", "url": "https://ustr.gov", "tier": 1 },
+          { "name": "Reuters", "url": "https://www.reuters.com", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "ecb-cut-jun-2025-pause",
+        "year": "Jun 11, 2025",
+        "title": "ECB Cuts to 2.00% — Signals Pause as Rates Near Neutral",
+        "type": "policy",
+        "detail": "The ECB completed its eighth consecutive rate cut since June 2024, reducing the deposit facility rate to 2.00%. President Lagarde signaled a pause as rates approached the estimated neutral level of 2.0–2.5%. In exactly 12 months, the ECB had cut rates by 200 basis points — the most aggressive sustained easing cycle since the eurozone debt crisis.",
+        "sources": [
+          { "name": "ECB Governing Council", "url": "https://www.ecb.europa.eu", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fomc-june-sep-2025",
+        "year": "Jun 18, 2025",
+        "title": "FOMC Holds; SEP Projects 1.4% US GDP for 2025",
+        "type": "policy",
+        "detail": "The FOMC held rates at 4.25–4.50%. The June SEP (Summary of Economic Projections) marked a sharp downgrade: US GDP projected at 1.4% for 2025 (vs 2.1% in March), unemployment projected at 4.5%, PCE inflation at 3.0%, and core PCE at 3.1%. The Fed funds rate median end-2025 projection was 3.9% — implying two cuts. The majority of members saw some rate reductions as appropriate in 2025.",
+        "sources": [
+          { "name": "Federal Reserve SEP, Jun 2025", "url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20250618.htm", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fomc-holds-jul-2025",
+        "year": "Jul 30, 2025",
+        "title": "FOMC Holds 8-2; Bowman and Waller Dissent for Cut",
+        "type": "policy",
+        "detail": "The FOMC held rates at 4.25–4.50% by an 8-2 vote — the first dissents of 2025. Governors Bowman and Waller voted for a 25 basis point cut, arguing policy remained 'meaningfully restrictive' and that risks to employment were more pressing than inflation at this stage. The Fed noted growth had 'moderated,' with unemployment at 4.1% and core PCE at 2.7%.",
+        "sources": [
+          { "name": "Federal Reserve FOMC Minutes, Jul 2025", "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20250730.htm", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "boe-cut-aug-2025",
+        "year": "Aug 6, 2025",
+        "title": "Bank of England Cuts to 4.00% — Narrowest Vote (5-4)",
+        "type": "policy",
+        "detail": "The Bank of England cut its policy rate to 4.00% in a narrow 5-4 vote, with four members preferring to hold given persistent inflation. UK CPI was projected to peak at approximately 4% in September 2025 due to energy prices before declining. UK GDP growth in Q2 2025 was a weak 0.1% QoQ. Governor Andrew Bailey emphasized the MPC would maintain vigilance on inflation persistence.",
+        "sources": [
+          { "name": "Bank of England MPC", "url": "https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "payroll-benchmark-revision-sep-2025",
+        "year": "Sep 2025",
+        "title": "Payroll Benchmark Revision Erases ~900,000 Jobs",
+        "type": "economic",
+        "detail": "The BLS annual benchmark revision to payroll data showed approximately 900,000 previously reported jobs did not exist — a significant downward revision. This revealed the US labor market had been weaker than official statistics suggested throughout 2024–2025. The revision reinforced arguments by Fed doves for more aggressive rate cuts and increased concerns about the durability of the 'soft landing' narrative.",
+        "sources": [
+          { "name": "BLS Employment Situation", "url": "https://www.bls.gov/ces/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fed-first-cut-sep-2025",
+        "year": "Sep 17, 2025",
+        "title": "Fed Begins Easing: Cuts 25 bps to 4.00–4.25%",
+        "type": "policy",
+        "detail": "The FOMC cut its federal funds rate by 25 basis points to 4.00–4.25%, beginning the 2025 easing cycle after holding rates since December 2024. The September SEP projected GDP at 1.6% for 2025, unemployment at 4.5%, and PCE at 3.0%. One member dissented in favor of a larger 50 bps cut. The move reflected the Fed's judgment that the balance of risks had shifted toward the employment mandate.",
+        "sources": [
+          { "name": "Federal Reserve FOMC / SEP, Sep 2025", "url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20250917.htm", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "era": "Late 2025: Fed Eases, Tariffs Persist",
+    "events": [
+      {
+        "id": "evergrande-liquidation-jan-2024",
+        "year": "Jan 2024",
+        "title": "Evergrande Liquidation Ordered by Hong Kong Court",
+        "type": "economic",
+        "detail": "A Hong Kong court ordered the liquidation of China Evergrande Group in January 2024, the world's most indebted property developer with over $300 billion in liabilities. The ruling crystallized losses for creditors and signaled the ongoing systemic stress in China's property sector. Local government financing vehicles (LGFVs) with related exposure began restructuring, weighing on China's growth trajectory throughout 2024–2025.",
+        "sources": [
+          { "name": "Reuters", "url": "https://www.reuters.com", "tier": 2 },
+          { "name": "Financial Times", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fomc-cuts-oct-2025",
+        "year": "Oct 29, 2025",
+        "title": "Fed Cuts 25 bps to 3.75–4.00%; Votes to End QT December 1",
+        "type": "policy",
+        "detail": "The FOMC cut rates by 25 basis points to 3.75–4.00% by a 10-2 vote. Crucially, the Fed also voted to formally end quantitative tightening (QT) — halting all Treasury and MBS runoff — effective December 1, 2025. This ended one of the most significant balance sheet reduction programs in Fed history, which had reduced holdings from a ~$9 trillion peak. Core PCE remained at 2.8% and unemployment at 4.4%.",
+        "sources": [
+          { "name": "Federal Reserve FOMC Minutes, Oct 2025", "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20251029.htm", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fed-ends-qt-dec-2025",
+        "year": "Dec 1, 2025",
+        "title": "Federal Reserve Ends Quantitative Tightening After $3T+ Balance Sheet Reduction",
+        "type": "policy",
+        "detail": "The Federal Reserve formally ended its quantitative tightening (QT) program on December 1, 2025, as authorized at the October FOMC meeting. Since peak balance sheet of ~$9 trillion in 2022, the Fed had reduced holdings by over $3 trillion. The end of QT was accompanied by authorization for 'Reserve Management Purchases' to maintain an appropriate level of bank reserves — a move that some analysts characterized as stealth quantitative easing.",
+        "sources": [
+          { "name": "Federal Reserve", "url": "https://www.federalreserve.gov", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fomc-cuts-dec-2025",
+        "year": "Dec 10, 2025",
+        "title": "Fed Cuts to 3.50–3.75%; SEP Projects 2.3% GDP 2026",
+        "type": "policy",
+        "detail": "The FOMC cut rates by 25 basis points to 3.50–3.75% with a 9-3 vote — the three dissenters being two who wanted to hold (concerned about inflation) and one who wanted a larger cut. The December SEP projected GDP at 1.7% for 2025 and 2.3% for 2026; unemployment at 4.5% (2025) and 4.4% (2026); PCE at 2.9% (2025) and 2.4% (2026). The median dot plot showed the fed funds rate falling to 3.4% by end-2026.",
+        "sources": [
+          { "name": "Federal Reserve FOMC / SEP, Dec 2025", "url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20251210.htm", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "south-korea-political-crisis-dec-2024",
+        "year": "Dec 2024",
+        "title": "South Korea Political Crisis: President Yoon Declares Martial Law",
+        "type": "political",
+        "detail": "South Korean President Yoon Suk-yeol briefly declared martial law in December 2024 in a failed political maneuver that was overturned by the National Assembly within hours. Yoon was subsequently impeached and arrested. The crisis created temporary political uncertainty and demonstrated that political risk could compound economic headwinds in export-oriented Asian economies amid the global trade war.",
+        "sources": [
+          { "name": "Reuters", "url": "https://www.reuters.com", "tier": 2 },
+          { "name": "Bloomberg", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "imf-weo-oct-2025",
+        "year": "Oct 2025",
+        "title": "IMF October 2025 WEO: Tariff Uncertainty Remains Main Downside",
+        "type": "economic",
+        "detail": "The IMF's October 2025 World Economic Outlook revised global growth slightly upward from April 2025 projections, reflecting the US-China trade truce and some resilience in domestic demand. However, the IMF maintained that tariff uncertainty was the principal downside risk and warned that a collapse of the 90-day truce could materially worsen the outlook. The report cited elevated policy uncertainty indices as a key constraint on investment.",
+        "sources": [
+          { "name": "IMF World Economic Outlook, Oct 2025", "url": "https://www.imf.org/en/Publications/WEO", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "era": "2026: New Risks, Judicial Pushback",
+    "events": [
+      {
+        "id": "imf-weo-update-jan-2026",
+        "year": "Jan 19, 2026",
+        "title": "IMF Upgrades 2026 Forecast to 3.3% — 'Steady Amid Divergent Forces'",
+        "type": "economic",
+        "detail": "The IMF's January 2026 WEO Update revised the 2026 global growth forecast upward to 3.3%, citing resilience of technology investment, AI-driven productivity gains, and adaptation to trade disruptions. However, the IMF simultaneously warned of new risks: AI asset concentration creating bubble risk (moderate AI stock correction could reduce global growth by 0.4 percentage points) and potential for tariff re-escalation after the US-China truce expired.",
+        "sources": [
+          { "name": "IMF WEO Update, Jan 2026", "url": "https://www.imf.org/en/Blogs/Articles/2026/01/19/global-economy-shakes-off-tariff-shock-amid-tech-driven-boom", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fomc-holds-jan-2026",
+        "year": "Jan 28, 2026",
+        "title": "FOMC Holds 10-2; Waller and Miran Dissent for Cut",
+        "type": "policy",
+        "detail": "The FOMC held rates at 3.50–3.75% with a 10-2 vote. Governors Waller and Miran (a new FOMC member) dissented, arguing the federal funds rate remained 'meaningfully restrictive' and that rising unemployment risk warranted an immediate cut. The majority held, citing core PCE still at 2.8% and CPI at 2.7% — both above the 2% target. Chair Powell reiterated data-dependence and noted the Fed was not in a hurry.",
+        "sources": [
+          { "name": "Federal Reserve FOMC Minutes, Jan 2026", "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260128.htm", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "us-gdp-q4-2025-estimate",
+        "year": "Feb 2026",
+        "title": "US Q4 2025 GDP: +0.7% — Sharply Below Q3's +4.4%",
+        "type": "economic",
+        "detail": "The BEA's second estimate for US Q4 2025 GDP showed annualized growth of only 0.7% — a sharp deceleration from Q3 2025's 4.4% growth. The slowdown reflected weaker trade (tariff uncertainty suppressing exports), softer consumer spending growth, and moderating business investment. While not a contraction, the Q4 reading fueled concerns that the 2026 outlook might disappoint consensus forecasts.",
+        "sources": [
+          { "name": "BEA GDP Release, Mar 13 2026", "url": "https://www.bea.gov", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "supreme-court-ieepa-ruling-feb-2026",
+        "year": "Feb 20, 2026",
+        "title": "Supreme Court Strikes Down IEEPA Tariffs 6-3",
+        "type": "political",
+        "detail": "The US Supreme Court ruled 6-3 that the International Emergency Economic Powers Act (IEEPA) does not authorize the executive branch to impose tariffs — striking down most of the 2025 tariff regime built on IEEPA authority. Markets rallied on the ruling as supply chain disruptions were expected to ease. The ruling created immediate uncertainty about the legal basis of US trade policy and the administration's response.",
+        "sources": [
+          { "name": "US Supreme Court", "url": "https://www.supremecourt.gov", "tier": 1 },
+          { "name": "Tax Foundation", "url": "https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/", "tier": 3 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "section-122-tariffs-feb-2026",
+        "year": "Feb 24, 2026",
+        "title": "Trump Invokes Section 122: 10% Tariff on $1.2T of Imports (150 Days)",
+        "type": "trade",
+        "detail": "Four days after the Supreme Court's IEEPA ruling, President Trump invoked Section 122 of the Trade Act of 1974 — a rarely-used provision allowing emergency tariffs for 150 days — to reimpose a 10% tariff on approximately $1.2 trillion of US imports (roughly 34% of all goods imports). The Tax Foundation estimated the tariff would cost US households ~$600/year and reduce GDP by 0.2% long-run before potential retaliation by trading partners.",
+        "sources": [
+          { "name": "White House", "url": "https://www.whitehouse.gov", "tier": 1 },
+          { "name": "Tax Foundation", "url": "https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/", "tier": 3 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "imf-debt-warning-mar-2026",
+        "year": "Mar 4, 2026",
+        "title": "IMF Warns: Rising Sovereign Debt Creates Stagflation Vulnerability",
+        "type": "economic",
+        "detail": "An IMF blog post titled 'Debt Confronts Policymakers With Difficult Trade-offs' warned that rising sovereign debt across advanced economies — with the US at ~124% debt-to-GDP and Japan at ~250%+ — creates stagflation-like vulnerabilities. Fiscal space to respond to downturns is limited, and high debt levels can amplify the inflation impact of supply shocks like tariffs. The IMF called for medium-term fiscal consolidation plans without choking near-term growth.",
+        "sources": [
+          { "name": "IMF Blog, Mar 2026", "url": "https://www.imf.org/en/Blogs", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fomc-holds-mar-2026",
+        "year": "Mar 18, 2026",
+        "title": "FOMC Holds at 3.50–3.75%; VIX at 24, Yield Curve Normalized",
+        "type": "policy",
+        "detail": "The FOMC held rates at 3.50–3.75% at the March 2026 meeting as expected by markets. The yield curve had normalized to a positive slope (+50 bps spread between 10Y and 2Y Treasuries), and the VIX remained elevated at ~24 (above the historical average of ~19) reflecting ongoing policy uncertainty. The 10Y Treasury yielded 4.26%, and the 10Y breakeven inflation rate was 2.37%, consistent with anchored long-run inflation expectations near target.",
+        "sources": [
+          { "name": "Federal Reserve FOMC Statement", "url": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm", "tier": 1 },
+          { "name": "FRED T10Y2Y", "url": "https://fred.stlouisfed.org/series/T10Y2Y", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  }
+]

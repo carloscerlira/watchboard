@@ -1,1 +1,282 @@
-[]
+[
+  {
+    "id": "is-us-in-recession",
+    "question": "Is the United States in or heading toward a recession?",
+    "sideA": {
+      "label": "Recession Warning Signals",
+      "text": "US GDP contracted 0.6% annualized in Q1 2025 — the first negative quarter since 2020. Unemployment rose from a 2023 trough of 3.4% to 4.4–4.5% by late 2025. The BLS payroll benchmark revision erased ~900,000 previously reported jobs. Consumer confidence fell 21 points from its November 2024 peak to 91.2 in February 2026, with the Expectations Index at 72.0 — well below the 80-point recession-watch threshold. Q4 2025 GDP was only +0.7%, confirming a significant growth deceleration."
+    },
+    "sideB": {
+      "label": "No Recession Declared",
+      "text": "NBER has not declared a recession, and its model indicator remains at 0. The Q1 2025 contraction was distorted by a pre-tariff import surge that inflated the trade deficit component — domestic final demand remained positive. Q2 2025 rebounded to +3.8% and Q3 surged to +4.4%. Chauvet-Piger recession probability model was at only 0.80% in December 2025. Initial jobless claims remained historically low at ~205,000."
+    },
+    "resolution": "No official recession. One distorted negative quarter; growth decelerating but not collapsing. NBER would require sustained broad deterioration before declaring a recession.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "tariffs-inflationary-or-deflationary",
+    "question": "Are US tariffs primarily inflationary or deflationary?",
+    "sideA": {
+      "label": "Tariffs Are Inflationary",
+      "text": "The March 2025 FOMC minutes stated inflation was 'likely to be boosted this year by the effects of higher tariffs.' May 2025 FOMC staff warned tariff effects were 'significantly larger and broader than anticipated.' US core PCE rose from 2.3% (May 2025) to 2.8% (October 2025) as tariff pass-through materialized. The Tax Foundation estimates 2025 tariffs cost US households ~$1,000/year. The average effective US tariff rate reached its highest level since 1947 at ~7.7%."
+    },
+    "sideB": {
+      "label": "Tariffs Are Deflationary Globally",
+      "text": "The July 2025 FOMC noted that 'foreign exporters bore most tariff costs' — limiting US consumer price impact. IMF research shows tariffs reduce global trade volumes, destroy demand, and are net deflationary for trade partner economies. China's CPI hovered near 0% throughout 2024–2025 in part due to US tariff demand destruction redirecting cheap Chinese exports to other markets. The US-China May 2025 truce (reducing tariffs from 145% to ~30%) significantly reduced pass-through."
+    },
+    "resolution": "Contested. Tariffs are inflationary for the US short-run (higher import costs) but deflationary for trade partners via demand destruction. The magnitude and duration of US inflation impact are disputed, with evidence of significant foreign exporter price absorption.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "fed-too-tight-or-too-loose",
+    "question": "Is the Federal Reserve too tight, keeping rates too high and risking recession?",
+    "sideA": {
+      "label": "Policy Still Restrictive — Cut Now",
+      "text": "Fed Governors Waller and Miran dissented at the January 2026 FOMC meeting, arguing policy remained 'still meaningfully restrictive' with unemployment risks more pressing than inflation. Real interest rates at ~1.6% are significantly positive, historically consistent with contractionary policy. With inflation declining toward target, continuing to hold at 3.50–3.75% risks an unnecessary slowdown. Unemployment has already risen to 4.4% from 3.4% at its trough."
+    },
+    "sideB": {
+      "label": "Patience Required — Inflation Not Won",
+      "text": "The majority of the FOMC (10-2 at January 2026 meeting) held rates, citing core PCE at 2.8% and CPI at 2.7% — both above the 2% target. Three members wanted to hold (or cut less) at December 2025. Section 122 tariffs reimposed in February 2026 threaten renewed inflation pass-through. The Fed's December 2025 SEP projects rates declining only gradually to 3.4% median by end-2026, reflecting appropriate caution about a second inflation wave."
+    },
+    "resolution": "Actively contested within the FOMC. Two governors dissented for cuts at January 2026. The majority view is that measured patience is appropriate given above-target inflation, but the gap between doves and hawks is narrowing.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "is-china-recovering",
+    "question": "Is China's economy recovering or experiencing a structural decline?",
+    "sideA": {
+      "label": "China Is Recovering",
+      "text": "China still achieved approximately 4.8–5.0% GDP growth in 2024, meeting its official target despite the property crisis. PBOC monetary easing, government stimulus packages, and redirected manufacturing exports support a measured recovery. World Bank projects 4.4% growth for 2026. Chinese manufacturing exports found new markets post-US tariff disruption. The May 2025 trade truce with the US (reducing tariffs from 145% to ~30%) provided significant relief."
+    },
+    "sideB": {
+      "label": "China Faces Structural Slowdown",
+      "text": "The IMF cut China's 2025 forecast by 0.6 percentage points to 4.0% — a significant downgrade. The property sector crisis is structural: Evergrande was liquidated in January 2024, Country Garden defaulted, and developer debt exceeds $500 billion. Deflation risk persists with CPI near zero. Local government financing vehicle (LGFV) debt restructuring is ongoing. Effective US tariffs remain ~30% even after the truce. China cannot sustain 5%+ growth on its prior model of property investment and export-led growth."
+    },
+    "resolution": "Contested. China avoids official recession but faces a genuine structural growth deceleration driven by property sector collapse, deflation risk, and geopolitical trade isolation.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "soft-landing-achieved",
+    "question": "Has the US achieved a 'soft landing' — taming inflation without causing recession?",
+    "sideA": {
+      "label": "Soft Landing Largely Achieved",
+      "text": "Inflation fell from 9.1% (June 2022) to 2.7% CPI (December 2025) while unemployment rose only moderately to 4.4% — far below the 6–7% unemployment historically associated with major Fed tightening cycles. No NBER recession was declared. The Fed cut rates 100 basis points in Q4 2025 without triggering financial stress. Real GDP grew in 7 of 9 quarters from 2024–2025. Consumer spending remained resilient throughout."
+    },
+    "sideB": {
+      "label": "Tariff Risk Makes Landing Premature",
+      "text": "Declaring a soft landing is premature. Consumer confidence fell sharply (to 91.2 in February 2026 from a 112.8 peak). GDP growth decelerated to 0.7% in Q4 2025. The payroll benchmark revision revealed the labor market was weaker than reported throughout 2024–2025. Section 122 tariffs reimposed February 2026 create a new inflation/growth challenge. The IMF's April 2025 warning about 'tariff rates not seen in a century' suggests the landing is still in progress."
+    },
+    "resolution": "Contested. The core inflation-to-unemployment trade-off resembles a soft landing by historical standards, but ongoing tariff policy creates new stagflation risk that could undermine the achievement.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "yield-curve-false-positive",
+    "question": "Did the yield curve inversion predict a recession that never came — a false positive?",
+    "sideA": {
+      "label": "False Positive — Inversion Misleading",
+      "text": "The 10Y-2Y Treasury yield curve was deeply inverted (negative) from mid-2022 through mid-2024 — a historically reliable recession predictor. Yet no NBER recession occurred. The curve un-inverted and normalized to +50 basis points by March 2026. Unprecedented Fed intervention, pandemic fiscal stimulus, and structural changes (labor market resilience, AI investment) may have broken the traditional yield curve signal. The model incorrectly predicted recession 2023–2024."
+    },
+    "sideB": {
+      "label": "Inversion Still Warning — Delayed, Not Wrong",
+      "text": "Yield curve inversions have an average 18–24 month lag before recession materializes. The 2022–2024 inversion may still be predictive of a recession in 2025–2026 as the delayed effects of 200+ basis points of rate hikes work through the economy. Q1 2025 GDP was negative (-0.6%) and Q4 2025 slowed to 0.7% — suggesting the slowdown is arriving, just gradually. Tariff policy has extended and intensified the downside risk."
+    },
+    "resolution": "Unresolved. The traditional 18–24 month signal suggests late 2024–early 2026 as the window. No recession declared through March 2026, suggesting the longest ever false-positive period or a still-developing slowdown.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ieepa-tariff-authority-legal",
+    "question": "Did the President have legal authority to impose tariffs under IEEPA?",
+    "sideA": {
+      "label": "Yes — Broad Emergency Powers",
+      "text": "The administration argued the International Emergency Economic Powers Act (IEEPA) granted broad presidential authority to regulate foreign commerce during national emergencies. Trade deficits and fentanyl trafficking were declared emergencies justifying the tariffs. This interpretation was supported by precedent of executive use of IEEPA for sanctions and export controls since the 1970s."
+    },
+    "sideB": {
+      "label": "No — IEEPA Doesn't Cover Tariffs",
+      "text": "The US Supreme Court ruled 6-3 on February 20, 2026 that IEEPA does not authorize the executive branch to impose tariffs — it was designed for blocking transactions and sanctions, not trade taxes. The court found the executive overstepped its authority. The ruling struck down the bulk of the 2025 tariff regime. Congressional authority over tariffs under the Constitution's Taxing Clause was central to the ruling."
+    },
+    "resolution": "Resolved by Supreme Court: IEEPA does NOT authorize tariffs (6-3 ruling, Feb 20 2026). Administration immediately pivoted to Section 122 of the Trade Act of 1974 to reimpose tariffs within legal authority.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "boe-inflation-vs-growth-tradeoff",
+    "question": "Should the Bank of England prioritize inflation fighting or economic growth support?",
+    "sideA": {
+      "label": "Prioritize Growth — Economy Too Weak",
+      "text": "UK GDP growth was only 0.1% QoQ in Q2 2025, and contracted 0.1% in Q4 2024. The Bank of England has already cut rates six times since August 2024 to 3.75%. Five of nine MPC members voted for a cut in August 2025 by the narrowest majority. The economy cannot sustain elevated rates given weak consumer spending, high household debt service costs from fixed-rate mortgage resets, and trade war headwinds."
+    },
+    "sideB": {
+      "label": "Prioritize Inflation — Still Above Target",
+      "text": "UK CPI remained above the 2% target and was projected to peak at ~4% in September 2025 due to energy prices. Four MPC members voted to hold rates in August 2025. Governor Bailey warned of inflation 'persistence' from energy shocks and wage growth. Cutting too fast risks re-igniting inflation already above the Bank's mandate. The August 2025 vote was the narrowest possible majority (5-4) — genuine disagreement about the inflation path."
+    },
+    "resolution": "Ongoing MPC debate. The Bank is cutting but very gradually ('gradual and careful' is the official formulation). The energy price spike from Middle East conflict (BOE cited March 2026) adds upside inflation risk.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "de-dollarization-real-threat",
+    "question": "Is BRICS de-dollarization a genuine threat to US dollar reserve currency status?",
+    "sideA": {
+      "label": "Genuine Long-Term Erosion Underway",
+      "text": "BRICS+ expanded in 2024 to include Saudi Arabia, UAE, Egypt, Ethiopia, and Iran — bringing major oil exporters and population centers into a dollar-alternative bloc. Yuan's share of global trade payment systems (SWIFT) has grown from near zero to ~4–5%. Russia, after 2022 sanctions, has almost entirely abandoned dollar settlements. China is developing a digital yuan for cross-border payments. The IMF itself has noted a gradual diversification of reserve holdings."
+    },
+    "sideB": {
+      "label": "Dollar Dominance Remains Overwhelming",
+      "text": "The dollar still constitutes ~59% of global foreign exchange reserves (2025). The euro is the only meaningful alternative at ~20%. BRICS has no viable common currency and no proposal for one has advanced beyond discussion. During every major crisis in 2024–2025 (April tariff shock, August yen carry unwind), capital fled TO the dollar, not away. No sovereign wealth fund, central bank, or institutional investor is meaningfully reducing dollar holdings at scale."
+    },
+    "resolution": "Dollar dominance persists near-term; marginal longer-term erosion acknowledged by BIS and IMF. Not an imminent threat but a multi-decade structural trend worth monitoring.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "is-eurozone-in-recession",
+    "question": "Is the Eurozone in recession?",
+    "sideA": {
+      "label": "Germany In Recession; Eurozone at Stagnation",
+      "text": "Germany — the Eurozone's largest economy, accounting for ~25% of eurozone GDP — was in technical recession throughout 2024–2025, with manufacturing PMI persistently below 50 and industrial output contracting. The ECB cut rates eight times in 12 months precisely because growth was far too weak. The ECB's own projections showed eurozone growth at only ~0.8–1.0% for 2025. France also faced a fiscal crisis with deficit exceeding 6% of GDP."
+    },
+    "sideB": {
+      "label": "Eurozone Avoids Official Recession",
+      "text": "The eurozone as a whole did not enter official recession (two consecutive quarters of negative GDP). Q4 2024 to Q4 2025 GDP grew approximately 1.2% year-over-year. Southern Europe (Spain, Italy, Portugal) and some smaller states showed resilient growth. ECB cuts have improved financial conditions. The US-China trade truce reduced some of the most severe tariff headwinds. The ECB paused cuts at 2.00% in June 2025 reflecting gradual stabilization."
+    },
+    "resolution": "No eurozone recession officially declared through March 2026. Germany in technical recession; eurozone aggregate in prolonged stagnation with divergence between strong southern Europe and weak industrial north.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ai-boom-masking-weakness",
+    "question": "Is the AI investment boom masking underlying economic weakness?",
+    "sideA": {
+      "label": "AI Investment Is Real and Countercyclical",
+      "text": "The IMF's January 2026 WEO Update highlighted tech investment as 'counterbalancing trade headwinds' and contributing to a more optimistic 2026 global growth forecast of 3.3%. US business investment in AI infrastructure (data centers, chips) remained strong throughout 2025 despite tariff uncertainty. Productivity gains from AI adoption across sectors could raise long-term potential growth. Tech company earnings remained resilient throughout the tariff disruption."
+    },
+    "sideB": {
+      "label": "AI Boom Creates Bubble Risk",
+      "text": "The IMF's same January 2026 report warned that AI asset concentration creates financial stability risk. The Shiller CAPE ratio for the S&P 500 was ~38 — 120% above the historical mean of 17.35. A moderate AI stock correction could reduce global growth by 0.4 percentage points (IMF estimate). AI investment is concentrated in 5–7 mega-cap companies; the broader economy's investment growth has been uneven. Headline GDP growth numbers may be misleadingly strong due to this concentrated tech boom."
+    },
+    "resolution": "Genuinely contested. IMF simultaneously forecasts tech-driven growth recovery AND warns of AI asset concentration bubble risk as the single most important financial stability concern for 2026.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "us-household-debt-risk",
+    "question": "Does record US household debt pose a systemic recession risk?",
+    "sideA": {
+      "label": "Household Debt is Dangerously High",
+      "text": "US household debt reached a record ~$18 trillion by 2025. Credit card delinquency rates rose throughout 2024–2025 as pandemic-era savings buffers were depleted. Auto loan delinquencies hit post-financial-crisis highs. Consumer confidence fell to 91.2 with the Expectations Index at 72 — below the 80 recession-watch level. Real wages grew modestly but household balance sheet stress was mounting, particularly for lower-income households without the benefit of locked-in low mortgage rates."
+    },
+    "sideB": {
+      "label": "Aggregate Balance Sheets Remain Sound",
+      "text": "Aggregate US household net worth remains at record levels due to elevated equity and home values. The majority of mortgage debt is locked in at pre-2022 sub-3% rates — immune from the rate hike cycle. Unemployment at 4.4% remains historically low, supporting debt service capacity. The Fed's Household Debt Service Ratio (DSR) remained below its pre-2008 crisis level. The stress is concentrated in specific segments (credit cards, auto) rather than systemic."
+    },
+    "resolution": "Bifurcated picture: aggregate balance sheets sound, but growing stress in specific debt categories (credit cards, autos) and among lower-income households. Not currently systemic, but deteriorating.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "german-fiscal-stimulus-eurozone",
+    "question": "Can German fiscal stimulus rescue the Eurozone from stagnation?",
+    "sideA": {
+      "label": "Germany Must Invest to Save the Eurozone",
+      "text": "Germany's infrastructure deficit and defense spending gap require massive investment. Relaxing the 'debt brake' constitutional constraint to allow deficit spending on infrastructure, green energy, and defense could stimulate not only Germany but, via multiplier effects, the broader eurozone. Economists at the IMF and Brookings have repeatedly called for Germany's fiscal capacity (low 60% debt-to-GDP) to be deployed to counteract the ECB's limited easing room at 2.00%."
+    },
+    "sideB": {
+      "label": "Debt Brake Is Constitutional — Limited Room",
+      "text": "Germany's debt brake (Schuldenbremse) limits the structural federal deficit to 0.35% of GDP and is enshrined in the Basic Law. Suspending it requires a two-thirds majority in the Bundestag, which the CDU/SPD coalition lacks amid AfD gains. Political fragmentation and Germany's deep-seated fiscal conservatism make major stimulus politically infeasible. The ECB's 200 bps of cuts are the primary tool, not fiscal policy."
+    },
+    "resolution": "Ongoing debate. Limited fiscal stimulus possible via investment funds and structural flexibility clauses, but sweeping German fiscal expansion remains politically constrained through 2026.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "emerging-market-debt-crisis-imminent",
+    "question": "Is an emerging market debt crisis imminent in 2025–2026?",
+    "sideA": {
+      "label": "EM Debt Stress Is Severe and Spreading",
+      "text": "Multiple emerging markets faced simultaneous stress in 2024–2025: Argentina (220% inflation, IMF program), Turkey (40%+ policy rates), Pakistan (IMF bailout), Egypt (currency collapse, IMF program expansion), Ghana (restructuring), Zambia (post-default), Sri Lanka (post-default). US tariffs reduce EM export revenues. The strong US dollar increases dollar-denominated debt service costs. IMF resources are being widely drawn upon, suggesting systemic stress."
+    },
+    "sideB": {
+      "label": "IMF Backstop Prevents Systemic Contagion",
+      "text": "The IMF has over $1 trillion in lending capacity and has been deploying it effectively to prevent individual country crises from becoming systemic contagion events. No G20 or major EM sovereign default has occurred. Bond spreads for investment-grade EM sovereigns remained manageable. BRICS solidarity (China's bilateral lending) provided additional buffers. The 'EM crisis' countries are mostly frontier markets, not the systemically important large EMs (Brazil, India, South Africa, Mexico)."
+    },
+    "resolution": "Ongoing stress in frontier markets; no systemic large-EM contagion event through March 2026. The IMF and China's bilateral lending have been effective backstops. Risk elevated but not crisis-level.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "fed-qt-caused-stress",
+    "question": "Did Federal Reserve Quantitative Tightening (QT) cause financial market stress?",
+    "sideA": {
+      "label": "QT Drained Reserves — Risk Was Real",
+      "text": "The Fed's decision to slow QT at the March 2025 FOMC meeting (reducing Treasury cap from $25B to $5B) and ultimately end QT on December 1, 2025, was precisely because reserve management concerns arose. The Fed also authorized 'Reserve Management Purchases' after QT ended — a stealth QE that some analysts likened to the September 2019 repo-market crisis prevention. The Fed acted preventively to avoid a liquidity crunch, suggesting the risk was genuine."
+    },
+    "sideB": {
+      "label": "QT Ended Smoothly by Design",
+      "text": "The Federal Reserve ended QT after reducing its balance sheet from ~$9 trillion to target levels without a single systemic event. No major bank failure, repo market seizure (unlike September 2019), or liquidity crisis occurred in 2024–2025. High yield credit spreads at 3.27% were near their tightest levels in years — the opposite of financial stress. The Fed's gradual, well-telegraphed approach successfully avoided the pitfalls of poorly managed balance sheet reduction."
+    },
+    "resolution": "QT completed without systemic stress event. The deliberate slowdown and halt were prudent risk management rather than evidence of a near-crisis. Financial conditions remained broadly orderly throughout.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "global-recession-probability-2025-2026",
+    "question": "What is the probability of a global recession in 2025–2026?",
+    "sideA": {
+      "label": "Recession Risk Is Elevated",
+      "text": "After Liberation Day tariffs (April 2025), Bloomberg Economics raised its US recession probability to ~40%. The Conference Board's CEO Confidence indicator fell sharply. Consumer confidence Expectations Index at 72 is below the 80-level associated with recession risk. Global Policy Uncertainty Index is near record highs (~388). The IMF cut 2025 global growth to 2.8% — approaching the 2.5% threshold often defined as a 'global recession.' Multiple large economies (Germany, UK, Japan) were in or near technical recession simultaneously."
+    },
+    "sideB": {
+      "label": "Global Recession Narrowly Avoided",
+      "text": "The Chauvet-Piger US recession probability model registered only 0.80% in December 2025. NBER has not declared a US recession. IMF WEO Update (January 2026) revised global growth UP to 3.3% for 2026 — well above the 2.5% global recession threshold. US-China trade truce provided significant relief. Fed delivered 75 bps of cuts in Q4 2025. Global PMIs stabilized. The 'global recession' scenario had a narrow escape in April–May 2025."
+    },
+    "resolution": "Global recession narrowly avoided in 2025 but risks remain elevated in 2026. The trade truce and Fed easing cycle were pivotal in averting the worst scenario. Section 122 tariffs and BOJ normalization remain key risk factors for late 2026.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "japan-boj-normalization-risk",
+    "question": "Does Bank of Japan rate normalization pose a systemic global financial risk?",
+    "sideA": {
+      "label": "BOJ Hikes Could Trigger Global Carry Unwind",
+      "text": "Japan's August 5, 2024 market crash ('Black Monday II') — triggered by a BOJ rate hike that unwound yen carry trades — demonstrated the systemic risk. The Nikkei fell 12% in a single session. Estimates suggest up to $4 trillion in yen-funded carry trades exist. With Japan's 10Y JGB yield now at 2.11% (February 2026), further BOJ normalization could trigger repeated episodes of global risk-asset selling as investors close dollar/euro-funded positions."
+    },
+    "sideB": {
+      "label": "BOJ Will Normalize Slowly — Managed Risk",
+      "text": "The BOJ explicitly flagged the August 2024 market reaction as a lesson in communication and immediately walked back hawkish signals. Governor Ueda emphasized the BOJ would normalize 'cautiously and gradually.' After the August shock, subsequent BOJ moves were well-telegraphed. Japan's normalization is from deeply negative territory (NIRP) toward zero — the destination is still very accommodative. The carry trade will unwind slowly, not in a panic, because traders will adjust positions gradually."
+    },
+    "resolution": "Risk acknowledged and actively managed by the BOJ. August 2024 was a warning shot. Further normalization will be slow and communication-heavy, reducing but not eliminating systemic risk from yen carry unwinding.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "us-sovereign-debt-sustainability",
+    "question": "Is US government debt at $36 trillion+ sustainable?",
+    "sideA": {
+      "label": "Debt Path Is Unsustainable Long-Term",
+      "text": "The IMF's March 2026 blog explicitly warned that rising sovereign debt 'confronts policymakers with difficult trade-offs.' US debt-to-GDP is ~124%. The CBO projects debt rising to 200%+ of GDP over the next 30 years absent policy changes. Real interest rates at 1.62% mean the government pays meaningfully above inflation on its entire debt stock. The extension of the 2017 Tax Cuts and Jobs Act adds trillions. Eventually, the market will demand a fiscal premium — raising borrowing costs."
+    },
+    "sideB": {
+      "label": "Dollar Reserve Status Provides Unique Buffer",
+      "text": "The US dollar's unique reserve currency status allows the United States to borrow at rates unavailable to other sovereign debtors. 10Y Treasury yields at 4.26% reflect market confidence, not stress — the US can borrow cheaply even with $36T in debt. High yield credit spreads are tight (3.27%). The US has never defaulted; legal debt ceiling constraints are ultimately political, not financial. Japan has 250%+ debt-to-GDP without a crisis."
+    },
+    "resolution": "Near-term sustainability: yes. Medium-term (10–30 years): growing concern that requires fiscal consolidation. The IMF flag represents a warning about future policy space rather than an imminent crisis.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "tariffs-per-household-cost",
+    "question": "How much do US tariffs actually cost American households?",
+    "sideA": {
+      "label": "Significant Household Tax Burden",
+      "text": "The Tax Foundation estimated IEEPA-era 2025 tariffs cost US households approximately $1,000 per year. After Section 122 reimposition (February 2026), the ongoing cost is estimated at ~$600/household. This is effectively a consumption tax on imports that disproportionately affects lower-income households who spend a higher share of income on imported goods. When trading partner retaliation and supply chain disruption costs are included, the total economic cost is substantially higher."
+    },
+    "sideB": {
+      "label": "Foreign Exporters Bear Most of the Cost",
+      "text": "The July 2025 FOMC minutes cited Fed staff research showing 'foreign exporters bore most tariff costs' rather than US consumers — foreign producers reduced prices to maintain market access. The actual consumer price impact was lower than the statutory tariff rate implies. Some tariff revenue (~$100B+ annually) offsets household tax burden when viewed at the national level. Domestic industries protected by tariffs (steel, autos) benefit in terms of employment, partially offsetting consumer costs."
+    },
+    "resolution": "Contested. Evidence suggests significant but partial pass-through to US consumers; full cost $600–$1,000/household before retaliation effects. Foreign exporters absorb some of the burden via price reduction, but the US consumer bears a meaningful share.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "imf-forecast-accuracy",
+    "question": "Are IMF growth forecasts reliable warning indicators of recession risk?",
+    "sideA": {
+      "label": "IMF Forecasts Are Too Optimistic",
+      "text": "The IMF consistently underestimated the impact of the 2022–2023 inflation surge and rate hikes until after the fact. In April 2025, the IMF cut global growth forecasts dramatically (from 3.3% to 2.8%) — after markets had already priced in severe tariff disruption weeks earlier. Critics note the IMF's institutional tendency to avoid alarm until risks are already materializing, reducing the utility of its forecasts as early warning signals. The IMF upgraded 2026 to 3.3% in January 2026 even as tariff policy remained deeply uncertain."
+    },
+    "sideB": {
+      "label": "IMF Provides Credible Baseline Reference",
+      "text": "The IMF's April 2025 WEO explicitly warned of 'effective tariff rates not seen in a century' — a clear signal that attracted global attention and prompted policy responses. The IMF has credibly revised forecasts up and down based on incoming information. Its January 2026 upgrade to 3.3% reflected the actual improvement in conditions post-truce and post-Fed easing. No other multilateral institution produces more comprehensive quarterly global forecasts with consistent methodology."
+    },
+    "resolution": "The IMF forecasts are a valuable institutional baseline but suffer from groupthink and political sensitivities. Most useful as a cross-check against market-based forecasts rather than a leading indicator.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]
