@@ -1,4 +1,16 @@
 {
   "lastRun": "2026-03-20T00:00:00Z",
-  "sections": {}
+  "tracker": "european-conquest-americas",
+  "sections": {
+    "timeline": { "status": "seeded", "itemCount": 80 },
+    "mapPoints": { "status": "seeded", "itemCount": 70 },
+    "mapLines": { "status": "seeded", "itemCount": 30 },
+    "claims": { "status": "seeded", "itemCount": 25 },
+    "political": { "status": "seeded", "itemCount": 20 },
+    "casualties": { "status": "seeded", "itemCount": 12 },
+    "kpis": { "status": "seeded", "itemCount": 10 },
+    "strikeTargets": { "status": "seeded", "itemCount": 10 },
+    "retaliation": { "status": "seeded", "itemCount": 10 },
+    "assets": { "status": "seeded", "itemCount": 10 }
+  }
 }
