@@ -1,4 +1,10 @@
 {
   "lastRun": "2026-03-20T00:00:00Z",
-  "sections": {}
+  "tracker": "bts",
+  "sections": {
+    "timeline": { "status": "seeded", "itemCount": 60 },
+    "political": { "status": "seeded", "itemCount": 7 },
+    "kpis": { "status": "seeded", "itemCount": 10 },
+    "meta": { "status": "seeded", "itemCount": 1 }
+  }
 }

@@ -1,1 +1,101 @@
-[]
+[
+  {
+    "id": "billboard-hot100-no1s",
+    "label": "Billboard Hot 100 No. 1 Hits",
+    "value": "6",
+    "color": "blue",
+    "source": "Billboard",
+    "contested": false,
+    "delta": "+6 since 2020",
+    "trend": "stable",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "billboard-200-no1-albums",
+    "label": "Billboard 200 No. 1 Albums",
+    "value": "4",
+    "color": "blue",
+    "source": "Billboard",
+    "contested": false,
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "global-album-sales",
+    "label": "Global Equivalent Album Sales",
+    "value": "142.5M+",
+    "color": "green",
+    "source": "ChartMasters / HYBE",
+    "contested": false,
+    "delta": "As of 2024",
+    "trend": "up",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "grammy-nominations",
+    "label": "Grammy Award Nominations",
+    "value": "5",
+    "color": "amber",
+    "source": "Recording Academy",
+    "contested": false,
+    "contestNote": "No Grammy wins despite 5 nominations across 3 ceremonies",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "un-speeches",
+    "label": "UN General Assembly Speeches",
+    "value": "3",
+    "color": "blue",
+    "source": "United Nations / UNICEF",
+    "contested": false,
+    "delta": "2018, 2020, 2021",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "love-yourself-tour-gross",
+    "label": "Love Yourself Tour Gross",
+    "value": "$196.4M",
+    "color": "green",
+    "source": "Pollstar / Billboard",
+    "contested": false,
+    "delta": "62 concerts, 2M+ fans",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "billboard-music-awards",
+    "label": "Billboard Music Awards Won",
+    "value": "12",
+    "color": "amber",
+    "source": "Billboard / MRC Data",
+    "contested": false,
+    "delta": "Most of any act in BBMA history (as of 2022)",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "days-since-debut",
+    "label": "Days Since Debut",
+    "value": "4,663+",
+    "color": "blue",
+    "source": "HYBE (debut: June 13, 2013)",
+    "contested": false,
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ifpi-global-artist",
+    "label": "IFPI Global Recording Artist of the Year",
+    "value": "2× Winner",
+    "color": "green",
+    "source": "IFPI",
+    "contested": false,
+    "delta": "2020 & 2021 — consecutive years",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "guinness-records",
+    "label": "Guinness World Records Held",
+    "value": "25+",
+    "color": "amber",
+    "source": "Guinness World Records",
+    "contested": false,
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]
