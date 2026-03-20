@@ -18,6 +18,7 @@ export default function MobileHeader({
   return (
     <header className="mtab-header">
       <div className="mtab-header-left">
+        <a className="mtab-home-link" href="/watchboard/" title="Watchboard Home">WB</a>
         {!isHistorical && <span className="mtab-live-dot" />}
         <span className="mtab-op-name">{operationName}</span>
       </div>

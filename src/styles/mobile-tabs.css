@@ -60,6 +60,15 @@
   min-width: 0;
 }
 
+.mtab-home-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-red);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
 .mtab-live-dot {
   width: 7px;
   height: 7px;
