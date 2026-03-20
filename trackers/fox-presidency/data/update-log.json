@@ -1,4 +1,12 @@
 {
   "lastRun": "2026-03-20T00:00:00Z",
-  "sections": {}
+  "tracker": "fox-presidency",
+  "sections": {
+    "kpis": { "status": "seeded", "itemCount": 10 },
+    "timeline": { "status": "seeded", "itemCount": 42 },
+    "mapPoints": { "status": "seeded", "itemCount": 21 },
+    "claims": { "status": "seeded", "itemCount": 15 },
+    "political": { "status": "seeded", "itemCount": 20 },
+    "econ": { "status": "seeded", "itemCount": 10 }
+  }
 }
