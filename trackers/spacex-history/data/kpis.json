@@ -1,1 +1,104 @@
-[]
+[
+  {
+    "id": "total-orbital-launches",
+    "label": "Total Orbital Launches",
+    "value": "350+",
+    "color": "blue",
+    "source": "SpaceX.com / Wikipedia",
+    "contested": false,
+    "delta": "+60 in 2023",
+    "trend": "up",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "booster-landings",
+    "label": "Successful Booster Landings",
+    "value": "300+",
+    "color": "green",
+    "source": "SpaceX.com / NASASpaceFlight.com",
+    "contested": false,
+    "delta": "~90% landing success rate",
+    "trend": "up",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "active-starlink-sats",
+    "label": "Active Starlink Satellites",
+    "value": "~10,000+",
+    "color": "blue",
+    "source": "Starlink.com / FCC filings",
+    "contested": false,
+    "delta": "+4,000 since 2023",
+    "trend": "up",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "starlink-subscribers",
+    "label": "Starlink Subscribers",
+    "value": "~10M+",
+    "color": "green",
+    "source": "SpaceX reports / Reuters",
+    "contested": false,
+    "trend": "up",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "max-booster-reflights",
+    "label": "Max Single Booster Reflights",
+    "value": "25+",
+    "color": "green",
+    "source": "SpaceX / NASASpaceFlight.com",
+    "contested": false,
+    "trend": "up",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "astronauts-launched",
+    "label": "Astronauts Launched to ISS",
+    "value": "50+",
+    "color": "blue",
+    "source": "NASA / SpaceX",
+    "contested": false,
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "falcon9-success-rate",
+    "label": "Falcon 9 Mission Success Rate",
+    "value": ">99%",
+    "color": "green",
+    "source": "SpaceX / Wikipedia",
+    "contested": false,
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "starship-ift-tests",
+    "label": "Starship Integrated Flight Tests",
+    "value": "7",
+    "color": "amber",
+    "source": "SpaceX.com",
+    "contested": false,
+    "delta": "IFT-7 completed Jan 2025",
+    "trend": "up",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "company-valuation",
+    "label": "SpaceX Valuation (Private)",
+    "value": "~$350B",
+    "color": "green",
+    "source": "Reuters / Bloomberg",
+    "contested": true,
+    "contestNote": "Private valuation from funding rounds; not public market verified",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "launch-cost-per-kg",
+    "label": "Falcon 9 Cost per kg to LEO",
+    "value": "~$2,720/kg",
+    "color": "green",
+    "source": "SpaceX pricing / Space Policy Inst.",
+    "contested": true,
+    "contestNote": "Depends on mission profile; Starlink internal pricing may differ",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]
