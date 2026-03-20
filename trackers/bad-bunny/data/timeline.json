@@ -1,1 +1,620 @@
-[]
+[
+  {
+    "era": "Underground Origins (2016)",
+    "events": [
+      {
+        "id": "diles-soundcloud",
+        "year": "Jan 25, 2016",
+        "title": "\"Diles\" Uploaded to SoundCloud — Goes Viral",
+        "type": "milestone",
+        "detail": "Benito Antonio Martínez Ocasio, then a supermarket bagger at Econo in Vega Baja, Puerto Rico, uploads \"Diles\" to SoundCloud. DJ Luian discovers the track and the song spreads through Puerto Rican underground trap circles. A remix featuring Ozuna, Farruko, Arcángel, and Ñengo Flow amplifies its reach.",
+        "sources": [
+          { "name": "Remezcla — Bad Bunny Career Timeline", "url": "https://remezcla.com/lists/music/a-timeline-of-bad-bunnys-biggest-career-moments-from-charts-to-protests-and-more/", "tier": 2 },
+          { "name": "Wikipedia — Bad Bunny", "url": "https://en.wikipedia.org/wiki/Bad_Bunny", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "soundcloud-early-uploads",
+        "year": "2013–2015",
+        "title": "Early SoundCloud Era — \"Get,\" \"Tentación,\" \"Just Let Me Know\"",
+        "type": "milestone",
+        "detail": "While studying communications at the University of Puerto Rico at Arecibo and working as a supermarket bagger at Econo in Vega Baja, Benito Martínez Ocasio uploads his earliest tracks to SoundCloud: \"Get\" (2013), \"Tentación\" (2014), and \"Just Let Me Know\" (2015). These recordings form the foundation of what will become the Bad Bunny sound.",
+        "sources": [
+          { "name": "Wikipedia — Bad Bunny", "url": "https://en.wikipedia.org/wiki/Bad_Bunny", "tier": 2 },
+          { "name": "Remezcla", "url": "https://remezcla.com/lists/music/a-timeline-of-bad-bunnys-biggest-career-moments-from-charts-to-protests-and-more/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "rimas-signing",
+        "year": "Mid 2016",
+        "title": "Signed to Rimas Entertainment by Noah Assad",
+        "type": "milestone",
+        "detail": "DJ Luian introduces Bad Bunny to Noah Assad, who had founded Rimas Entertainment in 2014 at age 24. Assad signs Bad Bunny and becomes his manager — a partnership that persists through 2026. Assad also connects him with production team Mambo Kingz.",
+        "sources": [
+          { "name": "Billboard — Noah Assad Interview", "url": "https://www.billboard.com/pro/noah-assad-rimas-entertainment-interview-photos-bad-bunny-manager/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "soy-peor-release",
+        "year": "Dec 8, 2016",
+        "title": "\"Soy Peor\" Released — First Major Single",
+        "type": "milestone",
+        "detail": "\"Soy Peor\" is released via Rimas Entertainment, reaching #22 on Billboard's Hot Latin Songs. The track would eventually earn 11× Latin Platinum RIAA certification, becoming one of the defining songs of Bad Bunny's early career and establishing the moody, introspective trap aesthetic that would define his sound.",
+        "sources": [
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 },
+          { "name": "Wikipedia — Bad Bunny", "url": "https://en.wikipedia.org/wiki/Bad_Bunny", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "era": "Latin Trap Breakout (2017–2018)",
+    "events": [
+      {
+        "id": "mayores-becky-g",
+        "year": "Jul 14, 2017",
+        "title": "\"Mayores\" with Becky G — First Hot 100 Entry",
+        "type": "collab",
+        "detail": "\"Mayores,\" featuring Bad Bunny on a Becky G track, peaks at #3 on Billboard Hot Latin Songs and marks Bad Bunny's first entry on the Billboard Hot 100. The music video accumulates over 2.5 billion YouTube views, giving him his first true international exposure.",
+        "sources": [
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 },
+          { "name": "Wikipedia — Bad Bunny", "url": "https://en.wikipedia.org/wiki/Bad_Bunny", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "krippy-kush-farruko",
+        "year": "Aug 3, 2017",
+        "title": "\"Krippy Kush\" with Farruko — International Breakthrough",
+        "type": "collab",
+        "detail": "\"Krippy Kush\" (with Farruko and Rvssian on Sony Music Latin) reaches the Top 5 on Hot Latin Songs and breaks Bad Bunny to international audiences. A November 2017 remix adding Nicki Minaj and 21 Savage expands its global reach. The original video approaches 500 million worldwide views.",
+        "sources": [
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 },
+          { "name": "Grammys.com — 11 Essential Bad Bunny Collaborations", "url": "https://www.grammy.com/news/11-essential-bad-bunny-collaborations-un-verano-sin-ti-cardi-b-drake-rosalia-bomba-estereo", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "sensualidad-top10",
+        "year": "Late 2017",
+        "title": "\"Sensualidad\" with J Balvin & Prince Royce — First Top 10",
+        "type": "collab",
+        "detail": "\"Sensualidad\" with J Balvin and Prince Royce becomes Bad Bunny's first Billboard Hot Latin Songs Top 10 entry, solidifying his standing as a principal figure in the urban Latin genre alongside Colombian superstar J Balvin. The collaboration would seed a lasting creative partnership.",
+        "sources": [
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "i-like-it-number-one",
+        "year": "May 2018",
+        "title": "\"I Like It\" with Cardi B & J Balvin Hits #1 Hot 100",
+        "type": "collab",
+        "detail": "\"I Like It\" — a bilingual banger with Cardi B and J Balvin — reaches #1 on the Billboard Hot 100, becoming Bad Bunny's first number-one on the chart and marking a landmark moment for Spanish-language music in mainstream American pop. The track earns Bad Bunny his first Billboard Music Award win.",
+        "sources": [
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 },
+          { "name": "Grammy.com", "url": "https://www.grammy.com/news/11-essential-bad-bunny-collaborations-un-verano-sin-ti-cardi-b-drake-rosalia-bomba-estereo", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "te-bote-number-one",
+        "year": "Early 2018",
+        "title": "\"Te Boté\" Remix Tops Hot Latin Songs",
+        "type": "milestone",
+        "detail": "The \"Te Boté\" remix featuring Bad Bunny, Ozuna, and Nicky Jam reaches #1 on Hot Latin Songs. The music video surpasses 1 billion YouTube views, placing Bad Bunny in the pantheon of reggaetón artists capable of crossing a billion views.",
+        "sources": [
+          { "name": "Billboard Hot Latin Songs", "url": "https://www.billboard.com/music/latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "mia-drake-collab",
+        "year": "Oct 11, 2018",
+        "title": "\"MIA\" with Drake Reaches #5 Hot 100",
+        "type": "collab",
+        "detail": "\"MIA\" with Drake peaks at #5 on the Billboard Hot 100 and surpasses 1.3 billion YouTube streams. Drake's endorsement signals to English-language markets that Bad Bunny is a global force, not merely a regional phenomenon. It was Drake's 26th Hot 100 top-10 at the time.",
+        "sources": [
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 },
+          { "name": "Grammy.com", "url": "https://www.grammy.com/news/11-essential-bad-bunny-collaborations-un-verano-sin-ti-cardi-b-drake-rosalia-bomba-estereo", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "x100pre-debut-album",
+        "year": "Dec 24, 2018",
+        "title": "Debut Album *X 100PRE* Released on Christmas Eve",
+        "type": "album",
+        "detail": "*X 100PRE* releases on Christmas Eve via Rimas Entertainment, debuting at #11 on the Billboard 200 and #1 on Top Latin Albums, where it stays for 46 weeks and charts for 177 weeks total. It accumulates 7.3 million equivalent album sales worldwide, earns Latin Diamond certification (600,000+ US units), and wins Best Urban Music Album at the 20th Latin Grammy Awards.",
+        "sources": [
+          { "name": "Wikipedia — X 100PRE", "url": "https://en.wikipedia.org/wiki/X_100pre", "tier": 2 },
+          { "name": "Billboard 200", "url": "https://www.billboard.com/charts/billboard-200/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "first-latin-grammy-nomination",
+        "year": "Late 2017",
+        "title": "First Latin Grammy Nomination at 18th Annual Ceremony",
+        "type": "award",
+        "detail": "Bad Bunny receives his first Latin Grammy nomination for Best Urban Fusion/Performance for \"Si Tu Novio Te Deja Sola\" at the 18th Annual Latin Grammy Awards, signaling his arrival as a significant force in formal music recognition circuits after just one year of major-label visibility.",
+        "sources": [
+          { "name": "Latin Recording Academy", "url": "https://www.latingrammy.com/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "x100pre-latin-grammy-win",
+        "year": "2019",
+        "title": "*X 100PRE* Wins Best Urban Music Album at Latin Grammy",
+        "type": "award",
+        "detail": "*X 100PRE* wins Best Urban Music Album at the 20th Annual Latin Grammy Awards, marking Bad Bunny's first major award in a formal industry ceremony. The win validates the album's critical and commercial reception and cements his position as a leader in the urban Latin genre.",
+        "sources": [
+          { "name": "Latin Recording Academy", "url": "https://www.latingrammy.com/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "era": "Global Superstar (2019–2020)",
+    "events": [
+      {
+        "id": "oasis-ep-j-balvin",
+        "year": "Jun 28, 2019",
+        "title": "*Oasis* Collaborative EP with J Balvin — #9 Billboard 200",
+        "type": "album",
+        "detail": "*Oasis*, a collaborative EP with J Balvin, peaks at #9 on the Billboard 200 and #1 on US Latin Albums. It is certified 2× Platinum by the RIAA. The project demonstrates Bad Bunny's crossover power and his partnership with J Balvin as one of the defining creative forces of their generation.",
+        "sources": [
+          { "name": "Billboard 200", "url": "https://www.billboard.com/charts/billboard-200/", "tier": 1 },
+          { "name": "RIAA", "url": "https://www.riaa.com/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "pr-protests-afilando",
+        "year": "Jul 2019",
+        "title": "Leaves European Tour to Join Puerto Rico #RickyRenuncia Protests",
+        "type": "milestone",
+        "detail": "When leaked Telegram messages expose Puerto Rican Governor Ricardo Rosselló's corruption and homophobic remarks, Bad Bunny abandons his European tour and flies to San Juan to march with the people. He collaborates with Residente and iLe on protest anthem \"Afilando los Cuchillos.\" Rosselló resigns July 24, 2019, in one of Puerto Rico's most historic political moments.",
+        "sources": [
+          { "name": "Rolling Stone — Bad Bunny Politics", "url": "https://www.rollingstone.com/music/music-latin/bad-bunny-politics-protests-pfknr-book-excerpt-1235504162/", "tier": 2 },
+          { "name": "El Nuevo Día", "url": "https://www.elnuevodia.com/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "tonight-show-yhlqmdlg-announcement",
+        "year": "Feb 27, 2020",
+        "title": "Announces *YHLQMDLG* on The Tonight Show — Tribute Shirt Moment",
+        "type": "milestone",
+        "detail": "Bad Bunny announces *YHLQMDLG* on The Tonight Show Starring Jimmy Fallon, performing \"Ignorantes\" with Sech backed by The Roots. He wears a shirt reading \"They killed Alexa, not a man in a skirt\" — a tribute to murdered trans woman Alexa Negrón Luciano — a landmark moment of gender activism in reggaetón.",
+        "sources": [
+          { "name": "Rolling Stone", "url": "https://www.rollingstone.com/music/music-latin/", "tier": 2 },
+          { "name": "NBC Tonight Show", "url": "https://www.nbc.com/the-tonight-show", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "yhlqmdlg-release",
+        "year": "Feb 29, 2020",
+        "title": "*YHLQMDLG* Released — Highest-Charting All-Spanish Album on Billboard 200",
+        "type": "album",
+        "detail": "*YHLQMDLG* (Yo Hago Lo Que Me Da La Gana), released on Leap Day, debuts at #2 on the Billboard 200 — the highest chart position ever for an all-Spanish-language album at the time. It accumulates 296 million first-week Spotify streams, spends 70 weeks at #1 on Top Latin Albums, earns 19× Latin Diamond RIAA certification, and charts 11 songs simultaneously on the Billboard Hot 100.",
+        "sources": [
+          { "name": "Billboard 200", "url": "https://www.billboard.com/charts/billboard-200/", "tier": 1 },
+          { "name": "Spotify Newsroom", "url": "https://newsroom.spotify.com/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "yo-perreo-sola-drag",
+        "year": "Apr 2020",
+        "title": "\"Yo Perreo Sola\" Music Video — Challenging Masculine Norms",
+        "type": "milestone",
+        "detail": "The \"Yo Perreo Sola\" music video features Bad Bunny performing in drag, directly challenging reggaetón's historically rigid masculine norms. Released with zero digital marketing spending, it tops YouTube global charts organically and sparks widespread conversation about gender expression within urban Latin music.",
+        "sources": [
+          { "name": "Rolling Stone", "url": "https://www.rollingstone.com/music/music-latin/", "tier": 2 },
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "un-dia-dua-lipa-j-balvin",
+        "year": "Jul 23, 2020",
+        "title": "\"Un Día (One Day)\" with Dua Lipa, J Balvin & Tainy",
+        "type": "collab",
+        "detail": "\"Un Día (One Day)\" with J Balvin, Dua Lipa, and Tainy is released, becoming the most prominent Bad Bunny crossover into English-language pop territory at that point. The track appears on J Balvin's *Jose* (2021) and Dua Lipa's *Future Nostalgia: The Moonlight Edition* (2021).",
+        "sources": [
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 },
+          { "name": "Grammy.com", "url": "https://www.grammy.com/news/11-essential-bad-bunny-collaborations-un-verano-sin-ti-cardi-b-drake-rosalia-bomba-estereo", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "dakiti-jhay-cortez",
+        "year": "Oct 30, 2020",
+        "title": "\"Dakiti\" with Jhay Cortez — #1 Global for 8 Weeks",
+        "type": "collab",
+        "detail": "\"Dakiti\" featuring Jhay Cortez is released as the lead single from *El Último Tour del Mundo*. It reaches #1 on the Billboard Global 200 and holds #1 on Spotify's global ranking for eight consecutive weeks, becoming one of the most successful Latin singles in streaming history.",
+        "sources": [
+          { "name": "Billboard Global 200", "url": "https://www.billboard.com/charts/billboard-global-200/", "tier": 1 },
+          { "name": "Spotify Newsroom", "url": "https://newsroom.spotify.com/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "el-ultimo-tour-release",
+        "year": "Nov 27, 2020",
+        "title": "*El Último Tour del Mundo* — First All-Spanish Album to Top Billboard 200",
+        "type": "album",
+        "detail": "*El Último Tour del Mundo* debuts at #1 on the Billboard 200 with 116,000 equivalent album units — the first all-Spanish-language album to ever top the chart. It spends 27 weeks at #1 on Top Latin Albums and earns 6× Latin Platinum RIAA certification. Features Rosalía on \"La Noche de Anoche.\"",
+        "sources": [
+          { "name": "Billboard 200", "url": "https://www.billboard.com/charts/billboard-200/", "tier": 1 },
+          { "name": "Wikipedia — El Último Tour del Mundo", "url": "https://en.wikipedia.org/wiki/El_%C3%9Altimo_Tour_Del_Mundo", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "las-que-no-iban-ep",
+        "year": "Apr–May 2020",
+        "title": "*Las Que No Iban a Salir* — Lockdown Bonus EP",
+        "type": "album",
+        "detail": "During the COVID-19 lockdown, Bad Bunny releases *Las Que No Iban a Salir* (The Songs That Weren't Going to Come Out), a surprise EP of outtakes and new tracks. It moves 2.7 million equivalent units and demonstrates his ability to engage fans organically without traditional promotion, while many artists' output stalled during the pandemic.",
+        "sources": [
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "spotify-wrapped-2020",
+        "year": "Dec 2020",
+        "title": "Named Spotify's Most-Streamed Artist Globally for 2020",
+        "type": "milestone",
+        "detail": "Bad Bunny is named Spotify's most-streamed artist globally for 2020 — the first non-English-language artist to top Spotify's annual global list. The achievement signals a seismic shift in global music consumption, with Spanish-language music reaching the apex of the world's most-used streaming platform.",
+        "sources": [
+          { "name": "Spotify Newsroom", "url": "https://newsroom.spotify.com/", "tier": 1 },
+          { "name": "Rolling Stone", "url": "https://www.rollingstone.com/music/music-news/bad-bunny-biggest-artist-2025-spotify-wrapped-1235476419/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "era": "Record-Breaking Heights (2021–2022)",
+    "events": [
+      {
+        "id": "snl-first-appearance",
+        "year": "Feb 21, 2021",
+        "title": "First SNL Appearance as Musical Guest",
+        "type": "milestone",
+        "detail": "Bad Bunny makes his Saturday Night Live debut as the musical guest for Season 46 (hosted by Regé-Jean Page). He performs \"La Noche de Anoche\" with Rosalía, exposing both artists to a mainstream American late-night audience in a widely-covered performance.",
+        "sources": [
+          { "name": "NBC Insider — SNL", "url": "https://www.nbc.com/nbc-insider/bad-bunny-snl-sketches-monologue-watch", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "grammy-win-yhlqmdlg",
+        "year": "Feb 2021",
+        "title": "Wins First Grammy — Best Latin Pop or Urban Album for *YHLQMDLG*",
+        "type": "award",
+        "detail": "*YHLQMDLG* wins the Grammy Award for Best Latin Pop or Urban Album at the 63rd Annual Grammy Awards, marking Bad Bunny's first Grammy win. The recognition from the Recording Academy underscores the album's landmark cultural significance, having debuted at #2 on the Billboard 200 as an all-Spanish record.",
+        "sources": [
+          { "name": "Recording Academy / Grammy.com", "url": "https://www.grammy.com/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "wwe-wrestlemania-37",
+        "year": "Mar 2021",
+        "title": "WWE Debut at WrestleMania 37 — Wins 24/7 Championship",
+        "type": "milestone",
+        "detail": "Bad Bunny makes his WWE debut at WrestleMania 37, teaming with Damian Priest to defeat The Miz and John Morrison. He later wins the WWE 24/7 Championship from Akira Tozawa and holds the title for 28 days. The crossover into professional wrestling expands his fan base into an entirely new entertainment vertical.",
+        "sources": [
+          { "name": "WWE.com", "url": "https://www.wwe.com/", "tier": 2 },
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "billboard-latin-awards-2021",
+        "year": "2021",
+        "title": "10 Wins at Billboard Latin Music Awards — Artist of the Year",
+        "type": "award",
+        "detail": "Billboard crowns Bad Bunny the most-awarded artist at the 2021 Billboard Latin Music Awards with 10 wins, including Artist of the Year. The sweep — across chart, album, and streaming categories — reflects his total dominance of the Latin music landscape across multiple simultaneous releases.",
+        "sources": [
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "grammy-ultima-tour-musica-urbana",
+        "year": "Aug 2021",
+        "title": "*El Último Tour del Mundo* Wins Inaugural Best Música Urbana Grammy",
+        "type": "award",
+        "detail": "*El Último Tour del Mundo* wins Best Música Urbana Album at the 64th Grammy Awards, the inaugural year of the category. The category's creation itself reflects the Recording Academy's formal recognition of urban Latin music as a distinct and dominant genre — and Bad Bunny wins its first-ever Grammy.",
+        "sources": [
+          { "name": "Recording Academy / Grammy.com", "url": "https://www.grammy.com/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "hiram-bithorn-stadium-shows",
+        "year": "Dec 10–11, 2021",
+        "title": "Sold-Out Stadium Shows at Hiram Bithorn — 50,000 Fans in Two Nights",
+        "type": "concert",
+        "detail": "Bad Bunny performs his first-ever stadium shows at Estadio Hiram Bithorn in San Juan, Puerto Rico. Two sold-out nights draw 50,000 total fans, setting a Puerto Rico attendance record. The shows mark a homecoming moment, cementing his status as the island's most celebrated musical export.",
+        "sources": [
+          { "name": "Billboard Boxscore", "url": "https://www.billboard.com/pro/boxscore/", "tier": 1 },
+          { "name": "El Nuevo Día", "url": "https://www.elnuevodia.com/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "un-verano-sin-ti-release",
+        "year": "May 6, 2022",
+        "title": "*Un Verano Sin Ti* — Biggest Latin Album Streaming Week Ever",
+        "type": "album",
+        "detail": "*Un Verano Sin Ti* debuts at #1 on the Billboard 200 with 356.66 million US streams — the biggest streaming week for a Latin album in history. It spends 13 non-consecutive weeks at #1 and becomes the first Spanish-language album to top the Billboard 200 Year-End Chart. Features Bomba Estéreo, Rauw Alejandro, the Marías, and many others.",
+        "sources": [
+          { "name": "Billboard 200", "url": "https://www.billboard.com/charts/billboard-200/", "tier": 1 },
+          { "name": "Wikipedia — Un Verano Sin Ti", "url": "https://en.wikipedia.org/wiki/Un_Verano_Sin_Ti", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "el-apagon-documentary",
+        "year": "Sep 16, 2022",
+        "title": "\"El Apagón\" Video & 23-Minute Puerto Rico Documentary",
+        "type": "milestone",
+        "detail": "The music video for \"El Apagón\" is accompanied by a 23-minute documentary about Puerto Rico's power grid privatization and gentrification. The project is widely cited as one of the most politically meaningful artistic statements in Latin music of the decade — using a pop platform to deliver a critique of colonial economic structures.",
+        "sources": [
+          { "name": "Rolling Stone", "url": "https://www.rollingstone.com/music/music-latin/", "tier": 2 },
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "worlds-hottest-tour-2022",
+        "year": "Jul–Oct 2022",
+        "title": "World's Hottest Tour — $314M Gross, 1.9M Tickets Sold",
+        "type": "concert",
+        "detail": "The World's Hottest Tour, Bad Bunny's first-ever stadium tour, spans 43 dates in 14 countries across the Americas. It grosses $314.1 million total ($232.5 million US leg alone) and sells 1.9 million tickets. Records are set at Yankee Stadium (2 sold-out nights, 50,000 per night). Combined with the earlier El Último Tour, Bad Bunny grosses $435 million from 81 shows in 2022 — the all-time calendar-year touring record at the time.",
+        "sources": [
+          { "name": "Billboard Boxscore", "url": "https://www.billboard.com/pro/boxscore/", "tier": 1 },
+          { "name": "Wikipedia — World's Hottest Tour", "url": "https://en.wikipedia.org/wiki/World%27s_Hottest_Tour", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "spotify-wrapped-2022",
+        "year": "Dec 2022",
+        "title": "Spotify's Most-Streamed Artist Globally for 2022 — Third Consecutive Year",
+        "type": "milestone",
+        "detail": "Bad Bunny is named Spotify's most-streamed artist globally for 2022, the third consecutive year he has topped the chart (2020–2022). He is the only artist ever to achieve three consecutive years at the top of Spotify Wrapped. Billboard names him Greatest Pop Star of 2022 — the first male Latino and Spanish-language artist recognized with the title.",
+        "sources": [
+          { "name": "Spotify Newsroom", "url": "https://newsroom.spotify.com/", "tier": 1 },
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "uvst-grammy-nomination-aoty",
+        "year": "Dec 2022",
+        "title": "*Un Verano Sin Ti* Nominated for Grammy Album of the Year",
+        "type": "award",
+        "detail": "*Un Verano Sin Ti* receives a Grammy nomination for Album of the Year at the 65th Grammy Awards — the first Spanish-language album to receive the nomination in the category. It wins Best Música Urbana Album. The AOTY nomination alone is a historic milestone that signals broader industry recognition of Spanish-language music.",
+        "sources": [
+          { "name": "Recording Academy / Grammy.com", "url": "https://www.grammy.com/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "era": "Cultural Icon (2023–2024)",
+    "events": [
+      {
+        "id": "coachella-2023-headliner",
+        "year": "Apr 14, 2023",
+        "title": "Headlines Coachella — First Spanish-Language Headliner in Festival History",
+        "type": "concert",
+        "detail": "Bad Bunny headlines the Coachella Valley Music and Arts Festival, becoming the first Spanish-language artist to headline the iconic festival. His nearly two-hour set features surprise guests including Post Malone and Jhay Cortez arriving by jet ski to perform \"Dakiti.\" Weekend 2 adds Arcángel, José Feliciano, and Rosalía.",
+        "sources": [
+          { "name": "Billboard — Coachella 2023 Recap", "url": "https://www.billboard.com/music/latin/bad-bunny-historic-headliner-coachella-2023-recap-1235303337/", "tier": 2 },
+          { "name": "Rolling Stone", "url": "https://www.rollingstone.com/music/music-latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "uvst-most-streamed-album-spotify",
+        "year": "May 2023",
+        "title": "*Un Verano Sin Ti* Becomes Most-Streamed Album in Spotify History",
+        "type": "milestone",
+        "detail": "*Un Verano Sin Ti* first reaches 10 billion Spotify streams (May 2023) and then surpasses Ed Sheeran's *Divide* to become the most-streamed album ever on Spotify, accumulating over 22 billion total streams. It is the first Spanish-language album to hold this record.",
+        "sources": [
+          { "name": "Spotify Newsroom", "url": "https://newsroom.spotify.com/", "tier": 1 },
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "wwe-backlash-pr",
+        "year": "May 6, 2023",
+        "title": "WWE Backlash Puerto Rico — San Juan Street Fight",
+        "type": "milestone",
+        "detail": "Bad Bunny competes in a San Juan Street Fight against Damian Priest at WWE Backlash in Puerto Rico — one of the most praised celebrity WWE matches in years. The event draws unprecedented interest from a Latin audience and is widely covered as a cultural celebration of Puerto Rico.",
+        "sources": [
+          { "name": "WWE.com", "url": "https://www.wwe.com/", "tier": 2 },
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "nadie-sabe-release",
+        "year": "Oct 13, 2023",
+        "title": "*Nadie Sabe Lo Que Va a Pasar Mañana* Debuts at #1",
+        "type": "album",
+        "detail": "*Nadie Sabe Lo Que Va a Pasar Mañana* releases with 22 tracks of trap-metal and Latin trap. It debuts at #1 on the Billboard 200 with 184,000 album-equivalent units and becomes Spotify's most-streamed album in a single day in 2023. All 21 eligible songs chart on the Billboard Hot 100 simultaneously.",
+        "sources": [
+          { "name": "Billboard 200", "url": "https://www.billboard.com/charts/billboard-200/", "tier": 1 },
+          { "name": "Wikipedia — Nadie Sabe Lo Que Va a Pasar Mañana", "url": "https://en.wikipedia.org/wiki/Nadie_Sabe_Lo_Que_Va_a_Pasar_Ma%C3%B1ana", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "snl-hosting-first",
+        "year": "Oct 21, 2023",
+        "title": "First Time Hosting Saturday Night Live (Season 49)",
+        "type": "milestone",
+        "detail": "Bad Bunny hosts and performs on Saturday Night Live for Season 49, becoming the first Puerto Rican artist to host the show. Guest cameos include Mick Jagger and Lady Gaga (both speaking Spanish), with Pedro Pascal appearing as a translator in the monologue. He performs \"UN PREVIEW\" and \"MONACO.\"",
+        "sources": [
+          { "name": "NBC Insider — SNL", "url": "https://www.nbc.com/nbc-insider/bad-bunny-snl-sketches-monologue-watch", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "most-wanted-tour-2024",
+        "year": "2024",
+        "title": "Most Wanted Tour — $211.4M Gross, 753,000 Tickets",
+        "type": "concert",
+        "detail": "The Most Wanted Tour runs 47 dates in 2024, grossing $211.4 million and selling 753,000 tickets — all dates sell out. Bad Bunny implements an anti-bot ticket registration system to protect fans. The tour wins Pollstar Latin Tour of the Year and ranks #7 on Pollstar's Top 200 Worldwide Touring Acts.",
+        "sources": [
+          { "name": "Billboard Boxscore", "url": "https://www.billboard.com/pro/boxscore/", "tier": 1 },
+          { "name": "Wikipedia — Most Wanted Tour", "url": "https://en.wikipedia.org/wiki/Most_Wanted_Tour_(Bad_Bunny)", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "super-bowl-lx-announcement",
+        "year": "Sep 28, 2024",
+        "title": "Announced as Apple Music Super Bowl LX Halftime Show Headliner",
+        "type": "milestone",
+        "detail": "The NFL officially announces Bad Bunny as the headliner for the Apple Music Super Bowl LX Halftime Show, in partnership with Jay-Z's Roc Nation. The announcement confirms what will become a historic performance — the first Spanish-language singer to headline the Super Bowl.",
+        "sources": [
+          { "name": "NFL.com", "url": "https://www.nfl.com/", "tier": 1 },
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "100-hot100-entries",
+        "year": "Jan 2025",
+        "title": "Surpasses 100 Billboard Hot 100 Entries — First Latin Artist",
+        "type": "milestone",
+        "detail": "Bad Bunny surpasses 100 career entries on the Billboard Hot 100, reaching a career total of 113 entries, 41 top-40 placements, and 12 top-10 hits. He is the first Latin artist in history to cross the 100-entry threshold on America's premier singles chart.",
+        "sources": [
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "era": "Puerto Rican Legacy (2025–2026)",
+    "events": [
+      {
+        "id": "debi-tirar-mas-fotos-short-film",
+        "year": "Jan 3, 2025",
+        "title": "*Debí Tirar Más Fotos* Short Film Released — 13-Minute Puerto Rico Story",
+        "type": "milestone",
+        "detail": "A 13-minute short film co-written and directed with Emmy-winning filmmaker Arí Maniel Cruz Suárez is released on YouTube. Featuring an animated Puerto Rican crested toad character named \"Concho,\" the film explores gentrification, cultural memory, and Puerto Rican identity — not a music video but a standalone artistic work paired with the album.",
+        "sources": [
+          { "name": "Rolling Stone", "url": "https://www.rollingstone.com/music/music-latin/", "tier": 2 },
+          { "name": "Billboard", "url": "https://www.billboard.com/music/latin/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "debi-tirar-mas-fotos-release",
+        "year": "Jan 5, 2025",
+        "title": "*Debí Tirar Más Fotos* Released — #1 Billboard 200, Latin Music Homecoming",
+        "type": "album",
+        "detail": "*Debí Tirar Más Fotos* (I Should Have Taken More Photos) releases with 17 tracks blending reggaetón, plena, jíbaro, salsa, and bomba — recorded entirely in Puerto Rico. It debuts #1 on the Billboard 200 with 264 million on-demand streams in its first week and is later named the most-streamed album globally on Spotify for 2025.",
+        "sources": [
+          { "name": "Billboard 200", "url": "https://www.billboard.com/charts/billboard-200/", "tier": 1 },
+          { "name": "Wikipedia — Debí Tirar Más Fotos", "url": "https://en.wikipedia.org/wiki/Deb%C3%AD_Tirar_M%C3%A1s_Fotos", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "100-billion-spotify-streams",
+        "year": "Feb 2025",
+        "title": "Surpasses 100 Billion Total Spotify Streams",
+        "type": "milestone",
+        "detail": "Bad Bunny surpasses 100 billion total Spotify streams across all artist credits — one of only four artists to reach this milestone, alongside Taylor Swift, Drake, and The Weeknd. The achievement makes him the most-streamed male artist in Spotify's all-time history.",
+        "sources": [
+          { "name": "Spotify Newsroom", "url": "https://newsroom.spotify.com/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "no-me-quiero-ir-residency",
+        "year": "Jul 11–Sep 20, 2025",
+        "title": "\"No Me Quiero Ir de Aquí\" — First-Ever Concert Residency in Puerto Rico History",
+        "type": "concert",
+        "detail": "Bad Bunny performs a 30-show residency (plus a 31st bonus \"Una Más\" show on Sept. 20) at El Choli (Coliseo de Puerto Rico) — the first-ever concert residency in Puerto Rico's history. The 18,000-capacity venue sells approximately 400,000 tickets total. Surprise guests include Feid, Rauw Alejandro, LeBron James, and Kylian Mbappé. Amazon Music livestreams the final night.",
+        "sources": [
+          { "name": "Billboard — Residency Review", "url": "https://www.billboard.com/music/latin/bad-bunny-residency-coliseo-puerto-rico-review-1236019929/", "tier": 2 },
+          { "name": "El Nuevo Día", "url": "https://www.elnuevodia.com/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "latin-grammy-aoty-2025",
+        "year": "Nov 2025",
+        "title": "*Debí Tirar Más Fotos* Wins Latin Grammy Album of the Year",
+        "type": "award",
+        "detail": "*Debí Tirar Más Fotos* wins Album of the Year AND Best Urban Music Album at the 26th Annual Latin Grammy Awards, becoming the first album to win Album of the Year at both the Latin Grammy Awards and the Grammy Awards in the same cycle.",
+        "sources": [
+          { "name": "Latin Recording Academy", "url": "https://www.latingrammy.com/", "tier": 1 },
+          { "name": "Hollywood Reporter — Latin Grammys 2025", "url": "https://www.hollywoodreporter.com/music/music-news/latin-grammys-2025-winners-list-bad-bunny-wins-1236426604/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "spotify-wrapped-2025",
+        "year": "Dec 3, 2025",
+        "title": "Named Spotify's Most-Streamed Artist for 2025 — Fourth Time Overall",
+        "type": "milestone",
+        "detail": "Bad Bunny is named Spotify's most-streamed artist globally for 2025 (19.8 billion streams that year), making it his fourth time topping Spotify Wrapped (2020, 2021, 2022, 2025). Billboard names him Greatest Pop Star of 2025 — the second time he has received the title and the first artist to receive it twice.",
+        "sources": [
+          { "name": "Spotify Newsroom — Wrapped 2025", "url": "https://newsroom.spotify.com/2025-12-03/wrapped-bad-bunny-top-artist-album/", "tier": 1 },
+          { "name": "Rolling Stone", "url": "https://www.rollingstone.com/music/music-news/bad-bunny-biggest-artist-2025-spotify-wrapped-1235476419/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "grammy-aoty-2026",
+        "year": "Feb 2, 2026",
+        "title": "*Debí Tirar Más Fotos* Wins Grammy Album of the Year — Historic First",
+        "type": "award",
+        "detail": "At the 68th Grammy Awards, *Debí Tirar Más Fotos* wins Album of the Year — the first Spanish-language album to win in the category's 67-year history. Bad Bunny also wins Best Música Urbana Album and Best Global Music Performance. In his acceptance speech he states: \"ICE out. We're not savage, we're not animals, we're not aliens. We are humans and we are Americans.\"",
+        "sources": [
+          { "name": "Recording Academy / Grammy.com", "url": "https://www.grammy.com/", "tier": 1 },
+          { "name": "PBS NewsHour — Grammy 2026", "url": "https://www.pbs.org/newshour/arts/bad-bunny-wins-album-of-the-year-at-the-2026-grammy-awards-making-history-for-a-spanish-language-album", "tier": 2 },
+          { "name": "Billboard — Grammy Records 2026", "url": "https://www.billboard.com/lists/bad-bunny-kendrick-lamar-grammys-records/", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "super-bowl-lx-halftime",
+        "year": "Feb 8, 2026",
+        "title": "Apple Music Super Bowl LX Halftime Show — 128.2M Viewers, 4.157B Global Views",
+        "type": "concert",
+        "detail": "Bad Bunny headlines the Apple Music Super Bowl LX Halftime Show at Levi's Stadium, Santa Clara, CA — the first Spanish-language singer to headline the Super Bowl. The show draws 128.2 million US viewers (4th-largest halftime show audience in history) and 4.157 billion global views in 24 hours. Guests include Cardi B, Karol G, Ricky Martin, and Lady Gaga. California Governor Gavin Newsom declares February 8, 2026 \"Bad Bunny Day.\" Streams spike 470% in the US post-show.",
+        "sources": [
+          { "name": "Billboard — Super Bowl Viewership", "url": "https://www.billboard.com/music/music-news/bad-bunny-super-bowl-halftime-show-fourth-biggest-ever-1236177940/", "tier": 2 },
+          { "name": "Wikipedia — Super Bowl LX Halftime Show", "url": "https://en.wikipedia.org/wiki/Super_Bowl_LX_halftime_show", "tier": 2 },
+          { "name": "NBC / Nielsen", "url": "https://www.nbcsports.com/", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  }
+]
