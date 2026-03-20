@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "id": "min-aung-hlaing",
+    "name": "Min Aung Hlaing",
+    "role": "Senior General; SAC Chairman (2021–Jul 2025); now Chairman, State Security & Peace Commission",
+    "avatar": "junta",
+    "initial": "M",
+    "quote": "The military must safeguard the nation's existence. We will work for the country and the people, and hand over power to the winning party after holding a free and fair election.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "soe-win",
+    "name": "Soe Win",
+    "role": "Vice-Senior General; SAC Vice Chairman; now Vice Chairman, State Security & Peace Commission",
+    "avatar": "junta",
+    "initial": "S",
+    "quote": "The military will not allow the country to fall into the hands of terrorists and anarchists who seek to destroy the union.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "myat-tun-oo",
+    "name": "Myat Tun Oo",
+    "role": "SAC Information Committee Chairman; regime spokesperson; controlled state media propaganda",
+    "avatar": "junta",
+    "initial": "T",
+    "quote": "All military operations target terrorists — not civilians. The claims of human rights organizations are fabrications designed to destabilize Myanmar.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "duwa-lashi-la",
+    "name": "Duwa Lashi La",
+    "role": "NUG Acting President; former Kachin State lawyer and community leader",
+    "avatar": "nug",
+    "initial": "D",
+    "quote": "The SAC junta's brutality will never break the people's will. We will establish a federal democratic union where all citizens have equal rights regardless of ethnicity or religion.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "mahn-win-khaing-than",
+    "name": "Mahn Win Khaing Than",
+    "role": "NUG Prime Minister; former Lower House Speaker; ethnic Karen NLD leader",
+    "avatar": "nug",
+    "initial": "W",
+    "quote": "This is our darkest moment, but the dawn will come. The people of Myanmar have chosen democracy and will sacrifice everything to achieve it.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "aung-san-suu-kyi",
+    "name": "Aung San Suu Kyi",
+    "role": "Imprisoned State Counsellor; Nobel Peace Laureate; sentenced to 27 years by junta courts",
+    "avatar": "nug",
+    "initial": "A",
+    "quote": "Please take care of yourselves. Do not be reckless. Do not be controlled by fear of the military.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "zin-mar-aung",
+    "name": "Zin Mar Aung",
+    "role": "NUG Minister for Foreign Affairs; political prisoner under previous junta; international spokesperson",
+    "avatar": "nug",
+    "initial": "Z",
+    "quote": "We call on the international community to recognize the NUG as Myanmar's legitimate government and to provide concrete support — not just statements — to the people's struggle for democracy.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "twan-mrat-naing",
+    "name": "Twan Mrat Naing (Aung Myo Kyaw)",
+    "role": "Major General; AA Commander-in-Chief; ULA (AA political wing) Chairman; de facto ruler of Rakhine",
+    "avatar": "eao",
+    "initial": "T",
+    "quote": "The Arakan Army fights not only to liberate Rakhine but to build a truly federal democratic Myanmar where all peoples can live in dignity and equality.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "mutu-say-poe",
+    "name": "Mutu Say Poe",
+    "role": "KNU (Karen National Union) Chairman; longest-serving ethnic armed organization leader in Myanmar",
+    "avatar": "eao",
+    "initial": "M",
+    "quote": "The Karen people have been fighting for our rights for 70 years. Now we stand with all the peoples of Myanmar to end military dictatorship once and for all.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "n-ban-la",
+    "name": "General N'Ban La",
+    "role": "KIO (Kachin Independence Organisation) Chairman; KIA supreme commander; key NUG ally",
+    "avatar": "eao",
+    "initial": "N",
+    "quote": "The KIA has always defended the Kachin people against military aggression. We will continue to fight until a genuine federal union is established.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "lway-yay-mong",
+    "name": "Lway Yay Mong (Tarng Shawng)",
+    "role": "TNLA (Ta'ang National Liberation Army) Chairman; Three Brotherhood Alliance co-founder; Operation 1027 architect",
+    "avatar": "eao",
+    "initial": "L",
+    "quote": "Operation 1027 proved that united ethnic armed forces can decisively defeat the junta's military machine. We will not stop until all Myanmar people are free.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "peng-daxun",
+    "name": "Peng Daxun",
+    "role": "MNDAA (Myanmar National Democratic Alliance Army) Chairman; Kokang leader; Operation 1027 co-commander",
+    "avatar": "eao",
+    "initial": "P",
+    "quote": "We launched Operation 1027 to restore Kokang's dignity and autonomy, and to liberate northern Shan State from military occupation. We did not expect such a complete victory so quickly.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "saw-kyaw-hla",
+    "name": "Saw Kyaw Hla / KNDF",
+    "role": "Karenni Nationalities Defence Force (KNDF) Commander; Kayah State resistance leader",
+    "avatar": "eao",
+    "initial": "K",
+    "quote": "Karenni people have suffered genocidal violence for too long. We fight to defend our homes, our culture, and to build a Karenni State where we live on our own terms.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "tom-andrews",
+    "name": "Tom Andrews",
+    "role": "UN Special Rapporteur on Myanmar Human Rights (2020–2025); called for arms embargo and ICC referral",
+    "avatar": "intl",
+    "initial": "T",
+    "quote": "Myanmar is in a death spiral. The military junta is committing atrocity crimes on a massive scale. The international community must act before it is too late.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "wang-yi",
+    "name": "Wang Yi",
+    "role": "Chinese Foreign Minister; key mediator between SAC and Three Brotherhood Alliance; brokered Jan 2024 ceasefire",
+    "avatar": "intl",
+    "initial": "W",
+    "quote": "China hopes all parties in Myanmar will remain calm and restrained, and resolve disputes through dialogue and consultation within the constitutional and legal framework.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "kyaw-min-htike",
+    "name": "Kyaw Min Htike",
+    "role": "AAPP (Assistance Association for Political Prisoners) Secretary; documents arrests, torture, and deaths in detention",
+    "avatar": "civil",
+    "initial": "K",
+    "quote": "The junta's prison system is a machine of torture and death. Every day our colleagues are beaten, denied medicine, and disappear into cells from which they never return.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "sithu-maung",
+    "name": "Sithu Maung",
+    "role": "CRPH (Committee Representing Pyidaungsu Hluttaw) member; NUG ally; activist MP who fled arrest in 2021",
+    "avatar": "nug",
+    "initial": "S",
+    "quote": "We left behind our families, our homes, everything. But we carry with us the mandate of the people who voted for us, and that mandate is to build a democratic Myanmar.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ye-myo-hein",
+    "name": "Ye Myo Hein",
+    "role": "PDF Commander-in-Chief; NUG Defense Ministry senior official; leads PDF military coordination",
+    "avatar": "nug",
+    "initial": "Y",
+    "quote": "The PDF is not a militia — we are a national defense force fighting for every citizen of Myanmar. Our fighters come from every ethnicity, religion, and region of this country.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "rohingya-representative",
+    "name": "Tun Khin",
+    "role": "Burmese Rohingya Organisation UK (BROUK) President; Rohingya genocide survivor and international advocate",
+    "avatar": "civil",
+    "initial": "T",
+    "quote": "The same military that committed genocide against us now fights for its survival. We Rohingya support democracy but we need guarantees of safety, citizenship rights, and accountability for the 2017 genocide before we can return.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "asean-chair",
+    "name": "ASEAN 5-Point Consensus",
+    "role": "ASEAN's framework for Myanmar dialogue; largely unimplemented; SAC boycotted multiple summits",
+    "avatar": "intl",
+    "initial": "A",
+    "quote": "ASEAN calls on all parties to exercise utmost restraint and implement the Five Point Consensus. The situation in Myanmar has not improved and represents an ongoing threat to regional stability.",
+    "lastUpdated": "2026-03-20"
+  }
+]

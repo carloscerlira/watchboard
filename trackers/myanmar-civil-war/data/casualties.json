@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "id": "civilians-aapp-confirmed",
+    "category": "Confirmed Civilian Deaths (AAPP)",
+    "killed": "6,486+",
+    "injured": "Unknown",
+    "source": "AAPP (Apr 2025)",
+    "tier": 3,
+    "contested": "yes",
+    "note": "AAPP documents individually verified civilian deaths. Actual toll significantly higher — excludes many undocumented deaths in remote areas, detention deaths, and indirect conflict casualties.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "total-conflict-deaths-acled",
+    "category": "Total Conflict Deaths (ACLED, all actors)",
+    "killed": "50,000+",
+    "injured": "Unknown",
+    "source": "ACLED (cumulative since Feb 2021)",
+    "tier": 3,
+    "contested": "yes",
+    "note": "ACLED estimate includes combatant deaths from all sides (SAC, PDF, EAOs) plus civilians. Junta denies figures. Likely an undercount given limited reporting from remote conflict zones.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "deaths-in-detention",
+    "category": "Deaths in Detention / Torture",
+    "killed": "2,000+",
+    "injured": "Unknown",
+    "source": "AAPP (Dec 2025)",
+    "tier": 3,
+    "contested": "yes",
+    "note": "AAPP documents deaths in SAC detention from torture, medical neglect, and extrajudicial execution. Junta denies systematic mistreatment. Many families never notified.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "children-killed",
+    "category": "Children Killed",
+    "killed": "751+",
+    "injured": "Unknown",
+    "source": "AAPP (Apr 2025)",
+    "tier": 3,
+    "contested": "yes",
+    "note": "AAPP documents 751 confirmed child deaths. UN Children's Fund (UNICEF) warns actual number is much higher given attacks on schools, villages, and IDP camps.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "women-killed",
+    "category": "Women Killed",
+    "killed": "1,494+",
+    "injured": "Unknown",
+    "source": "AAPP (Apr 2025)",
+    "tier": 3,
+    "contested": "yes",
+    "note": "AAPP documented 1,494 confirmed female deaths. Women Make Peace and other organizations document gender-based violence including rape as a weapon of war by SAC forces.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "airstrike-casualties-2025",
+    "category": "Airstrike Civilian Deaths (2025)",
+    "killed": "1,971",
+    "injured": "Unknown",
+    "source": "ACLED (2025 annual data)",
+    "tier": 3,
+    "contested": "yes",
+    "note": "ACLED recorded 2,602 air attacks in 2025 — the highest annual total since the coup — killing 1,971 people. SAC denies targeting civilians.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "earthquake-deaths-march-2025",
+    "category": "Earthquake Deaths (Mar 28, 2025)",
+    "killed": "3,500–5,352",
+    "injured": "Thousands",
+    "source": "SAC Official (3,564–3,770) / Independent Media (DVB: 4,549 / Mizzima: 5,352+)",
+    "tier": "all",
+    "contested": "heavily",
+    "note": "Junta official figures significantly lower than independent media reports. True toll likely higher due to access restrictions in conflict-affected earthquake zones. 7.7-magnitude earthquake struck Mandalay-Sagaing region on March 28, 2025.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "sac-soldiers-killed",
+    "category": "SAC Soldiers Killed (Resistance Claims)",
+    "killed": "50,000+",
+    "injured": "Unknown",
+    "source": "NUG Defense Ministry / EAO Claims",
+    "tier": 4,
+    "contested": "heavily",
+    "note": "NUG/PDF/EAO claims of SAC soldier deaths. Junta does not publish military casualty figures. Independent verification is impossible. Claims likely exaggerated for propaganda; actual SAC losses significant given territory losses.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "protest-deaths-2021",
+    "category": "Killed in 2021 Protest Crackdowns",
+    "killed": "800+",
+    "injured": "3,000+",
+    "source": "AAPP (2021)",
+    "tier": 3,
+    "contested": "yes",
+    "note": "Security forces fired on anti-coup protesters from February to April 2021. Deadliest single day: March 3 (38+ killed). Bago crackdown April 9 killed 80+. Junta characterizes all deaths as 'instigated' by armed groups.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "idp-related-deaths",
+    "category": "IDP/Displacement-Related Deaths",
+    "killed": "Unknown (thousands estimated)",
+    "injured": "Unknown",
+    "source": "UN OCHA / UNHCR (2025)",
+    "tier": 1,
+    "contested": "evolving",
+    "note": "3.6 million IDPs (Nov 2025) with only 15% in formal camps; majority in jungles/temporary shelters with minimal healthcare, food, or sanitation. Mortality rate in IDP camps not systematically tracked but known to be significant.",
+    "lastUpdated": "2026-03-20"
+  }
+]
