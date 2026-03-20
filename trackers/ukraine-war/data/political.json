@@ -1,1 +1,227 @@
-[]
+[
+  {
+    "id": "zelenskyy-ua",
+    "name": "Volodymyr Zelenskyy",
+    "role": "President of Ukraine",
+    "avatar": "ua",
+    "initial": "Z",
+    "quote": "We want peace. And he's a man of war. We are doing everything to prevent a third world war. We are fighting for our freedom, for our land, for our children.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "putin-ru",
+    "name": "Vladimir Putin",
+    "role": "President of Russia",
+    "avatar": "ru",
+    "initial": "P",
+    "quote": "If Kyiv is not willing to resolve the matter peacefully, Russia will accomplish all the aims of the special military operation by military means.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "biden-nato",
+    "name": "Joe Biden",
+    "role": "US President (2021–Jan 2025)",
+    "avatar": "nato",
+    "initial": "B",
+    "quote": "We will not waver in our support for Ukraine. Ukraine can and will stop Putin. America stands with Ukraine.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "trump-nato",
+    "name": "Donald Trump",
+    "role": "US President (Jan 2025–present)",
+    "avatar": "nato",
+    "initial": "T",
+    "quote": "Vladimir, STOP! 5000 soldiers a week are dying. Let's get the Peace Deal DONE! No more money, no more weapons, no more people. Let's make a deal.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "stoltenberg-nato",
+    "name": "Jens Stoltenberg",
+    "role": "NATO Secretary General (until Oct 2024)",
+    "avatar": "nato",
+    "initial": "S",
+    "quote": "Ukraine's future is in NATO. Supporting Ukraine is not charity, it is an investment in our own security. A world where might makes right is more dangerous for all of us.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "rutte-nato",
+    "name": "Mark Rutte",
+    "role": "NATO Secretary General (from Oct 2024)",
+    "avatar": "nato",
+    "initial": "R",
+    "quote": "The deployment of North Korean troops to fight alongside Russian forces in Europe is very serious. This is yet further evidence of Russia's willingness to escalate this war.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "vonderleyen-eu",
+    "name": "Ursula von der Leyen",
+    "role": "EU Commission President",
+    "avatar": "eu",
+    "initial": "V",
+    "quote": "Russia must pay for its crimes. The frozen Russian assets are not ours — but as long as Russia wages its illegal war, they will be at work for Ukraine's reconstruction.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "lavrov-ru",
+    "name": "Sergei Lavrov",
+    "role": "Russian Foreign Minister",
+    "avatar": "ru",
+    "initial": "L",
+    "quote": "The West has declared a 'total hybrid war' on Russia. They are fighting us using Ukrainian soldiers as cannon fodder. We will achieve all the goals of the special military operation.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "gerasimov-ru",
+    "name": "Valery Gerasimov",
+    "role": "Russian Chief of General Staff / Ukraine Commander",
+    "avatar": "ru",
+    "initial": "G",
+    "quote": "The Russian Armed Forces are conducting an active defense and inflicting significant losses on the enemy in all directions of the special military operation.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "syrskyi-ua",
+    "name": "Oleksandr Syrskyi",
+    "role": "Ukrainian Commander-in-Chief (from Feb 2024)",
+    "avatar": "ua",
+    "initial": "S",
+    "quote": "The situation on the front is difficult. We are fighting against a much larger army. Every meter of our land that we hold is paid for with the blood of our defenders.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "zaluzhnyi-ua",
+    "name": "Valery Zaluzhnyi",
+    "role": "Former Ukrainian Commander-in-Chief; now UK Ambassador",
+    "avatar": "ua",
+    "initial": "Z",
+    "quote": "We are at a stalemate. Without a technological leap — new technologies, new weapons — there is unlikely to be a breakthrough in the near future. The enemy has adapted.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "yermak-ua",
+    "name": "Andriy Yermak",
+    "role": "Head of Ukrainian Presidential Office",
+    "avatar": "ua",
+    "initial": "Y",
+    "quote": "Ukraine will never accept ultimatums. We negotiate from a position of principle, not desperation. Our sovereignty and territorial integrity are not bargaining chips.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "macron-eu",
+    "name": "Emmanuel Macron",
+    "role": "President of France",
+    "avatar": "eu",
+    "initial": "M",
+    "quote": "We cannot exclude sending ground troops to Ukraine. Nothing should be ruled out. Russia cannot and must not win this war — European security is at stake.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "scholz-eu",
+    "name": "Olaf Scholz",
+    "role": "German Chancellor (until Jan 2025)",
+    "avatar": "eu",
+    "initial": "S",
+    "quote": "We will not participate in any actions that could lead to a direct confrontation between NATO and Russia. Germany supports Ukraine firmly but will not escalate to nuclear risk.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "merz-eu",
+    "name": "Friedrich Merz",
+    "role": "German Chancellor (from Feb 2025)",
+    "avatar": "eu",
+    "initial": "M",
+    "quote": "Europe must be able to defend itself. Germany will increase defense spending and support Ukraine for as long as necessary — that is our duty.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "grossi-un",
+    "name": "Rafael Grossi",
+    "role": "IAEA Director General",
+    "avatar": "un",
+    "initial": "G",
+    "quote": "The situation at the Zaporizhzhia Nuclear Power Plant remains extremely precarious. I appeal to both sides to refrain from any military activity that could endanger nuclear safety.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "guterres-un",
+    "name": "António Guterres",
+    "role": "UN Secretary-General",
+    "avatar": "un",
+    "initial": "G",
+    "quote": "This war is killing and displacing people in huge numbers. It is causing massive destruction. It is creating alarming dangers for nuclear facilities. It must end.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "prigozhin-other",
+    "name": "Yevgeny Prigozhin",
+    "role": "Wagner Group Chief (deceased Aug 23, 2023)",
+    "avatar": "other",
+    "initial": "P",
+    "quote": "We are marching for justice! This is not a coup but a march of justice against incompetent military leadership. We will not let Russia be destroyed by mediocre generals.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "kim-jongun-other",
+    "name": "Kim Jong Un",
+    "role": "North Korean Leader",
+    "avatar": "other",
+    "initial": "K",
+    "quote": "The DPRK will always be with Russia. Our relations have reached a new high strategic level — an impregnable fortress of iron solidarity.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "sunak-nato",
+    "name": "Rishi Sunak",
+    "role": "UK Prime Minister (until Jul 2024)",
+    "avatar": "nato",
+    "initial": "S",
+    "quote": "The UK stands unwaveringly with Ukraine. We were the first country to provide lethal aid, the first to provide long-range missiles, the first to pledge battle tanks. We will continue to lead.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "starmer-nato",
+    "name": "Keir Starmer",
+    "role": "UK Prime Minister (from Jul 2024)",
+    "avatar": "nato",
+    "initial": "S",
+    "quote": "Britain's commitment to Ukraine is unconditional. Ukraine's fight is our fight — democracy and the rule of law must prevail over brute force.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "blinken-nato",
+    "name": "Antony Blinken",
+    "role": "US Secretary of State (until Jan 2025)",
+    "avatar": "nato",
+    "initial": "B",
+    "quote": "We will support Ukraine for as long as it takes. And Russia will face a strategic failure — it will never subjugate Ukraine, and its economy will be increasingly isolated.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "rubio-nato",
+    "name": "Marco Rubio",
+    "role": "US Secretary of State (from Jan 2025)",
+    "avatar": "nato",
+    "initial": "R",
+    "quote": "We support peace, not endless war. The goal is a sustainable ceasefire that prevents future escalation while protecting core interests. The US will remain engaged in European security.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "reznikov-ua",
+    "name": "Oleksii Reznikov",
+    "role": "Ukrainian Defence Minister (2021–2023)",
+    "avatar": "ua",
+    "initial": "R",
+    "quote": "Every HIMARS, every tank, every air defense system is not just a weapon — it is a life saved. Ukraine fights for values that the entire free world shares.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "umerov-ua",
+    "name": "Rustem Umerov",
+    "role": "Ukrainian Defence Minister (from 2023)",
+    "avatar": "ua",
+    "initial": "U",
+    "quote": "Ukraine needs partners to transform commitment into capability. Paper pledges must become real weapons at real frontlines. We are grateful for the support but more is urgently needed.",
+    "lastUpdated": "2026-03-20"
+  }
+]

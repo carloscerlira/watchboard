@@ -1,1 +1,134 @@
-[]
+[
+  {
+    "id": "ukraine-gdp-2022-collapse",
+    "label": "Ukraine GDP Change 2022",
+    "value": "-29.1%",
+    "change": "Largest single-year drop in modern Ukrainian history",
+    "direction": "down",
+    "sparkData": [100, 90, 80, 72, 71, 70.9],
+    "color": "red",
+    "source": "World Bank / IMF (2022)",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ukraine-gdp-recovery-2023",
+    "label": "Ukraine GDP Growth 2023",
+    "value": "+5.3%",
+    "change": "Partial recovery driven by defense industry and western aid",
+    "direction": "up",
+    "sparkData": [70, 71, 72, 73, 74, 74.7],
+    "color": "green",
+    "source": "IMF / National Bank of Ukraine (2023)",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ukraine-reconstruction-cost",
+    "label": "Ukraine Reconstruction Cost Estimate",
+    "value": "$524B",
+    "change": "Needed over 10 years; equivalent to 3× pre-war Ukrainian GDP",
+    "direction": "up",
+    "sparkData": [100, 180, 250, 350, 420, 524],
+    "color": "red",
+    "source": "World Bank Joint Damage Assessment (2024)",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "frozen-russian-assets",
+    "label": "Frozen Russian State Assets",
+    "value": "~$300B",
+    "change": "Primarily €210B at Euroclear Belgium; generating ~$3B/year interest",
+    "direction": "stable",
+    "sparkData": [295, 297, 298, 300, 300, 300],
+    "color": "blue",
+    "source": "G7 Finance Ministers / EU Council (2025)",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "us-total-ukraine-aid",
+    "label": "US Military Aid to Ukraine (total)",
+    "value": "$113B+",
+    "change": "Includes Biden-era packages + $61B April 2024 package",
+    "direction": "up",
+    "sparkData": [20, 40, 65, 90, 105, 113],
+    "color": "green",
+    "source": "US DoD / USAID (through 2025)",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "eu-total-ukraine-aid",
+    "label": "EU Total Aid to Ukraine (all types)",
+    "value": "€118B+",
+    "change": "EU surpassed US as largest single aid provider in 2024; includes €50B 4-year facility",
+    "direction": "up",
+    "sparkData": [15, 30, 60, 90, 110, 118],
+    "color": "green",
+    "source": "Kiel Institute for the World Economy (Feb 2026)",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "russia-defense-spending-gdp",
+    "label": "Russia Defense Spending (% of GDP)",
+    "value": "7.2%",
+    "change": "Up from 3.6% pre-war; 41% of all federal budget on military/security",
+    "direction": "up",
+    "sparkData": [3.6, 4.0, 5.0, 6.0, 6.8, 7.2],
+    "color": "red",
+    "source": "Russian Finance Ministry / IISS (2025)",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "russia-interest-rate",
+    "label": "Russian Central Bank Interest Rate",
+    "value": "21%",
+    "change": "Record high to combat war inflation; stifling private investment",
+    "direction": "up",
+    "sparkData": [8, 11, 13, 16, 19, 21],
+    "color": "red",
+    "source": "Russian Central Bank (2025)",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ukraine-war-cost-per-day",
+    "label": "Ukraine War Cost per Day (Russia)",
+    "value": "$500M–$1B",
+    "change": "Estimated daily Russian war expenditure; driving budget deficit",
+    "direction": "up",
+    "sparkData": [200, 350, 450, 500, 700, 850],
+    "color": "amber",
+    "source": "Various Western economists / KSE Institute (2025)",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "russia-wealth-fund-depletion",
+    "label": "Russian National Wealth Fund",
+    "value": "~60% depleted",
+    "change": "Fund draining to cover war budget deficits; liquid reserves nearly exhausted",
+    "direction": "down",
+    "sparkData": [100, 90, 80, 70, 60, 40],
+    "color": "red",
+    "source": "Russian Finance Ministry / Reuters (2025)",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ukraine-poverty-rate",
+    "label": "Ukrainians in Poverty",
+    "value": "24.2%",
+    "change": "Up from 5.5% pre-war; 7.1M pushed into poverty",
+    "direction": "up",
+    "sparkData": [5.5, 12, 18, 22, 23.5, 24.2],
+    "color": "red",
+    "source": "World Bank (2024)",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "g7-ukraine-loan",
+    "label": "G7 Loan to Ukraine (backed by frozen assets)",
+    "value": "$50B",
+    "change": "Finalized Oct 2024; US contributed $20B; secured by Russian asset interest",
+    "direction": "up",
+    "sparkData": [0, 0, 10, 30, 45, 50],
+    "color": "green",
+    "source": "G7 Finance Ministers (Oct 2024)",
+    "lastUpdated": "2026-03-20"
+  }
+]

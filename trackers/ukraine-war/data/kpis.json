@@ -1,1 +1,98 @@
-[]
+[
+  {
+    "id": "russian-casualties",
+    "label": "Russian Military Casualties",
+    "value": "~1.2M",
+    "color": "red",
+    "source": "CSIS / CIA estimate (Jan 2026)",
+    "contested": true,
+    "contestNote": "Russia has never released official casualty figures. Western estimates range from 900K–1.3M KIA+WIA+MIA. Russia's MoD claims minimal losses.",
+    "delta": "+40K/month",
+    "deltaNote": "Western estimate for late 2025 monthly losses",
+    "trend": "up",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ukrainian-casualties",
+    "label": "Ukrainian Military Casualties",
+    "value": "~500–600K",
+    "color": "amber",
+    "source": "CSIS estimate (Jan 2026)",
+    "contested": true,
+    "contestNote": "Zelenskyy stated 55,000 killed (2026); UALosses project documented 86,142 by name + 89,000+ MIA. CSIS estimates 100K–140K killed.",
+    "trend": "up",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "civilian-casualties-un",
+    "label": "Verified Civilian Deaths (UN)",
+    "value": "15,172+",
+    "color": "red",
+    "source": "UN OHCHR (through Jan 2026)",
+    "contested": true,
+    "contestNote": "UN emphasizes real figures are considerably higher due to underreporting. 2025 was deadliest year for civilians since 2022.",
+    "delta": "+2,514 in 2025",
+    "deltaNote": "31% rise over 2024",
+    "trend": "up",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "territory-occupied",
+    "label": "Ukrainian Territory Under Russian Control",
+    "value": "~20%",
+    "color": "red",
+    "source": "ISW / Ukrainian MoD (Mar 2026)",
+    "contested": true,
+    "contestNote": "Russia annexed Donetsk, Luhansk, Zaporizhzhia, and Kherson oblasts in Sep 2022, but doesn't fully control all four. Frontline still active.",
+    "delta": "+~500 km² in 2025",
+    "deltaNote": "Slow Russian gains despite massive losses",
+    "trend": "up",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "displaced-persons",
+    "label": "Displaced Ukrainians",
+    "value": "9.5M+",
+    "color": "amber",
+    "source": "UNHCR (early 2026)",
+    "contested": false,
+    "delta": "5.86M abroad",
+    "deltaNote": "Plus 3.7M internally displaced",
+    "trend": "stable",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "frozen-russian-assets",
+    "label": "Frozen Russian State Assets",
+    "value": "~$300B",
+    "color": "blue",
+    "source": "G7 / EU (2025)",
+    "contested": false,
+    "contestNote": "Primarily held in Euroclear, Belgium (~€210B). Legal barriers prevent full seizure; G7 using interest (~$3B/year) to back $50B Ukraine loan.",
+    "trend": "stable",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "war-day-count",
+    "label": "Days of Full-Scale Invasion",
+    "value": "1,485",
+    "color": "amber",
+    "source": "Since Feb 24, 2022",
+    "contested": false,
+    "trend": "up",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "western-aid-total",
+    "label": "Total Western Aid to Ukraine",
+    "value": "$250B+",
+    "color": "green",
+    "source": "Kiel Institute / US DoD (through early 2026)",
+    "contested": false,
+    "contestNote": "Includes US, EU, Germany, UK, Canada and other allies. US largest single donor; EU collectively surpassed US in 2024.",
+    "delta": "$61B US Apr 2024",
+    "deltaNote": "Largest single US package",
+    "trend": "up",
+    "lastUpdated": "2026-03-20"
+  }
+]

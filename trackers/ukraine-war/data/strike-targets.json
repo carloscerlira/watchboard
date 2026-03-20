@@ -1,1 +1,92 @@
-[]
+[
+  {
+    "id": "strike-kyiv-energy-oct22",
+    "name": "Kyiv Energy Infrastructure",
+    "detail": "Russia launched coordinated mass strikes on Kyiv's power grid, heating infrastructure, and water systems beginning October 2022. Using Kalibr cruise missiles, Kh-101, and Shahed drones, Russia destroyed approximately 50% of Ukraine's power generation capacity by winter 2022–23. Millions experienced daily blackouts of 4–12 hours.",
+    "icon": "target",
+    "time": "Oct 2022",
+    "tier": 1,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "strike-mariupol-theater",
+    "name": "Mariupol Drama Theater",
+    "detail": "Russian forces bombed the Mariupol Drama Theater on March 16, 2022, while it housed hundreds of civilian evacuees. 'Children' written in large Cyrillic letters was visible from satellite imagery outside the building. An estimated 300–600 civilians were killed. The attack was condemned as a war crime by the UN and Western governments.",
+    "icon": "target",
+    "time": "Mar 16, 2022",
+    "tier": 1,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "strike-kramatorsk-station",
+    "name": "Kramatorsk Train Station",
+    "detail": "Russia struck Kramatorsk's train station on April 8, 2022, with two Tochka-U ballistic missiles killing 59 civilians and wounding 100+ who were evacuating the Donetsk region. The Ukrainian-markings on the missile were used by Russia to blame Ukraine, but Ukrainian military experts confirmed Russia was the only user of that specific missile variant in Kramatorsk's direction.",
+    "icon": "target",
+    "time": "Apr 8, 2022",
+    "tier": 1,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "strike-dnipro-apartment-jan23",
+    "name": "Dnipro Residential Building",
+    "detail": "A Russian Kh-22 cruise missile struck a residential apartment building in Dnipro city on January 14, 2023, killing 46 civilians including children and wounding 80+. The building collapsed partially. The Kh-22 is a Soviet anti-ship missile repurposed for ground attack — it is highly inaccurate and cannot be intercepted by Ukraine's existing air defenses.",
+    "icon": "target",
+    "time": "Jan 14, 2023",
+    "tier": 1,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "strike-zaporizhzhia-npp",
+    "name": "Zaporizhzhia Nuclear Power Plant",
+    "detail": "Russia has militarized and repeatedly shelled around Europe's largest nuclear plant since seizing it March 4, 2022. The plant lost external power 8 times since August 2022 — unprecedented in any nuclear plant's history. IAEA Director General Grossi made multiple missions to the site. All 6 reactors were eventually shut down but require continued cooling to prevent meltdown.",
+    "icon": "target",
+    "time": "Mar 4, 2022",
+    "tier": 1,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "strike-odesa-cathedral-jul23",
+    "name": "Odesa UNESCO Cathedral",
+    "detail": "Russia struck the Transfiguration Cathedral of Odesa with a cruise missile in July 2023, severely damaging the UNESCO-listed structure. The attack came hours after Russia withdrew from the Black Sea Grain Initiative and targeted Odesa's port and city center. UNESCO condemned the cultural heritage destruction.",
+    "icon": "target",
+    "time": "Jul 23, 2023",
+    "tier": 2,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "strike-kharkiv-shopping-center",
+    "name": "Kharkiv Shopping Mall Strike",
+    "detail": "Russian missile strikes repeatedly hit civilian commercial areas in Kharkiv, including a crowded shopping center on May 25, 2024 that killed 7 and wounded 16. Kharkiv has been struck nearly every day of the war due to its proximity to the Russian border (40km). Over 1,000 civilian structures in Kharkiv have been damaged or destroyed.",
+    "icon": "target",
+    "time": "May 25, 2024",
+    "tier": 2,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "strike-ternopil-nov25",
+    "name": "Ternopil Missile Strike",
+    "detail": "Russia struck the western Ukrainian city of Ternopil on November 19, 2025 in one of the deadliest single attacks of 2025 — 38 civilians killed including 8 children. The attack targeted a densely populated residential area far from the frontline, underscoring Russia's continued targeting of civilian areas throughout Ukraine.",
+    "icon": "target",
+    "time": "Nov 19, 2025",
+    "tier": 1,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "strike-azovstal-mariupol",
+    "name": "Azovstal Steel Plant Siege",
+    "detail": "Russian forces besieged the massive Azovstal steel plant complex in Mariupol from March to May 2022, where the last Ukrainian defenders (Azov regiment + regular troops) and over 1,000 civilians sheltered. Daily airstrikes, artillery, and naval fire reduced the facility. Ukraine ordered surrender on May 20, 2022. ~2,439 fighters taken prisoner.",
+    "icon": "target",
+    "time": "Mar–May 2022",
+    "tier": 1,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "strike-ukrainian-hospitals",
+    "name": "Ukraine Hospital Strikes (250+)",
+    "detail": "By end of 2024, Russia had struck over 250 Ukrainian medical facilities, including maternity hospitals, pediatric centers, and trauma facilities. WHO's Health Cluster documented hundreds of attacks. The Mariupol maternity hospital was bombed March 9, 2022, killing 3 and wounding 17, including a pregnant woman who became an iconic image of Russian attacks on civilians.",
+    "icon": "target",
+    "time": "Ongoing 2022–2026",
+    "tier": 1,
+    "lastUpdated": "2026-03-20"
+  }
+]

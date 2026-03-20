@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "id": "ua-strike-moskva-sunk",
+    "name": "Sinking of Moskva Flagship",
+    "detail": "On April 13–14, 2022, Ukraine struck and sank the Moskva — flagship of Russia's Black Sea Fleet — using two domestically-developed Neptune anti-ship cruise missiles. The Moskva sank while being towed, with an estimated 27–40 crew killed and 100+ missing. It was Russia's worst naval loss since the Falklands War and a massive psychological blow, undermining Russia's control of the western Black Sea.",
+    "icon": "retaliation",
+    "time": "Apr 13, 2022",
+    "tier": 1,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ua-strike-kerch-bridge-oct22",
+    "name": "Kerch Bridge Truck Bomb",
+    "detail": "On October 8, 2022, a massive truck bomb detonated on the Kerch Bridge connecting Russia to occupied Crimea, collapsing two road spans and igniting fuel tanker cars. The attack was attributed to Ukraine's Security Service (SBU). Putin had personally inaugurated the bridge in 2018. A second Ukrainian strike in July 2023 using Storm Shadow missiles caused additional damage. The bridge remained a critical supply route throughout the war.",
+    "icon": "retaliation",
+    "time": "Oct 8, 2022",
+    "tier": 2,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ua-strike-himars-ammo-depots",
+    "name": "HIMARS Strike Campaign — Russian Ammo Depots",
+    "detail": "Starting June 2022, Ukraine systematically used HIMARS to destroy 30+ Russian ammunition depots in a matter of months. Key strikes included depots in Nova Kakhovka, Chornobaivka, Kherson Oblast. The campaign forced Russia to move ammunition 80+ km from the front, dramatically degrading Russian artillery rates. ISW credited this campaign as a major factor in enabling Ukraine's Kherson counteroffensive.",
+    "icon": "retaliation",
+    "time": "Jun–Nov 2022",
+    "tier": 1,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ua-strike-sevastopol-fleet",
+    "name": "Attacks on Black Sea Fleet Headquarters",
+    "detail": "Ukraine repeatedly struck Russia's Black Sea Fleet headquarters in Sevastopol, Crimea through 2023–2024. The most significant attack came September 22, 2023 — a Storm Shadow missile strike on the fleet headquarters that killed the fleet's deputy commander and caused major damage. By mid-2024, Russia had relocated much of its Black Sea Fleet from Sevastopol to Novorossiysk on the Russian mainland, essentially ceding Crimea's maritime security role.",
+    "icon": "retaliation",
+    "time": "Sep 22, 2023",
+    "tier": 1,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ua-kursk-incursion",
+    "name": "Kursk Oblast Incursion — Russian Territory",
+    "detail": "On August 6, 2024, Ukraine launched a surprise offensive into Russia's Kursk Oblast — the first time since WWII that a foreign military occupied Russian territory. Ukrainian forces captured over 1,300 km² at peak, including Sudzha (gas transit hub), and held portions of Kursk for 7+ months. Ukraine captured 594+ Russian POWs in the first weeks for potential exchange. The operation forced Russia to divert troops from Donbas.",
+    "icon": "retaliation",
+    "time": "Aug 6, 2024",
+    "tier": 1,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ua-long-range-drone-strikes-russia",
+    "name": "Long-Range Drone Strikes on Russian Territory",
+    "detail": "Starting 2023, Ukraine launched increasingly deep drone strikes into Russian territory — including oil refineries, air bases, and industrial facilities hundreds of kilometers inside Russia. Key strikes targeted: Engels-2 Strategic Aviation Base (twice, 2022–2023), Saratov and Ryazan refineries, Lipetsk air base, and the Moscow suburb of Zhukovsky (aircraft factory). Ukraine did not officially claim most attacks but they were attributed to Ukrainian intelligence/military.",
+    "icon": "retaliation",
+    "time": "2023–2025",
+    "tier": 2,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ua-snake-island-liberated",
+    "name": "Snake Island Liberated",
+    "detail": "Ukraine retook Snake Island on June 30, 2022 after forcing Russian evacuation through sustained HIMARS, artillery, and drone strikes on the island's garrison. Russia had captured the island February 24, 2022 in the famous exchange where Ukrainian defenders reportedly told the Russian warship 'go fuck yourself.' Liberation denied Russia a strategic platform for Black Sea operations and was a major psychological victory.",
+    "icon": "retaliation",
+    "time": "Jun 30, 2022",
+    "tier": 2,
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ua-atacms-crimea-airfields",
+    "name": "ATACMS Strikes on Crimea Airfields",
+    "detail": "After receiving ATACMS authorization in 2023–2024, Ukraine struck Russian military airfields in Crimea including Saki, Belbek, and Sarabuz. The October 2023 strike on Berdiansk port destroyed Russian naval landing ships. ATACMS strikes significantly reduced Russia's ability to use Crimea as a launching platform for air and naval operations and forced redistribution of Russian aircraft.",
+    "icon": "retaliation",
+    "time": "Oct 2023–2024",
+    "tier": 1,
+    "lastUpdated": "2026-03-20"
+  }
+]
