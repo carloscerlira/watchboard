@@ -1,0 +1,223 @@
+name: Batch Initialize Trackers
+
+on:
+  workflow_dispatch:
+    inputs:
+      trackers:
+        description: 'JSON array of tracker definitions. Each object: { "slug", "topic", "start_date", "region", "domain?", "country?", "series_id?", "series_name?", "series_order?", "is_hub?" }'
+        required: true
+      auto_seed:
+        description: 'Dispatch seed-tracker.yml for each tracker after init'
+        required: false
+        default: 'true'
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  id-token: write
+  actions: write
+
+jobs:
+  init-all:
+    runs-on: ubuntu-latest
+    timeout-minutes: 720
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Parse and validate input
+        id: parse
+        run: |
+          # Validate JSON
+          echo '${{ github.event.inputs.trackers }}' | python3 -c "
+          import json, sys
+          trackers = json.load(sys.stdin)
+          assert isinstance(trackers, list), 'Input must be a JSON array'
+          for i, t in enumerate(trackers):
+              assert 'slug' in t, f'Tracker {i} missing slug'
+              assert 'topic' in t, f'Tracker {i} missing topic'
+              assert 'start_date' in t, f'Tracker {i} missing start_date'
+              assert 'region' in t, f'Tracker {i} missing region'
+          print(f'Validated {len(trackers)} tracker definitions')
+          "
+          echo "count=$(echo '${{ github.event.inputs.trackers }}' | python3 -c 'import json,sys;print(len(json.load(sys.stdin)))')" >> $GITHUB_OUTPUT
+
+      - name: Initialize trackers sequentially
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            You are batch-initializing multiple trackers for the Watchboard intelligence dashboard platform.
+
+            TRACKER DEFINITIONS (JSON array):
+            ${{ github.event.inputs.trackers }}
+
+            For EACH tracker in the array, do the following steps IN ORDER. Complete one tracker fully before moving to the next.
+
+            ══════════════════════════════════════════════
+            STEP 0 — READ REFERENCE FILES (do this ONCE)
+            ══════════════════════════════════════════════
+
+            Read these files to understand the patterns:
+            1. src/lib/tracker-config.ts — TrackerConfigSchema (every required and optional field, including DomainSchema, RegionSchema, SeriesSchema)
+            2. src/lib/schemas.ts — data schemas for every section
+            3. trackers/iran-conflict/tracker.json — example: military conflict tracker
+            4. trackers/ayotzinapa/tracker.json — example: human rights investigation
+
+            ══════════════════════════════════════════════
+            FOR EACH TRACKER — repeat these steps:
+            ══════════════════════════════════════════════
+
+            STEP 1 — CHECK IF EXISTS
+            If trackers/{slug}/ already exists, SKIP this tracker and move to the next.
+
+            STEP 2 — GENERATE tracker.json
+            Create trackers/{slug}/tracker.json with ALL required fields.
+
+            Use the tracker's fields from the JSON definition:
+            - slug, startDate from start_date
+            - domain: from the definition, or infer from topic (must be a valid DomainSchema value)
+            - region: infer from geographic region (must be a valid RegionSchema value like "north-america", "middle-east", "global")
+            - country: from the definition, or infer
+            - series: if series_id is provided, include { "id": series_id, "name": series_name, "order": series_order, "isHub": is_hub }
+            - tags: generate 3-5 relevant freeform tags
+
+            CRITICAL DECISIONS (based on topic):
+            - name, shortName, description, icon, color — appropriate for the topic
+            - status: "active"
+            - temporal: "live" for ongoing events, "historical" for past events
+            - sections: Choose from "hero", "kpis", "timeline", "map", "military", "casualties", "economic", "claims", "political"
+              Military conflict → all 9. Investigation → skip military. Disaster → skip military. Always include hero, kpis, timeline.
+            - map.bounds, map.center: REAL coordinates for the region. Search the web for exact bounds.
+            - map.categories: 3-5 categories SPECIFIC to this topic
+            - globe.enabled: true, with 4-6 camera presets at REAL coordinates
+            - navSections: match enabled sections
+            - politicalAvatars, eventTypes: appropriate for this topic
+            - ai config: custom systemPrompt, searchContext, enabledSections, coordValidation, updateIntervalDays, backfillTargets
+
+            STEP 3 — CREATE DATA FILES
+            Create trackers/{slug}/data/events/ directory (mkdir -p).
+            Create meta.json with operationName, dayCount, dateline, heroHeadline, heroSubtitle, footerNote, lastUpdated.
+            Create update-log.json with lastRun timestamp.
+            Create empty arrays [] for: kpis.json, timeline.json, map-points.json, map-lines.json, claims.json, political.json, casualties.json, econ.json, strike-targets.json, retaliation.json, assets.json.
+
+            STEP 4 — VALIDATE
+            Read back tracker.json, verify valid JSON with all required fields.
+            Print: "✓ {slug} initialized — {N} sections, globe: yes/no"
+
+            STEP 5 — COMMIT (important!)
+            After EACH tracker, run:
+              git add trackers/{slug}/
+              git commit -m "feat(tracker): initialize {slug} tracker"
+            This ensures each tracker is committed individually.
+
+            After ALL trackers are done:
+            - Update README.md — for each new tracker, add a row to the tracker table
+            - git add README.md && git commit -m "docs: update README with new trackers"
+            - Print a final summary table of all trackers initialized
+
+            IMPORTANT: Do NOT push. The workflow handles that.
+          claude_args: "--max-turns 200 --dangerously-skip-permissions"
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --cached --quiet && [ -z "$(git log origin/main..HEAD --oneline 2>/dev/null)" ]; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No new trackers created"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "=== New trackers ==="
+            git log origin/main..HEAD --oneline 2>/dev/null || echo "Commits pending"
+          fi
+
+      - name: Validate all tracker configs
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          # Validate every tracker.json against schema
+          for dir in trackers/*/; do
+            slug=$(basename "$dir")
+            config="$dir/tracker.json"
+            if [ -f "$config" ]; then
+              npx tsx -e "
+              import { TrackerConfigSchema } from './src/lib/tracker-config.js';
+              import fs from 'fs';
+              const raw = JSON.parse(fs.readFileSync('${config}', 'utf8'));
+              const result = TrackerConfigSchema.safeParse(raw);
+              if (!result.success) {
+                console.error('✗ ${slug}:', result.error.errors.map(e => e.path.join('.') + ': ' + e.message).join(', '));
+                process.exit(1);
+              }
+              console.log('✓ ${slug}');
+              " || echo "WARNING: ${slug} failed validation"
+            fi
+          done
+
+      - name: Push all commits
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          for i in $(seq 1 10); do
+            if git pull --rebase origin main && git push; then
+              echo "Push succeeded on attempt $i"
+              break
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "Push attempt $i failed, retrying..."
+            sleep $(( (RANDOM % 8) + 3 ))
+          done
+
+      - name: Dispatch seed workflows
+        if: steps.changes.outputs.changed == 'true' && github.event.inputs.auto_seed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Parse tracker slugs from input and dispatch seed for each
+          echo '${{ github.event.inputs.trackers }}' | python3 -c "
+          import json, sys
+          trackers = json.load(sys.stdin)
+          for t in trackers:
+              print(t['slug'])
+          " | while read slug; do
+            if [ -d "trackers/${slug}/data" ]; then
+              echo "Dispatching seed for ${slug}..."
+              gh workflow run seed-tracker.yml -f tracker_slug="${slug}" -f sections=all || echo "Failed to dispatch seed for ${slug}"
+              sleep 2
+            else
+              echo "Skipping ${slug} — not found"
+            fi
+          done
+
+      - name: Job summary
+        if: always()
+        run: |
+          echo "## Batch Init Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date**: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> $GITHUB_STEP_SUMMARY
+          echo "**Input count**: ${{ steps.parse.outputs.count }} trackers" >> $GITHUB_STEP_SUMMARY
+          echo "**Auto-seed**: ${{ github.event.inputs.auto_seed }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Tracker | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|---------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo '${{ github.event.inputs.trackers }}' | python3 -c "
+          import json, sys, os
+          trackers = json.load(sys.stdin)
+          for t in trackers:
+              exists = os.path.isdir(f'trackers/{t[\"slug\"]}')
+              status = '✅ Created' if exists else '❌ Failed'
+              print(f'| {t[\"slug\"]} | {status} |')
+          " >> $GITHUB_STEP_SUMMARY

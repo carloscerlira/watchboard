@@ -39,10 +39,6 @@ on:
         required: false
         default: 'false'
 
-concurrency:
-  group: tracker-init
-  cancel-in-progress: false
-
 permissions:
   contents: write
   pull-requests: write
