@@ -22,6 +22,7 @@ A config-driven intelligence dashboard platform for tracking events of interest.
 | **[Ukraine War Tracker](https://artemiopadilla.github.io/watchboard/ukraine-war/)** | Intelligence dashboard tracking Russia's full-scale invasion of Ukraine: frontli... | 9 | Ukraine/Eastern Europe | 3D |
 | **[Myanmar Civil War Tracker](https://artemiopadilla.github.io/watchboard/myanmar-civil-war/)** | Intelligence dashboard tracking Myanmar's ongoing civil war following the Februa... | 9 | Myanmar/Southeast Asia | 3D |
 | **[Taiwan Strait Tensions Tracker](https://artemiopadilla.github.io/watchboard/taiwan-conflict/)** | Intelligence dashboard tracking Taiwan Strait tensions: PLA military exercises, ... | 9 | Taiwan/East Asia/Pacific | 3D |
+| **[Israel-Palestine Conflict Tracker](https://artemiopadilla.github.io/watchboard/israel-palestine/)** | Intelligence dashboard covering the Israel-Palestine conflict from the 1948 foun... | 9 | Israel/Palestine/Middle East | 3D |
 
 ---
 
