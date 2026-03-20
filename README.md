@@ -21,6 +21,7 @@ A config-driven intelligence dashboard platform for tracking events of interest.
 | **[Tlatelolco Massacre Tracker](https://artemiopadilla.github.io/watchboard/tlatelolco-1968/)** | Intelligence dashboard tracking the October 2, 1968 massacre at Plaza de las Tre... | 7 | Mexico City / Tlatelolco / Ciudad Universitaria | 3D |
 | **[Ukraine War Tracker](https://artemiopadilla.github.io/watchboard/ukraine-war/)** | Intelligence dashboard tracking Russia's full-scale invasion of Ukraine: frontli... | 9 | Ukraine/Eastern Europe | 3D |
 | **[Myanmar Civil War Tracker](https://artemiopadilla.github.io/watchboard/myanmar-civil-war/)** | Intelligence dashboard tracking Myanmar's ongoing civil war following the Februa... | 9 | Myanmar/Southeast Asia | 3D |
+| **[Taiwan Strait Tensions Tracker](https://artemiopadilla.github.io/watchboard/taiwan-conflict/)** | Intelligence dashboard tracking Taiwan Strait tensions: PLA military exercises, ... | 9 | Taiwan/East Asia/Pacific | 3D |
 
 ---
 
