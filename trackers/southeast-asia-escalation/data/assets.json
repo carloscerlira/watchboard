@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "type-055-destroyer",
+    "type": "China PLAN — Guided-Missile Destroyer",
+    "name": "Type 055 Renhai-class (10 vessels)",
+    "detail": "World's largest destroyers by displacement (~12,000 tons). Armed with 112 VLS cells for HHQ-9 SAMs, YJ-18 ASCMs, and CJ-10 land-attack cruise missiles. All ten commissioned 2020–2026: Nanchang (101), Lhasa (102), Anshan (103), Wuxi (104), Dalian (105), Yan'an (106), Zunyi (107), Xianyang (108), Dongguan (109), Anqing (110). Comparable to US Navy Ticonderoga-class cruisers.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "type-075-lhd",
+    "type": "China PLAN — Landing Helicopter Dock",
+    "name": "Type 075 Yushen-class (4 vessels)",
+    "detail": "Amphibious assault ships (~40,000 tons, 230m flight deck) capable of embarking ~30 helicopters and 800–1,600 marines. Four commissioned: CNS Hainan (31, South Sea Fleet), Guangxi (32), Anhui (33), Hubei (34). Key capability for any amphibious operation in the Spratlys or Taiwan Strait.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ccg-5901-nansha",
+    "type": "China Coast Guard — Mega-Cutter",
+    "name": "CCG-5901 'Nansha' (Zhaotou-class)",
+    "detail": "World's largest law enforcement vessel at 12,000 tons and 165m length. Armed with two 76.2mm main guns. Deployed to South China Sea, including near Sabina Shoal July 2024. Approximately 5x the size of Philippines' BRP Teresa Magbanua. CCG-2901 (12,000 tons) is deployed to the East China Sea.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "df-26-asbm",
+    "type": "China PLA Rocket Force — Anti-Ship Ballistic Missile",
+    "name": "DF-26 'Guam Killer' ASBM",
+    "detail": "Intermediate-range ASBM/ALCM with 4,000–5,000 km range. ~400 missiles deployed; 250+ launchers estimated (2023 DoD). Modular nuclear/conventional warhead swap capability. Demonstrated strike on moving ship target August 2020. Labeled the 'Guam Killer' for its ability to hold US territory at risk.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "df-21d-asbm",
+    "type": "China PLA Rocket Force — Anti-Ship Ballistic Missile",
+    "name": "DF-21D 'Carrier Killer' ASBM",
+    "detail": "World's first operational anti-ship ballistic missile. Range ~1,450–1,550 km; Mach 8–15 reentry speed with maneuvering reentry vehicle (MaRV) for terminal guidance. 50–200 estimated deployed. Specifically designed to deny US carrier strike groups access to Taiwan Strait and South China Sea.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "hq-9b-spratly",
+    "type": "China PLA — Surface-to-Air Missile System",
+    "name": "HQ-9B SAM Batteries (Fiery Cross, Subi, Mischief Reefs)",
+    "detail": "Long-range SAM with ~160 nm engagement radius against aircraft, drones, and cruise missiles. Comparable to Russia's S-300. Deployed to all three major Spratly outposts (Fiery Cross, Subi, Mischief Reefs) in 2018, violating Xi Jinping's 2015 pledge to Obama not to militarize the islands. Also deployed to Woody Island in Paracels since 2016.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "yj-12b-spratly",
+    "type": "China PLA — Anti-Ship Cruise Missile",
+    "name": "YJ-12B ASCM Batteries (Spratly Islands)",
+    "detail": "Anti-ship cruise missile with ~545 km range; Mach 2–3 flight speed with sea-skimming and evasive terminal maneuvers. Deployed to Fiery Cross, Subi, and Mischief Reefs in 2018, providing coverage over virtually the entire South China Sea. Difficult to intercept due to speed and low-altitude approach.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "china-maritime-militia",
+    "type": "China — People's Armed Forces Maritime Militia",
+    "name": "Maritime Militia Fleet (Spratlys)",
+    "detail": "Estimated ~300 blue-hulled vessels deployed in the Spratly Islands at any given time since 2018. Trained, equipped, and organized by PLA local military commands but operating as 'civilian' fishing boats. Key gray zone tool for asserting presence and swarming operations. Most prominently deployed in March 2021 Whitsun Reef swarming (~220 vessels) and Sabina Shoal 2024.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "spratly-island-ew-upgrades",
+    "type": "China PLA — Electronic Warfare / ISR Systems",
+    "name": "Spratly Islands EW/ISR Array (2023–2024 Upgrades)",
+    "detail": "CSIS AMTI identified at least 6 paved areas with fixed monopole antennas arrayed outward from each of the three major Spratly outposts (2023–2024). Matching earlier designs from deployable mobile Chinese EW platforms, targeting different electromagnetic spectrum bands. Combined with new radomes at Subi Reef. AMTI: 'An integrated strategy to establish unmatched ISR dominance in the South China Sea.'",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "uss-carl-vinson",
+    "type": "US Navy — Aircraft Carrier Strike Group",
+    "name": "USS Carl Vinson (CVN-70) Carrier Strike Group",
+    "detail": "Nimitz-class supercarrier (San Diego homeport); primary South China Sea carrier 2024–2025. Carrier Air Wing 2 (CVW-2) aboard; escorts include USS Princeton (CG-59), USS Sterett (DDG-104), USS William P. Lawrence (DDG-110). Completed 9-month WESTPAC deployment August 2025. USS George Washington (CVN-73) now forward-deployed at Yokosuka, Japan.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "p-8-poseidon",
+    "type": "US Navy — Maritime Patrol Aircraft",
+    "name": "P-8A Poseidon Maritime Patrol Aircraft",
+    "detail": "Long-range maritime patrol aircraft with sonobuoy, ASW torpedo, and Harpoon anti-ship missile capability. Routinely patrols South China Sea from bases in the Philippines, Guam, and Japan. Provides targeting data to NMESIS launchers. China has repeatedly intercepted P-8s over the South China Sea (2021: PLA J-11 released chaff near P-8; 2023: PLA J-16 performed 'unnecessarily aggressive maneuver').",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "nmesis-system",
+    "type": "US Marine Corps — Anti-Ship Missile System",
+    "name": "NMESIS (Navy-Marine Expeditionary Ship Interdiction System)",
+    "detail": "Truck-mounted remote-operated launcher for Naval Strike Missile (NSM) with ~100 nm range against surface ships. First deployed overseas to the Philippines during Balikatan 2025 (April–May 2025), positioned at Batanes Islands in the Luzon Strait. Operated by 3rd Marine Littoral Regiment. Demonstrates US capability to deny Chinese naval access to the Luzon Strait.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "3rd-marine-littoral-regiment",
+    "type": "US Marine Corps — Expeditionary Unit",
+    "name": "3rd Marine Littoral Regiment (3rd MLR)",
+    "detail": "Hawaii-based regiment designed for distributed maritime operations. First deployed to Philippines in 2023; now conducts annual Balikatan (Apr–May) and KAMANDAG (Oct) rotations. During Balikatan 2025 deployed NMESIS anti-ship missiles and MADIS air defense systems to Batanes Islands. Enables sustained land-based maritime strike in the Luzon Strait corridor.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mq-9-reaper-isa",
+    "type": "US/Philippines — Unmanned Aerial Vehicle",
+    "name": "MQ-9 Reaper (Maritime ISR Configuration)",
+    "detail": "Marine Corps MQ-9A Reapers deployed to a Philippine Air Force base post-2023 for South China Sea maritime ISR missions. Provides persistent surveillance and targeting data for surface engagements. Networked with 3rd MLR NMESIS and US Navy P-8A Poseidons for integrated maritime domain awareness.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "brp-sierra-madre",
+    "type": "Philippine Navy — Forward Operating Base",
+    "name": "BRP Sierra Madre (LS-57)",
+    "detail": "WWII-era US Navy tank landing ship (built 1944 as USS LST-821) deliberately grounded at Second Thomas Shoal (Ayungin Shoal) in 1999 to assert Philippine sovereignty. Hull riddled with large holes (one 3–4m high); metal in late-stage fatigue with severe corrosion. ~12 Philippine Marines maintain continuous garrison. China has attempted to blockade resupply missions since 2021.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "brp-teresa-magbanua",
+    "type": "Philippine Coast Guard — Multi-Role Response Vessel",
+    "name": "BRP Teresa Magbanua (MRRV-9701)",
+    "detail": "Philippines' largest and most capable Coast Guard vessel (2,260 tons, 96.6m, helicopter hangar). PCG flagship deployed to Sabina Shoal April 2024 to counter suspected Chinese reclamation. Rammed and sustained structural hull damage August 31, 2024 during Sabina standoff involving 40 Chinese vessels. Named after a Filipina guerrilla leader.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "brp-gregorio-del-pilar",
+    "type": "Philippine Navy — Offshore Patrol Vessel",
+    "name": "BRP Gregorio del Pilar (PS-15)",
+    "detail": "Ex-USCGC Hamilton (high endurance cutter). Philippines' first major warship acquisition for West Philippine Sea patrols. 3,250 tons, 115.2m length; armed with 76mm Oto Melara cannon. 29 knots max speed; 14,000 nm range. Key vessel for Philippine Navy resupply and patrol missions. Acquired 2011; Philippines has purchased two Hamilton-class vessels.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "virginia-class-aukus",
+    "type": "AUKUS — Nuclear-Powered Attack Submarine",
+    "name": "Virginia-class SSN (Future Australian Purchase)",
+    "detail": "Australia will purchase 3 Virginia-class SSNs from the US in the early 2030s (Block IV vessels 2032 and 2035, Block VII 2038), as Phase 2 of AUKUS. Australia committed US$3 billion over 4 years to boost US submarine production rates. SSN-AUKUS will be a separate trilateral design based on UK's next-generation submarine, with first Australian delivery expected early 2040s.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "f-16-v-philippines",
+    "type": "Philippine Air Force — Multi-Role Fighter",
+    "name": "F-16V Block 70/72 Fighting Falcon (20 aircraft, ordered)",
+    "detail": "US State Department approved sale of 20 F-16V fighters to the Philippines in a $5.5 billion package (April 2025), pending Congressional notification. The most advanced F-16 variant, with AESA radar and extended range. Will significantly upgrade PAF air combat capability over the South China Sea. Previous PAF primary fighter: FA-50 light combat aircraft from South Korea.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "patriot-himars-balikatan",
+    "type": "US Army — Air Defense / Precision Strike",
+    "name": "Patriot PAC-3 + HIMARS (Balikatan Deployments)",
+    "detail": "US Army deployed Patriot PAC-3 missile systems and HIMARS (M142 High Mobility Artillery Rocket System) launchers with 4 systems during Balikatan 2022. HIMARS provides precision long-range strike (up to 300 km with ATACMS). Patriot provides area air defense against ballistic missiles and aircraft. Regular presence at Balikatan exercises signals US willingness to forward-deploy high-end air defense to Philippines.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]

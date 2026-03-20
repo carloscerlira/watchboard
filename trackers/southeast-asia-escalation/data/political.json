@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "id": "xi-jinping",
+    "name": "Xi Jinping",
+    "role": "General Secretary, Communist Party of China; President, PRC",
+    "avatar": "china",
+    "initial": "X",
+    "quote": "As a coastal state in the South China Sea, China firmly upholds its territorial sovereignty and maritime rights and interests in accordance with its domestic law and international law.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "wang-yi",
+    "name": "Wang Yi",
+    "role": "Director, Office of the Central Foreign Affairs Commission; Foreign Minister, PRC",
+    "avatar": "china",
+    "initial": "W",
+    "quote": "Infringement and provocation in the South China Sea will backfire and those acting as others' chess pieces are bound to be discarded.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mao-ning",
+    "name": "Mao Ning",
+    "role": "Spokesperson, Ministry of Foreign Affairs, PRC",
+    "avatar": "china",
+    "initial": "M",
+    "quote": "China's coast guard carried out a lawful, professional, and restrained enforcement operation. The Philippines bears full responsibility for the deterioration of the situation.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "zhao-lijian",
+    "name": "Zhao Lijian",
+    "role": "Former Spokesperson, Ministry of Foreign Affairs, PRC",
+    "avatar": "china",
+    "initial": "Z",
+    "quote": "AUKUS seriously undermines regional peace and stability, intensifies the arms race and undermines the international non-proliferation regime. China firmly opposes it.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ferdinand-marcos-jr",
+    "name": "Ferdinand Marcos Jr.",
+    "role": "President of the Philippines (since June 2022)",
+    "avatar": "ph",
+    "initial": "F",
+    "quote": "The Philippines cannot yield. The Philippines cannot waver. The West Philippine Sea is ours and will remain ours.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "gilberto-teodoro",
+    "name": "Gilberto Teodoro",
+    "role": "Secretary of National Defense, Philippines",
+    "avatar": "ph",
+    "initial": "G",
+    "quote": "Because, finally, the Filipinos had the gumption to say stop. Of course China is a top threat. Of course they are.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "enrique-manalo",
+    "name": "Enrique Manalo",
+    "role": "Secretary of Foreign Affairs, Philippines",
+    "avatar": "ph",
+    "initial": "E",
+    "quote": "It's clear that many of China's recent incidents are inconsistent with its declared intention to manage differences. We have no intention of surrendering or compromising sovereign rights.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jay-tarriela",
+    "name": "Jay Tarriela",
+    "role": "PCG Rear Admiral; West Philippine Sea spokesperson",
+    "avatar": "ph",
+    "initial": "J",
+    "quote": "We will not be intimidated. We will continue documenting and publishing every Chinese aggression in the West Philippine Sea so the world can see what is really happening.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "romeo-brawner",
+    "name": "Romeo Brawner Jr.",
+    "role": "Chief of Staff, Armed Forces of the Philippines (2023–2024)",
+    "avatar": "ph",
+    "initial": "R",
+    "quote": "What happened on June 17 was an aggressive and illegal use of force against our personnel. Our men showed extraordinary restraint and courage under direct physical assault.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "rodrigo-duterte",
+    "name": "Rodrigo Duterte",
+    "role": "Former President of the Philippines (2016–2022)",
+    "avatar": "ph",
+    "initial": "R",
+    "quote": "The Americans are the ones pushing the Philippine government to go out there and find a quarrel and eventually maybe start a war.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "joe-biden",
+    "name": "Joe Biden",
+    "role": "President of the United States (2021–2025)",
+    "avatar": "us",
+    "initial": "J",
+    "quote": "Any attack on Philippine aircraft, vessels, or Armed Forces in the South China Sea would invoke our mutual defense treaty. That commitment is ironclad.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pete-hegseth",
+    "name": "Pete Hegseth",
+    "role": "Secretary of Defense, United States (since January 2025)",
+    "avatar": "us",
+    "initial": "P",
+    "quote": "China has demonstrated that it wants to fundamentally alter the region's status quo. Any unilateral attempt to change the status quo in the South China Sea by force or coercion is unacceptable.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "lloyd-austin",
+    "name": "Lloyd Austin",
+    "role": "Secretary of Defense, United States (2021–2025)",
+    "avatar": "us",
+    "initial": "L",
+    "quote": "The US commitment to the Philippines' defense is ironclad. We are establishing Task Force Ayungin to ensure we can decisively respond to crisis or aggression in the South China Sea.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "antony-blinken",
+    "name": "Antony Blinken",
+    "role": "Secretary of State, United States (2021–2025)",
+    "avatar": "us",
+    "initial": "A",
+    "quote": "The Philippines is an irreplaceable ally. Armed attacks on Philippine armed forces, public vessels, or aircraft in the Pacific, including the South China Sea, invoke our mutual defense obligations.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "samuel-paparo",
+    "name": "Samuel Paparo",
+    "role": "Commander, US Indo-Pacific Command (since 2024)",
+    "avatar": "us",
+    "initial": "S",
+    "quote": "The death of a Filipino citizen in the South China Sea would represent a red line, as stated by President Marcos. We stand ready to fulfill our treaty obligations without hesitation.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "anthony-albanese",
+    "name": "Anthony Albanese",
+    "role": "Prime Minister of Australia (since May 2022)",
+    "avatar": "asean",
+    "initial": "A",
+    "quote": "AUKUS has one overriding objective: to enhance the stability of the Indo-Pacific. This is the biggest single investment in Australia's defence capability in all of our history.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "lee-hsien-loong",
+    "name": "Lee Hsien Loong",
+    "role": "Prime Minister of Singapore (2004–2024); Senior Statesman",
+    "avatar": "asean",
+    "initial": "L",
+    "quote": "ASEAN countries do not want to be forced to choose between the US and China. We need to see both powers manage their relationship and coexist peacefully.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "fumio-kishida",
+    "name": "Fumio Kishida",
+    "role": "Prime Minister of Japan (2021–2024)",
+    "avatar": "other",
+    "initial": "F",
+    "quote": "Ukraine today may be East Asia tomorrow. Japan must take robust action to deter any attempt to change the status quo by force in the Indo-Pacific.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "shigeru-ishiba",
+    "name": "Shigeru Ishiba",
+    "role": "Prime Minister of Japan (since October 2024)",
+    "avatar": "other",
+    "initial": "S",
+    "quote": "The creation of an Asian version of NATO is essential to deter China. We must synthesize QUAD, AUKUS, and bilateral alliances into a collective Asia security architecture.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "rishi-sunak",
+    "name": "Rishi Sunak",
+    "role": "Prime Minister of the United Kingdom (2022–2024)",
+    "avatar": "other",
+    "initial": "R",
+    "quote": "AUKUS represents a new era of cooperation between our three nations. Together we are investing in the security and stability of the Indo-Pacific for generations to come.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]
