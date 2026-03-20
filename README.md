@@ -25,6 +25,39 @@ A config-driven intelligence dashboard platform for tracking events of interest.
 | **[Israel-Palestine Conflict Tracker](https://artemiopadilla.github.io/watchboard/israel-palestine/)** | Intelligence dashboard covering the Israel-Palestine conflict from the 1948 foun... | 9 | Israel/Palestine/Middle East | 3D |
 | **[Somalia Conflict Tracker](https://artemiopadilla.github.io/watchboard/somalia-conflict/)** | Intelligence dashboard tracking Somalia's ongoing insurgency: Al-Shabaab operati... | 9 | Somalia/Horn of Africa | 3D |
 | **[October 7th Attack Tracker](https://artemiopadilla.github.io/watchboard/october-7-attack/)** | Intelligence dashboard tracking the Hamas-led October 7, 2023 assault on Israel ... | 9 | Israel/Gaza | 3D |
+| **[Gaza War](https://artemiopadilla.github.io/watchboard/gaza-war/)** | Israel-Gaza war: ground operations, ceasefire negotiations, humanitarian crisis, displacement, and ICJ proceedings | 9 | Gaza/Israel/Middle East | 3D |
+| **[Sudan Civil War](https://artemiopadilla.github.io/watchboard/sudan-conflict/)** | Sudan civil war between SAF and RSF: Khartoum, ethnic violence in Darfur, displacement crisis | 9 | Sudan/East Africa | 3D |
+| **[Sahel Insurgency](https://artemiopadilla.github.io/watchboard/sahel-insurgency/)** | JNIM/ISGS jihadist expansion, military coups in Mali/Burkina Faso/Niger, Wagner Group, French withdrawal | 9 | Sahel/North Africa | 3D |
+| **[Afghanistan-Pakistan War](https://artemiopadilla.github.io/watchboard/afghanistan-pakistan-war/)** | US invasion, Taliban insurgency, NATO withdrawal, Taliban return to power, ISIS-K, TTP attacks | 9 | Afghanistan/Pakistan | 3D |
+| **[India-Pakistan Conflict](https://artemiopadilla.github.io/watchboard/india-pakistan-conflict/)** | Partition, Kashmir dispute, four wars, nuclear tests, Kargil, Mumbai attacks, LOC tensions | 9 | South Asia/Kashmir | 3D |
+| **[SE Asia Escalation](https://artemiopadilla.github.io/watchboard/southeast-asia-escalation/)** | South China Sea militarization, AUKUS, Philippines-China clashes, ASEAN divisions, arms buildup | 9 | Southeast Asia/South China Sea | 3D |
+| **[NATO-US Tensions](https://artemiopadilla.github.io/watchboard/nato-us-tensions/)** | Burden-sharing disputes, Article 5 questions, European strategic autonomy, Trump-era friction | 7 | Europe/North America | 3D |
+| **[World War I](https://artemiopadilla.github.io/watchboard/world-war-1/)** | The Great War 1914–1918: trench warfare, Somme, Verdun, Gallipoli, US entry, Versailles | 9 | Europe/Global | 3D |
+| **[World War II](https://artemiopadilla.github.io/watchboard/world-war-2/)** | WWII 1939–1945: Nazi expansion, Pacific theater, Holocaust, Stalingrad, Normandy, atomic bombs | 9 | Europe/Pacific/Global | 3D |
+| **[Mexico-US Wars](https://artemiopadilla.github.io/watchboard/mexico-us-conflict/)** | Texas Revolution, Alamo, Mexican-American War, Treaty of Guadalupe Hidalgo (1835–1848) | 8 | Mexico/USA | 3D |
+| **[Sinaloa Fragmentation](https://artemiopadilla.github.io/watchboard/sinaloa-fragmentation/)** | Mayo Zambada capture, Chapitos vs Mayos faction war, fentanyl trade (2024–) | 8 | Mexico/Sinaloa | 3D |
+| **[ICE History](https://artemiopadilla.github.io/watchboard/ice-history/)** | ICE creation under DHS 2003, enforcement evolution, family separations, mass deportation campaign | 7 | USA/Mexico | 3D |
+| **[Haiti Collapse](https://artemiopadilla.github.io/watchboard/haiti-collapse/)** | Moïse assassination, gang control of Port-au-Prince, transitional council, UN-backed intervention | 8 | Haiti/Caribbean | 3D |
+| **[Chile: Allende to Pinochet](https://artemiopadilla.github.io/watchboard/chile-allende-pinochet/)** | Socialist government, CIA intervention, 1973 coup, dictatorship, Operation Condor (1970–1990) | 7 | Chile/South America | 3D |
+| **[US-LatAm Interventions](https://artemiopadilla.github.io/watchboard/usa-latam-interventions/)** | US coups, CIA operations, Operation Condor, Panama, Guatemala 1954, Nicaragua Contras | 8 | Latin America | 3D |
+| **[Cuba Crises](https://artemiopadilla.github.io/watchboard/cuba-crises/)** | Revolution, Bay of Pigs, Missile Crisis, embargo, Soviet alliance, Special Period, 2021 protests | 7 | Cuba/Caribbean | 3D |
+| **[Mexican Political History](https://artemiopadilla.github.io/watchboard/mx-political-history/)** | PRI hegemony, democratic transition, party evolution PRI/PAN/PRD/Morena, key elections | 6 | Mexico | 3D |
+| **[Fox Presidency](https://artemiopadilla.github.io/watchboard/fox-presidency/)** | First PAN president, democratic transition, migration policy, US relations post-9/11 (2000–2006) | 7 | Mexico | 3D |
+| **[Calderón Presidency](https://artemiopadilla.github.io/watchboard/calderon-presidency/)** | War on drugs, military vs cartels, escalating violence, Mérida Initiative (2006–2012) | 9 | Mexico | 3D |
+| **[Peña Nieto Presidency](https://artemiopadilla.github.io/watchboard/pena-nieto-presidency/)** | Structural reforms, Ayotzinapa crisis, Casa Blanca scandal, El Chapo recapture (2012–2018) | 7 | Mexico | 3D |
+| **[AMLO Presidency](https://artemiopadilla.github.io/watchboard/amlo-presidency/)** | Fourth Transformation, abrazos no balazos, Tren Maya, AIFA, constitutional reforms (2018–2024) | 7 | Mexico | 3D |
+| **[Sheinbaum Presidency](https://artemiopadilla.github.io/watchboard/sheinbaum-presidency/)** | First female president, AMLO continuity, judicial reform, US-Mexico relations under Trump (2024–) | 7 | Mexico | 3D |
+| **[Trump Presidencies](https://artemiopadilla.github.io/watchboard/trump-presidencies/)** | 45th and 47th president: immigration crackdown, trade wars, Jan 6th, tariff escalation, MAGA | 7 | USA/Global | 3D |
+| **[COVID-19 Pandemic](https://artemiopadilla.github.io/watchboard/covid-pandemic/)** | Wuhan origin, global spread, lockdowns, vaccines, variant waves, WHO response, excess mortality | 8 | Global | 3D |
+| **[Global Recession Risk](https://artemiopadilla.github.io/watchboard/global-recession-risk/)** | Tariff escalation, bond stress, China slowdown, inflation, central bank policy (2024–2026) | 7 | Global | 3D |
+| **[Quantum Theory](https://artemiopadilla.github.io/watchboard/quantum-theory/)** | Planck, Einstein, Bohr, Heisenberg, Schrödinger, Copenhagen, Bell theorem, quantum computing | 6 | Global | 3D |
+| **[China Tech Revolution](https://artemiopadilla.github.io/watchboard/china-tech-revolution/)** | Made in China 2025, AI race, semiconductor war, Huawei, TikTok, DeepSeek, US decoupling | 7 | China/Global | 3D |
+| **[NASA Artemis Program](https://artemiopadilla.github.io/watchboard/artemis-program/)** | Return to Moon, SLS, Orion, Artemis I–IV, Gateway station, SpaceX/Blue Origin landers | 6 | USA/Global | 3D |
+| **[SpaceX History](https://artemiopadilla.github.io/watchboard/spacex-history/)** | Founding, Falcon 1, Falcon 9 reusability, Dragon, Starlink, Starship, Mars colonization | 6 | USA/Global | 3D |
+| **[European Conquest of Americas](https://artemiopadilla.github.io/watchboard/european-conquest-americas/)** | Columbus, conquistadors, Aztec/Inca fall, colonization, indigenous genocide, Columbian Exchange | 8 | Americas/Europe | 3D |
+| **[FIFA World Cup 2026](https://artemiopadilla.github.io/watchboard/world-cup-2026/)** | First 48-team tournament, tri-host USA/Mexico/Canada, qualification, venues, match schedule | 6 | USA/Mexico/Canada | 3D |
+| **[BTS](https://artemiopadilla.github.io/watchboard/bts/)** | K-pop global rise, discography, UN speeches, military service, reunion, ARMY fandom | 4 | South Korea/Global | 3D |
+| **[Bad Bunny](https://artemiopadilla.github.io/watchboard/bad-bunny/)** | SoundCloud to reggaeton star, YHLQMDLG, Un Verano Sin Ti, world tours, Spotify records | 4 | Puerto Rico/Global | 3D |
 
 ---
 
