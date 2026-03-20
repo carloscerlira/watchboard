@@ -1,1 +1,155 @@
-[]
+[
+  {
+    "id": "ismael-mayo-zambada",
+    "name": "Ismael 'El Mayo' Zambada García",
+    "role": "Co-Founder, Sinaloa Cartel (La Mayiza) — In US Custody",
+    "avatar": "mayos",
+    "initial": "I",
+    "quote": "I was ambushed and taken against my will. I had never been arrested before in my 76 years. I will tell the truth about what happened to me.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ivan-archivaldo-guzman",
+    "name": "Iván Archivaldo Guzmán Salazar",
+    "role": "Primary Chapitos Leader, El Chapo's Eldest Son — At Large",
+    "avatar": "chapitos",
+    "initial": "I",
+    "quote": "The war will not end until we have what is ours.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jesus-alfredo-mochomito-guzman",
+    "name": "Jesús Alfredo 'El Mochomito' Guzmán Salazar",
+    "role": "Chapitos Co-Leader, El Chapo's Son — At Large",
+    "avatar": "chapitos",
+    "initial": "J",
+    "quote": "Sinaloa has always been ours. Nothing has changed.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "joaquin-guzman-lopez",
+    "name": "Joaquín Guzmán López",
+    "role": "El Chapo's Son — In US Custody, Alleged Orchestrator of Mayo's Capture",
+    "avatar": "chapitos",
+    "initial": "J",
+    "quote": "I surrendered to the United States of my own free will. I sought to cooperate.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mayito-flaco-zambada",
+    "name": "Ismael 'Mayito Flaco' Zambada Sicairos",
+    "role": "La Mayiza Field Commander, El Mayo's Son — At Large",
+    "avatar": "mayos",
+    "initial": "I",
+    "quote": "We authorized the offensive on September 9. We will take back everything that belongs to the Zambada family.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "chapo-isidro-meza",
+    "name": "Fausto Isidro 'Chapo Isidro' Meza Flores",
+    "role": "La Mayiza Ally, Commands Vitache Special Forces, Controls Northern Sinaloa",
+    "avatar": "mayos",
+    "initial": "F",
+    "quote": "Guasave belongs to us and always will. We stand with the Zambada family against the Chapitos.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "aureliano-el-guano-guzman",
+    "name": "Aureliano 'El Guano' Guzmán Palomino",
+    "role": "El Chapo's Brother — Defected from Chapitos to La Mayiza",
+    "avatar": "mayos",
+    "initial": "A",
+    "quote": "Blood alone does not determine loyalty. The Zambada family has always been the true backbone of Sinaloa.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ovidio-guzman-lopez",
+    "name": "Ovidio 'El Ratón' Guzmán López",
+    "role": "El Chapo's Son — Extradited to US, Pleaded Guilty, Cooperating Witness",
+    "avatar": "chapitos",
+    "initial": "O",
+    "quote": "I accept responsibility for my role in the Sinaloa Cartel. I am prepared to cooperate fully with the United States government.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "claudia-sheinbaum",
+    "name": "Claudia Sheinbaum",
+    "role": "President of Mexico — Adopted Military-Forward Security Strategy",
+    "avatar": "mx-gov",
+    "initial": "C",
+    "quote": "We will not negotiate with organized crime. Our strategy is law, justice, and the protection of our people. National homicides are down 25 percent.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "omar-garcia-harfuch",
+    "name": "Omar García Harfuch",
+    "role": "Secretary of Security and Citizen Protection — Sheinbaum Security Chief",
+    "avatar": "mx-gov",
+    "initial": "O",
+    "quote": "We deployed 1,400 additional troops to Culiacán. We are taking territory back from organized crime.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ruben-rocha-moya",
+    "name": "Rubén Rocha Moya",
+    "role": "Governor of Sinaloa — Implicated by El Mayo, Denies Involvement",
+    "avatar": "mx-gov",
+    "initial": "R",
+    "quote": "I was in California visiting family on July 25. I had no knowledge of any meeting, any ambush, or any kidnapping. These accusations are false and politically motivated.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ricardo-trevilla-trejo",
+    "name": "Ricardo Trevilla Trejo",
+    "role": "Secretary of National Defense (SEDENA)",
+    "avatar": "mx-gov",
+    "initial": "R",
+    "quote": "The Sinaloa Cartel has lost control of 30 of 42 trafficking routes it once dominated. Our operations are degrading their capacity.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "anne-milgram-dea",
+    "name": "Anne Milgram",
+    "role": "DEA Administrator — Announced Mayo's Capture",
+    "avatar": "us",
+    "initial": "A",
+    "quote": "Today we have dismantled the top leadership of the Sinaloa Cartel — an organization responsible for the majority of fentanyl that has killed Americans.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ken-salazar-ambassador",
+    "name": "Ken Salazar",
+    "role": "US Ambassador to Mexico — Acknowledged Mayo Was Taken Against His Will",
+    "avatar": "us",
+    "initial": "K",
+    "quote": "Zambada was taken against his will. Guzmán López surrendered voluntarily. The United States did not sanction the method by which Zambada was brought to justice.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "hector-cuen-ojeda",
+    "name": "Héctor Melesio Cuén Ojeda",
+    "role": "Former Mayor of Culiacán, University Rector — Killed Jul 25, 2024",
+    "avatar": "other",
+    "initial": "H",
+    "quote": "Cuén died at the same ranch where Mayo was abducted, not in a robbery as the state claimed. Federal evidence confirmed four bullets, not one.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "el-comanche-mayiza",
+    "name": "'El Comanche'",
+    "role": "La Mayiza Senior Field Commander — Authorized September 9 Offensive",
+    "avatar": "mayos",
+    "initial": "C",
+    "quote": "Orders issued. The time for waiting is over. Every plaza must act simultaneously.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "nemesio-mencho-oseguera",
+    "name": "Nemesio 'El Mencho' Oseguera Cervantes",
+    "role": "CJNG Leader — Killed by Mexican Military, February 2026",
+    "avatar": "other",
+    "initial": "N",
+    "quote": "Jalisco's reach extends wherever we choose to go. Sinaloa is within our interests now.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]

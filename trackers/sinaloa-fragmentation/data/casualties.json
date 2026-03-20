@@ -1,1 +1,145 @@
-[]
+[
+  {
+    "id": "total-homicides-sinaloa-war",
+    "category": "Total Homicides (Sinaloa State, Sep 2024–Mar 2026)",
+    "killed": "2,400+",
+    "injured": "Unknown",
+    "source": "Noroeste cumulative tally / ACLED",
+    "tier": 2,
+    "contested": "heavily",
+    "note": "Official SNSP data shows lower figures. Noroeste field reporters count 1,972 in first year alone. CNN analysis: homicides rose 400% since El Mayo's capture.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "culiacan-peak-monthly",
+    "category": "Culiacán — Peak 30-Day Period (Late 2024)",
+    "killed": "140",
+    "injured": "Unknown",
+    "source": "Noroeste",
+    "tier": 2,
+    "contested": "evolving",
+    "note": "Single worst 30-day death toll in Culiacán's history. Record 30 murders in single day (Sep 17, 2024). City hospitals overwhelmed.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "displaced-persons-total",
+    "category": "Persons Displaced from Homes",
+    "killed": "0",
+    "injured": "N/A",
+    "source": "Universidad Autónoma de Sinaloa",
+    "tier": 3,
+    "contested": "heavily",
+    "note": "9,000+ families (academic estimate) vs 1,763 families (state official count). At least 50 rural communities abandoned. Improvised camps near Culiacán landfill with shortages of food, water, medical care.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "disappeared-persons",
+    "category": "Disappeared/Kidnapped Persons",
+    "killed": "Unknown",
+    "injured": "0",
+    "source": "Noroeste",
+    "tier": 2,
+    "contested": "heavily",
+    "note": "2,133 kidnappings recorded since September 2024. Average 5.3 disappeared per day. Journalists describe disappearances as the 'primary form of lethal violence' in this war. Most bodies never recovered.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "badiraguato-displacement",
+    "category": "Badiraguato Municipality — Displaced Families",
+    "killed": "Unknown",
+    "injured": "0",
+    "source": "Badiraguato Municipal Government",
+    "tier": 1,
+    "contested": "partial",
+    "note": "Mayor confirmed approximately 100 families (450 people) displaced. Municipality overall population dropped from 37,757 to 26,542 in census data (near 30% reduction including pre-war trends).",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "concordia-displacement",
+    "category": "Concordia Municipality — Highest Displaced Count",
+    "killed": "Unknown",
+    "injured": "0",
+    "source": "Sinaloa State Authorities",
+    "tier": 1,
+    "contested": "partial",
+    "note": "261 displaced families documented by mid-2025 — the highest single-municipality count in the conflict. Communities including El Palmito, El Espinal, and others effectively abandoned.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "cosala-displacement",
+    "category": "Cosalá Municipality — Displaced Families",
+    "killed": "Unknown",
+    "injured": "0",
+    "source": "Sinaloa State Authorities",
+    "tier": 1,
+    "contested": "partial",
+    "note": "238 displaced families recorded by mid-2025. Multiple factions controlling territory simultaneously makes civilian life untenable in this central Sinaloa municipality.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "first-week-war-deaths",
+    "category": "First Week of Open War (Sep 9–17, 2024)",
+    "killed": "50+",
+    "injured": "Unknown",
+    "source": "Noroeste / Reuters",
+    "tier": 2,
+    "contested": "evolving",
+    "note": "More than 50 killed in the first seven days following La Mayiza's September 9 offensive. Bodies found with faction symbols (sombreros, pizza slices) as psychological warfare. Schools closed, Independence Day celebrations cancelled.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mazatlan-homicides-2025",
+    "category": "Mazatlán Homicides (Jan–Sep 2025)",
+    "killed": "95",
+    "injured": "Unknown",
+    "source": "Latin Times / Noroeste",
+    "tier": 2,
+    "contested": "no",
+    "note": "227% increase over same period in 2024. Tourist hub swept into conflict as factions contest Mazatlán's criminal plaza. Significant impact on hospitality sector occupancy.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "army-clash-october-2024",
+    "category": "Mexican Army vs Cartel Combatants (Oct 2024)",
+    "killed": "19",
+    "injured": "Unknown",
+    "source": "SEDENA / Reuters",
+    "tier": 1,
+    "contested": "no",
+    "note": "Mexican Army kills 19 suspected cartel combatants in the bloodiest single military engagement with narco-traffickers in years. One local commander arrested. Occurred during peak violence period.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "navy-raid-march-2026",
+    "category": "Mexican Navy Culiacán Raid (Mar 19, 2026)",
+    "killed": "11",
+    "injured": "Unknown",
+    "source": "SEMAR / Al Jazeera",
+    "tier": 1,
+    "contested": "no",
+    "note": "Eleven killed in Navy operation targeting Sinaloa Cartel leadership. Plaza boss Omar 'El Patas' Torres captured. High-powered weapons and tactical equipment seized. Torres's daughter released.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "tierra-blanca-june-2025",
+    "category": "Tierra Blanca Neighborhood Clashes (Jun 2025)",
+    "killed": "3+",
+    "injured": "Unknown",
+    "source": "El Universal / Reforma",
+    "tier": 2,
+    "contested": "no",
+    "note": "At least 3 killed when La Mayiza destroyed a Chapitos armored truck with a .50-caliber rifle in Tierra Blanca, June 15–16, 2025. Occurred just two days after Security Secretary García Harfuch arrived with 1,400 Army troops.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "civilians-sinaloa-2025",
+    "category": "Civilian Homicides Sinaloa (Jan–Aug 2025)",
+    "killed": "571+",
+    "injured": "Unknown",
+    "source": "InSight Crime / ACLED",
+    "tier": 3,
+    "contested": "evolving",
+    "note": "At least 571 civilians killed in Sinaloa in the first eight months of 2025 according to conflict tracking organizations. Includes non-combatants caught in crossfire, extortion victims, and witnesses.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]

@@ -1,1 +1,519 @@
-[]
+[
+  {
+    "era": "The Kidnapping & Shock — Jul–Aug 2024",
+    "events": [
+      {
+        "id": "mayo-capture-july-25",
+        "year": "Jul 25, 2024",
+        "title": "El Mayo Zambada Captured via Alleged Kidnapping",
+        "type": "arrest",
+        "detail": "Ismael 'El Mayo' Zambada García, co-founder of the Sinaloa Cartel, is lured to Huertos del Pedregal ranch outside Culiacán under the pretext of mediating a political dispute. Armed men in military-style uniforms bag him, zip-tie him, sedate him, and fly him to a New Mexico airfield near El Paso where DEA agents take custody. His two bodyguards vanish. Joaquín Guzmán López, son of El Chapo, arrives separately and surrenders voluntarily.",
+        "sources": [
+          { "name": "DEA Statement on Arrests", "tier": 1, "url": "https://www.dea.gov/documents/2024/2024-07/2024-07-25/statement-dea-administrator-milgram-arrests-ismael-zambada-garcia" },
+          { "name": "Al Jazeera", "tier": 2, "url": "https://www.aljazeera.com/news/2024/8/10/i-was-ambushed-sinaloa-drug-cartel-leader-el-mayo-details-capture" }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "cuen-ojeda-killed",
+        "year": "Jul 25, 2024",
+        "title": "Former Culiacán Mayor Héctor Cuén Ojeda Found Dead",
+        "type": "assassination",
+        "detail": "Héctor Melesio Cuén Ojeda, former mayor of Culiacán and rector of the Autonomous University of Sinaloa, is found dead the same day as Mayo's capture. Official state narrative claims a single gunshot in a gas station robbery. Federal investigators later find forensic evidence — four bullets to the head, severe bruising, blood at Huertos del Pedregal ranch — that directly contradicts the official account and supports Zambada's version that Cuén died at the kidnapping ambush site.",
+        "sources": [
+          { "name": "Washington Post", "tier": 2, "url": "https://www.washingtonpost.com/world/2024/10/20/mexico-sinaloa-cartel-fighting-governor-scandal/" },
+          { "name": "Mexico News Daily", "tier": 2, "url": "https://mexiconewsdaily.com/news/new-evidence-cuen-murder-mayo-zambada-story-sinaloa/" }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "mayo-letter-released",
+        "year": "Aug 2024",
+        "title": "Zambada's Letter Accuses Guzmán López of Kidnapping",
+        "type": "clash",
+        "detail": "Ismael Zambada García's attorney releases a public letter in which Mayo details the kidnapping in his own words, accusing Joaquín Guzmán López of orchestrating the ambush. The letter sparks international controversy and deepens the rupture within the Sinaloa Cartel. US Ambassador Ken Salazar subsequently confirms that Zambada was indeed taken against his will, though the US denies having sanctioned the kidnapping method.",
+        "sources": [
+          { "name": "InSight Crime", "tier": 3, "url": "https://insightcrime.org/news/truth-or-lie-a-letter-from-el-mayo-fuels-mexico-us-tensions-over-sinaloa-cartel-arrests/" },
+          { "name": "Al Jazeera", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "governor-rocha-implication",
+        "year": "Aug 2024",
+        "title": "Sinaloa Governor Rocha Moya Implicated, Denies Involvement",
+        "type": "arrest",
+        "detail": "Zambada's letter implicates Sinaloa Governor Rubén Rocha Moya, claiming he was supposed to attend the meeting at Huertos del Pedregal that turned into an ambush. The governor insists he was visiting family in California that day but fails to produce US immigration documents. Three opposition PAN legislators file criminal complaints against him. Sinaloa state prosecutors are later found to have covered up the Cuén killing.",
+        "sources": [
+          { "name": "Washington Post", "tier": 2 },
+          { "name": "Proceso", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "post-arrest-tension",
+        "year": "Aug 2024",
+        "title": "Tense Calm Follows Arrest — 10 Killed in First Week",
+        "type": "clash",
+        "detail": "The days immediately following Mayo's arrest see a period of uneasy quiet as both factions absorb the shock. Governor Rocha Moya reports 10 killed in the week after the capture. Cartel operatives await orders as confusion reigns about who now leads the Zambada wing. Both the Chapitos and Mayos factions begin mobilizing fighters and weapons in anticipation of open conflict.",
+        "sources": [
+          { "name": "Reuters", "tier": 2 },
+          { "name": "InSight Crime", "tier": 3 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "mayo-arraigned-brooklyn",
+        "year": "Sep 13, 2024",
+        "title": "El Mayo Arraigned in Brooklyn Federal Court",
+        "type": "arrest",
+        "detail": "Ismael 'El Mayo' Zambada García is formally arraigned in the Eastern District of New York in Brooklyn on charges of racketeering conspiracy, continuing criminal enterprise, and drug trafficking. He pleads not guilty. The arraignment confirms he will face trial in the United States despite his claims of having been kidnapped and transported without consent.",
+        "sources": [
+          { "name": "Reuters", "tier": 2 },
+          { "name": "CBS News", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "era": "War Erupts — Sep–Oct 2024",
+    "events": [
+      {
+        "id": "mayiza-offensive-september-9",
+        "year": "Sep 9, 2024",
+        "title": "La Mayiza Launches Coordinated Opening Strikes",
+        "type": "clash",
+        "detail": "Ismael 'Mayito Flaco' Zambada Sicairos authorizes coordinated pre-dawn attacks against Los Chapitos across Sinaloa. Field commander 'El Comanche' issues synchronized orders to plaza bosses throughout the state. Mexican Army troops encounter armed civilians in La Campiña neighborhood of east Culiacán — a Chapitos stronghold — killing a sergeant and triggering citywide violence. The Sinaloa Civil War has officially begun.",
+        "sources": [
+          { "name": "InSight Crime", "tier": 3, "url": "https://insightcrime.org/special-series-sinaloa-cartel-internal-war/" },
+          { "name": "Animal Político", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "culiacan-bloodbath-september",
+        "year": "Sep 17, 2024",
+        "title": "Record 30 Murders in Single Day in Culiacán",
+        "type": "clash",
+        "detail": "Culiacán records 30 homicides in a single day — an unprecedented toll for the city. More than 50 people are killed in the first week of open conflict. Bodies are left in streets, some with sombreros and pizza slices — informal symbols used by rival factions to mark their kills. Schools close across the city and the government cancels scheduled Independence Day celebrations.",
+        "sources": [
+          { "name": "Noroeste", "tier": 2 },
+          { "name": "Riodoce", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "el-palmito-evacuation",
+        "year": "Sep 2024",
+        "title": "El Palmito Community Evacuated — 200 Residents Flee",
+        "type": "displacement",
+        "detail": "Armed groups force the evacuation of El Palmito in Concordia municipality. Approximately 180–200 residents flee, primarily to Mazatlán. The community, situated in the sierra near the Sinaloa-Durango border, becomes one of the first but not last rural communities to be emptied by the conflict. Residents receive minimal government assistance upon arrival in coastal cities.",
+        "sources": [
+          { "name": "InSight Crime", "tier": 3 },
+          { "name": "Proceso", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "badiraguato-drone-attacks",
+        "year": "Sep 16, 2024",
+        "title": "Armed Drone Strikes Hit El Chapo's Hometown Badiraguato",
+        "type": "clash",
+        "detail": "Drone attacks strike the Bacacoragua area of Badiraguato municipality — El Chapo's home region and historically a sacred cartel sanctuary. Electricity is cut and roads blocked as fighting engulfs mountain communities. Mayor confirms approximately 100 families (450 people) flee their homes. The use of drones by cartel factions signals an alarming escalation in tactical capabilities compared to prior conflicts.",
+        "sources": [
+          { "name": "CBS News", "tier": 2, "url": "https://www.cbsnews.com/news/drug-lord-el-chapo-hometown-hit-by-drone-attacks-residents-flee/" },
+          { "name": "Latin Times", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "army-kills-19-october",
+        "year": "Oct 2024",
+        "title": "Mexican Army Kills 19 in Bloodiest Anti-Cartel Clash in Years",
+        "type": "clash",
+        "detail": "Mexican Army soldiers engage suspected cartel combatants in Sinaloa, killing 19 in what authorities describe as the most lethal military confrontation with narco-traffickers in several years. The clash underscores the escalating militarization of the conflict. One local commander is arrested. The operation takes place amid broader military reinforcements being sent to the state by the Sheinbaum administration.",
+        "sources": [
+          { "name": "Reuters", "tier": 2 },
+          { "name": "Reforma", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "third-military-region-commander-replaced",
+        "year": "Oct 2, 2024",
+        "title": "Mexican Army Replaces Sinaloa Regional Commander",
+        "type": "arrest",
+        "detail": "Guillermo Briseño Lobera replaces Jesús Leana Ojeda as commander of the Third Military Region — the army's operational command covering Sinaloa. The change comes as violence reaches critical levels and signals the Sheinbaum administration's decision to adopt a more assertive military posture in the state. Thousands of additional army troops are subsequently deployed across Sinaloa.",
+        "sources": [
+          { "name": "SEDENA (Mexican Defense Ministry)", "tier": 1 },
+          { "name": "El Universal", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "fentanyl-price-spike",
+        "year": "Oct 2024",
+        "title": "Fentanyl Wholesale Price Doubles in Culiacán",
+        "type": "seizure",
+        "detail": "Intelligence reports and journalistic investigations document that the wholesale price of one kilogram of fentanyl in Culiacán rose from approximately $3,000 to $6,000 — a 100% increase — in the months following the cartel civil war's outbreak. The Chapitos impose a ban on independent fentanyl producers, requiring formal faction approval to operate. Independent producers unable to comply begin relocating to Sonora and Baja California.",
+        "sources": [
+          { "name": "InSight Crime", "tier": 3, "url": "https://insightcrime.org/investigations/fentanyl-producers-mexico-adapting-challenging-market/" },
+          { "name": "DEA Intelligence Report", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "claudia-sheinbaum-security-policy",
+        "year": "Oct 2024",
+        "title": "President Sheinbaum Adopts More Muscular Security Strategy",
+        "type": "arrest",
+        "detail": "Claudia Sheinbaum, who took office as Mexico's president in October 2024, moves away from her predecessor López Obrador's 'hugs not bullets' policy and adopts a more aggressive posture toward organized crime. She authorizes large-scale military deployments to Sinaloa, launches Fuerza de Tarea task forces combining army and police units, and approves extraditions of cartel figures at an unprecedented pace — more than 100 in her first year.",
+        "sources": [
+          { "name": "Americas Quarterly", "tier": 3 },
+          { "name": "Reforma", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "era": "Peak Violence — Nov 2024–Feb 2025",
+    "events": [
+      {
+        "id": "record-fentanyl-bust-december-2024",
+        "year": "Dec 2024",
+        "title": "Mexico's Largest-Ever Fentanyl Bust: 20 Million Pills Seized",
+        "type": "seizure",
+        "detail": "Mexican federal forces seize 20 million fentanyl pills in operations in Ahome and Guasave municipalities in northern Sinaloa — the largest single fentanyl seizure in Mexican history at the time. The bust occurs in territory previously dominated by the Zambada faction's ally Chapo Isidro (Fausto Isidro Meza Flores), raising questions about whether authorities were tipped off by a rival faction.",
+        "sources": [
+          { "name": "Secretaría de Seguridad (SSPC)", "tier": 1 },
+          { "name": "Reuters", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "140-dead-culiacan-peak",
+        "year": "Nov 2024",
+        "title": "140 Dead in Single 30-Day Period in Culiacán",
+        "type": "clash",
+        "detail": "Culiacán records 140 homicides in a single 30-day period at the height of the violence, far surpassing any comparable period in recent Mexican criminal history for the city. Hospitals operate over capacity. Families are unable to claim bodies from the streets. The BBC later characterizes Culiacán as an 'active conflict zone' where gunmen move in convoys and firefights erupt near schools.",
+        "sources": [
+          { "name": "Noroeste", "tier": 2 },
+          { "name": "CNN", "tier": 2, "url": "https://www.cnn.com/2025/08/18/americas/mexico-killings-sinaloa-cartel-kingpin-latam-intl" }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "el-guano-defects",
+        "year": "Late 2024",
+        "title": "El Chapo's Brother Aureliano 'El Guano' Defects to La Mayiza",
+        "type": "clash",
+        "detail": "Aureliano Guzmán Palomino, known as 'El Guano' and the biological brother of El Chapo, defects from Los Chapitos and switches allegiance to La Mayiza. The defection is a major symbolic and operational blow to the Guzmán family faction, suggesting that not even El Chapo's own blood relatives remain loyal to his sons' leadership. La Mayiza begins leaking Chapitos commanders' locations to Mexican authorities.",
+        "sources": [
+          { "name": "InSight Crime", "tier": 3 },
+          { "name": "Borderland Beat", "tier": 3 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "chapo-isidro-vitache-joins",
+        "year": "Late 2024",
+        "title": "Chapo Isidro and Los Vitache Join La Mayiza Alliance",
+        "type": "clash",
+        "detail": "Fausto Isidro Meza Flores, known as 'Chapo Isidro,' and his elite Vitache Special Forces formally align with La Mayiza. Isidro controls key northern Sinaloa territory including Guasave and Ahome. His experienced paramilitary forces significantly boost the Mayiza faction's fighting capability and consolidate their dominance in northern Sinaloa. The Cabrera Sarabia family and associated armed groups also affiliate with Mayiza.",
+        "sources": [
+          { "name": "InSight Crime", "tier": 3 },
+          { "name": "Riodoce", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "9000-families-displaced",
+        "year": "Early 2025",
+        "title": "9,000 Families Displaced — 50 Rural Communities Abandoned",
+        "type": "displacement",
+        "detail": "The Autonomous University of Sinaloa documents that at least 9,000 families have been displaced from their homes due to cartel violence by early 2025. State authorities acknowledge at least 1,763 families displaced to official shelters. Approximately 50 rural communities in the Sierra Madre Occidental are largely abandoned — effectively becoming ghost towns. Displaced persons establish improvised camps near the Culiacán landfill with serious shortages of food and medical care.",
+        "sources": [
+          { "name": "Universidad Autónoma de Sinaloa", "tier": 3 },
+          { "name": "InSight Crime", "tier": 3, "url": "https://insightcrime.org/investigations/in-battle-for-sierra-madre-old-allies-new-foes-displace-hundreds/" }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "el-espinal-fighting-jan-2025",
+        "year": "Jan 4, 2025",
+        "title": "Heavy Fighting in El Espinal — Burned Vehicles, Mass Flight",
+        "type": "clash",
+        "detail": "Intense fighting between La Chapiza (Chapitos) and La Mayiza forces is documented in El Espinal, Concordia municipality, on January 4, 2025. Multiple burned-out vehicles are photographed by journalists. Residents of the surrounding area flee en masse. Concordia eventually records the highest total number of displaced families of any municipality in the conflict — 261 families by mid-2025.",
+        "sources": [
+          { "name": "Riodoce", "tier": 2 },
+          { "name": "Animal Político", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "costa-rica-narco-messages",
+        "year": "Jan 6, 2025",
+        "title": "Bodies with Narco-Messages Left in Culiacán's Costa Rica Neighborhood",
+        "type": "assassination",
+        "detail": "Bodies of suspected Chapitos-aligned gunmen are discovered in Culiacán's Costa Rica neighborhood, left with narco-messages (narco-mantas) claiming responsibility from Rugrat-affiliated La Mayiza operatives. The incident is one of dozens of similar incidents recorded in January 2025 as both factions use public body displays as psychological warfare against each other and the civilian population.",
+        "sources": [
+          { "name": "Noroeste", "tier": 2 },
+          { "name": "Borderland Beat", "tier": 3 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "cjng-alliance-emerges",
+        "year": "Early 2025",
+        "title": "Reports Emerge of Chapitos-CJNG Alliance",
+        "type": "clash",
+        "detail": "Multiple intelligence and journalistic reports document the emergence of a working alliance between Los Chapitos and the Jalisco New Generation Cartel (CJNG), led by Nemesio Oseguera Cervantes 'El Mencho.' CJNG deploys hundreds of gunmen into Sinaloa to support Chapitos operations, launching offensives along the Sinaloa-Durango border against Mayiza factions. The Mexican government officially denies the alliance despite video evidence circulated on social media.",
+        "sources": [
+          { "name": "InSight Crime", "tier": 3 },
+          { "name": "Proceso", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "concordia-fighting-feb-2025",
+        "year": "Feb 26, 2025",
+        "title": "Heavy Mayiza vs Chapitos Combat in Concordia Municipality",
+        "type": "clash",
+        "detail": "Major armed confrontations between La Mayiza and Los Chapitos are documented in Concordia municipality on February 26, 2025. The fighting involves armed convoys, heavy weapons, and results in multiple deaths on both sides. Concordia, a largely rural municipality in southern Sinaloa bordering the Sierra Madre Occidental, becomes one of the most persistently contested territories in the conflict.",
+        "sources": [
+          { "name": "Riodoce", "tier": 2 },
+          { "name": "Animal Político", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "financial-operator-guerito-arrested",
+        "year": "Feb 19, 2025",
+        "title": "El Güerito, Iván Archivaldo's Financial Controller, Arrested",
+        "type": "arrest",
+        "detail": "José Ángel Canobbio Inzunza, known as 'El Güerito,' is arrested in what authorities describe as the most significant blow yet to the Chapitos' financial infrastructure. As Iván Archivaldo Guzmán's primary financial controller, El Güerito managed money laundering networks, bribery payments to officials, and resource allocation for Chapitos operations. His arrest follows intelligence reportedly provided by La Mayiza operatives.",
+        "sources": [
+          { "name": "Secretaría de Seguridad (SSPC)", "tier": 1 },
+          { "name": "Reforma", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "era": "La Mayiza Ascendant — Mar–Aug 2025",
+    "events": [
+      {
+        "id": "potrerillos-body-hanging",
+        "year": "Mar 3, 2025",
+        "title": "Body Found Hanging from Arches in Potrerillos del Norote",
+        "type": "assassination",
+        "detail": "A body is discovered hanging from arches in Potrerillos del Norote, a town in central Sinaloa, with a narco-message attached. The display is emblematic of the psychological warfare tactics employed by both factions throughout the conflict. Throughout early 2025, public displays of bodies with faction markings occur regularly across multiple Sinaloa municipalities.",
+        "sources": [
+          { "name": "Riodoce", "tier": 2 },
+          { "name": "Noroeste", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "sierra-madre-mayiza-takeover",
+        "year": "May 19, 2025",
+        "title": "La Mayiza Takes Control of Sierra Madre Mountain Communities",
+        "type": "clash",
+        "detail": "La Mayiza reports taking control of key mountain communities including Surutato, Los Sitios, La Apoma, and surrounding ranches in the Sierra Madre Occidental. The high-altitude sierra region is vital for drug cultivation, clandestine labs, and as a refuge for cartel leadership. At least 50 rural mountain communities have been largely abandoned by their civilian populations during the conflict.",
+        "sources": [
+          { "name": "InSight Crime", "tier": 3, "url": "https://insightcrime.org/investigations/in-battle-for-sierra-madre-old-allies-new-foes-displace-hundreds/" },
+          { "name": "Riodoce", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "garcia-harfuch-culiacan-june-2025",
+        "year": "Jun 14, 2025",
+        "title": "Security Secretary García Harfuch Arrives in Culiacán with 1,400 Troops",
+        "type": "clash",
+        "detail": "Security Secretary Omar García Harfuch personally travels to Culiacán and brings 1,400 additional Army soldiers with him in a high-profile show of force. Two days after his arrival, fighting erupts in the Tierra Blanca neighborhood as La Mayiza destroys a Chapitos truck with a .50-caliber anti-materiel rifle, killing at least 3 people. The incident underscores that even massive military presence cannot suppress the conflict.",
+        "sources": [
+          { "name": "Secretaría de Seguridad (SSPC)", "tier": 1 },
+          { "name": "El Universal", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "mayiza-controls-90-percent",
+        "year": "Mid-2025",
+        "title": "La Mayiza Reportedly Controls 90% of Sinaloa Territory",
+        "type": "clash",
+        "detail": "Multiple intelligence and journalistic assessments conclude that La Mayiza now controls approximately 90% of the Sinaloa territory previously held by Los Chapitos. Only portions of Culiacán city and selected mountain strongholds remain under Chapitos control. Secretary of Defense Ricardo Trevilla Trejo confirms that the Sinaloa Cartel as a whole has lost control of 30 of the 42 drug trafficking routes it once dominated.",
+        "sources": [
+          { "name": "Latin Times", "tier": 2, "url": "https://www.latintimes.com/la-mayiza-now-controls-most-sinaloa-mayito-flaco-set-lead-reconfigured-sinaloa-cartel-report-590255" },
+          { "name": "SEDENA (Mexican Defense Ministry)", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "mazatlan-murders-spike",
+        "year": "Mid-2025",
+        "title": "Mazatlán Homicides Spike 227% — Tourist Hub Engulfed",
+        "type": "clash",
+        "detail": "Mazatlán, Sinaloa's primary Pacific coast tourist city, records 95 homicides between January and September 2025 — a 227% increase over the same period in 2024. The spread of violence to the tourist hub alarms the hospitality sector and foreign governments. Hotels report significant occupancy drops. Multiple tourist-area shootings are documented as both factions fight for control of the Mazatlán plaza.",
+        "sources": [
+          { "name": "Latin Times", "tier": 2, "url": "https://www.latintimes.com/turf-wars-between-los-chapitos-la-mayiza-spread-across-sinaloa-reaching-tourist-hub-mazatlan-590826" },
+          { "name": "Noroeste", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "ovidio-guilty-plea-july-2025",
+        "year": "Jul 2025",
+        "title": "Ovidio Guzmán Pleads Guilty in Chicago, Agrees to Cooperate",
+        "type": "arrest",
+        "detail": "Ovidio Guzmán López — El Chapo's son previously arrested in Mexico and extradited to the US — pleads guilty to drug conspiracy charges in Chicago federal court and agrees to cooperate with federal authorities. His cooperation agreement potentially exposes Chapitos operations, supply chains, and bribery networks. The plea creates profound distrust within Chapitos ranks, as operatives fear betrayal and exposure.",
+        "sources": [
+          { "name": "DOJ", "tier": 1 },
+          { "name": "Reuters", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "mayo-guilty-plea-august-2025",
+        "year": "Aug 25, 2025",
+        "title": "El Mayo Pleads Guilty in Brooklyn Court",
+        "type": "arrest",
+        "detail": "Ismael 'El Mayo' Zambada García formally pleads guilty in Brooklyn federal court to racketeering conspiracy and continuing criminal enterprise charges. He acknowledges the Sinaloa Cartel's cocaine procurement networks in Colombia, drug importation infrastructure into the United States, and the organization's decades-long criminal operations. The plea represents the formal legal conclusion of the career of one of the world's most powerful drug traffickers — a man who had never been arrested until July 2024.",
+        "sources": [
+          { "name": "DOJ / EDNY", "tier": 1 },
+          { "name": "Al Jazeera", "tier": 2, "url": "https://www.aljazeera.com/news/2025/8/25/once-elusive-mexican-drug-kingpin-el-mayo-zambada-pleads-guilty-in-us" }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "dea-historic-fentanyl-seizure",
+        "year": "May 2025",
+        "title": "DEA Albuquerque Seizes 2.7 Million Pills — Largest Ever",
+        "type": "seizure",
+        "detail": "The DEA's Albuquerque division seizes 2.7 million fentanyl pills in a single operation — the largest single seizure of fentanyl pills in DEA history. The bust, tracing supply chains disrupted by the Sinaloa cartel war, underscores how the intra-cartel conflict is affecting drug flows into the American Southwest. Between January and July 2025, DEA seizes approximately 44 million fentanyl pills, 4,500 lbs of fentanyl powder, and 65,000 lbs of methamphetamine nationally.",
+        "sources": [
+          { "name": "DOJ", "tier": 1, "url": "https://www.justice.gov/opa/pr/largest-fentanyl-bust-dea-history-authorities-seize-over-400-kilograms-fentanyl-record" },
+          { "name": "DEA", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "era": "Endgame — Sep 2025–Mar 2026",
+    "events": [
+      {
+        "id": "chukys-alliance-mayiza",
+        "year": "Late 2025",
+        "title": "La Mayiza Negotiates Support Pact with Los Chukys",
+        "type": "clash",
+        "detail": "La Mayiza reportedly concludes a support pact with Los Chukys — a Northeast Cartel-affiliated Los Zetas offshoot with approximately 200 operatives active in Sinaloa border regions. The alliance expands La Mayiza's operational capacity and marks a significant shift as traditionally Zetas-affiliated groups align with the Zambada wing. The agreement underscores how the Sinaloa conflict is reshaping Mexican organized crime more broadly.",
+        "sources": [
+          { "name": "InSight Crime", "tier": 3 },
+          { "name": "Borderland Beat", "tier": 3 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "lindoro-navidad-arrested-dec-2025",
+        "year": "Dec 23, 2025",
+        "title": "Iván Archivaldo's Brother-in-Law and Financial Operators Arrested",
+        "type": "arrest",
+        "detail": "Coordinated raids in Zapopan, Jalisco result in the arrest of Mario Alfredo Lindoro Navidad ('El 7') — Iván Archivaldo Guzmán's brother-in-law and financial operator — along with Mario Lindoro Elenes ('El Niño'), his father-in-law. Both are key nodes in the Chapitos' money laundering and financial management networks. The arrests on Christmas Eve represent another blow to the Chapitos' leadership infrastructure.",
+        "sources": [
+          { "name": "Secretaría de Seguridad (SSPC)", "tier": 1 },
+          { "name": "Reforma", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "dea-operation-august-2025",
+        "year": "Aug 25, 2025",
+        "title": "DEA Mass Operation: 617 Arrested, Half-Ton of Fentanyl Seized",
+        "type": "arrest",
+        "detail": "A coordinated DEA operation spanning 23 field divisions arrests 617 people and seizes 480 kg of fentanyl powder, 714,707 counterfeit pills, 2,209 kg of methamphetamine, 7,469 kg of cocaine, 420 firearms, and approximately $13 million in currency and assets. The operation targets Sinaloa Cartel supply chains disrupted by the intra-cartel war. It represents one of the largest single-day anti-cartel enforcement actions in US history.",
+        "sources": [
+          { "name": "CBS News", "tier": 2, "url": "https://www.cbsnews.com/news/raids-sinaloa-drug-cartel-600-arrested-dea/" },
+          { "name": "DOJ", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "el-pato-arrested-oct-2025",
+        "year": "Oct 2025",
+        "title": "Plaza Boss El Pato Arrested in Juárez ODNI Operation",
+        "type": "arrest",
+        "detail": "An intelligence-led operation coordinated by the Office of the Director of National Intelligence (ODNI) leads to the arrest of Leonardo Daniel Martinez Vera, known as 'El Pato,' a Sinaloa Cartel plaza boss operating in Ciudad Juárez. The arrest reflects growing US intelligence investment in leveraging the Sinaloa civil war's intelligence opportunities to dismantle cartel command structures.",
+        "sources": [
+          { "name": "DOJ", "tier": 1 },
+          { "name": "Reuters", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "mencho-killed-february-2026",
+        "year": "Feb 2026",
+        "title": "CJNG Leader El Mencho Killed in Military Operation",
+        "type": "assassination",
+        "detail": "Mexican military forces kill Nemesio Rubén Oseguera Cervantes, known as 'El Mencho,' during an operation in Jalisco. El Mencho was the leader of the Jalisco New Generation Cartel (CJNG) and the Chapitos' key external ally in the Sinaloa civil war. His death destabilizes the Chapitos' primary source of external support and dramatically reshapes the strategic calculus in Sinaloa, potentially opening the door for a negotiated settlement between the factions.",
+        "sources": [
+          { "name": "SEDENA (Mexican Defense Ministry)", "tier": 1 },
+          { "name": "Reuters", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "navy-raid-culiacan-el-patas",
+        "year": "Mar 19, 2026",
+        "title": "Mexican Navy Raids Culiacán — 11 Killed, Plaza Boss El Patas Captured",
+        "type": "arrest",
+        "detail": "The Mexican Navy conducts a major raid in Culiacán targeting Sinaloa Cartel leadership. Eleven people are killed in the operation. Omar Oswaldo Torres, known as 'El Patas,' the leader of the Los Mayos faction in a key Culiacán plaza, is captured along with high-powered weapons and tactical equipment. Torres's daughter is released during the operation. The raid is one of the most significant single-day security operations in Culiacán since the war began.",
+        "sources": [
+          { "name": "Al Jazeera", "tier": 2, "url": "https://www.aljazeera.com/news/2026/3/19/mexican-military-says-11-killed-in-raid-targeting-sinaloa-cartel-leader" },
+          { "name": "Secretaría de Marina (SEMAR)", "tier": 1 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "ivan-mayito-flaco-meeting-reports",
+        "year": "Mar 2026",
+        "title": "Unconfirmed Reports: Iván Archivaldo and Mayito Flaco May Have Met",
+        "type": "clash",
+        "detail": "Borderland Beat reports — unconfirmed — that Iván Archivaldo Guzmán and Ismael 'Mayito Flaco' Zambada Sicairos may have held a meeting, possibly to explore ending hostilities. Context is crucial: El Mencho's February 2026 death removed the Chapitos' primary external ally, while Ovidio Guzmán's cooperation agreement and multiple financial operator arrests have left the Chapitos severely weakened. Security analysts note that both sides have economic and personal incentives to end a war that has devastated their own operations.",
+        "sources": [
+          { "name": "Borderland Beat", "tier": 3, "url": "https://www.borderlandbeat.com/2026/03/ismael-zambada-sicairos-and-ivan.html" },
+          { "name": "InSight Crime", "tier": 3 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "2400-total-dead-sinaloa",
+        "year": "Mar 2026",
+        "title": "2,400+ Total Killed in Sinaloa Since September 2024",
+        "type": "clash",
+        "detail": "Noroeste, the leading Sinaloa newspaper, tallies more than 2,400 killings across Sinaloa since September 9, 2024 — the day La Mayiza launched its opening offensive. The figure combines official homicide data with Noroeste's own journalistic count. Average daily homicide rate peaked at 5.4 per day during the worst periods. The total is on pace to approach or surpass the 2008–2011 Sinaloa Cartel war, which killed nearly 10,000 people at its conclusion.",
+        "sources": [
+          { "name": "Noroeste", "tier": 2 },
+          { "name": "ACLED", "tier": 3, "url": "https://acleddata.com/report/how-sinaloa-cartel-rift-redrawing-mexicos-criminal-map" }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      },
+      {
+        "id": "sinaloa-trafficking-routes-lost",
+        "year": "Mar 2026",
+        "title": "Sinaloa Cartel Loses Control of 30 of 42 Trafficking Routes",
+        "type": "seizure",
+        "detail": "Mexico's Secretary of Defense Ricardo Trevilla Trejo confirms publicly that the Sinaloa Cartel has lost control of 30 out of 42 drug trafficking routes it once dominated in Mexico. The unprecedented loss reflects both the devastating impact of the intra-cartel civil war on organizational capacity and the Mexican military's aggressive interdiction campaign. Rival cartels including CJNG have moved to fill the void in some corridors.",
+        "sources": [
+          { "name": "SEDENA (Mexican Defense Ministry)", "tier": 1 },
+          { "name": "El Universal", "tier": 2 }
+        ],
+        "lastUpdated": "2026-03-20T00:00:00Z"
+      }
+    ]
+  }
+]

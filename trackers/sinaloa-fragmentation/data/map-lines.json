@@ -1,1 +1,212 @@
-[]
+[
+  {
+    "id": "mayo-kidnap-flight-culiacan-elpaso",
+    "from": [-107.394, 24.800],
+    "to": [-106.700, 31.800],
+    "cat": "clash",
+    "label": "El Mayo's Extradition Flight — Culiacán to El Paso (Jul 25, 2024)",
+    "date": "2024-07-25",
+    "notes": "Ismael 'El Mayo' Zambada sedated and flown from Huertos del Pedregal ranch near Culiacán to a private airfield near Santa Teresa, New Mexico (near El Paso) where DEA agents took custody.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mayiza-offensive-sept9-culiacan",
+    "from": [-108.990, 25.790],
+    "to": [-107.394, 24.800],
+    "cat": "mayos",
+    "label": "La Mayiza Opening Strike — Los Mochis to Culiacán (Sep 9, 2024)",
+    "date": "2024-09-09",
+    "notes": "Synchronized La Mayiza strikes launched from northern strongholds against Chapitos positions in Culiacán. Field commander El Comanche coordinated attacks along this corridor.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "chapitos-hwy15-north-control",
+    "from": [-107.394, 24.800],
+    "to": [-108.280, 26.710],
+    "cat": "chapitos",
+    "label": "Chapitos Highway 15 North — Culiacán to Choix",
+    "date": "2024-09-15",
+    "notes": "Los Chapitos' claimed control corridor along Highway 15 northbound from Culiacán through El Fuerte to the Chihuahua border. Armed checkpoints documented throughout this route.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "cjng-incursion-durango-sinaloa",
+    "from": [-104.660, 24.020],
+    "to": [-106.970, 24.950],
+    "cat": "clash",
+    "label": "CJNG Incursion — Durango to Sinaloa Border (Early 2025)",
+    "date": "2025-01-15",
+    "notes": "CJNG gunmen deployed from Durango into the Sinaloa-Durango border zone to support Los Chapitos. Hundreds of CJNG fighters moved along this mountain corridor to engage La Mayiza-affiliated groups.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "fentanyl-route-culiacan-sonora-border",
+    "from": [-107.394, 24.800],
+    "to": [-109.900, 30.500],
+    "cat": "chapitos",
+    "label": "Chapitos Fentanyl Route — Culiacán to Sonora Border",
+    "date": "2024-10-01",
+    "notes": "Primary northbound trafficking route for Chapitos-processed fentanyl from Culiacán production facilities toward the US border crossings in Sonora. The Chapitos imposed licensing requirements on independent fentanyl producers in 2024.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mayiza-southern-corridor-mazatlan",
+    "from": [-108.990, 25.790],
+    "to": [-106.421, 23.231],
+    "cat": "mayos",
+    "label": "La Mayiza Pacific Corridor — Los Mochis to Mazatlán",
+    "date": "2024-10-01",
+    "notes": "La Mayiza's primary Pacific coast control corridor linking northern strongholds to southern Sinaloa. The faction moved to contest Mazatlán's lucrative criminal plaza throughout 2025, driving a 227% homicide increase.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "military-reinforcement-sinaloa",
+    "from": [-99.133, 19.433],
+    "to": [-107.394, 24.800],
+    "cat": "clash",
+    "label": "Military Reinforcement — Mexico City to Culiacán",
+    "date": "2024-10-02",
+    "notes": "Route of Army reinforcements sent by President Sheinbaum after taking office. Ultimately 11,000–14,000 soldiers were deployed to Sinaloa and surrounding states. Security Secretary García Harfuch personally traveled to Culiacán in June 2025.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "sierra-madre-chapitos-retreat",
+    "from": [-107.394, 24.800],
+    "to": [-107.570, 25.370],
+    "cat": "chapitos",
+    "label": "Chapitos Retreat to Sierra — Culiacán to Badiraguato",
+    "date": "2025-03-01",
+    "notes": "As La Mayiza gained the upper hand in Culiacán, Los Chapitos regrouped and moved fighters up into Badiraguato and the Sierra Madre strongholds historically associated with El Chapo's family.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "displaced-populations-culiacan-flight",
+    "from": [-107.570, 25.370],
+    "to": [-107.394, 24.800],
+    "cat": "clash",
+    "label": "Displacement Flow — Badiraguato to Culiacán",
+    "date": "2024-09-16",
+    "notes": "Route taken by thousands of displaced rural families fleeing violence in Badiraguato, Concordia, Cosalá and other sierra municipalities. Most headed to Culiacán or Mazatlán seeking safety.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "displaced-concordia-to-mazatlan",
+    "from": [-106.070, 23.280],
+    "to": [-106.421, 23.231],
+    "cat": "clash",
+    "label": "Displacement — Concordia to Mazatlán",
+    "date": "2024-09-15",
+    "notes": "Route taken by approximately 180–200 El Palmito residents and hundreds more from Concordia municipality. Mazatlán absorbed most displaced persons from southern Sinaloa, straining city social services.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mayiza-sierra-madre-advance",
+    "from": [-107.394, 24.800],
+    "to": [-107.400, 25.650],
+    "cat": "mayos",
+    "label": "La Mayiza Sierra Advance — May 2025",
+    "date": "2025-05-19",
+    "notes": "La Mayiza's advance through the Sierra Madre Occidental in May 2025, capturing communities including Surutato, Los Sitios, and La Apoma. This effectively eliminated the last Chapitos mountain strongholds.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "chapitos-mazatlan-corridor",
+    "from": [-107.394, 24.800],
+    "to": [-106.421, 23.231],
+    "cat": "chapitos",
+    "label": "Chapitos Mazatlán Supply Route",
+    "date": "2024-09-20",
+    "notes": "Chapitos-controlled corridor from Culiacán south to Mazatlán. La Mayiza's contest of this route contributed to the dramatic increase in Mazatlán violence during 2025.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "fentanyl-route-independent-sonora",
+    "from": [-108.990, 25.790],
+    "to": [-110.850, 29.100],
+    "cat": "mayos",
+    "label": "Displaced Producers Route — Los Mochis to Sonora",
+    "date": "2024-11-01",
+    "notes": "Route taken by independent fentanyl producers pushed out of Sinaloa after the Chapitos imposed licensing requirements in late 2024. Producers relocated to Sonora and Baja California to work with semi-independent Sinaloa-affiliated groups closer to the US border.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "chapo-isidro-guasave-culiacan",
+    "from": [-108.460, 25.560],
+    "to": [-107.394, 24.800],
+    "cat": "mayos",
+    "label": "Chapo Isidro Forces — Guasave to Culiacán",
+    "date": "2024-10-01",
+    "notes": "Deployment corridor for Fausto 'Chapo Isidro' Meza Flores and his Vitache Special Forces moving south from Guasave territory to reinforce La Mayiza positions in the Culiacán battle zone.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pacific-maritime-drug-route",
+    "from": [-109.046, 25.599],
+    "to": [-106.433, 23.198],
+    "cat": "mayos",
+    "label": "Pacific Maritime Corridor — Topolobampo to Mazatlán",
+    "date": "2024-09-01",
+    "notes": "Pacific maritime drug export route linking Topolobampo deep-water port (near Los Mochis) to Mazatlán port. Used by La Mayiza for bulk drug exports to Asian and Latin American markets.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "golden-triangle-culiacan-supply",
+    "from": [-107.400, 25.650],
+    "to": [-107.394, 24.800],
+    "cat": "clash",
+    "label": "Golden Triangle Supply Route — Sierra to Culiacán",
+    "date": "2024-09-01",
+    "notes": "Traditional route moving drugs produced in the Golden Triangle (Sinaloa-Chihuahua-Durango sierra) down to Culiacán processing and distribution centers. Contested throughout the civil war.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "military-navy-raid-march-2026",
+    "from": [-107.447, 24.757],
+    "to": [-107.408, 24.807],
+    "cat": "clash",
+    "label": "Navy Raid — SEMAR Base to El Patas Capture Site (Mar 19, 2026)",
+    "date": "2026-03-19",
+    "notes": "Route of Mexican Navy forces from the Culiacán naval base to the location where plaza boss El Patas was captured. 11 killed in the operation. Short but decisive urban operation demonstrating SEMAR's intelligence-driven capability.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "joaquin-guzman-lopez-surrender-route",
+    "from": [-107.394, 24.800],
+    "to": [-106.700, 31.800],
+    "cat": "chapitos",
+    "label": "Joaquín Guzmán López's Voluntary Surrender Flight (Jul 25, 2024)",
+    "date": "2024-07-25",
+    "notes": "Route of Joaquín Guzmán López's flight from Culiacán area to El Paso where he surrendered voluntarily to US authorities alongside the kidnapped El Mayo. His cooperation with US prosecutors pre-dated the event.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "dea-enforcement-ring-culiacan",
+    "from": [-107.394, 24.800],
+    "to": [-104.916, 38.833],
+    "cat": "clash",
+    "label": "DEA Enforcement Arc — Culiacán to US Operations",
+    "date": "2025-08-25",
+    "notes": "Conceptual arc representing the DEA's coordinated August 2025 operation spanning 23 US field divisions targeting Sinaloa Cartel supply chains. 617 arrested, half-ton of fentanyl seized.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ovidio-extradition-guadalajara-chicago",
+    "from": [-103.352, 20.666],
+    "to": [-107.394, 24.800],
+    "cat": "chapitos",
+    "label": "Ovidio Guzmán Extradition — Guadalajara to Chicago",
+    "date": "2023-04-01",
+    "notes": "Ovidio Guzmán López was extradited from Mexico to Chicago where he pleaded guilty to drug conspiracy charges in July 2025 and agreed to cooperate. His cooperation agreement undermines Chapitos leadership cohesion.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mayiza-concordia-elota-advance",
+    "from": [-108.990, 25.790],
+    "to": [-106.070, 23.280],
+    "cat": "mayos",
+    "label": "La Mayiza Southern Sweep — Los Mochis to Concordia",
+    "date": "2025-02-01",
+    "notes": "La Mayiza's territorial consolidation drive along the Pacific slopes from northern Sinaloa through Elota, San Ignacio, and into Concordia. This advance pushed Chapitos forces back to mountain strongholds.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]
