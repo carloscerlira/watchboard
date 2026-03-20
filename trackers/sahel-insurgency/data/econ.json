@@ -1,1 +1,90 @@
-[]
+[
+  {
+    "id": "burkina-faso-defense-budget",
+    "label": "Burkina Faso Defense Budget",
+    "value": "$813M (3.9% GDP)",
+    "change": "+74%",
+    "direction": "up",
+    "sparkData": [200, 250, 310, 380, 467, 813],
+    "color": "red",
+    "source": "World Bank / OECD 2023",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "sahel-displaced-persons",
+    "label": "Displaced Persons — Sahel Region",
+    "value": "3.5M+",
+    "change": "+600%",
+    "direction": "up",
+    "sparkData": [500000, 700000, 1200000, 2000000, 2800000, 3500000],
+    "color": "red",
+    "source": "UNHCR Sahel Crisis Situation Report 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mali-gdp-growth",
+    "label": "Mali Real GDP Growth",
+    "value": "3.7% (proj.)",
+    "change": "+0.2pts",
+    "direction": "up",
+    "sparkData": [4.8, 5.1, 4.7, 3.5, 3.5, 3.7],
+    "color": "amber",
+    "source": "IMF / World Bank 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "burkina-faso-food-insecure",
+    "label": "Food Insecure — Burkina Faso",
+    "value": "2.7M (11.4%)",
+    "change": "+280%",
+    "direction": "up",
+    "sparkData": [700000, 900000, 1400000, 1900000, 2400000, 2700000],
+    "color": "red",
+    "source": "WFP / FSIN 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "burkina-schools-closed",
+    "label": "Schools Closed — Burkina Faso",
+    "value": "5,330+",
+    "change": "+10,560%",
+    "direction": "up",
+    "sparkData": [50, 200, 500, 1200, 3000, 5330],
+    "color": "red",
+    "source": "UNOCHA Burkina Faso 2023",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "niger-uranium-exports",
+    "label": "Niger Uranium Export Revenue",
+    "value": "Severely disrupted",
+    "change": "-45%",
+    "direction": "down",
+    "sparkData": [310, 320, 280, 250, 200, 175],
+    "color": "red",
+    "source": "OECD / Niger Ministry of Mines 2024 (est.)",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "burkina-faso-health-facilities-closed",
+    "label": "Health Facilities Closed — Burkina Faso",
+    "value": "413+ (20% of total)",
+    "change": "+850%",
+    "direction": "up",
+    "sparkData": [40, 70, 120, 200, 320, 413],
+    "color": "red",
+    "source": "UNOCHA Burkina Faso Situation 2023",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "sahel-humanitarian-funding-gap",
+    "label": "Sahel Humanitarian Funding Gap",
+    "value": "$3.8B required (2024)",
+    "change": "+22%",
+    "direction": "up",
+    "sparkData": [1800, 2100, 2500, 2900, 3100, 3800],
+    "color": "amber",
+    "source": "OCHA Financial Tracking Service 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]

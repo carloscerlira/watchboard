@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "id": "iyad-ag-ghaly",
+    "name": "Iyad Ag Ghaly",
+    "role": "Emir of JNIM (Jama'at Nusrat al-Islam wal-Muslimin); founder of Ansar Dine",
+    "avatar": "jnim",
+    "initial": "I",
+    "quote": "We will not lay down our arms until Islamic law governs all of Mali — this is a duty before God, not a negotiation.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "amadou-koufa",
+    "name": "Amadou Koufa",
+    "role": "JNIM Commander — Katiba Macina; Fulani jihadist recruiter in central Mali",
+    "avatar": "jnim",
+    "initial": "A",
+    "quote": "The Fulani of the Macina have been oppressed for too long. We are not terrorists — we are the inheritors of Sékou Amadou's revolution.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "abu-al-bara-al-sahrawi",
+    "name": "Abu al-Bara al-Sahrawi",
+    "role": "Emir — Islamic State Sahel Province (IS-Sahel); successor to Adnan al-Sahrawi (killed 2021)",
+    "avatar": "jnim",
+    "initial": "A",
+    "quote": "[Claimed in IS-Sahel media]: The crusaders and their allies will not drive us from this land. Every soldier of the apostates is a legitimate target.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "adnan-abu-walid-al-sahrawi",
+    "name": "Adnan Abu Walid al-Sahrawi",
+    "role": "Founder of ISGS/IS-Sahel Province (killed August 17, 2021 by French drone)",
+    "avatar": "jnim",
+    "initial": "A",
+    "quote": "We are Islamic State soldiers in the Great Sahara. We answer only to the Caliph and to God.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "assimi-goita",
+    "name": "Col. Assimi Goïta",
+    "role": "Interim President of Mali; leader of 2020 and 2021 coups; head of CNSP junta",
+    "avatar": "aes",
+    "initial": "A",
+    "quote": "Mali will no longer accept to be dictated to. We have the right to choose our partners and our destiny. France had nine years — now it is our turn.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ibrahim-traore",
+    "name": "Capt. Ibrahim Traoré",
+    "role": "President of Burkina Faso; leader of September 2022 coup; world's youngest head of state at time of coup (age 34)",
+    "avatar": "aes",
+    "initial": "I",
+    "quote": "We will never forget that they [France] colonized us, humiliated us, and pillaged our resources. With Russia, with our brothers, we will reclaim our sovereignty.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "abdourahamane-tchiani",
+    "name": "Gen. Abdourahamane Tchiani",
+    "role": "President of Niger (CNSP); led July 2023 coup that deposed President Bazoum",
+    "avatar": "aes",
+    "initial": "A",
+    "quote": "The National Council for the Safeguard of the Homeland has decided to put an end to the regime that you know, as a result of the continuing deterioration of the security situation.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "emmanuel-macron",
+    "name": "Emmanuel Macron",
+    "role": "President of France; authorized end of Operation Barkhane; oversaw French withdrawal from all three AES states",
+    "avatar": "france",
+    "initial": "E",
+    "quote": "We left because the de facto authorities [in Mali] preferred to work with mercenaries rather than with a sovereign allied partner. Africa can count on France — France cannot be counted out by coups.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "yevgeny-prigozhin",
+    "name": "Yevgeny Prigozhin",
+    "role": "Founder of Wagner Group (deceased — killed August 23, 2023 in plane crash); oversaw Wagner's Mali deployment from December 2021",
+    "avatar": "other",
+    "initial": "Y",
+    "quote": "We are not in Mali to drink tea. The boys are doing real work — fighting, dying, winning. Russia needs Africa and Africa needs Russia.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ibrahim-boubacar-keita",
+    "name": "Ibrahim Boubacar Keïta (IBK)",
+    "role": "President of Mali 2013–2020; ousted in August 2020 coup; died January 16, 2022",
+    "avatar": "other",
+    "initial": "I",
+    "quote": "I do not wish blood to be shed in order to keep me in power. If today, certain elements of our armed forces want this to end, do I really have a choice?",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "roch-kabore",
+    "name": "Roch Marc Christian Kaboré",
+    "role": "President of Burkina Faso 2015–2022; ousted in January 2022 coup amid surging jihadist violence",
+    "avatar": "other",
+    "initial": "R",
+    "quote": "We are facing a new form of terrorism that respects no borders. Burkina Faso alone cannot address this challenge — regional and international solidarity is essential.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mohamed-bazoum",
+    "name": "Mohamed Bazoum",
+    "role": "President of Niger 2021–2023; detained since July 26, 2023 coup; remains in custody as of 2026",
+    "avatar": "other",
+    "initial": "M",
+    "quote": "What is happening [the coup] is totally unacceptable. The gains made for the reinforcement of our democracy will be safeguarded. I count on Nigeriens, on friends of democracy, to stand by my side.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "el-ghassim-wane",
+    "name": "El-Ghassim Wane",
+    "role": "Special Representative of the UN Secretary-General for Mali; head of MINUSMA 2021–2023",
+    "avatar": "un",
+    "initial": "E",
+    "quote": "MINUSMA has consistently sought to protect civilians and support Mali's peace process despite enormous constraints. The mission's departure does not mean the UN abandons the Malian people.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "antonio-guterres",
+    "name": "António Guterres",
+    "role": "UN Secretary-General; repeatedly called for renewed diplomatic engagement in the Sahel",
+    "avatar": "un",
+    "initial": "A",
+    "quote": "The Sahel is in flames. Terrorist groups and armed actors are exploiting governance failures, poverty, and climate change. No military response alone will solve this — we need political solutions.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "moussa-faki-mahamat",
+    "name": "Moussa Faki Mahamat",
+    "role": "Chairperson of the African Union Commission 2017–2025; key AU voice on Sahel coups",
+    "avatar": "un",
+    "initial": "M",
+    "quote": "The African Union categorically rejects unconstitutional changes of government in all circumstances. Peace, security, and democracy are inseparable in Africa's development agenda.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "amadou-sanogo",
+    "name": "Capt. Amadou Haya Sanogo",
+    "role": "Leader of March 2012 Mali coup (CNSP); handed over to transitional government; later arrested for crimes related to the 2012 coup",
+    "avatar": "other",
+    "initial": "A",
+    "quote": "The army has decided to assume its responsibilities before history. We promise a return to democratic civilian rule as soon as conditions allow.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "paul-henri-damiba",
+    "name": "Lt. Col. Paul-Henri Sandaogo Damiba",
+    "role": "President of Burkina Faso January–September 2022; led first 2022 coup; himself ousted in second 2022 coup by Traoré",
+    "avatar": "other",
+    "initial": "P",
+    "quote": "I assumed power to save Burkina Faso from the jihadist threat. I did not come for personal power — I came to serve. My departure is a sacrifice for national unity.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "faure-gnassingbe",
+    "name": "Faure Gnassingbé",
+    "role": "President of Togo; key regional mediator and interlocutor between AES states and ECOWAS",
+    "avatar": "other",
+    "initial": "F",
+    "quote": "We must keep the door of dialogue open. The people of the Sahel are our brothers and sisters — their suffering concerns all of us. There is no military solution without political dialogue.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "karim-khan",
+    "name": "Karim Khan",
+    "role": "ICC Prosecutor; called for investigation into Sahel atrocities including Mali and Burkina Faso",
+    "avatar": "un",
+    "initial": "K",
+    "quote": "Alleged crimes committed in Mali — against civilians, against cultural heritage, against humanity — fall squarely within the ICC's mandate. There will be no impunity for mass atrocities in the Sahel.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mahamadou-issoufou",
+    "name": "Mahamadou Issoufou",
+    "role": "Former President of Niger 2011–2021; key Western partner on Sahel security; predecessor to Bazoum",
+    "avatar": "other",
+    "initial": "M",
+    "quote": "The Sahel needs two things above all: development and security. Without development there is no security; without security there is no development. The world must not abandon us.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]

@@ -1,1 +1,302 @@
-[]
+[
+  {
+    "id": "serval-advance-konna-gao",
+    "from": [-8.00, 12.65],
+    "to": [-0.04, 16.27],
+    "cat": "un-peacekeeping",
+    "label": "Operation Serval — Barkhane Axis (Bamako → Gao)",
+    "date": "2013-01-11",
+    "notes": "French Serval advance northward from Bamako through Sévaré and Gao; main French counter-offensive axis Jan–Feb 2013.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "serval-advance-konna-timbuktu",
+    "from": [-8.00, 12.65],
+    "to": [-3.01, 16.77],
+    "cat": "un-peacekeeping",
+    "label": "Operation Serval — Western Axis (Bamako → Timbuktu)",
+    "date": "2013-01-27",
+    "notes": "French Serval advance along the western axis through Niono and Léré toward Timbuktu; city liberated January 27, 2013.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "serval-kidal-advance",
+    "from": [-0.04, 16.27],
+    "to": [1.41, 18.44],
+    "cat": "un-peacekeeping",
+    "label": "Operation Serval — Gao to Kidal Advance",
+    "date": "2013-01-30",
+    "notes": "French special forces advance from Gao to secure Kidal on January 30, 2013. Chadian forces reinforced the position.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jihadist-advance-konna-2013",
+    "from": [-0.04, 16.27],
+    "to": [-3.88, 14.97],
+    "cat": "jnim",
+    "label": "Jihadist Advance — Gao to Konna (Jan 2013)",
+    "date": "2013-01-10",
+    "notes": "AQIM/Ansar Dine/MUJAO advance from Gao southward to Konna on January 10, 2013 — the move that triggered French intervention.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jihadist-advance-diabaly-2013",
+    "from": [-0.04, 16.27],
+    "to": [-5.77, 14.18],
+    "cat": "jnim",
+    "label": "Jihadist Second Axis — Gao to Diabaly (Jan 2013)",
+    "date": "2013-01-14",
+    "notes": "MUJAO second axis of advance capturing Diabaly on January 14, 2013, threatening the Ségou-Bamako corridor before French airstrikes halted the advance.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jnim-timbuktu-blockade",
+    "from": [-4.20, 14.49],
+    "to": [-3.01, 16.77],
+    "cat": "jnim",
+    "label": "JNIM Timbuktu Blockade Corridor",
+    "date": "2023-06-01",
+    "notes": "JNIM supply-interdiction corridor from Mopti Region northward along the Niger River, cutting road access to Timbuktu since 2023.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jnim-katiba-macina-spread",
+    "from": [-4.93, 14.36],
+    "to": [-6.27, 13.45],
+    "cat": "jnim",
+    "label": "Katiba Macina Expansion — Mopti to Ségou",
+    "date": "2017-01-01",
+    "notes": "Katiba Macina expansion corridor from its Mopti heartland westward into Ségou Region 2015–2019, exploiting Fulani communal grievances.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jnim-western-expansion-senegal-border",
+    "from": [-6.27, 13.45],
+    "to": [-9.59, 15.23],
+    "cat": "jnim",
+    "label": "JNIM Western Expansion — Ségou to Kayes (→ Senegal)",
+    "date": "2023-01-01",
+    "notes": "JNIM westward expansion from Ségou through Kayes Region toward Mauritania and Senegal borders 2023–2025; multiple attacks on gendarmerie posts.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "isgs-expansion-liptako",
+    "from": [2.40, 15.92],
+    "to": [0.80, 14.80],
+    "cat": "isgs",
+    "label": "ISGS Expansion into Liptako-Gourma Tri-Border Zone",
+    "date": "2017-01-01",
+    "notes": "ISGS expansion from Ménaka base southward into the Liptako-Gourma tri-border zone 2017–2020, establishing the 'triangle of death'.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "isgs-expansion-burkina-north",
+    "from": [0.80, 14.80],
+    "to": [0.03, 14.03],
+    "cat": "isgs",
+    "label": "IS-Sahel Expansion into Northern Burkina Faso",
+    "date": "2019-01-01",
+    "notes": "IS-Sahel Province expansion southward from the tri-border zone into Burkina Faso's Sahel Region (Dori, Djibo corridor) from 2019.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "isgs-expansion-north-niger",
+    "from": [2.40, 15.92],
+    "to": [2.95, 14.95],
+    "cat": "isgs",
+    "label": "IS-Sahel Attacks in Tillabéri (Niger)",
+    "date": "2017-10-04",
+    "notes": "ISGS/IS-Sahel attack corridor from Ménaka eastward into Niger's Tillabéri Region; multiple major base attacks including Tongo Tongo (2017) and Inates (2019).",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "wagner-deployment-mali",
+    "from": [-8.00, 12.65],
+    "to": [-4.20, 14.49],
+    "cat": "wagner",
+    "label": "Wagner/Africa Corps Deployment — Bamako to Mopti",
+    "date": "2021-12-01",
+    "notes": "Initial Wagner Group deployment from Bamako to Mopti Region in December 2021, the first operational zone after arrival.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "wagner-deployment-gao",
+    "from": [-4.20, 14.49],
+    "to": [-0.04, 16.27],
+    "cat": "wagner",
+    "label": "Wagner/Africa Corps Northward — Mopti to Gao",
+    "date": "2022-03-01",
+    "notes": "Wagner Group extending operations northward from Mopti to Gao from early 2022, taking over former French Barkhane operational zones.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "wagner-kidal-offensive",
+    "from": [-0.04, 16.27],
+    "to": [1.41, 18.44],
+    "cat": "wagner",
+    "label": "FAMa/Africa Corps Kidal Offensive Column (Oct–Nov 2023)",
+    "date": "2023-10-02",
+    "notes": "FAMa-Wagner column of ~115 vehicles departing Gao October 2, 2023 and advancing to Kidal, capturing the city November 14, 2023.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "wagner-deployment-timbuktu",
+    "from": [-0.04, 16.27],
+    "to": [-3.01, 16.77],
+    "cat": "wagner",
+    "label": "Africa Corps Deployment — Gao to Timbuktu",
+    "date": "2022-06-01",
+    "notes": "Africa Corps deployment to Timbuktu airbase after Barkhane withdrawal from Mali. Russian personnel base struck by JNIM June 2, 2025.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jnim-attack-kati-garrison",
+    "from": [-4.20, 14.49],
+    "to": [-8.07, 12.75],
+    "cat": "jnim",
+    "label": "JNIM Attack Axis — Mopti to Kati (Sept 2024)",
+    "date": "2024-09-17",
+    "notes": "JNIM attack column approach route toward Kati garrison near Bamako, September 17, 2024 — first direct attack on the capital area in the conflict.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "barkhane-retreat-mali-niger",
+    "from": [-0.04, 16.27],
+    "to": [2.11, 13.51],
+    "cat": "un-peacekeeping",
+    "label": "Operation Barkhane Withdrawal — Gao to Niamey (Aug 2022)",
+    "date": "2022-08-15",
+    "notes": "Last French Barkhane soldiers cross from Mali into Niger on August 15, 2022, following expulsion by the Malian junta.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jnim-boulkessi-attack-route",
+    "from": [-4.20, 14.49],
+    "to": [-3.30, 14.90],
+    "cat": "jnim",
+    "label": "JNIM Attack — Boulkessi Base (Jun 2025)",
+    "date": "2025-06-01",
+    "notes": "JNIM assault route toward Boulkessi military base near the Mali-Burkina Faso border, June 1, 2025; 60+ killed, 220 taken hostage.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jnim-timbuktu-june-2025",
+    "from": [-4.20, 14.49],
+    "to": [-3.01, 16.77],
+    "cat": "jnim",
+    "label": "JNIM Coordinated Assault — Timbuktu (Jun 2025)",
+    "date": "2025-06-02",
+    "notes": "JNIM multi-point coordinated assault on Timbuktu including the Russian Africa Corps airbase, June 2, 2025; 60+ FAMa killed.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mnla-advance-jan-2012",
+    "from": [1.41, 18.44],
+    "to": [0.97, 19.47],
+    "cat": "jnim",
+    "label": "MNLA Advance — Kidal to Aguelhok (Jan 2012)",
+    "date": "2012-01-17",
+    "notes": "MNLA initial offensive axis capturing Aguelhok January 17–24, 2012; site of massacre of ~82 Malian soldiers.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mnla-advance-gao-kidal",
+    "from": [1.41, 18.44],
+    "to": [-0.04, 16.27],
+    "cat": "jnim",
+    "label": "Rebel Sweep — Kidal to Gao (Mar 2012)",
+    "date": "2012-03-31",
+    "notes": "MNLA and MUJAO sweep from the Kidal-Tessalit axis southward to capture Gao on March 31, 2012, exploiting the political vacuum after the coup.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jnim-expansion-burkina-mali",
+    "from": [-4.20, 14.49],
+    "to": [-1.53, 12.37],
+    "cat": "jnim",
+    "label": "JNIM Cross-Border Expansion — Mali to Burkina Faso",
+    "date": "2016-01-01",
+    "notes": "JNIM/Katiba Macina expansion from Mopti Region southward across the Mali-Burkina Faso border 2016–2020, establishing logistics and recruitment networks in northern Burkina Faso.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jnim-expansion-burkina-niger",
+    "from": [0.03, 14.03],
+    "to": [2.11, 13.51],
+    "cat": "jnim",
+    "label": "JNIM Expansion — Burkina Faso East toward Niger",
+    "date": "2019-01-01",
+    "notes": "JNIM/IS-Sahel eastward expansion from Burkina Faso's Est Region toward Niger's Dosso and Tillabéri border areas from 2019.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jnim-southward-benin-togo",
+    "from": [0.35, 12.06],
+    "to": [1.00, 11.25],
+    "cat": "jnim",
+    "label": "JNIM Southward Expansion — Burkina to Benin/W Park",
+    "date": "2021-01-01",
+    "notes": "JNIM/IS-Sahel southward expansion from Fada N'Gourma toward the W National Park zone and Benin/Togo border areas 2021–2025.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "isgs-tongo-tongo-ambush",
+    "from": [2.40, 15.92],
+    "to": [3.32, 15.47],
+    "cat": "isgs",
+    "label": "ISGS Ambush — Ménaka to Tongo Tongo (Oct 2017)",
+    "date": "2017-10-04",
+    "notes": "ISGS attack trajectory for the October 4, 2017 ambush near Tongo Tongo, Niger that killed 4 US Special Forces.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "france-niger-withdrawal",
+    "from": [2.11, 13.51],
+    "to": [15.04, 12.11],
+    "cat": "un-peacekeeping",
+    "label": "France Withdrawal — Niamey to N'Djamena (2023)",
+    "date": "2023-12-22",
+    "notes": "France's phased withdrawal of 1,500 troops from Niger to N'Djamena, Chad following the Niger junta's expulsion demand in 2023.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "gao-tessalit-supply-line",
+    "from": [-0.04, 16.27],
+    "to": [1.00, 20.20],
+    "cat": "wagner",
+    "label": "FAMa/Africa Corps Supply Axis — Gao to Tessalit",
+    "date": "2023-11-01",
+    "notes": "FAMa and Africa Corps logistical supply line from Gao northward to Tessalit following MINUSMA withdrawal and Kidal capture.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jnim-convoy-ambush-gao-kidal",
+    "from": [-0.04, 16.27],
+    "to": [0.36, 16.96],
+    "cat": "jnim",
+    "label": "JNIM Convoy Ambush Corridor — Gao-Bourem Road",
+    "date": "2022-01-01",
+    "notes": "JNIM repeated ambush corridor on the Gao-Bourem road and surrounding areas 2022–2024; FAMa convoys regularly targeted.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "burkina-faso-jnim-corridor-north",
+    "from": [-1.53, 12.37],
+    "to": [-1.63, 14.10],
+    "cat": "jnim",
+    "label": "JNIM Siege Corridor — Ouagadougou to Djibo",
+    "date": "2022-01-01",
+    "notes": "JNIM blockade of road access from Ouagadougou northward toward Djibo, forcing the Sahel Region provincial capital to rely entirely on costly airlifts for resupply.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "burkina-kaya-dori-blockade",
+    "from": [-1.09, 13.09],
+    "to": [0.03, 14.03],
+    "cat": "jnim",
+    "label": "JNIM Blockade — Kaya to Dori Road",
+    "date": "2022-06-01",
+    "notes": "JNIM interdiction of the Kaya-Dori road — the main supply artery to Burkina Faso's Sahel Region — repeatedly ambushed from 2022, accelerating humanitarian collapse.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]

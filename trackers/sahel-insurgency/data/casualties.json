@@ -1,1 +1,167 @@
-[]
+[
+  {
+    "id": "total-conflict-deaths-2012-2024",
+    "category": "Total Conflict Deaths — Sahel (2012–2024)",
+    "killed": "100,000+",
+    "injured": "Unknown (undercounted)",
+    "source": "Africa Center for Strategic Studies / ACLED cumulative",
+    "tier": 3,
+    "contested": "heavily",
+    "note": "Includes militant Islamist group attacks, inter-communal violence, and security force operations. Africa Center reports 150,000+ deaths from militant groups across the continent; Sahel accounts for the majority.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "minusma-peacekeepers",
+    "category": "MINUSMA Peacekeepers (2013–2023)",
+    "killed": "304",
+    "injured": "~500+",
+    "source": "UN Peacekeeping — official record",
+    "tier": 1,
+    "contested": "no",
+    "note": "175 deaths by 'malicious act' (hostile fire, IEDs, ambushes); 129 by accident, illness, or other. This makes MINUSMA the deadliest UN peacekeeping mission in history. Personnel from 56 contributing countries.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "operation-serval-militants",
+    "category": "Militants Killed — Operation Serval (2013)",
+    "killed": "~625",
+    "injured": "Unknown",
+    "source": "French Ministry of Defence estimates",
+    "tier": 2,
+    "contested": "partial",
+    "note": "French military estimate for jihadist fighters killed during Operation Serval (January–July 2013). Includes airstrikes and ground combat. 7 French soldiers were killed in Serval.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "moura-massacre-2022",
+    "category": "Moura Massacre Victims (March 27–31, 2022)",
+    "killed": "500+",
+    "injured": "~58 women sexually assaulted",
+    "source": "UN OHCHR Report — May 12, 2023",
+    "tier": 1,
+    "contested": "heavily",
+    "note": "UN OHCHR: at least 500 unlawfully executed (min. figure). ~20 women and 7 children killed. 58 women/girls raped. Initial HRW figure ~300. Malian government claims only 203 'terrorists.' The worst single atrocity of the Sahel conflict.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "sahel-civilians-2023",
+    "category": "Civilian Deaths — Sahel Region (2023)",
+    "killed": "7,800+",
+    "injured": "Unknown",
+    "source": "ACLED — January–August 2023",
+    "tier": 3,
+    "contested": "partial",
+    "note": "ACLED records 7,800+ civilian deaths in security incidents across the Sahel in the first 8 months of 2023 — a record high. Includes jihadist attacks, inter-communal violence, and security force operations.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "burkina-faso-deaths-2023",
+    "category": "Conflict Deaths — Burkina Faso (2023)",
+    "killed": "6,000+",
+    "injured": "Unknown",
+    "source": "ACLED (conservative estimate) 2023",
+    "tier": 3,
+    "contested": "evolving",
+    "note": "Burkina Faso experienced record violence in 2023, with both jihadist attacks and security force reprisals against civilians. ACLED applies conservative methodology; actual toll likely higher given media restrictions.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "ogossagou-massacre-2019",
+    "category": "Ogossagou Massacre — Fulani Civilians (March 23, 2019)",
+    "killed": "~160",
+    "injured": "Unknown",
+    "source": "Human Rights Watch / MINUSMA",
+    "tier": 3,
+    "contested": "partial",
+    "note": "Dogon hunters' militia (Dan Nan Ambassagou) attack on Fulani village of Ogossagou, Mopti Region. Worst inter-communal atrocity in Mali's modern history. A second attack on February 14, 2020 killed 35 more.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "nondin-soro-massacre-2024",
+    "category": "Nondin/Soro Massacre — Civilians (February 25, 2024)",
+    "killed": "223+",
+    "injured": "Unknown",
+    "source": "Human Rights Watch / Amnesty International",
+    "tier": 3,
+    "contested": "heavily",
+    "note": "Burkina Faso military forces and VDP killed at least 223 civilians including 56 children. Junta denies. HRW and Amnesty call it a potential crime against humanity. No accountability proceedings.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jnim-attack-deaths-2024",
+    "category": "JNIM Attack Deaths (2024)",
+    "killed": "1,454",
+    "injured": "Unknown",
+    "source": "Institute for Economics and Peace — GTI 2025",
+    "tier": 3,
+    "contested": "partial",
+    "note": "46% increase over 2023. Makes JNIM one of the four deadliest terrorist organizations globally. Average 10 deaths per attack. Operations across Mali, Burkina Faso, Niger, and expanding into coastal states.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "inates-attack-2019",
+    "category": "Inates Military Base Attack — Niger (December 10, 2019)",
+    "killed": "71",
+    "injured": "~Unknown",
+    "source": "AFP / Nigerien government",
+    "tier": 2,
+    "contested": "no",
+    "note": "Deadliest single attack in Nigerien military history. ISGS pre-dawn motorcycle assault on the Inates military camp, Tillabéri Region.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "tongo-tongo-2017",
+    "category": "Tongo Tongo Ambush — US/Nigerien Forces (October 4, 2017)",
+    "killed": "8 (4 US, 4 Nigerien)",
+    "injured": "2 US, 1 Nigerien",
+    "source": "US Pentagon / DoD investigation",
+    "tier": 1,
+    "contested": "partial",
+    "note": "Largest US combat loss in Africa since Somalia 1993. ISGS ambush of US Special Forces and Nigerien soldiers near Tongo Tongo village, Tillabéri Region. Prompted congressional investigation.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "boulkessi-attack-june-2025",
+    "category": "Boulkessi Base Attack — FAMa (June 1, 2025)",
+    "killed": "60+",
+    "injured": "~220 taken hostage",
+    "source": "AFP / JNIM media claims",
+    "tier": 2,
+    "contested": "partial",
+    "note": "JNIM assault on Boulkessi military base near Mali-Burkina Faso border. Among the heaviest single-day Malian military losses. Junta has not officially confirmed full casualty figures.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "timbuktu-attack-june-2025",
+    "category": "Timbuktu Coordinated Attacks — FAMa/Russia (June 2, 2025)",
+    "killed": "60+",
+    "injured": "Unknown",
+    "source": "AFP / Le Monde",
+    "tier": 2,
+    "contested": "partial",
+    "note": "JNIM simultaneous assault on Timbuktu military base, checkpoints, and Russian Africa Corps airbase. At least 60 FAMa confirmed killed. Russian casualties not disclosed.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "french-barkhane-deaths",
+    "category": "French Military Deaths — Operations Serval and Barkhane (2013–2022)",
+    "killed": "~57",
+    "injured": "~150+",
+    "source": "French Ministry of Defence",
+    "tier": 1,
+    "contested": "no",
+    "note": "7 killed in Operation Serval (2013–2014), approximately 50 more in Barkhane (2014–2022). France considers these among the highest military casualties in post-WWII French operations.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "niger-post-coup-deaths",
+    "category": "Niger — Jihadist Fatalities Post-Coup (2023–2024)",
+    "killed": "1,655+",
+    "injured": "Unknown",
+    "source": "ACLED 2024",
+    "tier": 3,
+    "contested": "evolving",
+    "note": "Fatalities linked to Islamist militants in Niger quadrupled in the first year after the July 2023 coup, with a 61% increase in battle-related deaths. IS-Sahel and JNIM both escalated operations after US forces were expelled.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]
