@@ -1,1 +1,191 @@
-[]
+[
+  {
+    "id": "muhammad-ali-jinnah",
+    "name": "Muhammad Ali Jinnah",
+    "role": "Founder and first Governor-General of Pakistan (1947)",
+    "avatar": "pakistan",
+    "initial": "J",
+    "quote": "Pakistan not only means freedom and independence but the Muslim Ideology which has to be preserved, which has come to us as a precious gift and treasure and which, we hope others will share with us.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "jawaharlal-nehru",
+    "name": "Jawaharlal Nehru",
+    "role": "First Prime Minister of India (1947–1964)",
+    "avatar": "india",
+    "initial": "N",
+    "quote": "The man who has got blood on his hands thinks that by some hocus pocus he can wash them clean. I want you to know that the world does not forget.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "indira-gandhi",
+    "name": "Indira Gandhi",
+    "role": "Indian PM 1966–77, 1980–84. Led India in 1971 war; signed Simla Agreement",
+    "avatar": "india",
+    "initial": "I",
+    "quote": "You cannot shake hands with a clenched fist.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "zulfikar-ali-bhutto",
+    "name": "Zulfikar Ali Bhutto",
+    "role": "Pakistan PM 1973–77; signed Simla Agreement; launched nuclear program",
+    "avatar": "pakistan",
+    "initial": "B",
+    "quote": "We will eat grass, even go hungry, but we will get one of our own [an atomic bomb].",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pervez-musharraf",
+    "name": "Pervez Musharraf",
+    "role": "Pakistani President 2001–08; Army Chief 1998–2007; architect of Kargil War",
+    "avatar": "pakistan",
+    "initial": "M",
+    "quote": "I stand for a moderate, enlightened, and progressive Pakistan. I stand against extremism.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "nawaz-sharif",
+    "name": "Nawaz Sharif",
+    "role": "Pakistani PM (multiple terms): signed Lahore Declaration (1999); ousted in Musharraf coup",
+    "avatar": "pakistan",
+    "initial": "N",
+    "quote": "Today, we took a bold, determined step to make peace with India. I am committed to seeing this through.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "atal-bihari-vajpayee",
+    "name": "Atal Bihari Vajpayee",
+    "role": "Indian PM 1998–2004; Pokhran-II, Lahore Declaration, Kargil War, Agra Summit",
+    "avatar": "india",
+    "initial": "V",
+    "quote": "You can change friends but not neighbors. We must live together with our neighbors.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "narendra-modi",
+    "name": "Narendra Modi",
+    "role": "Indian PM since 2014; ordered surgical strikes (2016), Balakot (2019), revoked Art. 370 (2019), Op. Sindoor (2025)",
+    "avatar": "india",
+    "initial": "M",
+    "quote": "India will not be deterred. Our response to terrorism will be firm, precise, and decisive.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "imran-khan",
+    "name": "Imran Khan",
+    "role": "Pakistani PM 2018–2022; released Abhinandan; arrested 2023; political career under army pressure",
+    "avatar": "pakistan",
+    "initial": "K",
+    "quote": "We want to give peace a chance. The release of Wing Commander Abhinandan is a peace gesture.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "hafiz-saeed",
+    "name": "Hafiz Saeed",
+    "role": "LeT founder; 26/11 planner; convicted in Pakistan (2020) for terrorism financing",
+    "avatar": "pakistan",
+    "initial": "S",
+    "quote": "We believe in jihad and we ask every Muslim to take up jihad.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "masood-azhar",
+    "name": "Masood Azhar",
+    "role": "JeM founder; mastermind of Parliament attack (2001), Pathankot (2016), Pulwama (2019); UN-designated terrorist",
+    "avatar": "pakistan",
+    "initial": "A",
+    "quote": "We will not rest until the freedom of Kashmir is achieved.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "syed-salahuddin",
+    "name": "Syed Salahuddin",
+    "role": "Chief of Hizbul Mujahideen; most prominent Kashmiri militant commander; US-designated terrorist (2017)",
+    "avatar": "kashmir",
+    "initial": "S",
+    "quote": "We will continue our struggle until Kashmir is liberated from Indian occupation.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "manmohan-singh",
+    "name": "Manmohan Singh",
+    "role": "Indian PM 2004–2014; 26/11 crisis management; Musharraf-Manmohan 4-point Kashmir formula negotiated",
+    "avatar": "india",
+    "initial": "S",
+    "quote": "Terrorism is a global challenge that requires a global response, including from Pakistan.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "farooq-abdullah",
+    "name": "Farooq Abdullah",
+    "role": "Three-time J&K CM; National Conference leader; supports special status for J&K within India",
+    "avatar": "kashmir",
+    "initial": "A",
+    "quote": "We are Indians first. But we want our special status that Article 370 gave us restored.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "omar-abdullah",
+    "name": "Omar Abdullah",
+    "role": "J&K CM (current); National Conference leader; won 2024 J&K Assembly elections after Article 370 revocation",
+    "avatar": "kashmir",
+    "initial": "O",
+    "quote": "The people of J&K have voted for development and their rights. We expect statehood to be restored.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "asim-munir",
+    "name": "General Asim Munir",
+    "role": "Pakistan COAS since Nov 2022; former ISI chief; presided over Operation Sindoor response (May 2025)",
+    "avatar": "pakistan",
+    "initial": "M",
+    "quote": "Kashmir runs in our blood and we will not waver in our principled stand.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "antonio-guterres",
+    "name": "António Guterres",
+    "role": "UN Secretary-General; called for de-escalation after Balakot (2019) and Operation Sindoor (2025)",
+    "avatar": "un",
+    "initial": "G",
+    "quote": "I call on both India and Pakistan to exercise maximum restraint and to resume dialogue immediately.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "shehbaz-sharif",
+    "name": "Shehbaz Sharif",
+    "role": "Pakistan PM 2022–2024; PM during Operation Sindoor crisis May 2025; managed Pakistan's response",
+    "avatar": "pakistan",
+    "initial": "S",
+    "quote": "Pakistan is a peace-loving nation. We will respond to Indian aggression with full force if provoked.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "rajnath-singh",
+    "name": "Rajnath Singh",
+    "role": "Indian Defence Minister since 2019; authorized Balakot follow-up plans; oversaw Operation Sindoor",
+    "avatar": "india",
+    "initial": "R",
+    "quote": "India's armed forces have the capability and the will to protect every inch of our territory.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "a-q-khan",
+    "name": "Dr. A.Q. Khan",
+    "role": "Father of Pakistan's nuclear bomb; ran global nuclear proliferation network sold to Iran, Libya, North Korea",
+    "avatar": "pakistan",
+    "initial": "K",
+    "quote": "I saved my country from a certain catastrophe. Pakistan needed the bomb, and I gave it to them.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "wc-abhinandan-varthaman",
+    "name": "Wing Commander Abhinandan Varthaman",
+    "role": "IAF pilot; shot down over Pakistan in Feb 2019 dogfight; captured and released; became national hero",
+    "avatar": "india",
+    "initial": "A",
+    "quote": "The Pakistani Army has been very good to me. I am sorry, I'm not supposed to say that.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]

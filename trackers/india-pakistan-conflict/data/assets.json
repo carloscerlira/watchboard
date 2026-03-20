@@ -1,1 +1,86 @@
-[]
+[
+  {
+    "id": "india-mirage-2000",
+    "type": "aircraft",
+    "name": "Dassault Mirage 2000 (IAF)",
+    "detail": "India operates ~50 Mirage 2000H/TH jets, primarily configured for strike missions. The Mirage 2000 carried SPICE-2000 precision-guided munitions in the Balakot airstrike on February 26, 2019 — the first IAF strike inside Pakistan since 1971.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "india-su30mki",
+    "type": "aircraft",
+    "name": "Sukhoi Su-30 MKI (IAF)",
+    "detail": "India's most capable air superiority fighter with 270+ in service. Built under license by Hindustan Aeronautics. Can carry BrahMos supersonic cruise missiles. Pakistan claimed (unverified) to have shot down a Su-30 in the February 2019 aerial engagement.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "india-brahmos-missile",
+    "type": "missile",
+    "name": "BrahMos Supersonic Cruise Missile",
+    "detail": "World's fastest operational cruise missile (Mach 2.8–3.0), developed jointly by India and Russia. Range of 300–500 km. Can be launched from land, sea, or air (Su-30 MKI). Deployed along Indian borders; India accidentally launched one into Pakistan in March 2022, reaching 124km before crashing.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "india-agni-5-icbm",
+    "type": "missile",
+    "name": "Agni-V Ballistic Missile",
+    "detail": "India's intercontinental ballistic missile with range 5,000+ km, covering all of China and Pakistan. Carries 1–3 nuclear warheads; tested for MIRV capability. First successful test April 2012. Represents India's credible nuclear deterrent against both Pakistan and China.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "india-ins-arihant",
+    "type": "naval",
+    "name": "INS Arihant (Nuclear Submarine)",
+    "detail": "India's first ballistic missile submarine (SSBN), operationalized 2018. Carries K-15 SLBMs (750km range) and will carry K-4 (3,500km range). Completes India's nuclear triad. Enables second-strike capability survivable against Pakistani first strike. A second SSBN (Arighat) launched 2024.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pakistan-jf17-thunder",
+    "type": "aircraft",
+    "name": "JF-17 Thunder (PAF)",
+    "detail": "Pakistan's primary multi-role fighter developed jointly with China. Over 130 in service. Block III variant (2022) features AESA radar and PL-15 long-range air-to-air missiles. Lower cost than F-16; forms backbone of PAF. Used in response to Balakot airspace incursion.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pakistan-f16-fighting-falcon",
+    "type": "aircraft",
+    "name": "F-16 Fighting Falcon (PAF)",
+    "detail": "Pakistan operates ~85 F-16A/B/C/D variants, making it the largest non-NATO F-16 operator in Asia. The aircraft was at center of February 2019 dispute — India alleged PAF used F-16 (which would violate US end-user agreement) in the Balakot response engagement, citing recovered AMRAAM debris.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pakistan-shaheen-iii-missile",
+    "type": "missile",
+    "name": "Shaheen-III Ballistic Missile",
+    "detail": "Pakistan's longest-range ballistic missile (2,750 km), capable of reaching all of India including Port Blair (Andaman Islands). Nuclear-capable. Tested 2015–2021. Specifically designed to target Indian assets in Andaman & Nicobar Islands — a Pakistani counter to India's island-based strategic assets.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pakistan-nasr-tactical-nuke",
+    "type": "missile",
+    "name": "Nasr / Hatf-IX Tactical Nuclear Missile",
+    "detail": "Pakistan's short-range (60km) tactical nuclear ballistic missile system, designed to counter India's Cold Start Doctrine conventional blitzkrieg. First tested 2011. The weapon's deployment to battlefield level is considered destabilizing by Western nuclear analysts as it lowers the nuclear threshold.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "india-t90-bhishma-tank",
+    "type": "armor",
+    "name": "T-90S Bhishma Main Battle Tank (India)",
+    "detail": "India's primary battle tank with 2,000+ in service, built under Russian license. Formed the basis of India's Cold Start Doctrine — rapid armored thrusts through Pakistan's Punjab sector. India's massive tank force (over 4,200 total) gives India significant conventional advantage on flat Punjab terrain.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "india-s400-triumf",
+    "type": "air-defense",
+    "name": "S-400 Triumf Air Defense System (India)",
+    "detail": "India acquired S-400 from Russia despite US CAATSA sanctions pressure. Deliveries began 2021. The system provides long-range anti-aircraft and anti-missile coverage over large swaths of India's airspace and can potentially threaten Pakistani aircraft well within Pakistan's borders.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pakistan-al-khalid-tank",
+    "type": "armor",
+    "name": "Al-Khalid Main Battle Tank (Pakistan)",
+    "detail": "Pakistan's domestically-developed (with Chinese assistance) main battle tank. Over 300 in service. Less capable than India's T-90 and Arjun MBT in comparable engagements. Pakistan's conventional inferiority in tank numbers and quality on the Punjab plain is a key reason for its reliance on tactical nuclear weapons.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]

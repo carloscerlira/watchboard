@@ -1,1 +1,121 @@
-[]
+[
+  {
+    "id": "loc-ceasefire-violations-2024",
+    "label": "LOC Ceasefire Violations (2024)",
+    "value": "~219",
+    "color": "red",
+    "source": "Indian Army / NDTV (2024 estimates)",
+    "contested": true,
+    "contestNote": "Pakistan disputes Indian counts; independent verification impossible",
+    "trend": "up",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "nuclear-warheads-india",
+    "label": "Indian Nuclear Warheads (est.)",
+    "value": "~172",
+    "color": "red",
+    "source": "SIPRI Yearbook 2024",
+    "contested": true,
+    "contestNote": "India maintains ambiguity about exact arsenal size",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "nuclear-warheads-pakistan",
+    "label": "Pakistani Nuclear Warheads (est.)",
+    "value": "~170",
+    "color": "red",
+    "source": "SIPRI Yearbook 2024",
+    "contested": true,
+    "contestNote": "Pakistan does not officially disclose warhead count",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "kashmir-insurgency-deaths-since-1989",
+    "label": "Conflict Deaths in J&K Since 1989",
+    "value": "~47,000",
+    "color": "red",
+    "source": "South Asia Terrorism Portal (SATP)",
+    "contested": true,
+    "contestNote": "Kashmiri groups put total higher; official Indian figures focus on militancy deaths only",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "loc-length-km",
+    "label": "Line of Control Length",
+    "value": "776 km",
+    "color": "amber",
+    "source": "Indian Army / UN Military Observer Group",
+    "contested": false,
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "kargil-soldiers-killed-india",
+    "label": "Indian Soldiers Killed — Kargil War (1999)",
+    "value": "527",
+    "color": "red",
+    "source": "Indian MOD Official Record",
+    "contested": false,
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pakistan-military-budget-2024",
+    "label": "Pakistan Defense Budget FY2024",
+    "value": "$7.8B",
+    "color": "amber",
+    "source": "Pakistan Finance Ministry 2024",
+    "contested": false,
+    "trend": "up",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "india-defense-budget-2024",
+    "label": "India Defense Budget FY2024–25",
+    "value": "$75B",
+    "color": "blue",
+    "source": "Indian Union Budget 2024",
+    "contested": false,
+    "trend": "up",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "displaced-1947-partition",
+    "label": "Displaced During 1947 Partition",
+    "value": "10–20 million",
+    "color": "amber",
+    "source": "UN Archives / Encyclopaedia Britannica",
+    "contested": true,
+    "contestNote": "Estimates vary; precise figure impossible to establish",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "bilateral-trade-2023",
+    "label": "India-Pakistan Bilateral Trade (2023)",
+    "value": "~$1.2B",
+    "color": "amber",
+    "source": "World Bank / India MEA",
+    "contested": true,
+    "contestNote": "Trade continues via third countries (UAE, Singapore) despite official suspension",
+    "trend": "down",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "loc-incidents-2020",
+    "label": "LOC Violations Recorded (2020)",
+    "value": "5,133",
+    "color": "red",
+    "source": "Indian Army Annual Report 2020",
+    "contested": true,
+    "contestNote": "Pakistan denied most reported violations; 2021 ceasefire dramatically reduced these",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "siachen-elevation",
+    "label": "Siachen Glacier — Highest Battlefield",
+    "value": "6,200 m",
+    "color": "blue",
+    "source": "Indian Army / Guinness World Records",
+    "contested": false,
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]

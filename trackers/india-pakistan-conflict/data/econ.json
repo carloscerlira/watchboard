@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "id": "india-defense-spend-gdp",
+    "label": "India Defense Spending (% GDP)",
+    "value": "1.9%",
+    "change": "+0.1% vs 2022",
+    "direction": "up",
+    "sparkData": [1.5, 1.6, 1.7, 1.7, 1.8, 1.9],
+    "color": "amber",
+    "source": "SIPRI / Indian Union Budget 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pakistan-defense-spend-gdp",
+    "label": "Pakistan Defense Spending (% GDP)",
+    "value": "3.0%",
+    "change": "+0.3% vs 2022",
+    "direction": "up",
+    "sparkData": [2.5, 2.6, 2.7, 2.8, 2.8, 3.0],
+    "color": "red",
+    "source": "SIPRI / Pakistan Finance Ministry 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "india-pakistan-bilateral-trade",
+    "label": "India-Pakistan Bilateral Trade",
+    "value": "~$1.2B (2023)",
+    "change": "-85% from peak ($2.1B in 2018)",
+    "direction": "down",
+    "sparkData": [2100, 1900, 800, 600, 900, 1200],
+    "color": "red",
+    "source": "World Bank / India MEA",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pakistan-imf-debt",
+    "label": "Pakistan External Debt",
+    "value": "$125B",
+    "change": "+$20B in 5 years",
+    "direction": "up",
+    "sparkData": [85, 90, 98, 110, 120, 125],
+    "color": "red",
+    "source": "IMF / Pakistan Finance Ministry 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "india-gdp-vs-pakistan",
+    "label": "India GDP (vs Pakistan's $375B)",
+    "value": "$3.7 trillion",
+    "change": "+8.2% in FY2023–24",
+    "direction": "up",
+    "sparkData": [2000, 2200, 2600, 2700, 3100, 3700],
+    "color": "green",
+    "source": "World Bank / IMF World Economic Outlook 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "cpec-investment-total",
+    "label": "China CPEC Investment in Pakistan",
+    "value": "$65B (committed)",
+    "change": "+$10B new pledges (2023)",
+    "direction": "up",
+    "sparkData": [20, 30, 40, 50, 55, 65],
+    "color": "amber",
+    "source": "Pakistan Finance Ministry / Reuters",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "kashmir-tourism-revenue",
+    "label": "J&K Tourism Revenue (India)",
+    "value": "₹8,500 crore (~$1B)",
+    "change": "+42% vs 2022",
+    "direction": "up",
+    "sparkData": [200, 350, 500, 600, 720, 850],
+    "color": "blue",
+    "source": "J&K Tourism Department 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "india-arms-imports",
+    "label": "India Arms Imports (5-yr avg)",
+    "value": "$6.3B/year",
+    "change": "+11% 2019–2023",
+    "direction": "up",
+    "sparkData": [4.5, 5.0, 5.5, 5.8, 6.0, 6.3],
+    "color": "amber",
+    "source": "SIPRI Arms Transfer Database 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pakistan-forex-reserves",
+    "label": "Pakistan Foreign Exchange Reserves",
+    "value": "$13.4B",
+    "change": "Recovered from $3.7B low (Jan 2023)",
+    "direction": "up",
+    "sparkData": [16, 13, 8, 3.7, 8, 13.4],
+    "color": "amber",
+    "source": "State Bank of Pakistan 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "india-nuclear-budget-estimate",
+    "label": "India Nuclear Weapons Estimated Annual Cost",
+    "value": "~$2.4B/year",
+    "change": "+12% vs 2020",
+    "direction": "up",
+    "sparkData": [1.8, 1.9, 2.0, 2.1, 2.2, 2.4],
+    "color": "red",
+    "source": "Stimson Center / Nuclear Threat Initiative 2023",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]
