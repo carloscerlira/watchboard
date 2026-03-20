@@ -1,1 +1,167 @@
-[]
+[
+  {
+    "id": "us-military-killed",
+    "category": "US Military — Killed in Action",
+    "killed": "2,461",
+    "injured": "20,744+",
+    "source": "DoD Casualty Report / iCasualties.org",
+    "tier": 1,
+    "contested": "no",
+    "note": "Includes 2,459 in-theater deaths plus 2 who died from wounds later. Does not include ~1,000+ who died from suicides after returning home.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "uk-military-killed",
+    "category": "UK Military — Killed",
+    "killed": "457",
+    "injured": "2,000+",
+    "source": "UK Ministry of Defence",
+    "tier": 1,
+    "contested": "no",
+    "note": "Highest coalition death toll after the US. Majority killed in Helmand province during intense fighting 2006-2013.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "coalition-nato-killed",
+    "category": "NATO & Coalition Troops — Total Killed",
+    "killed": "3,576",
+    "injured": "~30,000",
+    "source": "iCasualties.org / NATO",
+    "tier": 1,
+    "contested": "no",
+    "note": "Includes US, UK, Canada (158), France (90), Germany (57), Italy (53), and 45 other nations. Does not include local Afghan security force casualties.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "afghan-security-forces",
+    "category": "Afghan National Security Forces — Killed (2001–2021)",
+    "killed": "~69,000",
+    "injured": "~100,000+",
+    "source": "Brown Univ. Costs of War Project 2021",
+    "tier": 3,
+    "contested": "yes",
+    "note": "Afghan government never released systematic casualty data. Includes ANDSF, Afghan National Police, and National Directorate of Security. Figure based on academic estimates from multiple sources.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "afghan-civilians-unama",
+    "category": "Afghan Civilians Killed (UNAMA, 2009–2024)",
+    "killed": "~47,000",
+    "injured": "~77,000+",
+    "source": "UNAMA Annual Reports 2009–2024",
+    "tier": 1,
+    "contested": "partial",
+    "note": "UNAMA began systematic tracking in 2009. Pre-2009 civilian casualties are not systematically documented. Total since 2001 estimated at 70,000-100,000+ by Costs of War Project.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pakistan-military-killed",
+    "category": "Pakistan Military & Police — Killed (vs Terrorism)",
+    "killed": "~8,000",
+    "injured": "~12,000+",
+    "source": "Pakistan ISPR / South Asia Terrorism Portal",
+    "tier": 2,
+    "contested": "partial",
+    "note": "Pakistan suffered heavily fighting TTP and al-Qaeda affiliate groups in FATA and KPK. Includes casualties from operations Zarb-e-Azb, Rah-e-Rast, and other major operations.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "pakistan-civilians-killed",
+    "category": "Pakistani Civilians Killed by Terrorism (2001–2024)",
+    "killed": "~75,000",
+    "injured": "~100,000+",
+    "source": "South Asia Terrorism Portal / Pakistan ISPR",
+    "tier": 2,
+    "contested": "evolving",
+    "note": "Pakistan suffered massive civilian casualties from TTP, al-Qaeda, and affiliated groups. SATP records 70,000+ terrorist and counter-terrorism related deaths 2003-2024.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "us-contractors-killed",
+    "category": "US Contractors Killed",
+    "killed": "3,917",
+    "injured": "~50,000+",
+    "source": "DoD Contractors in Afghanistan / Brown Univ. Costs of War",
+    "tier": 1,
+    "contested": "no",
+    "note": "US private contractor deaths exceeded US military deaths. Contractors provided logistics, security, training, and maintenance. Deaths underreported and less publicly discussed.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "taliban-fighters-killed",
+    "category": "Taliban / Insurgent Fighters Killed",
+    "killed": "~50,000–80,000",
+    "injured": "Unknown",
+    "source": "Various ISAF reports; academic estimates",
+    "tier": 3,
+    "contested": "heavily",
+    "note": "No reliable aggregate data. ISAF and Afghan government statistics were inflated. Academic estimates range widely. Taliban never published own casualty data. Figure contested by all sides.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "isis-k-casualties",
+    "category": "ISIS-K Fighters Killed (2015–2024)",
+    "killed": "~10,000+",
+    "injured": "Unknown",
+    "source": "CENTCOM / ACLED estimates",
+    "tier": 3,
+    "contested": "yes",
+    "note": "Combined US/NATO and Taliban operations killed thousands of ISIS-K fighters. MOAB alone claimed 94 killed; sustained Taliban counterterrorism campaign continued post-2021.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "journalists-killed",
+    "category": "Journalists Killed in Afghanistan",
+    "killed": "58",
+    "injured": "~70+",
+    "source": "Committee to Protect Journalists (CPJ)",
+    "tier": 2,
+    "contested": "no",
+    "note": "Afghanistan has been one of the world's deadliest countries for journalists. Attacks came from Taliban, ISIS-K, and unclear perpetrators. Targeted killings of journalists surged under Taliban rule.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "aid-workers-killed",
+    "category": "Humanitarian Aid Workers Killed",
+    "killed": "~400+",
+    "injured": "~500+",
+    "source": "UN OCHA / Aid Worker Security Database",
+    "tier": 1,
+    "contested": "no",
+    "note": "Afghanistan ranks among world's most dangerous countries for aid workers. MSF hospital bombing (42 killed), targeted assassinations, and IEDs all killed humanitarian workers.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "abbey-gate-bombing",
+    "category": "Abbey Gate ISIS-K Bombing (Aug 26, 2021)",
+    "killed": "183 (13 US + 170 Afghan)",
+    "injured": "~650",
+    "source": "Pentagon / UNAMA",
+    "tier": 1,
+    "contested": "no",
+    "note": "Deadliest single event for US forces in a decade. Most victims were Afghan civilians attempting evacuation. ISIS-K claimed responsibility; US conducted retaliatory strikes in Nangarhar.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "civilian-poppy-eradication",
+    "category": "Afghan Civilians Killed in Drone/Airstrike 'Signature' Strikes",
+    "killed": "~10,000+",
+    "injured": "~20,000+",
+    "source": "Bureau of Investigative Journalism / ACLED",
+    "tier": 3,
+    "contested": "heavily",
+    "note": "Total civilians killed in US-led airstrikes remains one of the war's most contested figures. Pentagon systematically undercounted. Bureau of Investigative Journalism tracked 10,000+ Afghan civilian airstrike deaths.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "aps-school-massacre",
+    "category": "Army Public School Massacre (Dec 16, 2014)",
+    "killed": "149 (132 children + 17 staff)",
+    "injured": "~121",
+    "source": "Pakistan ISPR / BBC",
+    "tier": 1,
+    "contested": "no",
+    "note": "Deadliest terrorist attack in Pakistan's history. TTP sent 6 gunmen who killed children at Peshawar military school in retaliation for military operations. Led to lifting of death penalty moratorium.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]
