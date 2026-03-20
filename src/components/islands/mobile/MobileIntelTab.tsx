@@ -8,10 +8,9 @@ interface Props {
   claims: Claim[];
   political: PolItem[];
   timeline: TimelineEra[];
-  avatarLabels?: Record<string, string>;
 }
 
-export default function MobileIntelTab({ claims, political, timeline, avatarLabels }: Props) {
+export default function MobileIntelTab({ claims, political, timeline }: Props) {
   const [activeSubTab, setActiveSubTab] = useState<IntelSubTab>('claims');
 
   return (
@@ -63,7 +62,7 @@ export default function MobileIntelTab({ claims, political, timeline, avatarLabe
         <div className="mtab-data-panel">
           {political.length > 0 ? (
             political.map(pol => {
-              const avatarLabel = avatarLabels?.[pol.avatar] ?? pol.avatar;
+              const avatarLabel = pol.avatar;
               return (
                 <div key={pol.id} className="mtab-political-card">
                   <div className="mtab-political-header">

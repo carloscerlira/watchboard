@@ -36,7 +36,6 @@ interface Props {
   retaliationData: StrikeItem[];
   assetsData: Asset[];
   militaryTabs?: any[];
-  politicalAvatars?: Record<string, string>;
   // Initial state
   initialMapMode?: '2d' | '3d';
 }
@@ -119,7 +118,6 @@ export default function MobileTabShell(props: Props) {
               claims={props.claims}
               political={props.political}
               timeline={props.timeline}
-              avatarLabels={props.politicalAvatars}
             />
           </div>
         )}
