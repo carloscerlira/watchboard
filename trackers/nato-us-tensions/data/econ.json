@@ -1,1 +1,134 @@
-[]
+[
+  {
+    "id": "nato-aggregate-spending-pct",
+    "label": "NATO Average Defense Spending (% GDP)",
+    "value": "2.71%",
+    "change": "+0.18 pp vs 2023",
+    "direction": "up",
+    "sparkData": [1.43, 1.46, 1.48, 1.51, 1.53, 1.62, 1.71, 1.82, 1.91, 2.03, 2.53, 2.71],
+    "color": "#3498db",
+    "source": "NATO Defence Expenditure Report 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "nato-total-spending-usd",
+    "label": "NATO Total Defense Spending (USD)",
+    "value": "$1,506B",
+    "change": "+$120B vs 2023",
+    "direction": "up",
+    "sparkData": [901, 936, 958, 979, 1010, 1050, 1105, 1168, 1230, 1310, 1386, 1506],
+    "color": "#3498db",
+    "source": "NATO, 2024 (current prices)",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "germany-defense-budget",
+    "label": "Germany Defense Budget (EUR)",
+    "value": "€86B",
+    "change": "+€28B vs 2021",
+    "direction": "up",
+    "sparkData": [46, 48, 52, 53, 58, 62, 68, 75, 80, 86, 108, 120],
+    "color": "#27ae60",
+    "source": "German Federal Ministry of Defence, 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "germany-defense-pct-gdp",
+    "label": "Germany Defense Spending (% GDP)",
+    "value": "2.0%",
+    "change": "+0.7 pp vs 2021",
+    "direction": "up",
+    "sparkData": [1.2, 1.2, 1.3, 1.3, 1.4, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0],
+    "color": "#27ae60",
+    "source": "NATO, 2024 (first time Germany met 2% target)",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "poland-defense-pct-gdp",
+    "label": "Poland Defense Spending (% GDP)",
+    "value": "4.12%",
+    "change": "+0.36 pp vs 2023",
+    "direction": "up",
+    "sparkData": [1.9, 2.0, 2.1, 2.1, 2.2, 2.4, 2.6, 2.9, 3.2, 3.6, 3.76, 4.12],
+    "color": "#27ae60",
+    "source": "NATO, 2024 (highest in NATO)",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "eu-rearm-europe-fund",
+    "label": "EU ReArm Europe / SAFE Defense Fund",
+    "value": "€800B",
+    "change": "Announced Mar 2025",
+    "direction": "up",
+    "sparkData": [0, 0, 13, 15, 20, 28, 35, 55, 90, 150, 450, 800],
+    "color": "#f39c12",
+    "source": "European Commission, Readiness 2030 Plan, March 2025",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "nato-members-at-2pct-count",
+    "label": "NATO Members Meeting 2% Target",
+    "value": "23 members",
+    "change": "+5 from 2024",
+    "direction": "up",
+    "sparkData": [3, 5, 5, 8, 8, 9, 10, 11, 14, 18, 18, 23],
+    "color": "#27ae60",
+    "source": "NATO, 2025 estimate (up from 3 in 2014)",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "us-share-nato-spending",
+    "label": "US Share of NATO Defense Spending",
+    "value": "~67%",
+    "change": "-3 pp vs 2020",
+    "direction": "down",
+    "sparkData": [75, 74, 73, 72, 71, 71, 70, 70, 69, 68, 68, 67],
+    "color": "#e74c3c",
+    "source": "NATO, 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "european-defense-spending-total",
+    "label": "European NATO Members Defense Spending",
+    "value": "$496B",
+    "change": "+80% vs Feb 2022",
+    "direction": "up",
+    "sparkData": [200, 210, 218, 222, 230, 248, 270, 300, 340, 390, 450, 496],
+    "color": "#3498db",
+    "source": "European Commission, SIPRI, 2024",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "germany-sondervermogen-fund",
+    "label": "Germany Special Defense Fund (Sondervermögen)",
+    "value": "€500B",
+    "change": "Constitutional reform Mar 2025",
+    "direction": "up",
+    "sparkData": [0, 0, 0, 0, 0, 0, 0, 100, 100, 100, 100, 500],
+    "color": "#f39c12",
+    "source": "Bundestag vote, Mar 21, 2025",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "eu-safe-instrument",
+    "label": "EU SAFE Defense Loans Instrument",
+    "value": "€150B",
+    "change": "Adopted May 2025",
+    "direction": "up",
+    "sparkData": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 150],
+    "color": "#f39c12",
+    "source": "EU Council, May 2025",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "uk-defense-pct-gdp",
+    "label": "UK Defense Spending (% GDP)",
+    "value": "2.3%",
+    "change": "+0.1 pp vs 2023",
+    "direction": "up",
+    "sparkData": [1.9, 2.0, 2.0, 2.1, 2.1, 2.1, 2.0, 2.1, 2.2, 2.2, 2.2, 2.3],
+    "color": "#3498db",
+    "source": "NATO, 2024; UK MoD",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]

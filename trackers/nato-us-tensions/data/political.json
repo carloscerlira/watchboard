@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "id": "trump-donald",
+    "name": "Donald Trump",
+    "role": "US President (2017–2021, 2025–present)",
+    "avatar": "us",
+    "initial": "T",
+    "quote": "I'm also going to ask all NATO nations to increase defence spending to 5% of GDP, which is what it should have been years ago.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "biden-joe",
+    "name": "Joe Biden",
+    "role": "US President (2021–2025)",
+    "avatar": "us",
+    "initial": "B",
+    "quote": "America is back. The transatlantic alliance is back. And we are not looking backward; we are looking forward, together.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "macron-emmanuel",
+    "name": "Emmanuel Macron",
+    "role": "President of France (2017–present)",
+    "avatar": "eu",
+    "initial": "M",
+    "quote": "We are experiencing the brain death of NATO. There is no coordination whatsoever of strategic decision-making between the United States and its NATO allies. None.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "stoltenberg-jens",
+    "name": "Jens Stoltenberg",
+    "role": "NATO Secretary General (2014–2024)",
+    "avatar": "nato",
+    "initial": "S",
+    "quote": "NATO is not a threat to Russia. NATO is a defensive alliance. Our strength is that we stand together. An attack on one Ally is an attack on all.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "rutte-mark",
+    "name": "Mark Rutte",
+    "role": "NATO Secretary General (2024–present)",
+    "avatar": "nato",
+    "initial": "R",
+    "quote": "If we do not invest more, our collective defence is not credible. Spending more is not about pleasing an audience of one, it is about protecting one billion people.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "von-der-leyen-ursula",
+    "name": "Ursula von der Leyen",
+    "role": "European Commission President (2019–present)",
+    "avatar": "eu",
+    "initial": "V",
+    "quote": "Let's develop our strength without constantly leaning on someone else. Europe is in a fight — a fight for a continent that is whole and at peace.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "scholz-olaf",
+    "name": "Olaf Scholz",
+    "role": "German Chancellor (2021–2025)",
+    "avatar": "eu",
+    "initial": "S",
+    "quote": "We need a powerful, cutting-edge, progressive Bundeswehr. This Zeitenwende — this turning point — demands our joint effort. There will be a special fund of €100 billion for the Bundeswehr.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "merz-friedrich",
+    "name": "Friedrich Merz",
+    "role": "German Chancellor (2025–present)",
+    "avatar": "eu",
+    "initial": "M",
+    "quote": "My absolute priority will be to strengthen Europe as quickly as possible so that step by step, we can really achieve independence from the USA. It is five minutes to midnight for Europe.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "frederiksen-mette",
+    "name": "Mette Frederiksen",
+    "role": "Prime Minister of Denmark (2019–present)",
+    "avatar": "eu",
+    "initial": "F",
+    "quote": "If the United States chooses to attack another NATO country militarily, then everything stops — that is, including our NATO, and thus the security that has been provided since the end of the Second World War.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "vance-jd",
+    "name": "JD Vance",
+    "role": "US Vice President (2025–present)",
+    "avatar": "us",
+    "initial": "V",
+    "quote": "I genuinely believe that the greatest threat to the security of Europe is not Russia. The greatest threat to the security of Europe is from within — it is the retreat from the values that make Western civilisation worth defending.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "zelensky-volodymyr",
+    "name": "Volodymyr Zelensky",
+    "role": "President of Ukraine (2019–present)",
+    "avatar": "other",
+    "initial": "Z",
+    "quote": "It's unprecedented and absurd when a timeframe is not set, neither for the invitation nor for Ukraine's membership, while at the same time allies are represented as open to inviting Ukraine.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "erdogan-recep",
+    "name": "Recep Tayyip Erdoğan",
+    "role": "President of Turkey (2014–present)",
+    "avatar": "nato",
+    "initial": "E",
+    "quote": "Finland and Sweden must take concrete steps to address Turkey's security concerns, specifically regarding PKK terrorist organization members and extradition requests, before we can support their NATO accession.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "mattis-james",
+    "name": "James Mattis",
+    "role": "US Secretary of Defense (2017–2018)",
+    "avatar": "us",
+    "initial": "M",
+    "quote": "America will meet its Article 5 commitments. But if your nation does not want to see America moderate its commitment to this alliance, each of your capitals needs to show support for our common defense.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "duda-andrzej",
+    "name": "Andrzej Duda",
+    "role": "President of Poland (2015–present)",
+    "avatar": "eu",
+    "initial": "D",
+    "quote": "Poland is the most credible NATO ally — we spend over 4% of GDP on defense and we want a permanent, full American military base on Polish soil. We are ready to pay for it. We call it Fort Trump.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "kallas-kaja",
+    "name": "Kaja Kallas",
+    "role": "EU Foreign Policy Chief / former Estonian PM (2024–present)",
+    "avatar": "eu",
+    "initial": "K",
+    "quote": "Estonia spends 3.4% of GDP on defense because we have learned from history — countries that don't invest in their own defense become dependent and vulnerable. The Baltic states will defend every inch of our territory.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "johnson-boris",
+    "name": "Boris Johnson",
+    "role": "UK Prime Minister (2019–2022)",
+    "avatar": "uk",
+    "initial": "J",
+    "quote": "The UK stands four-square behind Article 5 and NATO's collective defense obligation. Brexit has not changed our commitment to European security — if anything it makes our NATO engagement more important, not less.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "sunak-rishi",
+    "name": "Rishi Sunak",
+    "role": "UK Prime Minister (2022–2024)",
+    "avatar": "uk",
+    "initial": "S",
+    "quote": "The United Kingdom is committed to spending 2.5% of GDP on defense. We must ensure NATO remains the cornerstone of our collective defense while European nations do more to carry their share of the burden.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "starmer-keir",
+    "name": "Keir Starmer",
+    "role": "UK Prime Minister (2024–present)",
+    "avatar": "uk",
+    "initial": "S",
+    "quote": "The UK has a proud history of leadership in NATO and we will continue to invest in our security. We are committed to reaching 2.5% of GDP on defense and will work with our European partners to strengthen the alliance.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "scholz-merkel-angela",
+    "name": "Angela Merkel",
+    "role": "German Chancellor (2005–2021)",
+    "avatar": "eu",
+    "initial": "M",
+    "quote": "The times in which we could rely fully on others are somewhat over, as I experienced in the last few days. We Europeans must really take our destiny into our own hands. We must fight for our own future as Europeans.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  },
+  {
+    "id": "tusk-donald",
+    "name": "Donald Tusk",
+    "role": "Polish Prime Minister (2023–present) / former European Council President",
+    "avatar": "eu",
+    "initial": "T",
+    "quote": "I know from Polish experience what Russia truly is. That's why Poland invests more than 4% of GDP in defense. We don't need lectures about burden-sharing — we are the most credible NATO ally on the eastern flank.",
+    "lastUpdated": "2026-03-20T00:00:00Z"
+  }
+]

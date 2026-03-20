@@ -1,9 +1,9 @@
 {
-  "operationName": "NATO-US Tensions",
+  "operationName": "NATO-US Tensions Tracker",
   "dayCount": 3346,
-  "dateline": "Washington / Brussels — 2017–Present",
-  "heroHeadline": "US Questions NATO Commitments as Europe Races Toward Strategic Autonomy",
-  "heroSubtitle": "Tracking burden-sharing disputes, Article 5 credibility, and transatlantic drift",
-  "footerNote": "Data sourced from NATO HQ, White House, CSIS, IISS, Politico Europe",
+  "dateline": "Washington / Brussels / The Hague — 2017–2026",
+  "heroHeadline": "Alliance Under Stress: US Conditionality Drives European Strategic Autonomy Push",
+  "heroSubtitle": "From Trump's 'NATO obsolete' opening to the 5% GDP demand and Article 5 ambiguity at The Hague — tracking eight years of transatlantic friction, European rearmament, and the redefinition of the world's most powerful military alliance",
+  "footerNote": "Data sourced from NATO HQ, White House, European Commission, CSIS, IISS, Atlantic Council, Politico Europe, Reuters, BBC",
   "lastUpdated": "2026-03-20T00:00:00Z"
 }
