@@ -1,1 +1,182 @@
-[]
+[
+  {
+    "id": "netanyahu-benjamin",
+    "name": "Benjamin Netanyahu",
+    "role": "Prime Minister of Israel (2022–present)",
+    "avatar": "israel",
+    "initial": "N",
+    "quote": "We are at war. Not an operation, not a round of fighting — war. The enemy will pay an unprecedented price.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "gallant-yoav",
+    "name": "Yoav Gallant",
+    "role": "Israeli Defense Minister (2022–Nov 2024)",
+    "avatar": "israel",
+    "initial": "G",
+    "quote": "We are fighting human animals and we will act accordingly. Gaza will not return to what it was before October 7.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "halevi-herzi",
+    "name": "Lt. Gen. Herzi Halevi",
+    "role": "IDF Chief of Staff (until Jan 2025)",
+    "avatar": "israel",
+    "initial": "H",
+    "quote": "The IDF failed in its most basic mission — to protect the citizens of Israel. I take full responsibility.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "bar-ronen",
+    "name": "Ronen Bar",
+    "role": "Shin Bet Director (until Mar 2025)",
+    "avatar": "israel",
+    "initial": "B",
+    "quote": "The Shin Bet failed in its mission. I bear responsibility for the intelligence failure that allowed October 7 to occur.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "gantz-benny",
+    "name": "Benny Gantz",
+    "role": "National Unity/Opposition Leader; War Cabinet Member (resigned Jun 2024)",
+    "avatar": "israel",
+    "initial": "G",
+    "quote": "Netanyahu is holding up a deal. If the government does not present a clear post-war plan, we will leave the war cabinet.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "sinwar-yahya",
+    "name": "Yahya Sinwar",
+    "role": "Hamas Leader in Gaza; October 7 Mastermind (killed Oct 16, 2024)",
+    "avatar": "hamas",
+    "initial": "S",
+    "quote": "We are the ones who started this war and we know how to end it. Every martyr, every wounded person will open a gate to liberation.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "haniyeh-ismail",
+    "name": "Ismail Haniyeh",
+    "role": "Hamas Political Bureau Chairman (assassinated Jul 31, 2024)",
+    "avatar": "hamas",
+    "initial": "H",
+    "quote": "The Al-Aqsa Flood has overturned the equations of the region. Palestine has returned to the center of the world's attention.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "deif-mohammed",
+    "name": "Mohammed Deif",
+    "role": "Hamas Military Commander — announced Operation Al-Aqsa Flood",
+    "avatar": "hamas",
+    "initial": "D",
+    "quote": "Today, the era of this enemy's rampaging without accountability has ended. Launch thousands of rockets in the first hour.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "biden-joe",
+    "name": "Joe Biden",
+    "role": "US President (2021–Jan 2025)",
+    "avatar": "us",
+    "initial": "B",
+    "quote": "The terrorist group Hamas unleashed pure, unadulterated evil. We stand with Israel. Israel has the right to defend itself.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "blinken-antony",
+    "name": "Antony Blinken",
+    "role": "US Secretary of State (2021–Jan 2025)",
+    "avatar": "us",
+    "initial": "B",
+    "quote": "I come to Israel as an American — but also as a Jew. The United States will always be there for Israel.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "trump-donald",
+    "name": "Donald Trump",
+    "role": "US President (Jan 2025–present)",
+    "avatar": "us",
+    "initial": "T",
+    "quote": "Finish the job. Take out Hamas completely. The hostages must come home — all of them.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "guterres-antonio",
+    "name": "António Guterres",
+    "role": "UN Secretary-General",
+    "avatar": "un",
+    "initial": "G",
+    "quote": "The attacks by Hamas did not happen in a vacuum. But nothing can justify the deliberate targeting and killing of civilians. International humanitarian law must be respected by all parties.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "khan-karim",
+    "name": "Karim Khan",
+    "role": "ICC Prosecutor",
+    "avatar": "un",
+    "initial": "K",
+    "quote": "The law is not a barrier to military action, it is a framework for that action. Arrest warrants have been issued for Netanyahu, Gallant, and Hamas commanders.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "patten-pramila",
+    "name": "Pramila Patten",
+    "role": "UN Special Representative on Sexual Violence in Conflict",
+    "avatar": "un",
+    "initial": "P",
+    "quote": "There are reasonable grounds to believe that sexual violence including rape and gang rape occurred in multiple locations on October 7 and continues against hostages.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ramaphosa-cyril",
+    "name": "Cyril Ramaphosa",
+    "role": "South African President — filed ICJ genocide case",
+    "avatar": "other",
+    "initial": "R",
+    "quote": "South Africa has approached the ICJ because the scale of Israel's actions in Gaza constitutes genocide. We have an obligation under international law to act.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ben-gvir-itamar",
+    "name": "Itamar Ben Gvir",
+    "role": "Israeli National Security Minister; Far-Right Coalition Partner",
+    "avatar": "israel",
+    "initial": "B",
+    "quote": "There must be no ceasefire. We must demolish Hamas, and Jewish settlement in Gaza is a legitimate and moral response.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "smotrich-bezalel",
+    "name": "Bezalel Smotrich",
+    "role": "Israeli Finance Minister; Far-Right Coalition Partner",
+    "avatar": "israel",
+    "initial": "S",
+    "quote": "The State of Israel will not allow a Palestinian state. The correct solution is voluntary emigration of the Arab population from Gaza.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "lapid-yair",
+    "name": "Yair Lapid",
+    "role": "Israeli Opposition Leader (Yesh Atid)",
+    "avatar": "israel",
+    "initial": "L",
+    "quote": "Netanyahu had the intelligence, had the warnings, and chose not to act. The hostages are rotting in tunnels while he plays politics.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "macron-emmanuel",
+    "name": "Emmanuel Macron",
+    "role": "French President",
+    "avatar": "other",
+    "initial": "M",
+    "quote": "France stands with Israel in the face of terrorism. But civilians in Gaza must be protected. The images coming from Gaza are unbearable.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "lifshitz-yocheved",
+    "name": "Yocheved Lifshitz",
+    "role": "Israeli Hostage — Released Nov 2023 (age 85, Kibbutz Nir Oz)",
+    "avatar": "other",
+    "initial": "L",
+    "quote": "They took very good care of us. They brought us medicines, but what they did before taking us was very difficult.",
+    "lastUpdated": "2026-03-20"
+  }
+]

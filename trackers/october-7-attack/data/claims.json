@@ -1,1 +1,213 @@
-[]
+[
+  {
+    "id": "total-killed-count",
+    "question": "How many people were killed on October 7, 2023?",
+    "sideA": {
+      "label": "Israeli Government",
+      "text": "1,195 Israelis killed (revised from initial ~1,400). Includes ~859 civilians and ~336 military/security personnel. This is the most comprehensive verified count, cross-referenced by Israel Police, IDF, and forensic teams."
+    },
+    "sideB": {
+      "label": "Hamas / Al Jazeera",
+      "text": "Hamas does not dispute the scale of Israeli deaths but asserts the attack was a legitimate resistance operation against an occupying power. Some analysts note the initial Israeli figure of ~1,400 was inflated by counting foreign nationals who died and were later reclassified."
+    },
+    "resolution": "The revised Israeli figure of ~1,195 is accepted by major international bodies including the UN. The initial 1,400 figure has been revised down; 1,195 is now the official and most-cited count.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "sexual-violence-claims",
+    "question": "Did Hamas systematically use sexual violence as a weapon on October 7?",
+    "sideA": {
+      "label": "Israel / UN Special Representative",
+      "text": "Yes. Israel presented extensive evidence including forensic reports, survivor testimony, and body camera footage to UN Special Representative Pramila Patten, who concluded there are 'reasonable grounds' to believe sexual violence occurred, including gang rape, sexual torture, and mutilation. The UN Security Council was briefed in March 2024."
+    },
+    "sideB": {
+      "label": "Hamas / Palestinian Advocates",
+      "text": "Hamas officially denies that sexual violence was ordered or systematic. Some journalists and advocates (notably in The Intercept and Al Jazeera) raised questions about specific cases and evidence methodology, arguing some early reports were based on unverified social media claims. Hamas called the allegations 'fabricated propaganda.'"
+    },
+    "resolution": "The UN's own investigator (Pramila Patten) concluded there are 'reasonable grounds' to believe sexual violence occurred in a widespread and systematic manner on Oct 7. The IDF and Israeli Knesset committee have produced extensive documentation. The specific scale and command authorization remain subjects of ongoing investigation.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "intelligence-failure-blame",
+    "question": "Who bears responsibility for the October 7 intelligence failure?",
+    "sideA": {
+      "label": "Opposition / Military Analysts",
+      "text": "The intelligence failure was comprehensive: AMAN (military intelligence) had the Jericho Wall document for a year and dismissed it; female soldiers' warnings were ignored; IDF Southern Command was under-resourced partly due to West Bank settler protection duties; and the judicial reform crisis (with reservists refusing training) degraded readiness. Netanyahu's government bears political responsibility."
+    },
+    "sideB": {
+      "label": "Netanyahu Government",
+      "text": "Netanyahu has blamed the military and intelligence establishment, specifically Shin Bet Director Ronen Bar and IDF Chief Halevi, for operational failures. He has argued that political leadership was not given adequate warning. Netanyahu opposed establishing an independent commission with subpoena power."
+    },
+    "resolution": "IDF Chief of Staff Halevi and Shin Bet Director Bar both resigned in 2025 accepting responsibility. Multiple internal IDF investigations confirmed systemic failures. A Knesset committee investigation is ongoing. Netanyahu himself has not acknowledged personal responsibility.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "hannibal-directive-oct7",
+    "question": "Did the IDF use the Hannibal Directive on October 7, potentially killing Israeli hostages?",
+    "sideA": {
+      "label": "Haaretz / Israeli Media Investigation",
+      "text": "Evidence suggests IDF units, including helicopter pilots, fired on vehicles and structures containing Israeli hostages on October 7, possibly under Hannibal Directive protocol (kill to prevent capture). At least one Merkava tank fired on a house in Be'eri where ~12 Israelis were held hostage, killing some. Helicopter gunship fire killed some hostages being transported to Gaza."
+    },
+    "sideB": {
+      "label": "IDF Spokesperson",
+      "text": "The IDF has denied officially activating the Hannibal Directive on October 7. The IDF maintains that forces responded to legitimate military threats. IDF statements acknowledge that some friendly fire occurred in the chaos of battle but reject the characterization of deliberate hostage-killing policy."
+    },
+    "resolution": "Ongoing IDF internal investigations and Knesset committee inquiries. Haaretz and NYT reporting based on official documents and testimonies is credible. IDF denials of a formal Hannibal order do not exclude individual unit decisions. Full accountability remains unresolved.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "hostage-deal-vs-military-ops",
+    "question": "Should Israel have prioritized hostage deals over continued military operations in Gaza?",
+    "sideA": {
+      "label": "Hostage Families Forum / Opposition",
+      "text": "Families consistently argued that Netanyahu delayed or sabotaged ceasefire deals (particularly in May 2024 and November 2024) in order to satisfy far-right coalition partners (Smotrich, Ben Gvir) who opposed any ceasefire. The Forum accused Netanyahu of 'abandoning' hostages for political survival. Benny Gantz resigned from the war cabinet in June 2024 over the lack of a post-war strategy."
+    },
+    "sideB": {
+      "label": "Netanyahu Government / Right Wing",
+      "text": "Netanyahu argued that military pressure — specifically the Rafah operation — was necessary to produce genuine Hamas concessions in hostage deals. He maintained that Hamas was using ceasefire negotiations as a tactic to survive rather than return hostages. Far-right coalition partners (Ben Gvir, Smotrich) threatened to collapse the government if a permanent ceasefire was agreed."
+    },
+    "resolution": "The January 2025 ceasefire deal occurred after significant military degradation of Hamas and the deaths of Sinwar and Haniyeh. Whether earlier deals were possible or blocked by Netanyahu remains a central political controversy in Israel. Hostage families held major weekly protests outside Netanyahu's residence throughout 2024.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "hamas-knew-about-judicial-reform",
+    "question": "Did Hamas time the attack to exploit Israel's internal judicial reform crisis?",
+    "sideA": {
+      "label": "Israeli Security Analysts",
+      "text": "Yes. Hamas leaders, including Yahya Sinwar, specifically referenced Israel's unprecedented internal division over judicial reform in internal documents. Reserve officers' refusal to train during judicial reform protests degraded IDF readiness. AMAN internal reports noted that Hamas was monitoring Israeli public discord. The timing on Simchat Torah (Jewish holiday when many soldiers are with family) was also deliberate."
+    },
+    "sideB": {
+      "label": "Hamas Official Narrative",
+      "text": "Hamas stated the attack was in response to Israeli incursions at Al-Aqsa Mosque, settler violence in the West Bank, and the ongoing Gaza blockade. Hamas denied that internal Israeli politics drove the timing. Mohammed Deif's announcement cited Palestinian 'resistance' motivations rather than Israeli weakness."
+    },
+    "resolution": "Sinwar's own captured personal notes and communications, reviewed by the Meir Amit Intelligence Center, reference Israeli societal divisions. The attack timing on a Jewish holiday and during peak division aligns with exploitation of Israeli vulnerability, though Hamas publicly frames it as a response to Palestinian oppression.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "numbers-of-fighters-infiltrated",
+    "question": "How many Hamas and allied fighters infiltrated Israel on October 7?",
+    "sideA": {
+      "label": "IDF / Israeli Government",
+      "text": "Approximately 3,000 Hamas and allied militant fighters (including Palestinian Islamic Jihad, PFLP, and ordinary Gaza civilians who followed through the breach) crossed into Israel. The IDF identified ~1,500 killed inside Israel on Oct 7, implying ~1,500 returned to Gaza."
+    },
+    "sideB": {
+      "label": "Hamas / Independent Analysts",
+      "text": "Hamas's own operational planning documents described a force of approximately 3,000 fighters for the operation. Some analysts estimate 2,500–4,000 crossed total, including organized militants and civilians who followed through opened gaps. The IDF figure of 3,000 is widely accepted."
+    },
+    "resolution": "There is broad consensus around ~3,000 fighters plus additional individuals who crossed through fence breaches. The IDF's figure is the most-cited and is consistent with Hamas planning documents. Exact numbers remain uncertain.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "al-ahli-hospital-explosion",
+    "question": "Who was responsible for the Al-Ahli Baptist Hospital explosion on October 17, 2023?",
+    "sideA": {
+      "label": "Hamas / Palestinian Authority / Arab States",
+      "text": "An Israeli airstrike hit Al-Ahli Baptist Hospital, killing up to 500 people according to Gaza Ministry of Health's initial statement. Hamas called it a 'war crime' and proof of Israel's targeting of civilian infrastructure. Several Arab leaders canceled a planned summit with President Biden."
+    },
+    "sideB": {
+      "label": "Israel / US / Western Governments",
+      "text": "A failed rocket launch by Palestinian Islamic Jihad (PIJ) caused the explosion — the rocket malfunctioned and hit the hospital parking lot. US, Canadian, and French intelligence agencies independently analyzed intercepts and satellite data and concluded an Israeli airstrike was not responsible. Death toll was also revised significantly below 500."
+    },
+    "resolution": "US, Canadian, French, and UK intelligence all concluded the explosion was caused by a failed Palestinian rocket, not an Israeli strike. Satellite imagery shows no crater consistent with an Israeli bomb. The death toll was far below Gaza MoH's initial estimate of 500. Most Western governments accept the misfired-rocket explanation; Hamas and Palestinian Authority maintain the Israeli airstrike narrative.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "beheaded-babies-claims",
+    "question": "Were babies and children beheaded by Hamas fighters on October 7?",
+    "sideA": {
+      "label": "Israeli Officials / Some Media Reports",
+      "text": "Israeli officials, including Prime Minister Netanyahu and government spokespeople, stated that Hamas fighters beheaded babies and committed atrocities against children. Some early media reports cited soldier testimonies of decapitated infants. The claims circulated globally and were cited by President Biden ('confirmed' he saw photographs)."
+    },
+    "sideB": {
+      "label": "Investigative Journalists / Fact-Checkers",
+      "text": "Several journalists (notably from HuffPost, The Intercept) found the original source of 'beheaded babies' claims to be a single Israeli soldier whose statement was unverified. The IDF and Israeli government ultimately stated they could not confirm specific decapitation cases of infants. Biden's White House later clarified he had not personally seen photographs of beheaded babies."
+    },
+    "resolution": "Hamas committed well-documented atrocities against children on October 7, including killings in homes and safe rooms. The specific claim of 'beheaded babies' as a systematic practice was not confirmed by IDF forensic reports or Israeli government officials, though mutilations of adult victims were documented. The claim became a significant information warfare flashpoint.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "iron-dome-effectiveness-oct7",
+    "question": "How effective was Iron Dome against the October 7 rocket barrage?",
+    "sideA": {
+      "label": "IDF / Israeli Defense Establishment",
+      "text": "Iron Dome achieved an approximately 85–90% interception rate overall on October 7, consistent with its historic performance. The system successfully protected Tel Aviv and Jerusalem. The volume of simultaneous launches (~2,000+ in first 20 minutes) was designed to overwhelm batteries in the south, where interception rates were lower."
+    },
+    "sideB": {
+      "label": "Military Critics / Analysts",
+      "text": "Iron Dome fundamentally failed its core mission on October 7 in the Gaza Envelope. By concentrating so many rockets simultaneously, Hamas demonstrated a systematic saturation strategy that Iron Dome cannot defeat. The system's reliance on missile interceptors (each costing ~$50,000 vs. Hamas Qassam rockets at ~$800) is economically unsustainable at scale."
+    },
+    "resolution": "Iron Dome performed within its design parameters but was deliberately overwhelmed by Hamas's massed-launch strategy. The IDF has acknowledged this tactical vulnerability and invested in additional batteries and the David's Sling / Arrow systems for improved layered defense.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "was-it-genocide-icj",
+    "question": "Is Israel's response to October 7 a genocide under international law?",
+    "sideA": {
+      "label": "South Africa / Many Global South Nations",
+      "text": "South Africa's ICJ application argued that Israel's conduct in Gaza — including the scale of civilian deaths, destruction of homes, hospitals, and food supply infrastructure, siege conditions, and statements by Israeli officials — constitutes genocide under the 1948 Convention on the Prevention and Punishment of the Crime of Genocide. Over 50 countries filed interventions supporting the case."
+    },
+    "sideB": {
+      "label": "Israel / United States / Germany",
+      "text": "Israel and its Western allies reject the genocide characterization. Israel argues it is conducting legitimate military operations against a terrorist organization that uses civilians as shields, provides humanitarian corridors, and has specific military objectives. Germany, Canada, and the US have all challenged the genocide framing in legal filings."
+    },
+    "resolution": "The ICJ issued provisional measures in January 2024 finding a 'plausible' risk of genocide and ordering Israel to take measures to prevent it, but stopped short of ordering a ceasefire. The full genocide case continues at the ICJ. Whether Israel's actions meet the legal threshold of genocidal intent ('dolus specialis') remains a contested legal question. International humanitarian law experts are divided.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "october-7-foreknowledge-egypt",
+    "question": "Did Egypt warn Israel about a coming Hamas attack before October 7?",
+    "sideA": {
+      "label": "Egyptian Sources / Reports",
+      "text": "Egyptian intelligence officials told AP and other outlets that Egypt warned Israel 'repeatedly' in the days before October 7 that something 'big and unusual' was coming from Hamas. An Egyptian intelligence official said they warned Israel through multiple channels that Hamas was planning 'something big' in the days before the attack."
+    },
+    "sideB": {
+      "label": "Israeli Government",
+      "text": "Israel's government disputed the claim that Egypt provided specific, actionable warnings about an imminent attack. Israeli officials said Egypt may have passed generic threat assessments but not intelligence specific enough to trigger a full military response. IDF and Shin Bet have not acknowledged receiving specific Egyptian warnings."
+    },
+    "resolution": "Egyptian officials' claims of repeated specific warnings were reported by AP and other outlets. The IDF and Israeli government have not confirmed receiving specific, actionable warnings from Egypt. This claim is contested and remains unresolved, with neither side releasing full documentation.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "hamas-use-of-civilian-infrastructure",
+    "question": "Did Hamas use hospitals and civilian infrastructure as military bases?",
+    "sideA": {
+      "label": "IDF / US Intelligence",
+      "text": "Israel presented evidence — including maps, live footage from raids, and captured Hamas documents — that Al-Shifa Hospital in Gaza City served as Hamas's main command and intelligence center, with tunnels running beneath it. CIA Director Bill Burns confirmed US intelligence assessed Al-Shifa as having military use. IDF forces raided the hospital in November 2023 and presented weapons caches, surveillance equipment, and tunnel entrances."
+    },
+    "sideB": {
+      "label": "Hamas / Doctors / WHO",
+      "text": "Hamas denied using hospitals as military bases. Doctors at Al-Shifa said they saw no Hamas command center. The WHO and MSF noted the IDF presented limited direct evidence of active command and control inside the hospital itself. Critics argued the IDF's original claims were exaggerated compared to what was actually found in the November 2023 raid."
+    },
+    "resolution": "IDF evidence showed tunnel access points beneath Al-Shifa and weapons caches inside the compound. The scale of the 'command center' was disputed — evidence supported military use of tunnels beneath the hospital but did not confirm active command operations in the hospital itself during the raid. Hamas use of civilian infrastructure for tunnels and weapons storage is broadly documented by multiple sources.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "two-state-solution-after-oct7",
+    "question": "Has October 7 made a two-state solution more or less likely?",
+    "sideA": {
+      "label": "International Community / Palestinian Authority",
+      "text": "The international community (US, EU, Saudi Arabia) has increased pressure for a two-state solution as the only durable path to peace. Saudi Arabia indicated normalization with Israel would require a credible pathway to Palestinian statehood. Spain, Norway, and Ireland formally recognized Palestine in May 2024. International support for Palestinian statehood has grown significantly since October 7."
+    },
+    "sideB": {
+      "label": "Israeli Right Wing / Netanyahu Government",
+      "text": "For Netanyahu's coalition, October 7 reinforced opposition to Palestinian statehood — Finance Minister Smotrich and National Security Minister Ben Gvir explicitly stated Gaza should be re-settled by Israelis. Netanyahu has consistently opposed Palestinian statehood. Israeli public support for a two-state solution dropped dramatically following October 7. Some Israeli analysts argue October 7 has made coexistence impossible in the medium term."
+    },
+    "resolution": "October 7 simultaneously increased international pressure for a two-state solution while making it politically impossible in Israel's current right-wing government. The PA's legitimacy in Gaza has been effectively eliminated. A functional two-state solution pathway requires resolution of the Gaza governance question, hostage crisis, and rebuilding — none of which have concrete international plans as of 2026.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "famine-in-gaza",
+    "question": "Has Israel deliberately caused famine conditions in Gaza?",
+    "sideA": {
+      "label": "UN / Humanitarian Organizations",
+      "text": "UNRWA, WFP, and WHO repeatedly warned of famine conditions in northern Gaza from late 2023. The UN's IPC famine review confirmed famine threshold conditions in parts of northern Gaza by late 2024. Aid restrictions, destruction of food infrastructure, and civilian displacement created catastrophic food insecurity affecting 100% of Gaza's population at various stages of crisis.",
+      "text": "UNRWA, WFP, WHO, and the IPC (Integrated Food Security Phase Classification) confirmed famine conditions in northern Gaza by early 2024. Deliberate aid restrictions, fuel cutoffs, and destruction of food supply chains created catastrophic food insecurity for 2.3 million Gazans."
+    },
+    "sideB": {
+      "label": "Israel / US (initially)",
+      "text": "Israel maintained it facilitated humanitarian aid entry through Kerem Shalom and other crossings and denied deliberately causing famine. Israel blamed Hamas for diverting aid, UNRWA for operational failures, and Egypt for delays at the Rafah crossing. The US initially supported Israel's position but by early 2024 began conditioning arms transfers on aid access improvements."
+    },
+    "resolution": "The UN's IPC and multiple humanitarian agencies confirmed famine conditions in northern Gaza by mid-2024. The ICC prosecutor cited starvation as a weapon of war in the arrest warrant application against Netanyahu and Gallant. The US State Department's own assessment (2024) found Israel had impeded aid delivery. Israel partially increased access after US pressure.",
+    "lastUpdated": "2026-03-20"
+  }
+]
