@@ -56,12 +56,14 @@ export default function MobileMapTab({
         </div>
       ) : (
         <div className="mtab-3d-placeholder">
-          <span>3D Globe view</span>
+          <div className="mtab-3d-icon">🌍</div>
+          <p className="mtab-3d-title">3D Intelligence Globe</p>
+          <p className="mtab-3d-hint">The interactive 3D globe with satellite tracking, missile animations, and cinematic mode works best on desktop.</p>
           <a
-            href={`/${trackerSlug}/globe/`}
+            href={`/watchboard/${trackerSlug}/globe/`}
             className="mtab-3d-link"
           >
-            Open full globe
+            Open 3D Globe →
           </a>
         </div>
       )}
