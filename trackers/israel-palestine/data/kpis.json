@@ -1,1 +1,117 @@
-[]
+[
+  {
+    "id": "gaza-total-deaths",
+    "label": "Gaza Deaths Since Oct 7",
+    "value": "50,000+",
+    "color": "red",
+    "source": "Gaza Ministry of Health / UN OCHA",
+    "contested": true,
+    "contestNote": "Gaza MoH figures include combatants; IDF estimates ~17,000 militants killed. UN has cited figures as broadly consistent with other data; Israel disputes civilian/combatant ratio.",
+    "delta": "+50,000 since Oct 7, 2023",
+    "trend": "up",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "israeli-oct7-killed",
+    "label": "Israelis Killed (Oct 7 Attack)",
+    "value": "~1,200",
+    "color": "red",
+    "source": "IDF / Israeli National Security Council",
+    "contested": false,
+    "contestNote": "IDF-confirmed figure; Hamas has not disputed the overall casualty scale.",
+    "delta": "Deadliest day for Jews since the Holocaust",
+    "trend": "stable",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "hostages-remaining",
+    "label": "Hostages Remaining in Gaza",
+    "value": "~59",
+    "color": "amber",
+    "source": "Israeli PM Office / Hostages Families Forum",
+    "contested": false,
+    "contestNote": "Israeli government count; believed roughly 24 alive as of early 2026, remainder deceased.",
+    "delta": "Down from 251 taken Oct 7",
+    "trend": "down",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "displaced-gazans",
+    "label": "Displaced People in Gaza",
+    "value": "~1.9 million",
+    "color": "amber",
+    "source": "UN OCHA / UNRWA",
+    "contested": false,
+    "contestNote": "~90% of Gaza's population (2.3M) displaced at peak; ongoing displacement amid resumed operations.",
+    "delta": "Most displaced since 1948",
+    "trend": "stable",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "west-bank-settlers",
+    "label": "Israeli Settlers in West Bank",
+    "value": "~700,000",
+    "color": "amber",
+    "source": "B'Tselem / UN OCHA / Peace Now",
+    "contested": true,
+    "contestNote": "Figure includes East Jerusalem; Israeli government disputes 'settlement' characterization for Jerusalem neighborhoods.",
+    "delta": "+100,000 since 2020",
+    "trend": "up",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "idf-soldiers-killed-gaza",
+    "label": "IDF Soldiers Killed (Gaza War)",
+    "value": "~850",
+    "color": "red",
+    "source": "IDF spokesperson",
+    "contested": false,
+    "delta": "As of Mar 2026",
+    "trend": "up",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "years-of-conflict",
+    "label": "Years of Conflict",
+    "value": "78 years",
+    "color": "blue",
+    "source": "Historical record (1948–2026)",
+    "contested": false,
+    "delta": "Since Israeli independence, May 14 1948",
+    "trend": "stable",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "un-resolutions",
+    "label": "UNSC Resolutions on Palestine",
+    "value": "100+",
+    "color": "blue",
+    "source": "UN Security Council records",
+    "contested": false,
+    "contestNote": "Includes all UNSC resolutions relating to Arab-Israeli / Israeli-Palestinian conflict since 1948.",
+    "trend": "up",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "unrwa-refugees",
+    "label": "Registered Palestinian Refugees",
+    "value": "5.9 million",
+    "color": "blue",
+    "source": "UNRWA",
+    "contested": true,
+    "contestNote": "UNRWA counts descendants of 1948 refugees; Israel argues definition is uniquely broad and perpetuates the conflict. US paused UNRWA funding in 2024.",
+    "trend": "up",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "icc-warrants-active",
+    "label": "Active ICC Arrest Warrants",
+    "value": "2",
+    "color": "amber",
+    "source": "ICC Pre-Trial Chamber I (Nov 2024)",
+    "contested": false,
+    "contestNote": "Warrants issued for PM Netanyahu and former Defense Minister Gallant. Hamas leaders' warrants also sought; Sinwar and Haniyeh killed before full issuance.",
+    "trend": "stable",
+    "lastUpdated": "2026-03-20"
+  }
+]

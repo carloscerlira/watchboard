@@ -1,1 +1,200 @@
-[]
+[
+  {
+    "id": "netanyahu",
+    "name": "Benjamin Netanyahu",
+    "role": "Prime Minister of Israel (2022–present; also 1996–99, 2009–21)",
+    "avatar": "il-gov",
+    "initial": "N",
+    "quote": "We will eliminate Hamas. We will free our hostages. We will ensure that Gaza never again poses a threat to Israel.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ben-gvir",
+    "name": "Itamar Ben-Gvir",
+    "role": "National Security Minister, Israel; Otzma Yehudit party leader",
+    "avatar": "il-gov",
+    "initial": "B",
+    "quote": "My right — our right — to live supersedes the right to movement of the Arabs of Gaza. There is no famine in Gaza.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "smotrich",
+    "name": "Bezalel Smotrich",
+    "role": "Finance Minister, Israel; Religious Zionism party leader",
+    "avatar": "il-gov",
+    "initial": "S",
+    "quote": "There is no Palestinian nation. There is no Palestinian people. There is no Palestinian language.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "gallant",
+    "name": "Yoav Gallant",
+    "role": "Former Defense Minister of Israel (dismissed Nov 2024); ICC arrest warrant issued Nov 2024",
+    "avatar": "il-gov",
+    "initial": "G",
+    "quote": "We are fighting human animals and we act accordingly. I have ordered a complete siege on Gaza — no electricity, no food, no water, no fuel.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "gantz",
+    "name": "Benny Gantz",
+    "role": "Opposition leader, Israel; National Unity party; Former war cabinet member (resigned Jun 2024)",
+    "avatar": "il-gov",
+    "initial": "G",
+    "quote": "I left the war cabinet because decisions were being made without a clear post-war strategy — and hostages were not the priority they should be.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "herzog",
+    "name": "Isaac Herzog",
+    "role": "President of Israel (ceremonial head of state)",
+    "avatar": "il-gov",
+    "initial": "H",
+    "quote": "It is an entire nation out there that is responsible. It is not true this rhetoric about civilians not being aware, not involved.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "mahmoud-abbas",
+    "name": "Mahmoud Abbas (Abu Mazen)",
+    "role": "President, Palestinian Authority; PLO Chairman",
+    "avatar": "pa",
+    "initial": "A",
+    "quote": "We must have a fully independent Palestinian state on the 1967 borders, with East Jerusalem as its capital. This is our inalienable right.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "shtayyeh",
+    "name": "Mohammad Shtayyeh",
+    "role": "Former Prime Minister, Palestinian Authority (resigned Feb 2024); replaced by Mohammad Mustafa",
+    "avatar": "pa",
+    "initial": "S",
+    "quote": "Israel is conducting a war of total destruction of the Palestinian people. The international community must act now.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "marwan-barghouti",
+    "name": "Marwan Barghouti",
+    "role": "Imprisoned Fatah leader; widely seen as most popular Palestinian political figure",
+    "avatar": "pa",
+    "initial": "B",
+    "quote": "Palestinian popular resistance is not terrorism. It is the legitimate response of a people under occupation that the world has refused to liberate.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "sinwar",
+    "name": "Yahya Sinwar (deceased)",
+    "role": "Hamas military and political leader; architect of Oct 7 attack; killed by IDF Oct 16, 2024",
+    "avatar": "hamas",
+    "initial": "S",
+    "quote": "We have decided to pay the price for freedom and to end the occupation. This is just the beginning.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "haniyeh",
+    "name": "Ismail Haniyeh (deceased)",
+    "role": "Hamas Political Bureau Chief; killed in Tehran July 31, 2024 in assassination attributed to Israel",
+    "avatar": "hamas",
+    "initial": "H",
+    "quote": "We extend our hands for a just peace. But our hands will remain on the trigger as long as there is occupation.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "deif",
+    "name": "Mohammed Deif",
+    "role": "Hamas military commander (Qassam Brigades); presumed killed Aug 2024; ICC arrest warrant sought",
+    "avatar": "hamas",
+    "initial": "D",
+    "quote": "This is the day of the greatest battle to end the last occupation on earth. We have decided to put an end to all crimes.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "meshaal",
+    "name": "Khaled Meshaal",
+    "role": "Hamas Political Bureau; based in Qatar; led Hamas in exile during 2007–2017",
+    "avatar": "hamas",
+    "initial": "M",
+    "quote": "We in Hamas do not fight the Jews because they are Jews. We fight the occupiers because they are occupiers.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "guterres",
+    "name": "António Guterres",
+    "role": "UN Secretary-General",
+    "avatar": "un",
+    "initial": "G",
+    "quote": "I am alarmed by statements from Israeli officials threatening a full-scale assault on Rafah — where over one million Palestinians are sheltering. There is no safe place to go in Gaza.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "albanese",
+    "name": "Francesca Albanese",
+    "role": "UN Special Rapporteur on the Situation of Human Rights in the Palestinian Territories",
+    "avatar": "un",
+    "initial": "A",
+    "quote": "There are reasonable grounds to believe that the threshold indicating Israel's commission of genocide is being met. The facts on the ground speak for themselves.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "karim-khan",
+    "name": "Karim Khan",
+    "role": "ICC Prosecutor; sought arrest warrants for Netanyahu, Gallant, and Hamas leaders",
+    "avatar": "intl",
+    "initial": "K",
+    "quote": "We cannot have a world where the laws of war that protect civilians, hospitals, and aid workers apply to some but not others.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "ramaphosa",
+    "name": "Cyril Ramaphosa",
+    "role": "President of South Africa; his government filed the ICJ genocide case against Israel",
+    "avatar": "intl",
+    "initial": "R",
+    "quote": "South Africa knows what it looks like when a government decides that a people are less than human. We have seen genocide before. We see it now in Gaza.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "biden",
+    "name": "Joe Biden",
+    "role": "US President (2021–Jan 2025); staunch Israel supporter; later pressured Israel on Gaza humanitarian crisis",
+    "avatar": "intl",
+    "initial": "B",
+    "quote": "Israel has a right to defend itself against Hamas terrorism. We will stand with Israel. But we also need a humanitarian pause to get more aid in.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "trump-donald",
+    "name": "Donald Trump",
+    "role": "US President (2017-21, 2025–present); recognized Jerusalem as capital; Abraham Accords broker",
+    "avatar": "intl",
+    "initial": "T",
+    "quote": "Gaza has to be cleaned out. A lot of people are going to have to move. I would like to see Gaza turned into the Riviera of the Middle East.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "lazzarini",
+    "name": "Philippe Lazzarini",
+    "role": "Commissioner-General, UNRWA",
+    "avatar": "un",
+    "initial": "L",
+    "quote": "More than 200 of our colleagues have been killed. Our premises have been bombed. We are struggling to keep the humanitarian operation alive in Gaza.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "erdogan",
+    "name": "Recep Tayyip Erdoğan",
+    "role": "President of Turkey; severed trade with Israel; called Netanyahu 'Hitler of our time'",
+    "avatar": "intl",
+    "initial": "E",
+    "quote": "Netanyahu — who has turned Gaza into a death camp — is no different than Hitler. He will face justice before international courts.",
+    "lastUpdated": "2026-03-20"
+  },
+  {
+    "id": "mbs",
+    "name": "Mohammed bin Salman",
+    "role": "Saudi Crown Prince; normalization talks with Israel paused after Oct 7; key regional actor",
+    "avatar": "intl",
+    "initial": "M",
+    "quote": "Normalization with Israel without a credible pathway to a Palestinian state is not something Saudi Arabia can accept.",
+    "lastUpdated": "2026-03-20"
+  }
+]
