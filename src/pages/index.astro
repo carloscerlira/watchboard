@@ -119,28 +119,16 @@ const globeEvents = serializedTrackers.flatMap(t => {
 
     <!-- Footer -->
     <footer class="ix-footer">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <span class="footer-label">Platform</span>
-          <span>Watchboard v1.0</span>
-        </div>
-        <div class="footer-col">
-          <span class="footer-label">Stack</span>
-          <span>Astro + React + CesiumJS</span>
-        </div>
-        <div class="footer-col">
-          <span class="footer-label">Source</span>
-          <a href="https://github.com/ArtemioPadilla/watchboard" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </div>
-        <div class="footer-col">
-          <span class="footer-label">License</span>
-          <span>MIT</span>
-        </div>
-      </div>
-      <div class="footer-about-links">
-        {serializedTrackers.filter(t => t.status === 'active').map(t => (
-          <a href={`${basePath}${t.slug}/about/`}>{t.shortName} — About &amp; Credits</a>
-        ))}
+      <div class="footer-row">
+        <span>Watchboard v1.0</span>
+        <span class="footer-sep">&middot;</span>
+        <span>Astro + React + CesiumJS</span>
+        <span class="footer-sep">&middot;</span>
+        <a href="https://github.com/ArtemioPadilla/watchboard" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <span class="footer-sep">&middot;</span>
+        <span>MIT</span>
+        <span class="footer-sep">&middot;</span>
+        <a href="https://artemiop.com/" target="_blank" rel="noopener noreferrer">artemiop.com</a>
       </div>
       <div class="footer-disclaimer">
         This platform aggregates publicly available information. It does not endorse any political position or narrative.
@@ -307,72 +295,42 @@ const globeEvents = serializedTrackers.flatMap(t => {
   .ix-footer {
     max-width: 960px;
     margin: 2rem auto 0;
-    padding: 1.5rem 1.5rem 2.5rem;
+    padding: 1.25rem 1.5rem 2rem;
     border-top: 1px solid var(--border);
+    text-align: center;
   }
 
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .footer-col {
+  .footer-row {
     display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.62rem;
     color: var(--text-muted);
+    margin-bottom: 0.5rem;
   }
 
-  .footer-label {
-    font-size: 0.52rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    opacity: 0.5;
-  }
-
-  .footer-col a {
+  .footer-row a {
     color: var(--accent-blue);
     text-decoration: none;
   }
 
-  .footer-col a:hover {
+  .footer-row a:hover {
     text-decoration: underline;
   }
 
-  .footer-about-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-  }
-
-  .footer-about-links a {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.58rem;
-    color: var(--text-muted);
-    text-decoration: none;
-    opacity: 0.7;
-    transition: opacity 0.2s, color 0.2s;
-  }
-
-  .footer-about-links a:hover {
-    color: var(--accent-blue);
-    opacity: 1;
+  .footer-sep {
+    color: var(--border-light);
   }
 
   .footer-disclaimer {
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.68rem;
+    font-size: 0.62rem;
     color: var(--text-muted);
-    opacity: 0.5;
+    opacity: 0.4;
     line-height: 1.5;
-    text-align: center;
   }
 
   /* ─── Responsive ─── */
@@ -398,10 +356,6 @@ const globeEvents = serializedTrackers.flatMap(t => {
     .classification-bar {
       font-size: 0.48rem;
       gap: 0.3rem;
-    }
-
-    .footer-grid {
-      grid-template-columns: repeat(2, 1fr);
     }
 
     .ix-hero {

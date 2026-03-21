@@ -1388,7 +1388,7 @@ body::before {
 
 /* ─── FOOTER ─── */
 .site-footer {
-  padding: 2rem;
+  padding: 1.25rem 2rem;
   border-top: 1px solid var(--border);
 }
 
@@ -1398,20 +1398,15 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.4rem;
   text-align: center;
 }
 
 .footer-note {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
-}
-
-.footer-disclaimer {
-  font-size: 0.68rem;
-  color: var(--text-muted);
-  max-width: 600px;
-  line-height: 1.6;
+  max-width: 900px;
+  line-height: 1.5;
 }
 
 .footer-links {
@@ -1430,8 +1425,8 @@ body::before {
 
 .footer-updated {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  color: var(--accent-red);
+  font-size: 0.65rem;
+  color: var(--text-muted);
   letter-spacing: 0.08em;
 }
 

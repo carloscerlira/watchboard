@@ -15,15 +15,15 @@ const githubUrl = githubRepo ? `https://github.com/${githubRepo}` : 'https://git
 ---
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-note">{meta.footerNote}</div>
-    <div class="footer-disclaimer">This dashboard presents information from multiple perspectives and does not endorse any particular narrative.</div>
     <div class="footer-links">
       <a href={aboutHref}>About &amp; Credits</a>
       <span class="footer-sep">&middot;</span>
       <a href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub</a>
       <span class="footer-sep">&middot;</span>
       <a href="https://artemiop.com/">artemiop.com</a>
+      <span class="footer-sep">&middot;</span>
+      <span class="footer-updated">Last updated: {meta.lastUpdated}</span>
     </div>
-    <div class="footer-updated">Last updated: {meta.lastUpdated}</div>
+    <div class="footer-note">{meta.footerNote} <span class="footer-sep">&middot;</span> Does not endorse any particular narrative.</div>
   </div>
 </footer>
