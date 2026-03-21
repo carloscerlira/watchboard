@@ -60,12 +60,17 @@ function loadTimeline(slug: string, eraLabel?: string) {
 
       const match = path.match(/(\d{4})-(\d{2})-(\d{2})\.json$/);
       if (match) {
+        const fileYear = match[1];
         const monLabel = MONTH_NAMES[match[2]];
         const day = String(Number(match[3]));
         if (monLabel) {
           for (const ev of events) {
             if (/^\d{4}$/.test(ev.year)) {
-              ev.year = `${monLabel} ${day}`;
+              // Year-only → stamp full date from filename
+              ev.year = `${monLabel} ${day}, ${fileYear}`;
+            } else if (/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2}$/i.test(ev.year)) {
+              // "Mon DD" without year → append year from filename
+              ev.year = `${ev.year}, ${fileYear}`;
             }
           }
         }
