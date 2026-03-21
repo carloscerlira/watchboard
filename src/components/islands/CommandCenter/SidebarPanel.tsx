@@ -166,6 +166,107 @@ const StatusBadge = memo(function StatusBadge({ tracker }: { tracker: TrackerCar
   );
 });
 
+// ── Series Strip ──
+
+const SeriesStrip = memo(function SeriesStrip({
+  group,
+  basePath,
+  activeTracker,
+  hoveredTracker,
+  onSelect,
+  onHover,
+}: {
+  group: import('../../../lib/tracker-directory-utils').TrackerGroup;
+  basePath: string;
+  activeTracker: string | null;
+  hoveredTracker: string | null;
+  onSelect: (slug: string | null) => void;
+  onHover: (slug: string | null) => void;
+}) {
+  return (
+    <div>
+      <div style={S.seriesHeader}>
+        <div style={S.seriesLine} />
+        <span style={S.seriesLabel}>{group.label}</span>
+        <div style={S.seriesLine} />
+      </div>
+      <div style={S.seriesStrip}>
+        {group.trackers.map((t, i) => (
+          <div key={t.slug} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+            {i > 0 && <span style={S.seriesArrow}>→</span>}
+            <div
+              style={{
+                ...S.seriesCard(t.color || '#3498db', !!t.isHub),
+                background: activeTracker === t.slug ? `${t.color || '#3498db'}15` : hoveredTracker === t.slug ? 'var(--bg-card-hover)' : 'var(--bg-card)',
+              }}
+              onClick={() => onSelect(activeTracker === t.slug ? null : t.slug)}
+              onMouseEnter={() => onHover(t.slug)}
+              onMouseLeave={() => onHover(null)}
+              onDoubleClick={() => { window.location.href = `${basePath}${t.slug}/`; }}
+            >
+              <span style={{ fontSize: '0.8rem' }}>{t.icon || ''}</span>
+              <div style={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}>
+                <span style={S.seriesCardName}>{t.shortName}</span>
+                <span style={{ ...S.seriesCardYear, color: t.color || '#3498db' }}>
+                  {t.startDate.slice(0, 4)}{t.endDate ? `–${t.endDate.slice(0, 4)}` : ''}
+                </span>
+              </div>
+              {t.isHub && <span style={S.hubBadge}>HUB</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+});
+
+// ── Recent Events Feed ──
+
+const RecentEventsFeed = memo(function RecentEventsFeed({
+  trackers,
+  onSelect,
+}: {
+  trackers: TrackerCardData[];
+  onSelect: (slug: string | null) => void;
+}) {
+  // Collect the 5 most recently updated trackers and show their headlines
+  const recentTrackers = useMemo(() => {
+    return [...trackers]
+      .filter(t => t.headline && t.status === 'active')
+      .sort((a, b) => new Date(b.lastUpdated).getTime() - new Date(a.lastUpdated).getTime())
+      .slice(0, 5);
+  }, [trackers]);
+
+  if (recentTrackers.length === 0) return null;
+
+  return (
+    <div style={S.feedWrap}>
+      <div style={S.feedHeader}>
+        <span style={S.feedDot} />
+        <span>LATEST INTEL</span>
+      </div>
+      {recentTrackers.map(t => (
+        <div
+          key={t.slug}
+          style={S.feedItem}
+          onClick={() => onSelect(t.slug)}
+        >
+          <div style={S.feedItemHeader}>
+            <span style={{ fontSize: '0.7rem' }}>{t.icon || ''}</span>
+            <span style={S.feedItemName}>{t.shortName}</span>
+            <span style={{ ...S.feedItemAge, color: t.color || '#3498db' }}>
+              {computeFreshness(t.lastUpdated).ageText}
+            </span>
+          </div>
+          <div style={S.feedItemText}>
+            {t.headline && t.headline.length > 80 ? t.headline.slice(0, 80) + '…' : t.headline}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+});
+
 // ── Main SidebarPanel ──
 
 export default function SidebarPanel({
@@ -190,9 +291,34 @@ export default function SidebarPanel({
   const domainCounts = useMemo(() => computeDomainCounts(trackers), [trackers]);
   const visibleDomains = useMemo(() => getVisibleDomains(domainCounts), [domainCounts]);
 
+  // Flat list of all visible tracker slugs for keyboard nav
+  const flatSlugs = useMemo(
+    () => groups.flatMap(g => g.trackers.map(t => t.slug)),
+    [groups],
+  );
+
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
-    if (e.key === 'Escape') onSelectTracker(null);
-  }, [onSelectTracker]);
+    if (e.key === 'Escape') {
+      onSelectTracker(null);
+      return;
+    }
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      const currentIdx = activeTracker ? flatSlugs.indexOf(activeTracker) : -1;
+      let nextIdx: number;
+      if (e.key === 'ArrowDown') {
+        nextIdx = currentIdx < flatSlugs.length - 1 ? currentIdx + 1 : 0;
+      } else {
+        nextIdx = currentIdx > 0 ? currentIdx - 1 : flatSlugs.length - 1;
+      }
+      onSelectTracker(flatSlugs[nextIdx]);
+    }
+    if (e.key === 'Enter' && activeTracker) {
+      window.location.href = `${basePath}${activeTracker}/`;
+    }
+  }, [activeTracker, flatSlugs, onSelectTracker, basePath]);
+
+  const isSearching = activeDomain !== null || searchQuery.trim().length > 0;
 
   return (
     <div style={S.sidebar} onKeyDown={handleKeyDown} tabIndex={-1}>
@@ -246,28 +372,47 @@ export default function SidebarPanel({
 
       {/* Tracker list */}
       <div style={S.list}>
+        {/* Recent events feed (only when not searching) */}
+        {!isSearching && <RecentEventsFeed trackers={trackers} onSelect={onSelectTracker} />}
+
         {filtered.length === 0 ? (
           <div style={S.noResults}>No trackers match your search.</div>
         ) : (
-          groups.map(group => (
-            <div key={`${group.type}-${group.label}`}>
-              <div style={S.groupHeader(group.type)}>
-                {group.labelIcon && <span style={S.groupIcon(group.type)}>{group.labelIcon}</span>}
-                <span>{group.label.toUpperCase()}</span>
-              </div>
-              {group.trackers.map(t => (
-                <TrackerRow
-                  key={t.slug}
-                  tracker={t}
+          groups.map(group => {
+            // Render series groups as horizontal strips
+            if (group.type === 'series') {
+              return (
+                <SeriesStrip
+                  key={`series-${group.label}`}
+                  group={group}
                   basePath={basePath}
-                  isActive={activeTracker === t.slug}
-                  isHovered={hoveredTracker === t.slug}
+                  activeTracker={activeTracker}
+                  hoveredTracker={hoveredTracker}
                   onSelect={onSelectTracker}
                   onHover={onHoverTracker}
                 />
-              ))}
-            </div>
-          ))
+              );
+            }
+            return (
+              <div key={`${group.type}-${group.label}`}>
+                <div style={S.groupHeader(group.type)}>
+                  {group.labelIcon && <span style={S.groupIcon(group.type)}>{group.labelIcon}</span>}
+                  <span>{group.label.toUpperCase()}</span>
+                </div>
+                {group.trackers.map(t => (
+                  <TrackerRow
+                    key={t.slug}
+                    tracker={t}
+                    basePath={basePath}
+                    isActive={activeTracker === t.slug}
+                    isHovered={hoveredTracker === t.slug}
+                    onSelect={onSelectTracker}
+                    onHover={onHoverTracker}
+                  />
+                ))}
+              </div>
+            );
+          })
         )}
       </div>
 
@@ -633,6 +778,156 @@ const S = {
       border: `1px solid ${c.border}`,
     };
   },
+
+  // Series strip styles
+  seriesHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    padding: '8px 12px 4px',
+    marginTop: 8,
+  } as CSSProperties,
+
+  seriesLine: {
+    flex: 1,
+    height: 1,
+    background: 'var(--border)',
+  } as CSSProperties,
+
+  seriesLabel: {
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.48rem',
+    fontWeight: 600,
+    textTransform: 'uppercase' as const,
+    letterSpacing: '0.1em',
+    color: 'var(--text-muted)',
+    whiteSpace: 'nowrap' as const,
+  } as CSSProperties,
+
+  seriesStrip: {
+    display: 'flex',
+    gap: '4px',
+    overflowX: 'auto' as const,
+    padding: '4px 12px 8px',
+    scrollbarWidth: 'thin' as const,
+    scrollbarColor: 'var(--border) transparent',
+  } as CSSProperties,
+
+  seriesArrow: {
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.6rem',
+    color: 'var(--text-muted)',
+    opacity: 0.3,
+    flexShrink: 0,
+  } as CSSProperties,
+
+  seriesCard: (color: string, isHub: boolean): CSSProperties => ({
+    display: 'flex',
+    alignItems: 'center',
+    gap: '5px',
+    padding: '4px 8px',
+    border: `1px solid ${isHub ? color + '40' : 'var(--border)'}`,
+    borderRadius: 5,
+    cursor: 'pointer',
+    transition: 'all 0.15s',
+    flexShrink: 0,
+    borderTop: `2px solid ${color}80`,
+  }),
+
+  seriesCardName: {
+    fontFamily: "'DM Sans', sans-serif",
+    fontSize: '0.7rem',
+    fontWeight: 600,
+    color: 'var(--text-primary)',
+    whiteSpace: 'nowrap' as const,
+    lineHeight: 1.2,
+  } as CSSProperties,
+
+  seriesCardYear: {
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.45rem',
+    letterSpacing: '0.06em',
+    marginTop: 1,
+  } as CSSProperties,
+
+  hubBadge: {
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.38rem',
+    fontWeight: 600,
+    textTransform: 'uppercase' as const,
+    letterSpacing: '0.06em',
+    padding: '1px 3px',
+    borderRadius: 2,
+    background: 'rgba(52,152,219,0.15)',
+    color: 'var(--accent-blue)',
+    border: '1px solid rgba(52,152,219,0.3)',
+    flexShrink: 0,
+  } as CSSProperties,
+
+  // Recent events feed
+  feedWrap: {
+    padding: '6px 12px 8px',
+    borderBottom: '1px solid var(--border)',
+    marginBottom: 4,
+  } as CSSProperties,
+
+  feedHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '6px',
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.48rem',
+    fontWeight: 600,
+    letterSpacing: '0.12em',
+    color: 'var(--accent-green)',
+    marginBottom: 6,
+  } as CSSProperties,
+
+  feedDot: {
+    width: 5,
+    height: 5,
+    background: 'var(--accent-green)',
+    borderRadius: '50%',
+    boxShadow: '0 0 4px rgba(46,204,113,0.5)',
+    animation: 'pulse 2s ease-in-out infinite',
+  } as CSSProperties,
+
+  feedItem: {
+    padding: '4px 6px',
+    marginBottom: 3,
+    borderRadius: 4,
+    cursor: 'pointer',
+    transition: 'background 0.15s',
+    background: 'rgba(255,255,255,0.02)',
+  } as CSSProperties,
+
+  feedItemHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '4px',
+  } as CSSProperties,
+
+  feedItemName: {
+    fontFamily: "'DM Sans', sans-serif",
+    fontSize: '0.65rem',
+    fontWeight: 600,
+    color: 'var(--text-primary)',
+  } as CSSProperties,
+
+  feedItemAge: {
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.42rem',
+    marginLeft: 'auto',
+  } as CSSProperties,
+
+  feedItemText: {
+    fontFamily: "'DM Sans', sans-serif",
+    fontSize: '0.6rem',
+    color: 'var(--text-muted)',
+    lineHeight: 1.4,
+    marginTop: 2,
+    paddingLeft: 18,
+  } as CSSProperties,
 
   noResults: {
     textAlign: 'center' as const,
