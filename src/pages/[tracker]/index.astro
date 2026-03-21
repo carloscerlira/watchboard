@@ -38,6 +38,16 @@ const { config } = Astro.props;
 const data = loadTrackerData(config.slug, config.eraLabel);
 const flatEvents = flattenTimelineEvents(data.timeline);
 const categories = config.map?.categories ?? [];
+
+// Build dynamic status label from temporal + domain
+const temporalLabel = config.temporal === 'historical' ? 'HISTORICAL' : 'ACTIVE';
+const domainLabels: Record<string, string> = {
+  conflict: 'CONFLICT', security: 'SECURITY', governance: 'GOVERNANCE',
+  disaster: 'DISASTER', 'human-rights': 'HUMAN RIGHTS', science: 'SCIENCE',
+  space: 'SPACE', economy: 'ECONOMY', culture: 'CULTURE', history: 'HISTORY',
+};
+const domainLabel = domainLabels[config.domain || ''] || 'TRACKER';
+const statusLabel = `${temporalLabel} ${domainLabel}`;
 ---
 <BaseLayout
   title={`${config.shortName} — Intel Dashboard`}
@@ -47,7 +57,7 @@ const categories = config.map?.categories ?? [];
 >
   <!-- Desktop layout -->
   <div class="desktop-layout">
-    <Header meta={data.meta} navSections={config.navSections} trackerSlug={config.slug} globeEnabled={config.globe?.enabled} />
+    <Header meta={data.meta} navSections={config.navSections} trackerSlug={config.slug} globeEnabled={config.globe?.enabled} statusLabel={statusLabel} />
     <main id="main-content">
       <HeroKpiCombo meta={data.meta} kpis={data.kpis} />
 

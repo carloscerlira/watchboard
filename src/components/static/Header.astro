@@ -7,9 +7,10 @@ interface Props {
   navSections?: NavSection[];
   trackerSlug?: string;
   globeEnabled?: boolean;
+  statusLabel?: string;
 }
 
-const { meta, navSections, trackerSlug, globeEnabled = true } = Astro.props;
+const { meta, navSections, trackerSlug, globeEnabled = true, statusLabel = 'ACTIVE TRACKER' } = Astro.props;
 
 // Fallback for backward compat
 const sections = navSections ?? (await import('../../lib/constants')).NAV_SECTIONS;
@@ -25,7 +26,7 @@ const aboutHref = trackerSlug ? `${basePath}${trackerSlug}/about/` : `${basePath
       <a class="home-link" href={basePath} title="Watchboard Home">WB</a>
       <span class="header-sep">&middot;</span>
       <span class="live-dot"></span>
-      <span class="header-title"><strong>ACTIVE CONFLICT</strong> &mdash; {meta.operationName}</span>
+      <span class="header-title"><strong>{statusLabel}</strong> &mdash; {meta.operationName}</span>
       <span class="freshness-indicator" data-updated={meta.lastUpdated} aria-live="polite">
         <span class="freshness-text">{meta.lastUpdated ? `Updated ${new Date(meta.lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}` : 'Last update time unknown'}</span>
       </span>
