@@ -10,6 +10,14 @@ interface GlobePoint {
   name: string;
 }
 
+interface GlobeRing {
+  slug: string;
+  lat: number;
+  lng: number;
+  color: string;
+  freshness: 'fresh' | 'recent';
+}
+
 interface Props {
   trackers: TrackerCardData[];
   activeTracker: string | null;
@@ -18,8 +26,40 @@ interface Props {
   onHoverTracker: (slug: string | null) => void;
 }
 
+function hexToRgb(hex: string): string {
+  const h = hex.replace('#', '');
+  const r = parseInt(h.substring(0, 2), 16);
+  const g = parseInt(h.substring(2, 4), 16);
+  const b = parseInt(h.substring(4, 6), 16);
+  return `${r},${g},${b}`;
+}
+
 const DARK_EARTH_URL = '//unpkg.com/three-globe/example/img/earth-night.jpg';
 const BUMP_URL = '//unpkg.com/three-globe/example/img/earth-topology.png';
+
+function computeFreshnessClass(lastUpdated: string): 'fresh' | 'recent' | 'stale' {
+  const ageHrs = (Date.now() - new Date(lastUpdated).getTime()) / 3600000;
+  if (ageHrs < 24) return 'fresh';
+  if (ageHrs < 48) return 'recent';
+  return 'stale';
+}
+
+function buildRings(trackers: TrackerCardData[]): GlobeRing[] {
+  const rings: GlobeRing[] = [];
+  for (const t of trackers) {
+    if (!t.mapCenter) continue;
+    const freshness = computeFreshnessClass(t.lastUpdated);
+    if (freshness === 'stale') continue;
+    rings.push({
+      slug: t.slug,
+      lat: t.mapCenter.lat,
+      lng: t.mapCenter.lon,
+      color: t.color || '#3498db',
+      freshness,
+    });
+  }
+  return rings;
+}
 
 function buildPoints(trackers: TrackerCardData[]): GlobePoint[] {
   const points: GlobePoint[] = [];
@@ -73,6 +113,10 @@ export default function GlobePanel({
   const points = buildPoints(trackers);
   const pointsRef = useRef(points);
   pointsRef.current = points;
+
+  const rings = buildRings(trackers);
+  const ringsRef = useRef(rings);
+  ringsRef.current = rings;
 
   const onSelectRef = useRef(onSelectTracker);
   onSelectRef.current = onSelectTracker;
@@ -173,7 +217,19 @@ export default function GlobePanel({
         })
         .onGlobeClick(() => {
           onSelectRef.current(null);
-        });
+        })
+        // Animated rings on fresh/recent tracker hubs
+        .ringsData(ringsRef.current)
+        .ringLat('lat')
+        .ringLng('lng')
+        .ringColor((d: any) => {
+          const active = activeRef.current;
+          if (active && d.slug !== active) return `${d.color}15`;
+          return (t: number) => `rgba(${hexToRgb(d.color)}, ${1 - t})`;
+        })
+        .ringMaxRadius((d: any) => d.freshness === 'fresh' ? 3 : 2)
+        .ringPropagationSpeed((d: any) => d.freshness === 'fresh' ? 2 : 1)
+        .ringRepeatPeriod((d: any) => d.freshness === 'fresh' ? 1200 : 2400);
 
       // Initial camera position
       globe.pointOfView({ lat: 20, lng: 30, altitude: 2.2 });
@@ -231,7 +287,11 @@ export default function GlobePanel({
     globe
       .pointColor(getPointColor)
       .pointRadius(getPointRadius)
-      .pointAltitude(getPointAltitude);
+      .pointAltitude(getPointAltitude)
+      .ringColor((d: any) => {
+        if (activeTracker && d.slug !== activeTracker) return `${d.color}15`;
+        return (t: number) => `rgba(${hexToRgb(d.color)}, ${1 - t})`;
+      });
   }, [activeTracker, hoveredTracker]);
 
   // Fly-to on selection
