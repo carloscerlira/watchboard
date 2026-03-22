@@ -438,7 +438,8 @@ export default function GlobePanel({
       )}
       <div ref={containerRef} style={styles.globeWrap} />
       <div style={styles.statusBar}>
-        <span>Drag to rotate · Scroll to zoom · Click marker to select</span>
+        <span className="globe-status-desktop">Drag to rotate · Scroll to zoom · Click marker to select</span>
+        <span className="globe-status-mobile">Swipe to rotate · Pinch to zoom · Tap marker to select</span>
       </div>
     </div>
   );

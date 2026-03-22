@@ -3211,6 +3211,241 @@ body::before {
   }
 }
 
+/* ─── MOBILE RESPONSIVENESS ─── */
+@media (max-width: 767px) {
+  /* ── Typography scaling ── */
+  body {
+    font-size: 15px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .hero {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .hero::before {
+    display: none;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  /* ── Header mobile improvements ── */
+  .site-header {
+    padding: 0 0.75rem;
+  }
+
+  .header-inner {
+    height: 48px;
+  }
+
+  .header-title {
+    font-size: 0.62rem;
+    max-width: 50vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobile-menu-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .header-nav.open .nav-btn {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.72rem;
+  }
+
+  /* ── Touch targets: ensure all interactive elements are >= 44px ── */
+  .nav-btn,
+  .tab-btn,
+  .latest-event-card,
+  .latest-events-more,
+  .map-filter,
+  .map-events-toggle,
+  .map-layers-toggle,
+  .feedback-fab {
+    min-height: 44px;
+  }
+
+  .nav-btn {
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* ── KPI strip mobile ── */
+  .kpi-strip {
+    padding: 0 0.75rem;
+  }
+
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kpi-value {
+    font-size: 1.6rem;
+  }
+
+  .kpi-label {
+    font-size: 0.55rem;
+  }
+
+  /* ── Footer mobile ── */
+  .site-footer {
+    padding: 1rem 0.75rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  /* ── Source legend mobile ── */
+  .source-legend {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .legend-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  /* ── Operations grid mobile ── */
+  .ops-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Casualty table: ensure horizontal scroll ── */
+  .cas-table-wrap {
+    margin: 0 -0.75rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .cas-table th,
+  .cas-table td {
+    padding: 0.5rem 0.65rem;
+    font-size: 0.75rem;
+  }
+
+  /* ── Econ grid mobile ── */
+  .econ-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Political grid mobile ── */
+  .pol-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pol-card {
+    padding: 1rem;
+  }
+
+  .pol-quote {
+    font-size: 0.88rem;
+  }
+
+  /* ── Claims mobile ── */
+  .claim-summary {
+    padding: 0.75rem 1rem;
+  }
+
+  .claim-question-text {
+    font-size: 0.95rem;
+  }
+
+  /* ── Timeline mobile ── */
+  .timeline-container {
+    margin: 0 -0.5rem;
+  }
+
+  /* ── Map mobile ── */
+  .map-container {
+    height: 350px;
+    border-radius: 6px;
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+  }
+
+  .map-info-panel {
+    width: calc(100vw - 24px);
+    left: 12px;
+    right: 12px;
+    top: auto;
+    bottom: 60px;
+    max-height: 40vh;
+    overflow-y: auto;
+  }
+
+  /* ── Feedback FAB repositioned above mobile tab bar ── */
+  .feedback-fab {
+    bottom: 4.5rem;
+    right: 1rem;
+  }
+
+  /* ── Latest events mobile ── */
+  .latest-event-card {
+    padding: 12px 14px;
+  }
+
+  .latest-event-title {
+    font-size: 0.95rem;
+  }
+
+  .latest-event-summary {
+    font-size: 0.82rem;
+  }
+
+  /* ── Strike list mobile ── */
+  .strike-item {
+    padding: 0.65rem;
+  }
+
+  .strike-name {
+    font-size: 0.85rem;
+  }
+
+  /* ── Asset grid mobile ── */
+  .asset-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+}
+
+/* ── Extra small screens (≤ 380px) ── */
+@media (max-width: 380px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .asset-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-title strong {
+    display: none;
+  }
+}
+
 /* ─── REDUCED MOTION ─── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

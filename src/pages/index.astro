@@ -74,6 +74,14 @@ const serializedTrackers = nonDraft.map(t => {
     overflow: hidden;
   }
 
+  /* Globe status text: swap for mobile-appropriate instructions */
+  .globe-status-mobile { display: none; }
+
+  @media (max-width: 767px) {
+    .globe-status-desktop { display: none; }
+    .globe-status-mobile { display: inline; }
+  }
+
   @keyframes spin {
     to { transform: rotate(360deg); }
   }
@@ -83,16 +91,58 @@ const serializedTrackers = nonDraft.map(t => {
     .command-center-root {
       flex-direction: column !important;
       height: 100vh !important;
+      height: 100dvh !important;
     }
     .command-center-root > div:first-child {
       flex: none !important;
-      height: 35vh !important;
+      height: 28vh !important;
+      min-height: 160px !important;
     }
     .command-center-root > div:last-child {
       flex: 1 !important;
       max-width: none !important;
+      min-width: 0 !important;
       border-left: none !important;
       border-top: 1px solid var(--border) !important;
+    }
+
+    /* Sidebar header: larger touch targets */
+    .command-center-root input[type="text"] {
+      font-size: 16px !important; /* Prevents iOS zoom on focus */
+      min-height: 40px !important;
+      padding: 8px 10px 8px 32px !important;
+    }
+
+    /* Make tracker rows taller for touch */
+    .command-center-root [style*="padding: 6px 12px"] {
+      min-height: 48px !important;
+    }
+
+    /* Make domain filter tabs taller */
+    .command-center-root button[type="button"] {
+      min-height: 32px !important;
+      padding: 6px 10px !important;
+      font-size: 0.58rem !important;
+    }
+
+    /* Series strip: allow wrapping */
+    .command-center-root [style*="overflowX"] {
+      -webkit-overflow-scrolling: touch !important;
+    }
+
+    /* Open dashboard link: bigger tap target */
+    .command-center-root a[href*="/"] {
+      min-height: 32px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+    }
+  }
+
+  /* Hide globe entirely on very small screens to save resources */
+  @media (max-width: 380px) {
+    .command-center-root > div:first-child {
+      height: 20vh !important;
+      min-height: 120px !important;
     }
   }
 </style>

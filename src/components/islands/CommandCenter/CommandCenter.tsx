@@ -112,7 +112,7 @@ const styles = {
 
   sidebar: {
     flex: '4 1 0%',
-    minWidth: 280,
+    minWidth: 0,
     maxWidth: 440,
     borderLeft: '1px solid var(--border)',
     overflow: 'hidden',
