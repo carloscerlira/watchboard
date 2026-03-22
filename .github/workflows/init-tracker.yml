@@ -339,19 +339,51 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           SLUG="${{ github.event.inputs.slug }}"
+          REGION="${{ github.event.inputs.region }}"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add "trackers/${SLUG}/" README.md
-          git commit -m "feat(tracker): initialize ${SLUG} tracker $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
           for i in $(seq 1 10); do
-            if git pull --rebase origin main && git push; then
+            # Abort any in-progress rebase from prior attempt
+            git rebase --abort 2>/dev/null || true
+
+            # Pull latest main
+            git checkout main 2>/dev/null || true
+            git pull origin main --rebase=false 2>/dev/null || true
+
+            # Re-generate README row on the fresh base
+            node -e "
+            const fs = require('fs');
+            const config = JSON.parse(fs.readFileSync('trackers/${SLUG}/tracker.json', 'utf8'));
+            const name = config.name;
+            let desc = config.description;
+            if (desc.length > 80) desc = desc.slice(0, 80) + '...';
+            const sections = config.sections.length;
+            const globe = config.globe?.enabled ? '3D' : '—';
+            const base = 'https://artemiopadilla.github.io/watchboard';
+            const row = '| **[' + name + '](' + base + '/${SLUG}/)** | ' + desc + ' | ' + sections + ' | ' + '${REGION}' + ' | ' + globe + ' |';
+            const readme = fs.readFileSync('README.md', 'utf8');
+            if (readme.includes('/${SLUG}/')) { console.log('Already in README'); process.exit(0); }
+            const lines = readme.split('\\\n');
+            let lastRowIdx = -1;
+            for (let i = 0; i < lines.length; i++) { if (lines[i].startsWith('| **[')) lastRowIdx = i; }
+            if (lastRowIdx >= 0) { lines.splice(lastRowIdx + 1, 0, row); fs.writeFileSync('README.md', lines.join('\\\n')); }
+            "
+
+            # Stage and commit
+            git add "trackers/${SLUG}/" README.md
+            git diff --cached --quiet && echo "Nothing to commit" && break
+            git commit -m "feat(tracker): initialize ${SLUG} tracker $(date -u +%Y-%m-%dT%H:%M:%SZ)" || true
+
+            # Push — if it works, done
+            if git push origin main; then
               echo "Push succeeded on attempt $i"
               break
             fi
-            git rebase --abort 2>/dev/null || true
+
             echo "Push attempt $i failed, retrying with jitter..."
-            sleep $(( (RANDOM % 8) + 3 ))
+            sleep $(( (RANDOM % 5) + 2 ))
           done
 
       - name: Job summary
@@ -518,13 +550,10 @@ jobs:
           git add "trackers/${SLUG}/"
           git commit -m "chore(data): seed ${SLUG} tracker data $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           for i in $(seq 1 10); do
-            if git pull --rebase origin main && git push; then
-              echo "Push succeeded on attempt $i"
-              break
-            fi
+            git pull --rebase origin main && git push && echo "Push succeeded on attempt $i" && break
             git rebase --abort 2>/dev/null || true
             echo "Push attempt $i failed, retrying with jitter..."
-            sleep $(( (RANDOM % 8) + 3 ))
+            sleep $(( (RANDOM % 5) + 2 ))
           done
 
       - name: Seed summary
