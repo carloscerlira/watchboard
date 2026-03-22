@@ -632,11 +632,12 @@ const S = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '6px 12px',
+    padding: '8px 12px',
     borderLeft: '2px solid transparent',
     cursor: 'pointer',
     transition: 'background 0.15s',
     userSelect: 'none' as const,
+    minHeight: 44, // ensure minimum touch target
   } as CSSProperties,
 
   collapsedLeft: {

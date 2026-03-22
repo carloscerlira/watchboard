@@ -1,0 +1,125 @@
+/* ══════════════════════════════════════════════
+   Command Center — Mobile UX Improvements
+   ══════════════════════════════════════════════ */
+
+/* ─── Safe area handling for notched phones ─── */
+@supports (padding: env(safe-area-inset-top)) {
+  @media (max-width: 767px) {
+    .command-center-root > div:last-child {
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+
+  /* ─── Touch targets: minimum 44px for all interactive elements ─── */
+
+  /* Domain filter tabs — larger touch area */
+  .command-center-root button[style*="uppercase"] {
+    min-height: 32px !important;
+    padding: 6px 10px !important;
+    font-size: 0.58rem !important;
+  }
+
+  /* Feed items — larger touch area */
+  .command-center-root [style*="cursor: pointer"][style*="rgba(255,255,255,0.02)"] {
+    padding: 8px 10px !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* ─── KPI chips: wrap instead of overflow ─── */
+  .command-center-root [style*="display: flex"][style*="gap: 5px"] {
+    flex-wrap: wrap !important;
+  }
+
+  /* ─── Search input: larger for easy tapping ─── */
+  .command-center-root input[type="text"] {
+    padding: 10px 10px 10px 32px !important;
+    font-size: 0.75rem !important;
+    border-radius: 8px !important;
+  }
+
+  /* ─── Better text legibility ─── */
+
+  /* Tracker names in collapsed rows */
+  .command-center-root [style*="0.78rem"] {
+    font-size: max(0.78rem, 14px) !important;
+  }
+
+  /* Status / freshness labels */
+  .command-center-root [style*="0.48rem"][style*="font-weight: 600"] {
+    font-size: 0.55rem !important;
+  }
+
+  /* KPI values — ensure readable */
+  .command-center-root [style*="0.68rem"][style*="font-weight: 600"] {
+    font-size: 0.72rem !important;
+  }
+
+  /* KPI labels — slightly larger */
+  .command-center-root [style*="0.42rem"][style*="uppercase"] {
+    font-size: 0.5rem !important;
+  }
+
+  /* ─── Series strip: add scroll hint ─── */
+  .command-center-root [style*="overflowX: auto"] {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    padding-right: 24px !important;
+  }
+
+  /* Series chips: snap to edges */
+  .command-center-root [style*="overflowX: auto"] > div {
+    scroll-snap-align: start;
+  }
+
+  /* ─── Expanded tracker card: better mobile layout ─── */
+  .command-center-root [style*="margin: 2px 8px"][style*="border-radius: 6"] {
+    margin: 4px 6px !important;
+    padding: 12px !important;
+  }
+
+  /* Open Dashboard link: make it a proper button-like target */
+  .command-center-root a[style*="accent-blue"][style*="0.58rem"] {
+    font-size: 0.65rem !important;
+    padding: 6px 12px !important;
+    background: rgba(52, 152, 219, 0.1) !important;
+    border: 1px solid rgba(52, 152, 219, 0.25) !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+  }
+
+  /* ─── Footer: more breathing room ─── */
+  .command-center-root [style*="padding: 6px 12px"][style*="opacity: 0.5"] {
+    padding: 10px 12px !important;
+  }
+}
+
+/* ─── Tablet tweaks (768-1024) ─── */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .command-center-root > div:last-child {
+    max-width: 380px !important;
+    min-width: 320px !important;
+  }
+}
+
+/* ─── Landscape phone: give globe more room ─── */
+@media (max-width: 767px) and (orientation: landscape) {
+  .command-center-root {
+    flex-direction: row !important;
+  }
+  .command-center-root > div:first-child {
+    flex: 1 !important;
+    height: 100% !important;
+    min-height: unset !important;
+  }
+  .command-center-root > div:last-child {
+    flex: none !important;
+    width: 55% !important;
+    max-width: none !important;
+    height: 100% !important;
+    border-top: none !important;
+    border-left: 1px solid var(--border) !important;
+  }
+}
